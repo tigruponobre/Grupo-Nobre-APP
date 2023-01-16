@@ -1,0 +1,79 @@
+#container{
+    display: flex;
+    height: 70vh;
+}
+#left-side{
+    width: 100%;
+}
+#title{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    padding-left: 1%;
+    border-left: 2px solid #fff;
+}
+subtitle{
+    font-size: x-large;
+}
+#title h1{
+    font-size: 4em;
+}
+.options{
+    margin-left: 7%;
+    margin-top: 1.5%;
+    font-size: 1.4em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    max-width: 18%;
+    transition: ease .5s;
+}
+.options:hover{
+    color: #42E9E1;
+    cursor: pointer;
+}
+
+#logodiv{
+    margin-left: 10%;
+}
+#logo{
+    width: 10%;
+}
+
+.doc{
+    margin-left: 14%;
+    margin-top: 1%;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.2em;
+    min-width: 40%;
+    opacity: 0;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+.doc:hover{
+    color: #42E9E1;
+}
+
+@keyframes appears{
+    from {margin-top: -1%;}
+    to {margin-top: 1%;}
+}
+
+.appears{
+    opacity: 1;
+    animation: appears 1s;
+}
+
+@keyframes disappears{
+    from {margin-top: 1%;}
+    to {margin-top: -1%;}
+
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.disappears{
+    opacity: 0;
+    animation: disappears 1s;
+}
