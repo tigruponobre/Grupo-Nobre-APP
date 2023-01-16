@@ -1,5 +1,5 @@
 const loginButton = document.getElementById('loginButton')
-sessionStorage.setItem('url', document.URL)
+sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
 const url = sessionStorage.url
 
 const notification = document.getElementById("notification")
@@ -33,7 +33,7 @@ async function getLogged(){
     const login = document.getElementById('login').value
     const password = document.getElementById('password').value
 
-    let response = await fetch(url + '.netlify/functions/login' ,{
+    let response = await fetch(url + '/.netlify/functions/login' ,{
         method: 'post',
         body: JSON.stringify({
             login: login,
@@ -75,7 +75,7 @@ async function getLogged(){
     }else{
         sessionStorage.setItem('token', data.token)
         sessionStorage.setItem('unauthorized', false)
-        window.location = url + 'pages/biblioteca'
+        window.location = url + '/pages/biblioteca'
     }
 }
 
