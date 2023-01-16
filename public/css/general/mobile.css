@@ -1,0 +1,43 @@
+nav{
+    flex-direction: column;
+}
+
+#logo{
+    margin-top: 6%;
+    width: 60%;
+}
+
+h1{
+    font-size: 22px;
+}
+
+#list li{
+    font-size: 18px;
+}
+
+#copy{
+    font-size: 12px;
+}
+
+#space{
+    height: 45px;
+}
+
+.container{
+    margin: 4% 5%;
+    padding: 5% 4%;
+}
+
+.container p{
+    margin-top: 10px;
+    margin-left: 3%;
+}
+
+#author{
+    display: none;
+}
+
+.container ul li{
+    margin-left: 11%;
+    margin-top: 5px;
+}

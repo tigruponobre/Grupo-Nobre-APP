@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gustavo Pasqua">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general/all.css">
+    <link rel="stylesheet" href="../css/general/header.css">
+    <link rel="stylesheet" href="../css/general/containers.css">
+    <link rel="stylesheet" href="../css/general/footer.css">
+    <script src="../scripts/authentication.js"></script>
+    <script src="../scripts/biblioteca.js" defer></script>
+    <title>Minha Biblioteca</title>
+</head>
+<body>
+    <header>
+         <nav>
+            <img id="logo" src="../img/GRUPO NOBRE.png" alt="logo">
+            <h4 id="author">Author: Gustavo Pasqua</h4>
+         </nav>
+         <hr>
+         <div id="title"><h1>DOCUMENTAÇÃO</h1></div>
+         <div id="ancoras">
+            <ul id="list">
+                <li id="netlify">ACESSO</li>
+                <li id="api">APLICAÇÃO</li>
+            </ul>
+         </div>
+    </header>
+
+    <section id="netlify_container">
+        <div class="container">
+            <h3>O que é o netlify:</h3>
+            <p>Netlify é uma plataforma de hospedagem https que contém planos grátis.</p>
+        </div>
+        <div class="container">
+            <h3>Alterações no projeto:</h3>
+            <p>1 - É preferível usar o cmd do windows diretamente do que pelo vscode.</p>
+            <p>2 - No CMD deve-se acessar o patch do projeto. Neste  localizado em <b>Documents > Gustavo > GRUPO NOBRE APP.</b></p>
+            <p>3 - Somente arquivos da pasta "<b>public</b>" podem ser usados no frontend.</p>
+            <p>4 - Todo o backend é formado na pasta "<b>functions</b>".</p>
+            <p>5 - Usar o comando <b>help</b> para ter acesso às funções do pacote. "<b>netlify help</b>" ou "<b>ntl help</b>".</p>
+            <p>6 - Comando mais usados:
+                <ul>
+                    <li>6.1 - "<b>ntl dev</b>" para abrir o abiente de desenvolvimento em localhost.</li>
+                    <li>6.2 - "<b>ntl functions:list</b>" para listar as funções existentes (endpoints) e se estão em produção.</li>
+                    <li>6.3 - "<b>ntl deploy</b>" para dar deploy. O netlify mostra um link teste antes de subir realmente para a produção para verificar se tudo está correto.</li>
+                </ul>
+            </p>
+            <p>7 - Para mais informações acesse <b><a href="https://cli.netlify.com/" target="_blank">cli.netlify.com</a></b>.</p> 
+        </div>
+    </section>
+
+    <section id="api_container">
+        <div class="container">
+            <h3>Apresentação</h3>
+            <p>Esta API recebe dados do CANVAS UNEF e CANVAS UNIFAN e retorna uma URL autenticada pela <b>Minha Biblioteca</b> (empresa de biblioteca virtual).</p>
+            <p>A URL autenticada só é retornada se o RA do aluno estiver registrado na nossa base de dados.</p>
+            <p>Entre os dados recebidos estão:<br>
+                <ul>
+                    <li>Primeiro Nome</li>
+                    <li>Último Nome</li>
+                    <li>RA do aluno</li>
+                </ul>
+            </p>
+        </div>
+        <div class="container">
+            <h3>Endpoints</h3>
+            <p><b>.netlify/functions/bibli_unef</b></p>
+            <p><b>.netlify/functions/bibli_fan</b></p>
+        </div>
+        <div class="container">
+            <h3>Requisição</h3>
+            <p>method: <b>post</b>.</p>
+            <p>body: JSON.stringify({<br>
+                firstName: <b>string</b>,<br>
+                lastName: <b>string</b>,<br>
+                ra: <b>string</b>
+            })</p>
+        </div>
+    </section>
+
+    <div id="space"></div>
+
+    <footer>
+        <p id="copy">&copy; 2022 Grupo Nobre. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

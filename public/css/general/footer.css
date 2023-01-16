@@ -1,0 +1,17 @@
+#space{
+    height: 30px;
+}
+
+footer {
+    width: 100%;
+    line-height: 40px;
+    position: fixed;
+    bottom: 0;
+}
+#copy{
+    background-color:#303030;
+    color: #CCCCCC;
+    text-align: right;
+    margin-bottom: 0;
+    padding-inline: 30px;
+}
