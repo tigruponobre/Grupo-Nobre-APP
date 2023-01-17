@@ -6,7 +6,7 @@ if(!getToken){
     window.location = url
 }else{
     async function validation(){
-        let response = await fetch(url + '.netlify/function/validation',{
+        let response = await fetch(url + '/.netlify/functions/validation',{
             method: 'post',
             body: JSON.stringify({
                 tokenValidation: getToken

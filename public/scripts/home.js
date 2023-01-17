@@ -1,10 +1,11 @@
+//Show documentations
 let documentation = document.querySelector('#documentations .options')
 let docs = document.querySelectorAll('.doc')
 docs = Array.from(docs)
 
-for(let index in docs){
-    docs[index].style.display = 'none'
-}
+//Set url in sessionStorage
+sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
+const url = sessionStorage.url
 
 
 let count = 0
@@ -21,11 +22,35 @@ documentation.addEventListener('click', ()=>{
     count += 1
 })
 
-let bringLogin = document.querySelector('.login')
+
+//Login/Logout
+let login_logout = document.querySelector('.login_logout')
+async function checkLogin(){
+    let token = sessionStorage.getItem('token')
+    let response = await fetch(url + '/.netlify/functions/validation',{
+        method: 'post',
+        body: JSON.stringify({
+            validationToken: token
+        })
+    })
+    if(response.status != 200){
+        login_logout.textContent = 'Login'
+    }else{
+        login_logout.textContent = 'Logout'
+    }
+}
+checkLogin()
+
 let loginDiv = document.querySelector('.loginDiv')
 let fade = document.querySelector('.fade')
-bringLogin.addEventListener('click', ()=>{
-    [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+login_logout.addEventListener('click', ()=>{
+    if(login_logout.textContent == 'Login'){
+        [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+    }else{
+        sessionStorage.removeItem('token')
+        sessionStorage.removeItem('unauthorized')
+        login_logout.textContent = 'Login'
+    }
 })
 
 document.onkeydown = (e) =>{
