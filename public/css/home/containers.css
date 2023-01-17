@@ -38,6 +38,7 @@
 }
 #logo-branca{
     width: 10%;
+    min-width: 200px;
 }
 
 .doc{

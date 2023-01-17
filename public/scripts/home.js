@@ -64,3 +64,7 @@ document.onkeydown = (e) =>{
         }
     }
 }
+
+fade.addEventListener('click', ()=>{
+    [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+})
