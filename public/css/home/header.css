@@ -27,7 +27,8 @@ nav ul{
     border-radius: 1em;
     transition: ease .5s;
     text-align: center;
-    min-width: 15%;
+    width: 15%;
+    min-width: 100px;
     max-width: 15%;
     color: #110750;
     background-color: #42E9E1;
