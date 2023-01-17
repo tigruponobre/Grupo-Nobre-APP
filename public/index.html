@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/home/header.css">
     <link rel="stylesheet" href="./css/home/containers.css">
     <link rel="stylesheet" href="./css/home/login.css">
-    <!-- <link rel="stylesheet" href="./css/home/footer.css"> -->
+    <link rel="stylesheet" href="./css/general/footer.css">
     <script src="./scripts/home.js" defer></script>
     <script src="./scripts/login.js" defer></script>
     <title>Home</title>
@@ -27,16 +27,16 @@
     <div id="container">
         <section id="left-side">
             <div id="title">
-                <subtitle id="subtitle"></subtitle>
+                <h2 id="greeting"></h2>
                 <h1>GRUPO NOBRE APP</h1>
             </div>
-            <a href="#" class="options"><img src="./img/crown1.png" width="40px">Conheça a TI Grupo Nobre</a>
+
             <a href="http://192.168.10.214/" class="options"><img src="./img/crown1.png" width="40px">Ramais Grupo Nobre</a>
             <a href="http://192.168.10.10/glpi/index.php?noAUTO=1" class="options"><img src="./img/crown1.png" width="40px">Solicitação ao TI</a>
             <div id="documentations">
                 <a class="options"><img src="./img/crown1.png" width="40px">Consultar documentações</a>
-                <a class="doc" ><img src="./img/arrow-right.png" width="25px">Netlify</a>
-                <a class="doc"><img src="./img/arrow-right.png" width="25px">Minha Biblioteca</a>
+                <!-- <a class="doc" ><img src="./img/arrow-right.png" width="25px">Netlify</a> -->
+                <a onclick="window.location.href = `${url}/pages/biblioteca`" class="doc"><img src="./img/arrow-right.png" width="25px">Minha Biblioteca</a>
             </div>
         </section>
     </div>
@@ -66,5 +66,9 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <p id="copy">&copy; 2022 Grupo Nobre. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
