@@ -1,8 +1,6 @@
 const loginButton = document.getElementById('loginButton')
-sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
-const url = sessionStorage.url
 
-const notification = document.getElementById("notification")
+let notification = document.getElementById("notification")
 const inputLogin = document.getElementById("loginInput")
 const inputPass = document.getElementById("passwordInput")
 
@@ -30,10 +28,10 @@ async function getLogged(){
     }
 
     //Get frontend info
-    const login = inputLogin.value
-    const password = inputPass.value
+    let login = inputLogin.value
+    let password = inputPass.value
 
-    let response = await fetch(url + '/.netlify/functions/login' ,{
+    let response = await fetch(url + '/.netlify/functions/login',{
         method: 'post',
         body: JSON.stringify({
             login: login,
@@ -75,7 +73,22 @@ async function getLogged(){
     }else{
         sessionStorage.setItem('token', data.token)
         sessionStorage.setItem('unauthorized', false)
-        window.location = url + '/pages/biblioteca'
+        checkLogin()
+        notification.innerText = 'Login efetuado com sucesso!'
+        notification.style.color = '#32be56'
+        notification.style.display = 'block'
+        notification.classList.add('bounce')
+        notification.classList.remove('notifyAnimation')
+        setTimeout(() => {
+            notification.classList.remove('bounce')
+        }, 1000);
+        setTimeout(()=>{
+            inputLogin.value = '' 
+            inputPass.value = ''
+            notification.style.display = 'none'
+            document.querySelector('.fade').classList.toggle('unhide')
+            document.querySelector('.loginDiv').classList.toggle('unhide')
+        },1500)
     }
 }
 
@@ -83,8 +96,4 @@ loginButton.addEventListener('click', getLogged)
 
 if(sessionStorage.getItem('unauthorized') == 'true'){
     window.alert('You are not authorized to view that page.')
-}
-
-if(window.innerWidth < 768){
-    document.querySelector('#card').style.width = '100%'
 }
