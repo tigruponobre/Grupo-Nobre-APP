@@ -35,10 +35,10 @@ async function checkLogin(){
     })
     if(response.status != 200){
         login_logout.textContent = 'Login'
-        document.getElementById('subtitle').textContent = 'Bem-vindo ao'
+        document.getElementById('greeting').textContent = 'Bem-vindo ao'
     }else{
         let user = sessionStorage.userName
-        document.getElementById('subtitle').textContent = `OLÁ ${user.split('.')[0].toUpperCase()}, VOCÊ ESTÁ NO`
+        document.getElementById('greeting').textContent = `OLÁ ${user.split('.')[0].toUpperCase()}, VOCÊ ESTÁ NO`
         login_logout.textContent = 'Logout'
     }
 }
@@ -50,7 +50,7 @@ login_logout.addEventListener('click', ()=>{
     if(login_logout.textContent == 'Login'){
         [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
     }else{
-        document.getElementById('subtitle').textContent = 'Bem-vindo ao'
+        document.getElementById('greeting').textContent = 'Bem-vindo ao'
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('unauthorized')
         login_logout.textContent = 'Login'
