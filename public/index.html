@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="./css/home/all.css">
     <link rel="stylesheet" href="./css/home/header.css">
     <link rel="stylesheet" href="./css/home/containers.css">
+    <link rel="stylesheet" href="./css/home/login.css">
     <!-- <link rel="stylesheet" href="./css/home/footer.css"> -->
     <script src="./scripts/home.js" defer></script>
+    <script src="./scripts/login.js" defer></script>
     <title>Home</title>
 </head>
 <body>
     <header>
         <nav>
-            <!-- <img id="logo" src="../img/GRUPO NOBRE.png" alt="logo"> -->
             <ul>
+                <li class="login">Login</li>
                 <li class="home">Home</li>
             </ul>
         </nav>
@@ -28,18 +30,41 @@
                 <subtitle>BEM-VINDO AO</subtitle>
                 <h1>GRUPO NOBRE APP</h1>
             </div>
-            <p class="options"><img src="./img/crown1.png" width="40px">Conheça a TI Grupo Nobre</p>
-            <a href="http://192.168.10.214/"><p class="options"><img src="./img/crown1.png" width="40px">Ramais Grupo Nobre</p></a>
-            <a href="http://192.168.10.10/glpi/index.php?noAUTO=1"><p class="options"><img src="./img/crown1.png" width="40px">Solicitação ao TI</p></a>
+            <a href="#" class="options"><img src="./img/crown1.png" width="40px">Conheça a TI Grupo Nobre</a>
+            <a href="http://192.168.10.214/" class="options"><img src="./img/crown1.png" width="40px">Ramais Grupo Nobre</a>
+            <a href="http://192.168.10.10/glpi/index.php?noAUTO=1" class="options"><img src="./img/crown1.png" width="40px">Solicitação ao TI</a>
             <div id="documentations">
-                <p class="options"><img src="./img/crown1.png" width="40px">Consultar documentações</p>
-                <p class="doc" ><img src="./img/arrow-right.png" width="25px">Netlify</p>
-                <p class="doc"><img src="./img/arrow-right.png" width="25px">Minha Biblioteca</p>
+                <a class="options"><img src="./img/crown1.png" width="40px">Consultar documentações</a>
+                <a class="doc" ><img src="./img/arrow-right.png" width="25px">Netlify</a>
+                <a class="doc"><img src="./img/arrow-right.png" width="25px">Minha Biblioteca</a>
             </div>
         </section>
     </div>
     <div id="logodiv">
-        <img src="./img/GN BRANCA.png" alt="logo" width="400px" id="logo">
+        <img src="./img/GN BRANCA.png" alt="logo" width="400px" id="logo-branca">
+    </div>
+
+    <div class="fade"></div>
+
+    <div class="loginDiv">
+        <div id="card">
+            <div id="logo-azul">
+                <img src="./img/GRUPO NOBRE.png" alt="logo" width="48%">
+            </div>
+            <div class="inputs">
+                <label for="login">Usuário</label>
+                <input type="text" id="loginInput">
+            </div>
+            <div class="inputs">
+                <label for="password">Senha</label>
+                <input type="password" id="passwordInput">
+            </div>
+            <p id="notification"></p>
+            <button id="loginButton">Login</button>
+            <div id="register">
+                <p id="registerMessage">Não tem conta? <b><a class="link" href="http://192.168.10.10/glpi/index.php?noAUTO=1">Solicite registro.</a></b></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

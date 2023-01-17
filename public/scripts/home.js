@@ -16,24 +16,22 @@ documentation.addEventListener('click', ()=>{
         }
         if(count >= 1){
             docs[index].classList.toggle('disappears')
-            if(docs[index].classList.contains('disappears')){
-                setTimeout(()=>{
-                    docs[index].style.display = 'none'
-                }, 950)
-            }
         }
     }
     count += 1
 })
 
+let bringLogin = document.querySelector('.login')
+let loginDiv = document.querySelector('.loginDiv')
+let fade = document.querySelector('.fade')
+bringLogin.addEventListener('click', ()=>{
+    [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+})
 
-// fatores.addEventListener('click', ()=>{
-//     let audio = document.createElement('audio')
-//     audio.setAttribute('controls','')
-//     audio.setAttribute('autoplay','')
-//     audio.setAttribute('style','display: none;')
-//     audio.innerHTML = '<source src="fatores.ogg" type="audio/ogg">'
-
-//     right.appendChild(audio)
-// })
-
+document.onkeydown = (e) =>{
+    if(loginDiv.classList.contains('unhide')){
+        if(e.keyCode == 27){
+            [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+        }
+    }
+}

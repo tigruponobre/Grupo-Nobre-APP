@@ -1,0 +1,130 @@
+.loginDiv{
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    opacity: 0;
+    pointer-events: none;
+}
+#card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 55vh;
+    border-radius: 4px;
+    box-shadow: 0 0 20px #00000090;
+}
+#logo-azul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.inputs{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8%;
+    gap: 5px;
+    color: #2469aa;
+}
+label{
+    width: 100%;
+    font-size: 18px;
+}
+
+.inputs input{
+    border: none;
+    border-bottom: 2px solid #000;
+    border-color: #2D73B4;
+    font-size: 20px;
+    width: 100%;
+    color:#2469aa;
+    transition: ease .3s;
+}
+.inputs input:focus{
+    outline: none;
+    border-bottom: 2px solid #55bb9b;
+}
+
+.link{
+    text-decoration: none;
+    color: #2D73B4;
+}
+
+#loginButton{
+    padding: 10px 50px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    background-color: #2D73B4;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#registerMessage{
+    color: #2469aa;
+}
+
+@keyframes notify{
+    from {font-size: 1px;}
+    to {font-size: 16px;}
+}
+
+@keyframes bounce {
+    0%{
+        transform: translatey(0px);
+    }
+    33%{
+        transform: translatey(-3px);
+    }
+    66%{
+        transform: translatey(3px);
+    }
+    100%{
+        transform: translatey(0px);
+    }
+}
+
+#notification{
+    display: none;
+    color: #e22f2f;
+    margin-bottom: 5%;
+    font-size: 16px;
+}
+
+.notifyAnimation{
+    animation: notify 0.4s;
+}
+
+.inputs .error{
+    border-color: #e22f2f;
+}
+
+.bounce{
+    animation: bounce .5s;
+}
+
+.fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.unhide{
+    transition: ease .5s;
+    opacity: 1;
+    pointer-events: inherit;
+}
