@@ -3,8 +3,8 @@ sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
 const url = sessionStorage.url
 
 const notification = document.getElementById("notification")
-const inputLogin = document.getElementById("login")
-const inputPass = document.getElementById("password")
+const inputLogin = document.getElementById("loginInput")
+const inputPass = document.getElementById("passwordInput")
 
 let contador = 0
 
@@ -30,8 +30,8 @@ async function getLogged(){
     }
 
     //Get frontend info
-    const login = document.getElementById('login').value
-    const password = document.getElementById('password').value
+    const login = inputLogin.value
+    const password = inputPass.value
 
     let response = await fetch(url + '/.netlify/functions/login' ,{
         method: 'post',

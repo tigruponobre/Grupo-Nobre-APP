@@ -11,7 +11,14 @@ nav ul{
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 8%;
+    align-items: center;
+}
+
+.login{
+    color: #42E9E1;
+    font-size: larger;
+    cursor: pointer;
 }
 
 .home{

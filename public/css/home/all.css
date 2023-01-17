@@ -4,13 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: 'Montserrat', sans-serif;;
-    color: #fff;
     font-family: sans-serif;
     text-decoration: none;
 }
 body{
     background-image: url(../../img/tech-city.jpg);
-    /* background-color: #21146D; */
+    color: #fff;
     background-size:cover;
     background-repeat: no-repeat;
 }

@@ -24,18 +24,19 @@ subtitle{
     display: flex;
     gap: 10px;
     align-items: center;
-    max-width: 18%;
     transition: ease .5s;
+    color: #fff;
+    max-width: 18%;
+    cursor: pointer;
 }
 .options:hover{
     color: #42E9E1;
-    cursor: pointer;
 }
 
 #logodiv{
     margin-left: 10%;
 }
-#logo{
+#logo-branca{
     width: 10%;
 }
 
@@ -76,4 +77,5 @@ subtitle{
 .disappears{
     opacity: 0;
     animation: disappears 1s;
+    pointer-events: none;
 }
