@@ -46,9 +46,18 @@ checkLogin()
 
 let loginDiv = document.querySelector('.loginDiv')
 let fade = document.querySelector('.fade')
+let inputs = Array.from(document.querySelectorAll('input'))
+let loginButtonHome = document.querySelector('#loginButton')
+let register = document.querySelector('#registerMessage a')
 login_logout.addEventListener('click', ()=>{
     if(login_logout.textContent == 'Login'){
-        [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+        for(let i in inputs){
+            inputs[i].removeAttribute('disabled')
+        }
+        loginButtonHome.removeAttribute('disabled')
+        register.setAttribute('href', 'http://192.168.10.10/glpi/index.php?noAUTO=1')
+        fade.classList.toggle('unhide')
+        loginDiv.classList.toggle('unhide')
     }else{
         document.getElementById('greeting').textContent = 'Bem-vindo ao'
         sessionStorage.removeItem('token')
