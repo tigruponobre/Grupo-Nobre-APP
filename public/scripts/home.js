@@ -59,6 +59,8 @@ login_logout.addEventListener('click', ()=>{
         register.setAttribute('href', 'http://192.168.10.10/glpi/index.php?noAUTO=1')
         fade.classList.toggle('unhide')
         loginDiv.classList.toggle('unhide')
+    }
+})
 
 login_logout.addEventListener('click', ()=>{
     if(login_logout.textContent == 'Login'){
