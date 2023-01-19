@@ -62,16 +62,16 @@ login_logout.addEventListener('click', ()=>{
     }
 })
 
-login_logout.addEventListener('click', ()=>{
-    if(login_logout.textContent == 'Login'){
-        [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
-    }else{
-        document.getElementById('greeting').textContent = 'Bem-vindo ao'
-        sessionStorage.removeItem('token')
-        sessionStorage.removeItem('unauthorized')
-        login_logout.textContent = 'Login'
-    }
-})
+// login_logout.addEventListener('click', ()=>{
+//     if(login_logout.textContent == 'Login'){
+//         [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+//     }else{
+//         document.getElementById('greeting').textContent = 'Bem-vindo ao'
+//         sessionStorage.removeItem('token')
+//         sessionStorage.removeItem('unauthorized')
+//         login_logout.textContent = 'Login'
+//     }
+// })
 
 document.onkeydown = (e) =>{
     if(loginDiv.classList.contains('unhide')){

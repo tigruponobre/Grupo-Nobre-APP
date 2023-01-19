@@ -96,5 +96,10 @@ async function getLogged(){
 loginButton.addEventListener('click', getLogged)
 
 if(sessionStorage.getItem('unauthorized') == 'true'){
-    window.alert('You are not authorized to view that page.')
+    let authNotification = document.createElement('div')
+    authNotification.setAttribute('class', 'authentication authNotificationMove')
+    authNotification.innerHTML = '<h3><img src="./img/warning.png" alt="warning" width="30px"> Você não está autorizado a visualizar aquela página, por gentileza, realize o <b id="notificationLogin">login!</b></h3>'
+    document.querySelector('body').insertBefore(authNotification, document.querySelector('header'))
+}else if(document.querySelector('.authentication')){
+    document.removeChild(document.querySelector('.authentication'))
 }
