@@ -89,6 +89,7 @@ async function getLogged(){
             notification.style.display = 'none'
             document.querySelector('.fade').classList.toggle('unhide')
             document.querySelector('.loginDiv').classList.toggle('unhide')
+            document.querySelector('.authentication').remove()
         },1500)
     }
 }
@@ -98,8 +99,6 @@ loginButton.addEventListener('click', getLogged)
 if(sessionStorage.getItem('unauthorized') == 'true'){
     let authNotification = document.createElement('div')
     authNotification.setAttribute('class', 'authentication authNotificationMove')
-    authNotification.innerHTML = '<h3><img src="./img/warning.png" alt="warning" width="30px"> Você não está autorizado a visualizar aquela página, por gentileza, realize o <b id="notificationLogin">login!</b></h3>'
+    authNotification.innerHTML = '<h3><img src="./img/warning.png" alt="warning" width="30px"> Você não está autorizado a visualizar aquela página, por gentileza, efetue o <b id="notificationLogin">login!</b></h3>'
     document.querySelector('body').insertBefore(authNotification, document.querySelector('header'))
-}else if(document.querySelector('.authentication')){
-    document.removeChild(document.querySelector('.authentication'))
 }

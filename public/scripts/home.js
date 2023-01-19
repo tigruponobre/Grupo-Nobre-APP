@@ -59,19 +59,18 @@ login_logout.addEventListener('click', ()=>{
         register.setAttribute('href', 'http://192.168.10.10/glpi/index.php?noAUTO=1')
         fade.classList.toggle('unhide')
         loginDiv.classList.toggle('unhide')
+    }else{
+        for(let i in inputs){
+            inputs[i].setAttribute('disabled', '')
+        }
+        loginButtonHome.setAttribute('disabled', '')
+        register.setAttribute('href', '')
+        sessionStorage.removeItem('unauthorized')
+        sessionStorage.removeItem('userName')
+        sessionStorage.removeItem('token')
+        checkLogin()
     }
 })
-
-// login_logout.addEventListener('click', ()=>{
-//     if(login_logout.textContent == 'Login'){
-//         [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
-//     }else{
-//         document.getElementById('greeting').textContent = 'Bem-vindo ao'
-//         sessionStorage.removeItem('token')
-//         sessionStorage.removeItem('unauthorized')
-//         login_logout.textContent = 'Login'
-//     }
-// })
 
 document.onkeydown = (e) =>{
     if(loginDiv.classList.contains('unhide')){
