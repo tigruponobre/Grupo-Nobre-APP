@@ -36,3 +36,7 @@ hr{
     bottom: -3%;
     left: 46.6%;
 }
+
+.disappears{
+    display: none;
+}
