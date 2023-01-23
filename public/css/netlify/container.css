@@ -1,0 +1,38 @@
+.container{
+    color: #2FD3C8;
+    padding: 20px;
+    margin-left: 3%;
+    margin-top: 1%;
+    max-width: 33%;
+    min-height: 83vh;
+    background-color: transparent;
+    border-radius: 4px;
+    opacity: 0.89;
+    box-shadow: 0 0 10px #2FD3C8;
+}
+
+.container-title{
+    font-weight: 500;
+    font-size: 28px;
+}
+hr{
+    border-color: #2FD3C8;
+    margin: 1% 0 2% 0;
+}
+
+.content{
+    padding: 1%;
+    margin: 2% 1%;
+    border-radius: 4px;
+    font-size: large;
+    background-color: #1F1463;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    position: absolute;
+    bottom: -3%;
+    left: 46.6%;
+}
