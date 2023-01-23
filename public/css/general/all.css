@@ -1,15 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Slab:wght@700&family=Roboto:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2d73b4;
-}
-
-body{
-    background: url(../../img/GN\ BG.png);
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.9;
-    overflow-y: scroll;
+    box-sizing: 'Montserrat', sans-serif;;
+    font-family: sans-serif;
+    text-decoration: none;
 }
