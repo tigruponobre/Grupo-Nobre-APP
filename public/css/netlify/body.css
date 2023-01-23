@@ -1,6 +1,5 @@
 body{
-    background-image: url(../../img/CLOUD.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../../img/backgrounds/new_cloud.jpg);
     color: #fff;
+    overflow-y: hidden;
 }

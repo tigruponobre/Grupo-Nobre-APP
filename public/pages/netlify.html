@@ -4,19 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/general/all.css">
     <link rel="stylesheet" href="../css/general/footer.css">
     <link rel="stylesheet" href="../css/netlify/body.css">
     <link rel="stylesheet" href="../css/netlify/header.css">
+    <link rel="stylesheet" href="../css/netlify/container.css">
     <title>Netlify</title>
 </head>
 <body>
     <header>
-        <h1 id="title"><img src="../img/cloud.png" width="40px">NETLIFY<img src="../img/cloud.png" width="40px"></h1>
+        <div id="menu">
+            <input type="checkbox" id="sandwich-check">
+            <label for="sandwich-check" id="sandwich">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <h1 id="title">NETLIFY</h1>
+        </div>
     </header>
     <div class="container">
-
+        <h3 class="container-title">Sobre</h3>
+        <hr>
+        <div class="content">
+            <p>O Netlify é uma plataforma de hospedagem https que contém planos grátis.</p>
+        </div>
+        <div class="content">
+            <p>Uma mesma conta Netlify consegue hospedar mais de um projeto.</p>
+        </div>
+        <div class="content">
+            <p>O deploy das aplicações pode ser feito todo via prompt de comando.</p>
+        </div>
+        <div class="content">
+            <p><b>API's</b> no netlify são construídas de uma forma diferente do usual.</p>
+        </div>
+        <div class="content">
+            <p><b>Os comandos no CMD podem ser dados por "netlify" ou "ntl".</b></p>
+        </div>       
     </div>
+    <div class="container">
+        <h3 class="container-title">Construção</h3>
+        <hr>
+        <div class="content">
+            <p>1 - Acesse o patch do projeto.</p>
+        </div>
+        <div class="content">
+            <p>2 - Verifique a versão do Netlify por <b>"ntl --version"</b> ou instale-o Netlify por <b>"npm install netlify-cli" -g</b></p>
+        </div>
+        <div class="content">
+            <p>2.1 - Instale os pacotes necessários com npm.</b></p>
+        </div>
+        <div class="content">
+            <p>3 - Crie o arquivo netlify.toml na raiz do projeto passando:<br>
+                [build]<br>
+                functions = "functions"<br>
+                publish = "public"</p>
+        </div>
+        <div class="content">
+            <p>4 - Crie uma pasta <b>"functions"</b> para construção do backend da aplicação.</p>
+        </div>
+        <div class="content">
+            <p>4.1 - Os endpoints do backand são acessados por meio de <b>"/.netlify/function/endpoint"</b>.</p>
+        </div>
+        <div class="content">
+            <p>5 - Crie uma pasta <b>"public"</b> para construção do frontend da aplicação.</p>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="container-title">Aplicação</h3>
+        <hr>
+        <div class="content">
+            <p>1 - Verifique se o netlify-cli está instalado na máquina por <b>"netlify --version"</b>, caso não, instale-o: <b>"npm install netlify-cli -g"</b>.</p>
+        </div>
+        <div class="content">
+            <p>2 - <b>"ntl help"</b> revela todos os comandos do netlify.</p>
+        </div>
+        <div class="content">
+            <p>3 - <b>"ntl login"</b> conecta o projeto à sua conta netlify.</p>
+        </div>
+        <div class="content">
+            <p>4 - </p>
+        </div>
+    </div>
+    <img id="logo" src="../img/logos/GN BRANCA.png" alt="logo" width="200px">
 </body>
 </html>

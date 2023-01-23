@@ -1,11 +1,60 @@
-header{
-    width: 100%;
-    margin-top: 1%;
-    display: flex;
-    justify-content: center;
-}
-#title{
+#menu{
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 10%;
+    gap: .5%;
+    margin: 1% 0 0 3%;
+    color: #2FD3C8;
+    font-size: x-large;
+}
+
+#sandwich-check:checked + #menu #title{
+    opacity: 0;
+}
+
+#sandwich-check{
+    position: absolute;
+    opacity: 0; 
+    pointer-events: none;
+}
+#sandwich{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 35px;
+}
+#sandwich span{
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 1px;
+    background-color: #2FD3C8;
+    transition: .3s ease-in-out;
+}
+
+#sandwich span:nth-child(1){
+    top: 0;
+}
+#sandwich span:nth-child(2){
+    top: 10px;
+}
+#sandwich span:nth-child(3){
+    top: 20px;
+    width: 40%;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(2){
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(3){
+    opacity: 0;
 }
