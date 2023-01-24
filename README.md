@@ -1,3 +1,8 @@
-# GRUPO NOBRE APP
+# GRUPO NOBRE APP [![JS](https://skills.thijs.gg/icons?i=html,css,js,nodejs)](https://skills.thijs.gg)
+## EN
+### About
+- Application that hosts api's, documentations and redirects of Grupo Nobre.
 
-- APPLICATION THAT HOSTS API'S, DOCUMENTATIONS AND REDIRECTS OF GRUPO NOBRE.
+## PT-BR
+### Sobre
+- Aplicação que hospeda API's, documentações e redirecionamentos do Grupo Nobre
