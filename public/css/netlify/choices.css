@@ -1,0 +1,34 @@
+.choices{
+    color: #2FD3C8;
+    padding: 20px;
+    margin-left: 3%;
+    margin-top: 1%;
+    max-width: 33%;
+    min-height: 83vh;
+    background-color: transparent;
+    border-radius: 4px;
+    opacity: 0.89;
+    box-shadow: 0 0 10px #2FD3C8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.choice{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+    background-color: #1F1463;
+    border: 1px solid #18104d;
+    cursor: pointer;
+}
+.choice h3{
+    transform: rotate(90deg);
+}
+.choice:hover{
+    background-color: #ffffff90;
+    color: #18104d;
+}
