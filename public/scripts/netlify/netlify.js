@@ -33,7 +33,8 @@ x.addEventListener('click', ()=>{
                 containers[index].classList.add('disappears')
             }
         }
-        // if()
-        choicesDiv.classList.toggle('disappears')
+        if(choicesDiv.classList.contains('disappears')){
+            choicesDiv.classList.remove('disappears')
+        }
     }
 })
