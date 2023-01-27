@@ -31,7 +31,7 @@
     width: 100%;
     border-radius: 1px;
     background-color: #2FD3C8;
-    transition: .3s ease-in-out;
+    transition: .4s ease-in-out;
 }
 
 #sandwich span:nth-child(1){
