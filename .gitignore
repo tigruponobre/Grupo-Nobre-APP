@@ -2,4 +2,4 @@
 .netlify
 .env
 node_modules
-./public/pages/biblioteca.html
+biblioteca.html
