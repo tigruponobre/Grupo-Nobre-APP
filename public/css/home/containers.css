@@ -1,88 +1,102 @@
-#container{
-    display: flex;
-    height: 70vh;
-}
+/* LEFT SIDE */
 #left-side{
-    width: 100%;
+    width: 50%;
+    padding: 2% 10% 0 5%;
 }
+
+/* CONTENT */
+
+/* TITLE */
 #title{
-    margin-left: 5%;
-    margin-bottom: 2%;
-    padding-left: 1%;
+    padding-left: 4%;
+    margin-bottom: 8%;
     border-left: 2px solid #fff;
 }
 #greeting{
-    font-size: x-large;
+    font-size: 3vh;
+    font-weight: 400;
 }
 #title h1{
-    font-size: 4em;
+    font-size: 6vh;
 }
+
+/* OPTIONS */
 .options{
-    margin-left: 7%;
-    margin-top: 1.5%;
-    font-size: 1.4em;
+    padding-left: 6%;
+    margin-top: 5%;
+    max-width: 48vh;
     display: flex;
-    gap: 10px;
     align-items: center;
-    transition: ease .5s;
+    gap: 1.5%;
+    font-size: 2.5vh;
     color: #fff;
-    max-width: 18%;
-    cursor: pointer;
+    transition: ease-out .2s;
 }
 .options:hover{
-    color: #42E9E1;
+    color: #309cb4;
+}
+/* CROWN ICON */
+.crown{
+    width: 4.7vh;
 }
 
+/* DOCUMENTATIONS */
+#queryDocs{
+    cursor: pointer;
+}
+#documentations{
+    display: flex;
+    flex-direction: column;
+    padding-left: 29%;
+}
+.doc{
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    font-size: 2vh;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: ease-out .2s;
+    max-width: 20vh;
+    margin-top: -6%;
+}
+.arrow-right{
+    width: 3.7vh;
+}
+
+/* DOCUMENTATIONS ANIMATION */
+@keyframes docsAnimation {
+    from {
+        margin-top: -6%;
+        opacity: 0;
+    }
+    to {
+        margin-top: 3%;
+        opacity: 1;
+    }
+}
+
+.docAppears{
+    animation: docsAnimation .2s;
+    opacity: 1;
+    margin-top: 3%;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.docAppears:hover{
+    color: #309cb4;
+}
+
+/* LOGO */
 #logodiv{
-    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 24vh;
 }
 #logo-branca{
-    width: 10%;
-    min-width: 200px;
-}
-
-.doc{
-    margin-left: 11%;
-    margin-top: 0.7%;
-    align-items: center;
-    gap: 6px;
-    font-size: 1.2em;
-    opacity: 0;
-    cursor: pointer;
-    transition: ease-in-out .2s;
-    width: 12%;
-    color: #1A1160;
-    padding-bottom: .3%;
-    font-size: larger;
-    color: #fff;
-}
-
-.doc:hover{
-    transform: translateX(-2%);
-    color: #42E9E1;
-    border-bottom: 1px solid #42E9E1;
-}
-
-@keyframes appears{
-    from {margin-top: -1%;}
-    to {margin-top: 0.7%;}
-}
-
-.appears{
-    opacity: 1;
-    animation: appears 1s;
-}
-
-@keyframes disappears{
-    from {margin-top: 0.7%;}
-    to {margin-top: -1%;}
-
-    from {opacity: 1;}
-    to {opacity: 0;}
-}
-
-.disappears{
-    opacity: 0;
-    animation: disappears 1s;
-    pointer-events: none;
+    width: 23vh;
 }

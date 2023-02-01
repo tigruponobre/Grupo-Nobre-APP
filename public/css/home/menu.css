@@ -1,0 +1,29 @@
+/* RIGHT SIDE */
+#right-side{
+    width: 50%;
+}
+/* NAV MENU */
+#menu{
+    list-style: none;
+    display: flex;
+    gap: 10%;
+    justify-content: end;
+    padding: 6% 9% 0 0;
+    font-size: 2.5vh;
+}
+
+/* MENU ITEMS */
+.login_logout{
+    color: #44d4f5;
+    cursor: pointer;
+    padding-top: 1vh;
+}
+.login_logout:hover{
+    text-shadow: 0 0 10px #42E9E1;
+}
+.home{
+    background-color: #309cb4;
+    padding: 1vh 2.8vh;
+    border-radius: 1.5vh;
+    cursor: default;
+}
