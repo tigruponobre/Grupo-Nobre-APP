@@ -3,7 +3,6 @@ let about = document.querySelector('#about')
 let construction = document.querySelector('#construction')
 let application = document.querySelector('#application')
 let containers = Array.from(document.querySelectorAll('.container'))
-let url = sessionStorage.url
 
 let choicesDiv = document.querySelector('.choices')
 let choices = document.querySelectorAll('.choice')
