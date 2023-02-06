@@ -1,24 +1,23 @@
 .authentication{
     background-color: #fff;
     color: #000;
-    width: 50%;
+    min-width: 35%;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translate(-50%);
-    height: 5vh;
+    min-height: 3vh;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: .6%;
+    margin-top: -2%;
 }
 
 .authentication h3{
     font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    font-size: 1em;
 }
 
 @keyframes authNotification {
@@ -28,4 +27,13 @@
 
 .authNotificationMove{
     animation: authNotification 1s;
+    margin-top: 0;
+}
+
+@media (max-width: 70em){
+    .authentication{
+        top: auto;
+        bottom: 3.2vh;
+        min-width: 100%;
+    }
 }

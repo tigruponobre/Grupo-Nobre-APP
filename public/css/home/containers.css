@@ -144,6 +144,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        bottom: 7vh;
     }
     #content{
         margin-top: 5em;

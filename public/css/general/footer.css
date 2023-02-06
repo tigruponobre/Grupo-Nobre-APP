@@ -1,19 +1,23 @@
-#space{
-    height: 30px;
-}
-
 footer {
     width: 100%;
     line-height: 3vh;
     position: fixed;
     bottom: 0;
     opacity: .8;
+    background-color:#303030;
 }
 #copy{
-    background-color:#303030;
+    width: 100%;
     color: #CCCCCC;
     text-align: right;
     margin-bottom: 0;
     padding-inline: 30px;
     font-size: 2vh;
+}
+
+@media (max-width:70em){
+    #copy{
+        padding-inline: 0;
+        font-size: 1.4vh;
+    }
 }
