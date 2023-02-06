@@ -123,8 +123,16 @@ label{
     pointer-events: none;
 }
 
+@media (max-width: 70em){
+    .fade{
+        opacity: .6;
+        z-index: -1;
+    }
+}
+
 .unhide{
     transition: ease .5s;
     opacity: 1;
     pointer-events: inherit;
+    z-index: 3;
 }

@@ -13,14 +13,15 @@
     <link rel="stylesheet" href="./css/home/containers.css">
     <link rel="stylesheet" href="./css/home/login.css">
     <link rel="stylesheet" href="./css/general/footer.css">
+    <script src="./scripts/home/indexMobile.js" defer></script>
     <script src="./scripts/home/home.js" defer></script>
     <script src="./scripts/home/login.js" defer></script>
-    <script src="./scripts/home/indexMobile.js" defer></script>
     <title>Home</title>
 </head>
 <body>
     <main>
         <nav id="right-side">
+            <img id="topLogo" src="./img/logos/GRUPO NOBRE.png" alt="logo_azul" width="150px">
             <ul id="menu">
                 <li class="login_logout"></li>
                 <li class="home">Home</li>
@@ -35,13 +36,13 @@
                 </div>
     
                 <div id="select">
-                    <a href="http://192.168.10.214/" class="options"><img class="crown" src="./img/icons/crown1.png"><p>Ramais Grupo Nobre</p></a>
-                    <a href="http://192.168.10.10/glpi/index.php" class="options"><img class="crown" src="./img/icons/crown1.png"><p>Solicitação ao TI - GLPI</p></a>
-                    <a href="http://192.168.10.65:8501" class="options"><img class="crown" src="./img/icons/crown1.png"><p>Concurso de bolsas 2023.1</p></a>
-                    <div id="queryDocs" class="options"><img class="crown" src="./img/icons/crown1.png">Consultar documentações</div>
+                    <a href="http://192.168.10.214/" class="options"><p><img class="crown" src="./img/icons/crown1.png">Ramais Grupo Nobre</p><img class="interaction" src="./img/icons/interaction.png"></a>
+                    <a href="http://192.168.10.10/glpi/index.php" class="options"><img class="crown" src="./img/icons/crown1.png"><p>Solicitação ao TI - GLPI</p><img class="interaction" src="./img/icons/interaction.png"></a>
+                    <a href="http://192.168.10.65:8501" class="options"><img class="crown" src="./img/icons/crown1.png"><p>Concurso de bolsas 2023.1</p><img class="interaction" src="./img/icons/interaction.png"></a>
+                    <div id="queryDocs" class="options"><p><img class="crown" src="./img/icons/crown1.png">Consultar documentações</p><img class="arrow-right" src="./img/icons/arrow-right.png"></div>
                     <div id="documentations">
-                        <a  class="doc" onclick="window.location.href = `${url}/pages/netlify`"><img class="arrow-right" src="./img/icons/arrow-right.png">Netlify</a>
-                        <a class="doc"><img class="arrow-right" src="./img/icons/arrow-right.png">Minha Biblioteca</a>
+                        <a  class="doc" onclick="window.location.href = `${url}/pages/netlify`"><p><img class="docIcon" src="./img/icons/documentation-icon.png">Netlify</p><img class="interaction-doc" src="./img/icons/interaction.png"></a>
+                        <a class="doc"><p><img class="docIcon" src="./img/icons/documentation-icon.png">Minha Biblioteca</p><img class="interaction-doc" src="./img/icons/interaction.png"></a>
                     </div>
                 </div>
             </section>
@@ -52,7 +53,7 @@
     </main>
     
     <div class="fade"></div>
-
+    
     <div class="loginDiv">
         <div id="card">
             <div id="logo-azul">

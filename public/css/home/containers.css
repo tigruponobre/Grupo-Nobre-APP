@@ -1,43 +1,70 @@
 /* LEFT SIDE */
 #left-side{
-    width: 50%;
-    padding: 2% 10% 0 5%;
+    /* width: 70%;
+    padding: 2% 10% 0 5%; */
+    padding: 2% 6% 0 0;
 }
 
 /* CONTENT */
-
+#content{
+    margin-left: 6%;
+}
 /* TITLE */
 #title{
-    padding-left: 4%;
-    margin-bottom: 8%;
+    padding-left: 1%;
     border-left: 2px solid #fff;
+    margin-bottom: 2%;
 }
 #greeting{
-    font-size: 3vh;
+    font-size: 2rem;
     font-weight: 400;
 }
 #title h1{
-    font-size: 6vh;
+    font-size: 4em;
+}
+
+/* SELECT OPTIONS */
+#select{
+    max-width: 70vh;
 }
 
 /* OPTIONS */
 .options{
-    padding-left: 6%;
-    margin-top: 5%;
-    max-width: 48vh;
+    background-color: #fff;
+    border-radius: 50em;
+    margin-top: 2.5%;
     display: flex;
     align-items: center;
     gap: 1.5%;
     font-size: 2.5vh;
-    color: #fff;
-    transition: ease-out .2s;
+    color: #200f81;
+    transition: ease-out .3s;
+    max-width: 70vh;
 }
 .options:hover{
     color: #309cb4;
+    box-shadow: 0 0 10px #000;
+}
+.arrow-right{
+    width: 3.7vh;
+    transition: .3s;
+}
+.options:hover .arrow-right{
+    transform: rotate(90deg);
+}
+.options p{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
 }
 /* CROWN ICON */
 .crown{
     width: 4.7vh;
+}
+/* ARROW ICON */
+.interaction{
+    width: 3.7vh;
 }
 
 /* DOCUMENTATIONS */
@@ -47,40 +74,52 @@
 #documentations{
     display: flex;
     flex-direction: column;
-    padding-left: 29%;
+    align-items: flex-end;
 }
 .doc{
     display: flex;
     align-items: center;
-    gap: 1%;
-    font-size: 2vh;
-    cursor: pointer;
+    justify-content: space-between;
+    max-width: 35vh;
+    min-width: 35vh;
+    background-color: #fff;
+    margin-top: -4%;
+    color: #200f81;
+    font-weight: 500;
+    border-radius: 50em;
     opacity: 0;
     pointer-events: none;
-    transition: ease-out .2s;
-    max-width: 20vh;
-    margin-top: -6%;
+    transition: .4s;
 }
-.arrow-right{
-    width: 3.7vh;
+.doc p{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+}
+.docIcon{
+    width: 3.2vh;
+}
+.interaction-doc{
+    width: 3.2vh;
 }
 
 /* DOCUMENTATIONS ANIMATION */
 @keyframes docsAnimation {
     from {
-        margin-top: -6%;
+        margin-top: -4%;
         opacity: 0;
     }
     to {
-        margin-top: 3%;
+        margin-top: 2%;
         opacity: 1;
     }
 }
 
 .docAppears{
-    animation: docsAnimation .2s;
+    animation: docsAnimation .4s;
     opacity: 1;
-    margin-top: 3%;
+    margin-top: 2%;
     pointer-events: all;
     cursor: pointer;
 }
@@ -91,12 +130,32 @@
 
 /* LOGO */
 #logodiv{
-    display: flex;
-    justify-content: center;
     position: absolute;
     bottom: 0;
-    left: 24vh;
+    margin-left: 31vh;
 }
 #logo-branca{
-    width: 23vh;
+    width: 25vh;
+}
+
+@media (max-width: 70em){
+    #logodiv{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #content{
+        margin-top: 5em;
+    }
+    .options{
+        max-width: 99vh;
+        margin-top: 2%;
+    }
+    #greeting{
+        font-size: 1.5em;
+    }
+    #title h1{
+        font-size: 2.1em;
+    }
 }
