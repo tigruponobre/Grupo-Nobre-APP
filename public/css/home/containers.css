@@ -144,7 +144,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        bottom: 7vh;
+        bottom: 4vh;
     }
     #content{
         margin-top: 5em;
@@ -154,9 +154,9 @@
         margin-top: 2%;
     }
     #greeting{
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     #title h1{
-        font-size: 2.1em;
+        font-size: 1.8em;
     }
 }
