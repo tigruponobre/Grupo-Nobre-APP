@@ -1,3 +1,27 @@
+/* SEARCH */
+#search{
+    position: absolute;
+    top: 2%;
+    right: 6%;
+    width: 15%;
+    padding: .5em .8em;
+    border-radius: 50em;
+    z-index: 10;
+    color: #2D73B4;
+    border: none;
+    /* transition: ease .3s; */
+}
+#search:focus{
+    outline: 2px solid #2D73B4;
+
+}
+#clearSearch{
+    position: absolute;
+    right: 6.8%;
+    top: 2.4%;
+    z-index: 11;
+}
+
 /* RIGHT SIDE */
 #right-side{
     /* width: 30%; */
