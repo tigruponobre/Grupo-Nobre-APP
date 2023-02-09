@@ -52,6 +52,9 @@
 .options:hover .arrow-right{
     transform: rotate(90deg);
 }
+.options .activated{
+    transform: rotate(90deg);
+}
 .options p{
     display: flex;
     align-items: center;

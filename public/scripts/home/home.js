@@ -13,6 +13,7 @@ consultaDocs.addEventListener('click', ()=>{
     for(let index in docs){
         docs[index].classList.toggle('docAppears')
     }
+    document.querySelector('.arrow-right').classList.toggle('activated')
 })
 
 
@@ -75,4 +76,20 @@ document.onkeydown = (e) =>{
 
 fade.addEventListener('click', ()=>{
     [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+})
+
+let search = document.getElementById('search')
+let searchValue = ''
+search.addEventListener('keypress', (key)=>{
+    if(key.keyCode == 13){
+        searchValue = search.value
+        window.location.href = 'https://www.google.com/search?q=' + searchValue
+    }
+})
+
+let lens = document.getElementById('lens')
+
+lens.addEventListener('click', ()=>{
+    searchValue = search.value
+    window.location.href = 'https://www.google.com/search?q=' + searchValue
 })
