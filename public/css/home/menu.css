@@ -1,12 +1,12 @@
 /* SEARCH */
 #search{
     position: absolute;
-    top: 2%;
+    top: 22%;
     right: 6%;
     width: 21em;
     padding-left: .8em;
     padding-right: 2.8em;
-    height: 3.5%;
+    height: 2.5em;
     border-radius: 50em;
     z-index: 10;
     color: #2D73B4;
@@ -22,7 +22,7 @@
     right: 6.5%;
     border-top-right-radius: 50em;
     border-bottom-right-radius: 50em;
-    top: 2.2%;
+    top: 34.5%;
     z-index: 11;
     background-color: #FFF;
     padding-left: .3%;
@@ -34,12 +34,10 @@
 
 /* RIGHT SIDE */
 #right-side{
-    /* width: 30%; */
     position: absolute;
-    top: 6.5%;
-    right: 6%;
+    top: 0;
+    right: 0;
     width: 100%;
-    /* background-color: #309cb4; */
 }
 #topLogo{
     display: none;
@@ -50,7 +48,7 @@
     display: flex;
     gap: 5%;
     justify-content: end;
-    /* padding: 3% 6% 0 0; */
+    padding: 3em 6% 0 0;
     font-size: 2.5vh;
 }
 
@@ -102,5 +100,18 @@
     }
     .home{
         display: none;
+    }
+    #search{
+        position: static;
+        width: 13em;
+        padding-right: 2em;
+    }
+    #clearSearch{
+        position: static;
+        /* width: 20px; */
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        margin: -15% 3% 0 0;
     }
 }
