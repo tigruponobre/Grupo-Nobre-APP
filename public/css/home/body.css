@@ -6,7 +6,7 @@ body{
     background-image: url(../../img/backgrounds/tech-city.jpg);
     color: #fff;
     background-size: auto;
-    background-position: center;
+    background-position: top;
     max-height: 100vh;
     height: 100vh;
 }
