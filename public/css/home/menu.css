@@ -1,7 +1,7 @@
 /* SEARCH */
 #search{
     position: absolute;
-    top: 22%;
+    top: 3%;
     right: 6%;
     width: 21em;
     padding-left: .8em;
@@ -22,7 +22,7 @@
     right: 6.5%;
     border-top-right-radius: 50em;
     border-bottom-right-radius: 50em;
-    top: 34.5%;
+    top: 3.18%;
     z-index: 11;
     background-color: #FFF;
     padding-left: .3%;
@@ -102,16 +102,15 @@
         display: none;
     }
     #search{
-        position: static;
-        width: 13em;
-        padding-right: 2em;
+        top: auto;
+        bottom: 5vh;
+        right: 50%;
+        transform: translate(50%);
     }
     #lens{
-        position: static;
-        /* width: 20px; */
-        background-color: transparent;
-        display: flex;
-        justify-content: flex-end;
-        margin: -15% 3% 0 0;
+        top: auto;
+        bottom: 5.2vh;
+        right: 50%;
+        transform: translate(7em);
     }
 }

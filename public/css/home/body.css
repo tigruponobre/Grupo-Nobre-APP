@@ -5,14 +5,16 @@
 body{
     background-image: url(../../img/backgrounds/tech-city.jpg);
     color: #fff;
-    background-size: cover;
+    background-size: auto;
+    background-position: center;
+    max-height: 100vh;
     height: 100vh;
 }
 
 @media (max-width: 70em){
     body{
         background-size: auto;
-        background-position: right;
+        background-position: center;
         background-repeat: no-repeat;
     }
 }
