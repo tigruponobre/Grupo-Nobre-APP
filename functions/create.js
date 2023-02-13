@@ -1,6 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const User = require('../models/User')
+const bcrypt = require('bcrypt')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
@@ -24,14 +25,29 @@ exports.handler = async function (event, context){
 
     //Get e-mail and password
     const eventBody = JSON.parse(event.body)
-    const {login, password}  = eventBody 
+    const {login, password}  = eventBody
+
+    //Encrypt password
+    const salt = await bcrypt.genSalt(12)
+    const passwordHash = await bcrypt.hash(password, salt)
+
 
     //Build user
     const user = {
         login,
-        password
+        password: passwordHash
     }
 
+    const userExists = await User.findOne({login: login})
+
+    if(userExists){
+        return {
+            statusCode: 400,
+            body: JSON.stringify({
+                resposta: "User already exists."
+            })
+        }
+    }
     //Create user in DB
     try {
         //Create
@@ -50,5 +66,6 @@ exports.handler = async function (event, context){
             })
         }
     }
+
 
 }

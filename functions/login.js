@@ -1,6 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const User = require('../models/User')
+const bcrypt = require('bcrypt')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
@@ -34,7 +35,9 @@ exports.handler = async function (event, context){
 
         if(infoUser){
             //Check user password
-            if(infoUser.password == password){
+            const checkPassword = await bcrypt.compare(password, infoUser.password)
+
+            if(checkPassword){
                 return{
                     statusCode: 200,
                     body: JSON.stringify({
