@@ -89,7 +89,7 @@ async function getLogged(){
             notification.style.display = 'none'
             document.querySelector('.fade').classList.toggle('unhide')
             document.querySelector('.loginDiv').classList.toggle('unhide')
-            if(unauthorized){
+            if(sessionStorage.unauthorized == 'true'){
                 document.querySelector('.authentication').remove()
             }
         },1500)

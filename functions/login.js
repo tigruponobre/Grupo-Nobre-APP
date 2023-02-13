@@ -1,7 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const User = require('../models/User')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
@@ -26,7 +26,7 @@ exports.handler = async function (event, context){
 
     //Get e-mail and password
     const eventBody = JSON.parse(event.body)
-    const {login, password}  = eventBody 
+    const {login, password} = eventBody 
 
     //Find user
     try {
