@@ -45,7 +45,6 @@ x.addEventListener('click', ()=>{
 
 backButton.addEventListener('click', ()=> window.location.href = url)
 
-
 backButton.addEventListener('mouseover', ()=>{
     buttonDiv.style.transform = 'translateY(-10px)'
     label.style.transform = 'translateY(-5px)'
