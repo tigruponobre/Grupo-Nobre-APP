@@ -24,7 +24,7 @@
     border-bottom-right-radius: 50em;
     top: 3.18%;
     z-index: 11;
-    background-color: #FFF;
+    background-color: transparent;
     padding-left: .3%;
     height: 3.1%;
     display: flex;
