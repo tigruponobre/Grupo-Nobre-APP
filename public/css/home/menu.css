@@ -8,7 +8,7 @@
     padding-right: 2.8em;
     height: 2.5em;
     border-radius: 50em;
-    z-index: 10;
+    z-index: 2;
     color: #2D73B4;
     border: 2px solid #0F054C;
     transition: ease .3s;
@@ -23,7 +23,7 @@
     border-top-right-radius: 50em;
     border-bottom-right-radius: 50em;
     top: 3.18%;
-    z-index: 11;
+    z-index: 2;
     background-color: transparent;
     padding-left: .3%;
     height: 3.1%;

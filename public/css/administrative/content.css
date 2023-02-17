@@ -1,0 +1,11 @@
+#content{
+    min-height: 89vh;
+}
+
+#admin{
+    width: 80vh;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translate(0, -50%);
+}

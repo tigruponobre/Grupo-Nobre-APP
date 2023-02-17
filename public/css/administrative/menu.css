@@ -1,0 +1,26 @@
+#menu{
+    width: 100%;
+    min-height: 11vh;
+    display: flex;
+    align-items: center;
+    background-color: #110947;
+    color: #fff;
+}
+
+#logo_gn{
+    width: 180px;
+    margin-left: 2%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 10%;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 20%;
+}
+
+li{
+   font-size: 1.5em;
+}
