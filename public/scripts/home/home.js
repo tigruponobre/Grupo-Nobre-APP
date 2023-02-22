@@ -28,7 +28,7 @@ async function checkLogin(){
         })
     })
     if(response.status != 200){
-        login_logout.textContent = 'Login'
+        login_logout.textContent = 'Administrativo'
         document.getElementById('greeting').textContent = 'Bem-vindo ao'
     }else{
         let user = sessionStorage.userName

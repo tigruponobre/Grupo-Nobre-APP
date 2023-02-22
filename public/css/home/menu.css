@@ -3,7 +3,7 @@
     position: absolute;
     top: 3%;
     right: 6%;
-    width: 21em;
+    width: 28em;
     padding-left: .8em;
     padding-right: 2.8em;
     height: 2.5em;
@@ -26,7 +26,7 @@
     z-index: 2;
     background-color: transparent;
     padding-left: .3%;
-    height: 3.1%;
+    height: 3.3%;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -111,6 +111,6 @@
         top: auto;
         bottom: 5.2vh;
         right: 50%;
-        transform: translate(7em);
+        transform: translate(10em);
     }
 }
