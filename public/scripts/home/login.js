@@ -39,7 +39,7 @@ async function getLogged(){
         })
     })
     let data = await response.json()
-    loginButton.textContent = 'Login'
+    loginButton.textContent = 'Administrativo'
     if(response.status != 200){
         if(data.resposta == 'User not found.'){
             if(notification.innerText){
