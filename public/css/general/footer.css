@@ -17,7 +17,7 @@ footer {
 
 @media (max-width:70em){
     #copy{
-        padding-inline: 0;
+        padding-inline: 2%;
         font-size: 1.4vh;
     }
 }

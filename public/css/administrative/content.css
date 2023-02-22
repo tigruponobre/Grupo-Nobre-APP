@@ -1,11 +1,35 @@
-#content{
-    min-height: 89vh;
+#admin{
+    position: absolute;
+    right: 0;
+    bottom: 44vh;
+    transform: translate(0, 50%);
+    margin-top: 11vh;
 }
 
-#admin{
-    width: 80vh;
-    position: absolute;
-    right: 2%;
-    top: 50%;
-    transform: translate(0, -50%);
+main{
+    padding-top: 14vh;
+}
+
+#circles{
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    justify-content: flex-end;
+    margin-right: 3%;
+}
+
+#circles li{
+    background-color: #fff;
+    width: 1.1%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    user-select: none;
+}
+
+#circles .active{
+    background-color:#2D73B4;
+}
+
+#docs{
+    color: #fff;
 }

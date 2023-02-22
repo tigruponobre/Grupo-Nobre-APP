@@ -1,3 +1,5 @@
 body{
     background-color: #180d5b;
+    max-height: 100vh;
+    height: 100vh;
 }
