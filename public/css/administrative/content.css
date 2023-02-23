@@ -25,6 +25,7 @@ main{
     border-radius: 50%;
     border: 1px solid #fff;
     user-select: none;
+    transition: ease .3s;
 }
 
 #circles .active{
