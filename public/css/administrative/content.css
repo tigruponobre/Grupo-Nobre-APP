@@ -42,7 +42,7 @@ main{
 }
 
 #docs h3{
-    padding-top: 2%;
+    padding-top: 4%;
     text-align: center;
     font-size: 1.4em;
 }
@@ -71,10 +71,33 @@ main{
     height: 33vh;
     background-color: #110947;
     cursor: pointer;
-    margin-top: 2%;
+    margin-top: 4%;
     transition: ease .3s;
 }
 
 .card:hover{
     box-shadow: 0 0 15px 1px #00000090;
+}
+
+@media (max-width: 1140px){
+    main{
+        padding-top: 13vh;
+    }
+    #docs{
+        margin-top: 2%;
+        margin-inline: 3%;
+        max-width: 95vh;
+    }
+    #docs h3{
+        padding-top: 5%;
+        font-size: 1.2em;
+    }
+    .card img{
+        width: 160px;
+    }
+    .card{
+        margin-top: 5%;
+        width: 12em;
+        height: 26vh;
+    }
 }
