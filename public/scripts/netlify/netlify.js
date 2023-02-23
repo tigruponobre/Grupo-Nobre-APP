@@ -43,7 +43,7 @@ x.addEventListener('click', ()=>{
     }
 })
 
-backButton.addEventListener('click', ()=> window.location.href = url)
+backButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
 
 backButton.addEventListener('mouseover', ()=>{
     buttonDiv.style.transform = 'translateY(-10px)'

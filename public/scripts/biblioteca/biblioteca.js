@@ -2,7 +2,7 @@ let buttonDiv = document.querySelector('.back')
 let backButton = document.querySelector('.backButton')
 let label = document.querySelector('.backLabel')
 
-backButton.addEventListener('click', ()=> window.location.href = url)
+backButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
 
 backButton.addEventListener('mouseover', ()=>{
     buttonDiv.style.transform = 'translateY(-10px)'
