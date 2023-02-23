@@ -7,6 +7,8 @@ nav{
     color: #fff;
     position: fixed;
     z-index: 10;
+    border-bottom: 2px solid #090429;
+    box-shadow: 0 0 10px #00000090;
 }
 
 #logo_gn{
@@ -24,7 +26,7 @@ nav{
 }
 
 #menu li{
-   font-size: 1.5em;
+   font-size: 1.2em;
    border: 1px solid #2D73B4;
    width: 20%;
    display: flex;
@@ -42,4 +44,18 @@ nav{
 #menu .active{
     background-color: #2D73B4;
     border-color: #fff;
+}
+
+@media (max-width: 1140px){
+    #menu{
+        gap: 1%;
+    }
+    #menu li{
+        width: 32%;
+        font-size: .8em;
+    }
+    #logo_gn{
+        width: 100px;
+        margin-left: 1%;
+    }
 }

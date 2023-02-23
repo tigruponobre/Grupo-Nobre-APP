@@ -4,6 +4,7 @@
     bottom: 44vh;
     transform: translate(0, 50%);
     margin-top: 11vh;
+    z-index: -1;
 }
 
 main{
@@ -20,7 +21,7 @@ main{
 
 #circles li{
     background-color: #fff;
-    width: 1.1%;
+    min-width: 1.3em;
     border-radius: 50%;
     border: 1px solid #fff;
     user-select: none;
@@ -31,5 +32,48 @@ main{
 }
 
 #docs{
+    margin-top: .5%;
+    background-color: #ffffff90;
+    max-width: 90vh;
+    margin-inline: 8%;
+    border-radius: 20px;
+    height: 80vh;
+}
+
+#docs h3{
+    padding-top: 2%;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#cards{
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5%;
+    justify-content: center;
+}
+
+.docName{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15px;
+    border-radius: 20px;
+    width: 18em;
+    height: 33vh;
+    background-color: #110947;
+    cursor: pointer;
+    margin-top: 2%;
+    transition: ease .3s;
+}
+
+.card:hover{
+    box-shadow: 0 0 15px 1px #00000090;
 }
