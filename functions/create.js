@@ -6,10 +6,12 @@ const bcrypt = require('bcryptjs')
 //Enviroment Variables
 const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
+const cluster = process.env.CLUSTER
+const collection = process.env.COLLECTION
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@cluster0.se0mehr.mongodb.net/administrators?retryWrites=true&w=majority`)
+    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${collection}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
     if(conection){
