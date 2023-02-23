@@ -1,6 +1,6 @@
 #admin{
     position: absolute;
-    right: 0;
+    right: 5%;
     bottom: 44vh;
     transform: translate(0, 50%);
     margin-top: 11vh;
@@ -16,7 +16,7 @@ main{
     list-style: none;
     gap: 5px;
     justify-content: flex-end;
-    margin-right: 3%;
+    margin-right: 20%;
 }
 
 #circles li{
@@ -42,7 +42,7 @@ main{
 }
 
 #docs h3{
-    padding-top: 4%;
+    padding-top: 2%;
     text-align: center;
     font-size: 1.4em;
 }
@@ -71,7 +71,7 @@ main{
     height: 33vh;
     background-color: #110947;
     cursor: pointer;
-    margin-top: 4%;
+    margin-top: 2%;
     transition: ease .3s;
 }
 
@@ -99,5 +99,10 @@ main{
         margin-top: 5%;
         width: 12em;
         height: 26vh;
+    }
+    #circles{
+        margin-right: 50%;
+        justify-content: center;
+        transform: translate(50%,0);
     }
 }

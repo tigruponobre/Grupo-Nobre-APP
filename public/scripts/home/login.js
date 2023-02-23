@@ -92,6 +92,7 @@ async function getLogged(){
             if(sessionStorage.unauthorized == 'true'){
                 document.querySelector('.authentication').remove()
             }
+            window.location.href = url + '/pages/administrativo'
         },1500)
     }
 }
