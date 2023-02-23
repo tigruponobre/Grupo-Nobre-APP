@@ -7,30 +7,60 @@
     z-index: -1;
 }
 
-main{
-    padding-top: 14vh;
-}
-
 #circles{
     display: flex;
     list-style: none;
     gap: 5px;
     justify-content: flex-end;
     margin-right: 20%;
+    padding-top: 8em;
 }
 
 #circles li{
     background-color: #fff;
-    min-width: 1.3em;
+    min-width: 12em;
+    min-height: 12em;
     border-radius: 50%;
     border: 1px solid #fff;
     user-select: none;
     transition: ease .3s;
+    font-size: 2px;
 }
 
 #circles .active{
     background-color:#2D73B4;
 }
+
+main{
+    margin-top: .5%;
+    background-color: #ffffff90;
+    max-width: 90vh;
+    margin-inline: 8%;
+    border-radius: 20px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3%;
+    gap: 1%;
+}
+
+main #crown{
+    max-width: 68px;
+    max-height: 68px;
+}
+
+main h1{
+    font-size: 3em;
+    color: #2D73B4;
+    display: flex;
+    align-items: center;
+}
+
+section{
+    display: none;
+}
+
 
 #docs{
     margin-top: .5%;
