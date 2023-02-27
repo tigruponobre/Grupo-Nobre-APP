@@ -29,7 +29,7 @@ for (let index in menuItems){
 }
 
 //GET USERS
-let usersDiv = document.getElementById('users')
+let usersUl = document.querySelector('#users ul')
 async function getUsers(){
     let response = await fetch('http://localhost:8888' + '/.netlify/functions/getUsers')
     let data = await response.json()
@@ -37,6 +37,8 @@ async function getUsers(){
 
     users.forEach(element => {
         let userData = document.createElement('li')
+        userData.innerHTML = element
+        usersUl.appendChild(userData)
     })
 }
 getUsers()
