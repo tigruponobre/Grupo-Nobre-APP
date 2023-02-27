@@ -1,10 +1,10 @@
+//GET ELEMENTS
 let main = document.getElementsByTagName('main')[0]
-
 let menuItems = Array.from(document.querySelectorAll('#menu li'))
 let circles = Array.from(document.querySelectorAll('#circles li'))
-
 let documentations = document.getElementById('docs')
 
+//SELECT MENU BUTTON
 for (let index in menuItems){
     menuItems[index].addEventListener('click', (event)=>{
         //Remove main
@@ -27,3 +27,16 @@ for (let index in menuItems){
         }
     })
 }
+
+//GET USERS
+let usersDiv = document.getElementById('users')
+async function getUsers(){
+    let response = await fetch('http://localhost:8888' + '/.netlify/functions/getUsers')
+    let data = await response.json()
+    let users = data.resposta
+
+    users.forEach(element => {
+        let userData = document.createElement('li')
+    })
+}
+getUsers()

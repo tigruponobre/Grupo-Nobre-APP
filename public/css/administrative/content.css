@@ -1,76 +1,15 @@
-#admin{
-    position: absolute;
-    right: 5%;
-    bottom: 44vh;
-    transform: translate(0, 50%);
-    margin-top: 11vh;
-    z-index: -1;
-}
-
-#circles{
-    display: flex;
-    list-style: none;
-    gap: 5px;
-    justify-content: flex-end;
-    margin-right: 20%;
-    padding-top: 8em;
-}
-
-#circles li{
-    background-color: #fff;
-    min-width: 12em;
-    min-height: 12em;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    user-select: none;
-    transition: ease .3s;
-    font-size: 2px;
-}
-
-#circles .active{
-    background-color:#2D73B4;
-}
-
-main{
-    margin-top: .5%;
-    background-color: #ffffff90;
-    max-width: 90vh;
-    margin-inline: 8%;
-    border-radius: 20px;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 3%;
-    gap: 1%;
-}
-
-main #crown{
-    max-width: 68px;
-    max-height: 68px;
-}
-
-main h1{
-    font-size: 3em;
-    color: #2D73B4;
-    display: flex;
-    align-items: center;
-}
-
+/* SECTION */
 section{
     display: none;
-}
-
-
-#docs{
     margin-top: .5%;
-    background-color: #ffffff90;
+    background-color: #ffffff;
     max-width: 90vh;
     margin-inline: 8%;
     border-radius: 20px;
     height: 80vh;
 }
 
+/* DOCUMENTATIONS */
 #docs h3{
     padding-top: 2%;
     text-align: center;
@@ -109,6 +48,41 @@ section{
     box-shadow: 0 0 15px 1px #00000090;
 }
 
+/* USERS */
+#consultUsers{
+    display: block;
+}
+#top{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    align-items: center;
+}
+#top h3{
+    font-size: 1.5em;
+    color: #0F054C;
+}
+#search{
+    width: 28em;
+    padding-left: .8em;
+    padding-right: 2.8em;
+    height: 2.5em;
+    border-radius: 50em;
+    z-index: 2;
+    color: #2D73B4;
+    border: 2px solid #0F054C;
+    transition: ease .3s;
+}
+#lens{
+    z-index: 3;
+    background: transparent;
+    position: relative;
+    top: .45em;
+    right: 2.2em;
+}
+
+
+/* RESPONSIVE */
 @media (max-width: 1140px){
     main{
         padding-top: 13vh;

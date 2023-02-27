@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../css/general/all.css">
     <link rel="stylesheet" href="../css/administrative/body.css">
     <link rel="stylesheet" href="../css/administrative/menu.css">
+    <link rel="stylesheet" href="../css/administrative/circles.css">
+    <link rel="stylesheet" href="../css/administrative/main.css">
     <link rel="stylesheet" href="../css/administrative/content.css">
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
-    <script src="../scripts/authentication.js"></script>
+    <!-- <script src="../scripts/authentication.js"></script> -->
     <script src="../scripts/administrative/administrative.js" defer></script>
     <title>Painel Administrativo</title>
 </head>
 <body>
+    <!-- NAV MENU -->
     <nav>
         <img id="logo_gn" src="../img/logos/gn_branca_curta.png" alt="logo">
         <ul id="menu">
@@ -22,25 +25,40 @@
             <li>CADASTRO</li>
         </ul>
     </nav>
+    <!-- CONTENT -->
     <div id="content">
+        <!-- CIRCLES -->
         <ul id="circles">
             <li>&nbsp</li>
             <li>&nbsp</li>
             <li>&nbsp</li>
         </ul>
+        <!-- MAIN BOX THAT GIVES USERS WELCOME -->
         <main>
             <img id="crown" src="../img/icons/crown1.png" alt="crown">
             <h2>PAINEL ADMNISTRATIVO</h2>
             <h1><img id="main" src="../img/logos/favicon.ico" alt="logo" width="200vh">GRUPO NOBRE APP</h1>
         </main>
+        <!-- DOCUMENTATIONS BOX -->
         <section id="docs">
-                <h3>DOCUMENTAÇÕES</h3>
-                <div id="cards">
-                    <div class="card" onclick="window.location.href = `${url}/pages/netlify`"><img src="../img/icons/netlify_icon.png" alt="netlify_icon" width="250vh"><p class="docName">NETLIFY</p></div>
-                    <div class="card" onclick="window.location.href = `${url}/pages/biblioteca`"><img src="../img/icons/bilbioteca_icon.jpg" alt="bilbioteca_icon" width="250vh"><p class="docName">BIBLIOTECA VIRTUAL</p></div>
-                    <!-- <div class="card"><img src="../img/icons/netlify_icon.png" alt="netlify_icon" width="250vh"><p class="docName">NETLIFY</p></div>
-                    <div class="card"><img src="../img/icons/bilbioteca_icon.jpg" alt="bilbioteca_icon" width="250vh"><p class="docName">BIBLIOTECA VIRTUAL</p></div> -->
+            <h3>DOCUMENTAÇÕES</h3>
+            <div id="cards">
+                <div class="card" onclick="window.location.href = `${url}/pages/netlify`"><img src="../img/icons/netlify_icon.png" alt="netlify_icon" width="250vh"><p class="docName">NETLIFY</p></div>
+                <div class="card" onclick="window.location.href = `${url}/pages/biblioteca`"><img src="../img/icons/bilbioteca_icon.jpg" alt="bilbioteca_icon" width="250vh"><p class="docName">BIBLIOTECA VIRTUAL</p></div>
+                <!-- <div class="card"><img src="../img/icons/netlify_icon.png" alt="netlify_icon" width="250vh"><p class="docName">NETLIFY</p></div>
+                <div class="card"><img src="../img/icons/bilbioteca_icon.jpg" alt="bilbioteca_icon" width="250vh"><p class="docName">BIBLIOTECA VIRTUAL</p></div> -->
             </div>
+        </section>
+        <!-- USERS BOX -->
+        <section id="consultUsers">
+            <div id="top">
+                <h3>USUÁRIOS</h3>
+                <div id="searchDiv">
+                    <input id="search" type="text" placeholder="Pesquisar usuário">
+                    <img id="lens" src="../img/icons/lupa.png" alt="lupa" width="22vh" height="22vh">
+                </div>
+            </div>
+            <div id="users"></div>
         </section>
         <img id="admin" src="../img/backgrounds/admin.jpg" alt="admin" width="700vh">
     </div>

@@ -1,0 +1,23 @@
+#circles{
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    justify-content: flex-end;
+    margin-right: 20%;
+    padding-top: 8em;
+}
+
+#circles li{
+    background-color: #fff;
+    min-width: 12em;
+    min-height: 12em;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    user-select: none;
+    transition: ease .3s;
+    font-size: 2px;
+}
+
+#circles .active{
+    background-color:#2D73B4;
+}

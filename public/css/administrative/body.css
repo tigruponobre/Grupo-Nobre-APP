@@ -3,3 +3,12 @@ body{
     max-height: 100vh;
     height: 100vh;
 }
+
+#admin{
+    position: absolute;
+    right: 5%;
+    bottom: 44vh;
+    transform: translate(0, 50%);
+    margin-top: 11vh;
+    z-index: -1;
+}
