@@ -2,14 +2,14 @@
 section{
     display: none;
     margin-top: .5%;
-    background-color: #ffffff;
+    background-image: url('../../img/backgrounds/science_bg.png');
     max-width: 90vh;
     margin-inline: 8%;
     border-radius: 20px;
     height: 80vh;
 }
 
-/* DOCUMENTATIONS */
+/* DOCUMENTATIONS BOX */
 #docs h3{
     padding-top: 2%;
     text-align: center;
@@ -48,10 +48,7 @@ section{
     box-shadow: 0 0 15px 1px #00000090;
 }
 
-/* USERS */
-/* #consultUsers{
-    display: block;
-} */
+/* USERS BOX*/
 #top{
     display: flex;
     justify-content: space-between;
@@ -103,6 +100,73 @@ section{
 #users ul .userDisappears{
     display: none;
 }
+
+/* REGISTER BOX */
+#register{
+    display: block;
+}
+#registerTitle{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.5em;
+    height: 2em;
+    padding: 5%;
+    padding-top: 10%;
+    color: #0F054C;
+}
+.registerCircles{
+    display: flex;
+    gap: 10px;
+}
+.registerCircles li{
+    background-color: #0F054C;
+    list-style: none;
+    min-width: .8em;
+    min-height: .8em;
+    border-radius: 50%;
+}
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5%;
+    padding-bottom: 4%;
+}
+#registerInfo label{
+    font-size: 1.3em;
+    margin-bottom: .4em;
+    color: #2D73B4;
+}
+#registerInfo input{
+    border: none;
+    border-bottom: 2px solid #2D73B4;
+    font-size: 1.1em;
+    color: #2D73B4;
+    background: transparent;
+    transition: ease-in .2s;
+}
+#registerInfo input:focus{
+    outline: none;
+    border-bottom: 2px solid #259b2b;
+}
+#registrateButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#registrate{
+    background-color: #2D73B4;
+    border: none;
+    padding: 1em 3em;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: ease .3s;
+}
+#registrate:hover{
+    background-color: #25629b;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1140px){
