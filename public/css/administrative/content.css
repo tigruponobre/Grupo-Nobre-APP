@@ -7,6 +7,7 @@ section{
     margin-inline: 8%;
     border-radius: 20px;
     height: 80vh;
+    overflow-y: auto;
 }
 
 /* DOCUMENTATIONS BOX */
@@ -64,13 +65,15 @@ section{
     justify-content: flex-end;
 }
 #search{
-    width: 28em;
+    max-width: 28em;
+    font-size: large;
+    background: transparent;
     padding-left: .9em;
     padding-right: 2.7em;
-    height: 2.5em;
+    height: 2.2em;
     border-radius: 50em;
     z-index: 2;
-    color: #2D73B4;
+    color: #0F054C;
     border: 2px solid #0F054C;
     transition: ease .3s;
 }
@@ -79,7 +82,7 @@ section{
     background: transparent;
     position: relative;
     top: .45em;
-    right: -23em;
+    right: -17.8em;
     cursor: pointer;
 }
 #users ul{
@@ -102,9 +105,6 @@ section{
 }
 
 /* REGISTER BOX */
-#register{
-    display: block;
-}
 #registerTitle{
     display: flex;
     align-items: center;
@@ -153,11 +153,14 @@ section{
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 #registrate{
     background-color: #2D73B4;
     border: none;
-    padding: 1em 3em;
+    padding: 1em 4em;
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
@@ -165,6 +168,9 @@ section{
 }
 #registrate:hover{
     background-color: #25629b;
+}
+#notification{
+    color: rgb(200, 82, 115);
 }
 
 
