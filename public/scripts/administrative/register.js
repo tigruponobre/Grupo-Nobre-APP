@@ -33,6 +33,7 @@ async function createUser(){
         passwordInput.style.borderColor = 'rgb(200, 82, 115)'
         confirmPasswordInput.style.borderColor = 'rgb(200, 82, 115)'
         notification.innerHTML = 'Senhas não conferem!'
+        notification.style.borderColor = 'rgb(200, 82, 115)'
     }else{
         let login = firstName.toLowerCase() + '.' + lastName.toLowerCase()
         let response = await fetch(url + '/.netlify/functions/create',{
@@ -44,15 +45,17 @@ async function createUser(){
         })
         let data = await response.json()
         if (data.resposta == 'User created successfully'){
-            notification.style.color = 'rgb(75, 200, 112)'
-            notification.innerHTML = `Usuário ${login} com sucesso!`
+            notification.style.color = 'rgb(44, 117, 44)'
+            notification.innerHTML = `Usuário "${login}" criado com sucesso!`
             document.getElementById('firstName').value = ''
             document.getElementById('lastName').value = ''
             document.getElementById('password').value = ''
             document.getElementById('confirmPassword').value = ''
             setTimeout(() => {
                 notification.innerHTML = ''
-            }, 2000);
+                passwordInput.style.borderColor = '#2D73B4'
+                confirmPasswordInput.style.borderColor = '#2D73B4'
+            }, 5000);
         }
     }
 }

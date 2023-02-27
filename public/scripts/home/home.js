@@ -7,16 +7,6 @@ docs = Array.from(docs)
 sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
 const url = sessionStorage.url
 
-
-let count = 0
-consultaDocs.addEventListener('click', ()=>{
-    for(let index in docs){
-        docs[index].classList.toggle('docAppears')
-    }
-    document.querySelector('.arrow-right').classList.toggle('activated')
-})
-
-
 //Login/Logout
 let login_logout = document.querySelector('.login_logout')
 async function checkLogin(){

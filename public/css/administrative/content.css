@@ -109,7 +109,7 @@ section{
     display: flex;
     align-items: center;
     gap: 1em;
-    font-size: 1.5em;
+    font-size: 1.7em;
     height: 2em;
     padding: 5%;
     padding-top: 10%;
@@ -140,10 +140,13 @@ section{
 #registerInfo input{
     border: none;
     border-bottom: 2px solid #2D73B4;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #2D73B4;
     background: transparent;
     transition: ease-in .2s;
+}
+#registerInfo input[type='password']{
+    letter-spacing: 0.120em;
 }
 #registerInfo input:focus{
     outline: none;
@@ -159,6 +162,7 @@ section{
 }
 #registrate{
     background-color: #2D73B4;
+    font-size: 1em;
     border: none;
     padding: 1em 4em;
     border-radius: 4px;
@@ -171,6 +175,8 @@ section{
 }
 #notification{
     color: rgb(200, 82, 115);
+    font-size: x-large;
+    padding-bottom: 5px;
 }
 
 
