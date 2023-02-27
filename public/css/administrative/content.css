@@ -49,9 +49,9 @@ section{
 }
 
 /* USERS */
-#consultUsers{
+/* #consultUsers{
     display: block;
-}
+} */
 #top{
     display: flex;
     justify-content: space-between;
@@ -99,6 +99,9 @@ section{
     display: flex;
     gap: 5px;
     align-items: center;
+}
+#users ul .userDisappears{
+    display: none;
 }
 
 /* RESPONSIVE */
