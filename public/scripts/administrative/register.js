@@ -27,6 +27,7 @@ async function createUser(){
     let lastName = document.getElementById('lastName').value
     let password = passwordInput.value
     let confirmPassword = confirmPasswordInput.value
+    let secretKey = document.getElementById('secretKey')
 
     //Check if passwords match
     if(password != confirmPassword){
@@ -40,7 +41,8 @@ async function createUser(){
             method: 'post',
             body: JSON.stringify({
                 login,
-                password
+                password,
+                secretKey
             })
         })
         let data = await response.json()

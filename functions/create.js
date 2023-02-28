@@ -8,6 +8,7 @@ const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
 const databaseName = process.env.DATABASE
+const masterKey = process.env.MASTERKEY
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -27,7 +28,17 @@ exports.handler = async function (event, context){
 
     //Get e-mail and password
     const eventBody = JSON.parse(event.body)
-    const {login, password}  = eventBody
+    const {login, password, secretKey}  = eventBody
+
+    //Verify secretKey
+    if(secretKey != masterKey){
+        return {
+            statusCode: 401,
+            body: JSON.stringify({
+                resposta: "Secret key doesn't match."
+            })
+        }
+    }
 
     //Encrypt password
     const salt = await bcrypt.genSalt(12)
