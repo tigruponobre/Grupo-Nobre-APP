@@ -27,7 +27,7 @@ async function createUser(){
     let lastName = document.getElementById('lastName').value
     let password = passwordInput.value
     let confirmPassword = confirmPasswordInput.value
-    let secretKey = document.getElementById('secretKey')
+    let secretKey = document.getElementById('secretKey').value
 
     //Check if passwords match
     if(password != confirmPassword){
@@ -53,6 +53,7 @@ async function createUser(){
             document.getElementById('lastName').value = ''
             document.getElementById('password').value = ''
             document.getElementById('confirmPassword').value = ''
+            document.getElementById('secretKey').value = ''
             setTimeout(() => {
                 notification.innerHTML = ''
                 passwordInput.style.borderColor = '#2D73B4'
