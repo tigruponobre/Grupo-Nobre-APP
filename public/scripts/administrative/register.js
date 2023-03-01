@@ -1,19 +1,3 @@
-//Search users
-let search = document.getElementById('search')
-search.addEventListener('keyup', (event)=>{
-    event.preventDefault()
-    let getUsersLi = Array.from(document.querySelectorAll('#users ul li'))
-    let searchValue = search.value
-    for (let user of getUsersLi){
-        user.classList.add('userDisappears')
-    }
-    for (let user of getUsersLi){
-        if(user.textContent.toLowerCase().match(searchValue.toLowerCase())){
-            user.classList.remove('userDisappears')
-        }
-    }
-})
-
 //Get elemets
 let passwordInput = document.getElementById('password')
 let confirmPasswordInput = document.getElementById('confirmPassword')
@@ -63,3 +47,8 @@ async function createUser(){
     }
 }
 
+document.getElementById('secretKey').addEventListener('keypress', (e)=>{
+    if(e.keyCode = 13){
+        createUser()
+    }
+})
