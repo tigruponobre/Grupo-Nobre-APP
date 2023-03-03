@@ -30,9 +30,8 @@ exports.handler = async function (event, context){
     const eventBody = JSON.parse(event.body)
     const {login, password, secretKey}  = eventBody
 
-    console.log(secretKey, masterKey)
     //Verify secretKey
-    if(secretKey != masterKey){
+    if(await bcrypt.compare(secretKey, masterKey)){
         return {
             statusCode: 401,
             body: JSON.stringify({

@@ -30,6 +30,10 @@ exports.handler = async function (event, context){
     const eventBody = JSON.parse(event.body)
     const {login, password} = eventBody 
 
+    //TOKEN
+    const salt = await bcrypt.genSalt(12)
+    const tokenHash = await bcrypt.hash(token,salt)
+
     //Find user
     try {
         //Find User
@@ -44,7 +48,7 @@ exports.handler = async function (event, context){
                     statusCode: 200,
                     body: JSON.stringify({
                         resposta: 'Login successful!',
-                        token: token
+                        token: tokenHash
                     })
                 }
             }else{
