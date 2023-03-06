@@ -43,6 +43,7 @@ section{
     cursor: pointer;
     margin-top: 2%;
     transition: ease .3s;
+    margin-bottom: 3%;
 }
 
 .card:hover{
