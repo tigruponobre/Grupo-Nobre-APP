@@ -22,9 +22,31 @@ async function getUsers(){
     let data = await response.json()
     let users = data.resposta
 
-    users.forEach(element => {
+    await users.forEach(element => {
         let userData = document.createElement('li')
-        userData.innerHTML = element
+        userData.innerHTML = `${element}<img class="deleteUsers" src="../img/icons/trash.png" width="25px"/>`
         usersUl.appendChild(userData)
+    })
+
+    //DELETE USERS
+    let trash = Array.from(document.querySelectorAll(".deleteUsers"))
+    trash.forEach(element => {
+        element.addEventListener('click', async (e)=>{
+            // console.log(e.target.parentElement.textContent)
+            let gettingUserName = e.target.parentElement.textContent
+            if(window.confirm(`Deseja excluir o usuário de ${gettingUserName}?`)){
+                let response = await fetch(url + '/.netlify/functions/delete', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        name: gettingUserName
+                    })
+                })
+                if(response.status == 200){
+                    getUsers()
+                }else{
+                    window.alert('Erro ao deletar usuário, contate o desenvolvedor.')
+                }
+            }
+        })
     })
 }

@@ -26,7 +26,7 @@ exports.handler = async function (event, context){
         }
     }
 
-    //Get e-mail and password
+    //Get login, password and secretKey
     const eventBody = JSON.parse(event.body)
     const {login, password, secretKey}  = eventBody
 

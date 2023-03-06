@@ -99,6 +99,11 @@ section{
     display: flex;
     gap: 5px;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.deleteUsers{
+    cursor: pointer;
 }
 #users ul .userDisappears{
     display: none;
