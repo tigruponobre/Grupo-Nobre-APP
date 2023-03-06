@@ -36,12 +36,14 @@ async function getUsers(){
             let gettingUserName = e.target.parentElement.textContent
             if(window.confirm(`Deseja excluir o usuário de ${gettingUserName}?`)){
                 let response = await fetch(url + '/.netlify/functions/delete', {
-                    method: 'post',
+                    method: 'delete',
                     body: JSON.stringify({
-                        name: gettingUserName
+                        name: gettingUserName,
+                        token: await sessionStorage.getItem('token')
                     })
                 })
                 if(response.status == 200){
+                    window.alert('Usuário deletado com sucesso!')
                     getUsers()
                 }else{
                     window.alert('Erro ao deletar usuário, contate o desenvolvedor.')

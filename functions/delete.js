@@ -1,12 +1,14 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const User = require('../models/User')
+const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
 const databaseName = process.env.DATABASE
+const masterKey = process.env.MASTERKEY
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -26,26 +28,48 @@ exports.handler = async function (event, context){
 
     //Getting user information from request
     const eventBody = JSON.parse(event.body)
-    const {name}  = eventBody
+    const {name, token}  = eventBody
 
+    //Verifying token
+    if(!bcrypt.compare(token, masterKey)){
+        return {
+            statusCode: 401,
+            body: JSON.stringify({
+                resposta: "Access denied"
+            })
+        }
+    }
+
+    //Transforme user name in user login
     const login = name.split(' ').join('.').toLowerCase()
-    if(login){
-        try {
-            await User.deleteOne({login: login})
-            return {
-                statusCode: 200,
-                body: JSON.stringify({
-                    respota: 'Sucess deleting user'
-                })
-            }
-        } catch (error) {
-            return {
-                statusCode: 500,
-                body: JSON.stringify({
-                    respota: 'Server error',
-                    error: error
-                })
-            }
+
+    //Check if user exists
+    const userExists = await User.findOne({login: login})
+    if(!userExists){
+        return {
+            statusCode: 404,
+            body: JSON.stringify({
+                respota: 'User not found'
+            })
+        }
+    }
+
+    //Deleting user
+    try{
+        await User.deleteOne({login: login})
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                respota: 'Sucess deleting user'
+            })
+        }
+    }catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({
+                respota: 'It was not possible to delete this user',
+                error: error
+            })
         }
     }
 }
