@@ -1,18 +1,18 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const User = require('../models/User')
+const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
-const databaseName = process.env.DATABASE
+const adm_collection = process.env.ADMCOLLECTION
 const masterKey = process.env.MASTERKEY
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${databaseName}?retryWrites=true&w=majority`)
+    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${adm_collection}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
     if(conection){
@@ -51,7 +51,7 @@ exports.handler = async function (event, context){
         password: passwordHash
     }
 
-    const userExists = await User.findOne({login: login})
+    const userExists = await Admin.findOne({login: login})
 
     if(userExists){
         return {
@@ -64,7 +64,7 @@ exports.handler = async function (event, context){
     //Create user in DB
     try {
         //Create
-        await User.create(user)
+        await Admin.create(user)
         return {
             statusCode: 201,
             body: JSON.stringify({

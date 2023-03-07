@@ -1,17 +1,17 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const User = require('../models/User')
+const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
-const collection = process.env.COLLECTION
+const adm_collection = process.env.ADMCOLLECTION
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${collection}?retryWrites=true&w=majority`)
+    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${adm_collection}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
     if(conection){
@@ -26,10 +26,10 @@ exports.handler = async function (event, context){
     }
 
     //GET ALL USERS
-    let allUsers = await User.find()
+    let allAdmins = await Admin.find()
     let users = []
-    for (let index in allUsers){
-        let login = allUsers[index]['login']
+    for (let index in allAdmins){
+        let login = allAdmins[index]['login']
         let getName = login.split('.')
         let userName = []
         getName.forEach(element => userName.push(element.charAt(0).toUpperCase() + element.slice(1)))
@@ -37,9 +37,9 @@ exports.handler = async function (event, context){
         users.push(userName)
     }
 
-    // console.log(allUsers)
+    // console.log(allAdmins)
 
-    if(allUsers){
+    if(allAdmins){
         return{
             statusCode: 200,
             body: JSON.stringify({

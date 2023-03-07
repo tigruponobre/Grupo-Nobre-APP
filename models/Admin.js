@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-const User = mongoose.model('User', {
+const Admin = mongoose.model('Admin', {
     login: "String",
     password: "String"
 })
 
-module.exports = User
+module.exports = Admin

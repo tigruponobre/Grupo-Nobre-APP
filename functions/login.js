@@ -1,13 +1,13 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const User = require('../models/User')
+const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
-const collection = process.env.COLLECTION
+const adm_collection = process.env.ADMCOLLECTION
 const token = process.env.TOKEN
 
 exports.handler = async function (event, context){
@@ -36,12 +36,12 @@ exports.handler = async function (event, context){
 
     //Find user
     try {
-        //Find User
-        let infoUser = await User.findOne({login: login})
+        //Find Admin
+        let infoAdmin = await Admin.findOne({login: login})
 
-        if(infoUser){
+        if(infoAdmin){
             //Check user password
-            const checkPassword = await bcrypt.compare(password, infoUser.password)
+            const checkPassword = await bcrypt.compare(password, infoAdmin.password)
 
             if(checkPassword){
                 return{
@@ -64,7 +64,7 @@ exports.handler = async function (event, context){
             return{
                 statusCode: 404,
                 body: JSON.stringify({
-                    resposta: 'User not found.'
+                    resposta: 'Admin not found.'
                 })
             }
         }
