@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general/all.css">
+    <link rel="stylesheet" href="../css/colegionobre/body.css">
+    <link rel="stylesheet" href="../css/colegionobre/card.css">
+    <script src="../scripts/colegionobre/consulta.js" defer></script>
+    <title>Consulta RA</title>
+</head>
+<body>
+    <div id="consulta" class="card">
+        <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
+        <h1 class="title">Consulte seu Regristro Acadêmico (RA)</h1>
+        <div class="inputs">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" autocomplete="off">
+        </div>
+        <div class="inputs">
+            <label for="dtnascimento">Data de Nascimento</label>
+            <input type="text" id="dtnascimento" autocomplete="off">
+        </div>
+        <p id="notification">Usuário não encontrado!</p>
+        <button id="consult" onclick="searchInfo()">Consultar</button>
+        <span id="notFound">Não encontrou? <b>Contate a secretaria.</b></span>
+    </div>
+    <div id="resultado" class="card">
+        <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
+        <h1 class="title">Consulta de RA</h1>
+        <h2 id="nome" class="identification"></h2>
+        <h2 id="registro" class="identification"></h2>
+        <button id="back" onclick="newSearch()">Pesquisar novamente</button>
+    </div>
+</body>
+</html>

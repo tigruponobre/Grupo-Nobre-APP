@@ -1,0 +1,133 @@
+/* Search card */
+.card{
+    background-color: #ffffff90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vh;
+    height: 70vh;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00000090;
+}
+
+.logo_colegio{
+    margin: 5% 0;
+}
+
+.title{
+    padding-inline: 5%;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.inputs{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 5%;
+    font-size: 1.4em;
+    gap: 10px;
+    color: #29659c;
+}
+
+.inputs input{
+    border: none;
+    border-bottom: 1px solid #29659c;
+    font-size: 1.6em;
+    color: #29659c;
+    background: transparent;
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+button{
+    margin-top: 5%;
+    width: 20em;
+    padding: 15px 0;
+    background-color: #29659c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+#consult:hover{
+    background-color: #235380;
+}
+
+#notFound{
+    margin-top: 5%;
+    color: #29659c;
+    cursor:default;
+}
+
+.idIcon{
+    border-right: 1px solid #036FC5;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-right: 10px;
+}
+
+#notification{
+    color: red;
+    margin-top: 5%;
+    display: none;
+}
+
+/* Result card */
+#nome{
+    width: 90%;
+    margin: 5% 0 10% 0;
+    color: #29659c;
+}
+#registro{
+    width: 90%;
+    color: #29659c;
+}
+
+.identification{
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+#resultado{
+    display: none;
+}
+
+@media (max-width: 1100px){
+    .card{
+        height: 100vh;
+        max-height: 100vh;
+    }
+    .logo_colegio{
+        margin: 20% 0 10% 0;
+    }
+    .title{
+        margin-bottom: 10%;
+    }
+    .inputs{
+        margin-bottom: 10%;
+    }
+    #notFound{
+        margin-top: 10%;
+    }
+
+    /* Result card */
+    #registro{
+        margin-bottom: 5%;
+    }
+}
+
