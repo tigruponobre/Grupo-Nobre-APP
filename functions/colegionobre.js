@@ -28,6 +28,7 @@ exports.handler = async function(event, context){
     //Destructuring body req and posting data
     const eventBody = await JSON.parse(event.body)
     const jsonBody = await JSON.parse(eventBody)
+    let newStudents = []
 
     for (let cpf of Object.keys(jsonBody)){
 
@@ -42,26 +43,27 @@ exports.handler = async function(event, context){
                 ra: jsonBody[cpf]['RA'],
                 dtnascimento: jsonBody[cpf]['DTNASCIMENTO']
             }
-            try {
-                await Student.create(newStudent)
-                // console.log(newStudent)
-            } catch (error) {
-                return {
-                    statusCode: 500,
-                    body: JSON.stringify({
-                        resposta: `It was not possible to register student: ${cpf}`,
-                        error: error
-                    })
-                }
-            }
+            newStudents.push(newStudent)
         }
+    }
 
+    try {
+        await Student.insertMany(newStudents)
+    } catch (error) {
         return {
-            statusCode: 201,
+            statusCode: 500,
             body: JSON.stringify({
-                resposta: "All possible students have been registered!"
+                resposta: `It was not possible to some student.`,
+                error: error
             })
         }
+    }
+
+    return {
+        statusCode: 201,
+        body: JSON.stringify({
+            resposta: "All possible students have been registered!"
+        })
     }
 
 }
