@@ -26,44 +26,44 @@ exports.handler = async function(event, context){
     }
 
     //Destructuring body req and posting data
-    const eventBody = await JSON.parse(event.body)
-    const jsonBody = await JSON.parse(eventBody)
-    let newStudents = []
+    const {cpf, nome, ra, dtnascimento} = await JSON.parse(event.body)
 
-    for (let cpf of Object.keys(jsonBody)){
-
-        //Check if student exists
-        let studentExists = await Student.findOne({cpf: cpf})
-        
-        //Se não existir, cadastrar
-        if(!studentExists){
-            let newStudent = {
-                cpf: cpf,
-                nome: jsonBody[cpf]['NOME'],
-                ra: jsonBody[cpf]['RA'],
-                dtnascimento: jsonBody[cpf]['DTNASCIMENTO']
-            }
-            newStudents.push(newStudent)
-        }
+    //MODEL
+    const newStudent = {
+        cpf,
+        nome,
+        ra,
+        dtnascimento
     }
 
-    try {
-        await Student.insertMany(newStudents)
-    } catch (error) {
+    //CHECK IF USER DOES'N EXIST
+    studentExist = await Student.findOne({cpf: cpf})
+    if(!studentExist){
+        try {
+            await Student.create(newStudent)
+            return {
+                statusCode: 201,
+                body: JSON.stringify({
+                    resposta: `${cpf} registered!`
+                })
+            }
+        } catch (error) {
+            return {
+                statusCode: 500,
+                body: JSON.stringify({
+                    resposta: `It was not possible to insert some student.`,
+                    error: error
+                })
+            }
+        }
+    }else{
         return {
-            statusCode: 500,
+            statusCode: 302,
             body: JSON.stringify({
-                resposta: `It was not possible to some student.`,
-                error: error
+                resposta: `Student already exists!`
             })
         }
     }
 
-    return {
-        statusCode: 201,
-        body: JSON.stringify({
-            resposta: "All possible students have been registered!"
-        })
-    }
-
+    
 }
