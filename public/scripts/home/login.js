@@ -1,24 +1,18 @@
+//Get DOM elemnts
 const loginButton = document.getElementById('loginButton')
-
 let notification = document.getElementById("notification")
 const inputLogin = document.getElementById("loginInput")
 const inputPass = document.getElementById("passwordInput")
 
-let contador = 0
-
+//Envent listener on input password to click enter
 inputPass.addEventListener('keypress', e => {
     if(e.key === 'Enter'){
         getLogged()
     }
 })
 
+//Function to login in
 async function getLogged(){
-    //Wait for response
-    if(contador < 1){
-        loginButton.textContent = 'Aguarde...'
-        contador += 1
-    }
-
     //Restart border-color
     if(inputLogin.classList.contains('error')){
         inputLogin.classList.remove('error')
@@ -27,19 +21,22 @@ async function getLogged(){
         inputPass.classList.remove('error')
     }
 
-    //Get frontend info
+    //Get data to post
     let login = inputLogin.value
     let password = inputPass.value
 
+    //Do the request
     let response = await fetch(url + '/.netlify/functions/login',{
         method: 'post',
         body: JSON.stringify({
-            login: login,
-            password: password
+            login,
+            password
         })
     })
+
     let data = await response.json()
-    loginButton.textContent = 'Administrativo'
+
+    //Check response
     if(response.status != 200){
         if(data.resposta == 'User not found.'){
             if(notification.innerText){
@@ -71,9 +68,9 @@ async function getLogged(){
             inputPass.classList.add('error')
         }
     }else{
-        sessionStorage.setItem('token', data.token)
-        sessionStorage.setItem('unauthorized', false)
-        sessionStorage.setItem('userName', login)
+        await sessionStorage.setItem('token', data.token)
+        await sessionStorage.setItem('unauthorized', false)
+        await sessionStorage.setItem('userName', login)
         checkLogin()
         notification.innerText = 'Login efetuado com sucesso!'
         notification.style.color = '#32be56'
@@ -97,8 +94,10 @@ async function getLogged(){
     }
 }
 
+//Add function to login on button
 loginButton.addEventListener('click', getLogged)
 
+//Check user is authorized
 if(sessionStorage.getItem('unauthorized') == 'true'){
     let authNotification = document.createElement('div')
     authNotification.setAttribute('class', 'authentication authNotificationMove')
