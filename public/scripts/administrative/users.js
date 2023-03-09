@@ -18,7 +18,7 @@ search.addEventListener('keyup', (event)=>{
 let usersUl = document.querySelector('#users ul')
 async function getUsers(){
     usersUl.innerHTML = ''
-    let response = await fetch('http://localhost:8888' + '/.netlify/functions/getUsers')
+    let response = await fetch(url + '/.netlify/functions/getUsers')
     let data = await response.json()
     let users = data.resposta
 
