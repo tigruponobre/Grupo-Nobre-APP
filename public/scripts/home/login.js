@@ -13,6 +13,9 @@ inputPass.addEventListener('keypress', e => {
 
 //Function to login in
 async function getLogged(){
+    //Changing button text to make user await
+    loginButton.textContent = 'Aguarde...'
+
     //Restart border-color
     if(inputLogin.classList.contains('error')){
         inputLogin.classList.remove('error')
@@ -35,6 +38,9 @@ async function getLogged(){
     })
 
     let data = await response.json()
+
+    //Bringing back button text
+    loginButton.textContent = 'Login'
 
     //Check response
     if(response.status != 200){
