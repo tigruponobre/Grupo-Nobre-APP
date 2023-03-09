@@ -24,7 +24,6 @@ for (let index in menuItems){
             documentations.style.display = 'block'
         }
         else if(event.target.textContent == 'USUÁRIOS'){
-            getUsers()
             circles[1].classList.add('active')
             documentations.style.display = 'none'
             register.style.display = 'none'

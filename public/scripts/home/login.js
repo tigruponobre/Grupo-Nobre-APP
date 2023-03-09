@@ -38,7 +38,7 @@ async function getLogged(){
 
     //Check response
     if(response.status != 200){
-        if(data.resposta == 'User not found.'){
+        if(data.resposta == 'Admin not found.'){
             if(notification.innerText){
                 notification.classList.add('bounce')
                 notification.classList.remove('notifyAnimation')

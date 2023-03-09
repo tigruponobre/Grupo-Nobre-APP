@@ -52,3 +52,5 @@ async function getUsers(){
         })
     })
 }
+
+getUsers()
