@@ -26,16 +26,18 @@ exports.handler = async function (event, context){
         }
     }
 
-    //Get login, password and secretKey
+    // Get login, password and secretKey
     const eventBody = JSON.parse(event.body)
-    const {login, password, secretKey}  = eventBody
+    const {login, password}  = eventBody
 
-    //Verify secretKey
-    if(await bcrypt.compare(secretKey, masterKey)){
+    //Check if admin exists
+    const adminExists = await Admin.findOne({login: login})
+
+    if(adminExists){
         return {
-            statusCode: 401,
+            statusCode: 302,
             body: JSON.stringify({
-                resposta: "Secret key doesn't match."
+                resposta: "Admin already exists."
             })
         }
     }
@@ -43,39 +45,27 @@ exports.handler = async function (event, context){
     //Encrypt password
     const salt = await bcrypt.genSalt(12)
     const passwordHash = await bcrypt.hash(password, salt)
-
-
-    //Build user
+    
+    //Model
     const user = {
         login,
         password: passwordHash
     }
 
-    const userExists = await Admin.findOne({login: login})
-
-    if(userExists){
-        return {
-            statusCode: 400,
-            body: JSON.stringify({
-                resposta: "User already exists."
-            })
-        }
-    }
-    //Create user in DB
+    //Register admin
     try {
-        //Create
         await Admin.create(user)
-        return {
+        return{
             statusCode: 201,
             body: JSON.stringify({
-                resposta: "User created successfully"
+                resposta: "Admin created successfully"
             })
         }
     } catch (error) {
-        return {
+        return{
             statusCode: 500,
             body: JSON.stringify({
-                resposta: "It was not possible to create user."
+            resposta: "It was not possible to create user."
             })
         }
     }

@@ -54,9 +54,7 @@ async function searchInfo(){
         })
     })
     const data = await response.json()
-    setTimeout(() => {
-        consultButton.textContent = 'Consultar'
-    }, 1000);
+    consultButton.textContent = 'Consultar'
     
     if(response.status == 200){
         document.getElementById('notification').style.display = 'none'
@@ -67,8 +65,6 @@ async function searchInfo(){
         nome.innerHTML = `<img class="idIcon" src="../img/icons/rosto.png" alt="rosto" width="60px"/>${data.resposta.nome}`
         registro.innerHTML = `<img class="idIcon" src="../img/icons/cracha.png" alt="cracha" width="60px"/>${data.resposta.ra}`
     }else{
-        setTimeout(() => {
-            document.getElementById('notification').style.display = 'block'
-        }, 1000);
+        document.getElementById('notification').style.display = 'block'
     }
 }
