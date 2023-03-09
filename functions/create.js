@@ -8,7 +8,7 @@ const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
 const adm_collection = process.env.ADMCOLLECTION
-const masterKey = process.env.MASTERKEY
+const token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -28,7 +28,19 @@ exports.handler = async function (event, context){
 
     // Get login, password and secretKey
     const eventBody = JSON.parse(event.body)
-    const {login, password}  = eventBody
+    const {login, password, secretKey}  = eventBody
+
+    //Check token
+    const authorization = await bcrypt.compare(token, secretKey)
+    if(!authorization){
+        console.log(authorization)
+        return {
+            statusCode: 401,
+            body: JSON.stringify({
+                resposta: "User not allowed"
+            })
+        }
+    }
 
     //Check if admin exists
     const adminExists = await Admin.findOne({login: login})

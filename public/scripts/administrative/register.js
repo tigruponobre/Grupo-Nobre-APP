@@ -30,7 +30,7 @@ async function createUser(){
             })
         })
         let data = await response.json()
-        if (data.resposta == 'User created successfully'){
+        if (data.resposta == 'Admin created successfully'){
             notification.style.color = 'rgb(44, 117, 44)'
             notification.innerHTML = `Usuário "${login}" criado com sucesso!`
             document.getElementById('firstName').value = ''
