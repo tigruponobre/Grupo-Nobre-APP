@@ -1,6 +1,4 @@
-if(!url){
-    let url = document.URL.split('/').splice('0',3).join('/')
-}
+let url = document.URL.split('/').splice('0',3).join('/')
 
 //Dots and bars on inputs
 const inputCPF = document.getElementById('cpf')
@@ -48,7 +46,7 @@ async function searchInfo(){
     const consultButton = document.getElementById('consult')
     consultButton.textContent = 'Aguarde...'
     let reqCPF = inputCPF.value.replace('.','').replace('.','').replace('-','')
-    const response = await fetch(`${url}.netlify/functions/searchstudent`, {
+    const response = await fetch(`${url}/.netlify/functions/searchstudent`, {
         method: 'post',
         body: JSON.stringify({
             cpf: reqCPF,
