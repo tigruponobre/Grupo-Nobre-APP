@@ -1,0 +1,25 @@
+#selecting{
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+select{
+    padding: .8% 10%;
+    background-color: #fff;
+    border: 1px solid #ee9745;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+select:hover{
+    outline: none;
+}
+
+select option{
+    cursor: pointer;
+}

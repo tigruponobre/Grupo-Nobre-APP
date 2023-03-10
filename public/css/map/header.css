@@ -1,0 +1,40 @@
+header{
+    display: flex;
+    min-height: 17em;
+    flex-direction: column;
+}
+
+#headerBackground{
+    position: absolute;
+    width: 100%;
+    height: 16em;
+    background-color: #ffffff;
+    opacity: .8;
+    z-index: -1;
+}
+
+#top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 5% 0 5%;
+}
+
+#contact{
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    background-color: #ee9745;
+    padding-inline: 2%;
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+#contact:hover{
+    background-color: #d17f31;
+}
+
+h1{
+    text-align: center;
+    padding-top: 1%;
+}

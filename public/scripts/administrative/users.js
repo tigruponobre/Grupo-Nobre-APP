@@ -43,8 +43,8 @@ async function getUsers(){
                     })
                 })
                 if(response.status == 200){
-                    window.alert('Usuário deletado com sucesso!')
                     getUsers()
+                    window.alert('Usuário deletado com sucesso!')
                 }else{
                     window.alert('Erro ao deletar usuário, contate o desenvolvedor.')
                 }
