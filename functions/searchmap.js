@@ -1,5 +1,6 @@
 //Imports
 const mongoose = require('mongoose')
+const Map = require('../models/Map')
 
 //Enviroment Variables
 const db_user = process.env.DB_USER
@@ -23,10 +24,18 @@ exports.handler = async function(event, context){
         }
     }
 
-    return{
+    const eventBody = await JSON.parse(event.body)
+    const { curso, turno, dia } = eventBody
+
+    let table = await Map.findOne({CURSO: curso})
+
+    information = table[turno][dia]
+
+    return {
         statusCode: 200,
         body: JSON.stringify({
-            resposta: "Connection successful."
+            information
         })
     }
+
 }
