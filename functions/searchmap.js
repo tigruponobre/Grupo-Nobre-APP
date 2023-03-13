@@ -26,16 +26,25 @@ exports.handler = async function(event, context){
 
     const eventBody = await JSON.parse(event.body)
     const { curso, turno, dia } = eventBody
-
-    let table = await Map.findOne({CURSO: curso})
-
-    information = table[turno][dia]
-
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            information
-        })
+   
+    try {
+        let table = await Map.findOne({CURSO: curso})
+        let information = table[turno][dia]
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                information
+            })
+        }
+    } catch (error) {
+        return {
+            statusCode: 404,
+            body: JSON.stringify({
+                resposta: 'Not found.'
+            })
+        }
     }
+
+   
 
 }

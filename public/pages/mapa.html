@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/map/header.css">
     <link rel="stylesheet" href="../css/map/selects.css">
     <link rel="stylesheet" href="../css/map/table.css">
+    <script src="../scripts/map/search.js" defer></script>
     <title>Mapa de salas</title>
 </head>
 <body>
@@ -26,43 +27,34 @@
         <div id="selecting">
             <select name="curso" id="curso">
                 <option value="curso">CURSO</option>
-                <option value="curso">CURSO</option>
-                <option value="curso">CURSO</option>
-                <option value="curso">CURSO</option>
+                <option value="DIREITO">DIREITO</option>
+                <option value="FARMÁCIA">FARMÁCIA</option>
+                <option value="BIOMEDICINA">BIOMEDICINA</option>
             </select>
-            <select name="semestre" id="semestre">
-                <option value="semestre">SEMESTRE</option>
+            <select name="turno" id="turno">
+                <option value="turno">TURNO</option>
+                <option value="MATUTINO">MATUTINO</option>
+                <option value="NOTURNO">NOTURNO</option>
+            </select>
+            <select name="dia" id="dia">
+                <option value="dia">DIA DA SEMANA</option>
+                <option value="SEGUNDA-FEIRA">SEGUNDA-FEIRA</option>
             </select>
         </div>
 
     </header>
-    <table>
+    <table id="myTable">
         <tr>
             <th>CURSO</th>
-            <th>SEMESTRE</th>
+            <th>TURNO</th>
+            <th>DIA DA SEMANA</th>
+            <th>TURMA</th>
             <th>DISCIPLINA</th>
             <th>PROFESSOR(A)</th>
-            <th>DIA DA SEMANA</th>
             <th>SALA</th>
             <th>MÓDULO</th>
-        </tr>
-        <tr>
-            <td>DIREITO</td>
-            <td>1°</td>
-            <td>DIREITO PENAL</td>
-            <td>GUSTAVO PASQUA</td>
-            <td>SEGUNDA-FEIRA</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>DIREITO</td>
-            <td>1°</td>
-            <td>DIREITO EMPRESARIAL</td>
-            <td>GUSTAVO PASQUA</td>
-            <td>SEGUNDA-FEIRA</td>
-            <td>1</td>
-            <td>1</td>
+            <th>INÍCIO</th>
+            <th>FIM</th>
         </tr>
     </table>
 </body>
