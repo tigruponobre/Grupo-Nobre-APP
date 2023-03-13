@@ -28,7 +28,7 @@ exports.handler = async function (event, context){
 
     // Get login, password and secretKey
     const eventBody = JSON.parse(event.body)
-    const {login, password, secretKey}  = eventBody
+    const {login, password, permissions, creator, currentDate, secretKey}  = eventBody
 
     //Check token
     const authorization = await bcrypt.compare(token, secretKey)
@@ -61,7 +61,10 @@ exports.handler = async function (event, context){
     //Model
     const user = {
         login,
-        password: passwordHash
+        password: passwordHash,
+        permissions,
+        criador: creator,
+        data_de_criacao: currentDate
     }
 
     //Register admin

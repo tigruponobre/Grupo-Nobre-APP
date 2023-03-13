@@ -20,7 +20,7 @@ header{
     padding: 2% 5% 0 5%;
 }
 
-#contact{
+#professors{
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -30,11 +30,32 @@ header{
     transition: ease .3s;
 }
 
-#contact:hover{
+#professors:hover{
     background-color: #d17f31;
 }
 
 h1{
     text-align: center;
     padding-top: 1%;
+}
+
+@media (max-width: 680px){
+    header{
+        min-height: 19em;
+    }
+    #headerBackground{
+        min-height: 18em;
+    }
+    #logo{
+        width: 130px;
+    }
+    #professors{
+        font-size: .8em;
+        color: #000;
+        padding-inline: 5%;
+    }
+    h1{
+        font-size: 1.2em;
+        margin-top: 15px;
+    }
 }

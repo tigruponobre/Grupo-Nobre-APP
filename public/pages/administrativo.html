@@ -93,6 +93,17 @@
                     <label for="confirmPassword">Confirmar senha:</label>
                     <input id="confirmPassword" type="password" spellcheck="false" autocomplete="off">
                 </div>
+                <div class="inputDiv">
+                    <label>Permissões:</label>
+                    <div id="checkboxes">
+                        <input type="checkbox" id="superAdmin">
+                        <label for="superAdmin">Super Admin</label>
+                        <input type="checkbox" id="roomMap">
+                        <label for="roomMap">Editor do mapa de salas</label>
+                        <input type="checkbox" id="professor">
+                        <label for="professor">Professor</label>
+                    </div>
+                </div>
                 <div id="registrateButton">
                     <p id="notification"></p>
                     <button id="registrate" onCLick="createUser()">Enviar</button>

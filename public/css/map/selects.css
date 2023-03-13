@@ -26,3 +26,17 @@ select:hover{
 select option{
     cursor: pointer;
 }
+
+@media (max-width: 680px){
+    #selecting{
+        flex-direction: column;
+        align-items: center;
+    }
+    select{
+        width: 90%;
+        max-width: 90%;
+        padding: 3% 0;
+        margin-top: 15px;
+        color: #000;
+    }
+}

@@ -185,6 +185,13 @@ section{
     padding-bottom: 5px;
 }
 
+input[type=checkbox], #checkboxes label{
+    cursor: pointer;
+}
+#checkboxes label{
+    margin-right: 5%;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1140px){
