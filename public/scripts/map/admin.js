@@ -188,16 +188,17 @@ function editRow(event){
 
 async function submitEdit(){
     //Get values
-    let updatingCurso = document.getElementById('editCurso').value
-    let updatingTurno = document.getElementById('editTurno').value
-    let updatingDia = document.getElementById('editDia').value
-    let updatingTurma = document.getElementById('editTurma').value
-    let updatingDisciplina = document.getElementById('editDisciplina').value
-    let updatingProfessor = document.getElementById('editProfessor').value
+    // let updatingCurso = document.getElementById('editCurso').value
+    // let updatingTurno = document.getElementById('editTurno').value
+    // let updatingDia = document.getElementById('editDia').value
+    // let updatingTurma = document.getElementById('editTurma').value
+    // let updatingDisciplina = document.getElementById('editDisciplina').value
+    let updatingProfessor = document.getElementById('editProfessor').value.toUpperCase()
     let updatingSala = document.getElementById('editSala').value
     let updatingModulo = document.getElementById('editModulo').value
     let updatingInicio = document.getElementById('editInicio').value
     let updatingFim = document.getElementById('editFim').value
+    let token = await sessionStorage.getItem('token')
 
     //Destructurin beforeUpdate
     let { beforeCurso, beforeTurno, beforeDia, beforeTurma } = beforeUpdate
@@ -208,11 +209,26 @@ async function submitEdit(){
             curso: beforeCurso,
             turno: beforeTurno,
             dia: beforeDia,
-            turma: beforeTurma
+            turma: beforeTurma,
+            professor: updatingProfessor,
+            sala: updatingSala,
+            modulo: updatingModulo,
+            inicio: updatingInicio,
+            fim: updatingFim,
+            token
         })
     })
 
     let data = await response.json()
 
-    console.log(data)
+    if (data.resposta == "Update successful."){
+        window.alert('Disciplina atualizada com sucesso!')
+        document.getElementById('darkFade').style.display = 'none'
+        document.getElementById('editRow').style.display = 'none'
+        if(window.innerWidth > 680){
+            searchMapDesktop(beforeCurso, beforeTurno, beforeDia)
+        }else{
+            searchMapMobile(beforeCurso, beforeTurno, beforeDia)
+        }
+    }
 }
