@@ -27,6 +27,7 @@ async function searchMapDesktop(curso, turno, dia){
     <th>MÓDULO</th>
     <th>INÍCIO</th>
     <th>FIM</th>
+    <th>EDITAR</th>
     </tr>`
 
     //Declearing information variable
@@ -85,6 +86,11 @@ async function searchMapDesktop(curso, turno, dia){
             newRow.appendChild(newData)
         }
 
+        //Edit button
+        let editButton = document.createElement('td')
+        editButton.innerHTML = '<button class="editButton" onClick="editRow(event)">EDITAR</button>'
+        newRow.appendChild(editButton)
+
         //Adding on the table
         document.getElementById('myTable').appendChild(newRow)
     }
@@ -142,8 +148,71 @@ async function searchMapMobile(curso, turno, dia){
         <th>MÓDULO: ${newModulo}</th>
         <th>INÍCIO: ${newInicio}</th>
         <th>FIM: ${newFim}</th>
+        <th>EDITAR: <button class="editButton">EDITAR</button></th>
         </tr>`
 
         document.getElementById('tables').appendChild(newTable)
     }
+}
+
+let beforeUpdate = ''
+
+function editRow(event){
+    let thisRowData = Array.from(event.target.parentElement.parentElement.children)
+    for(let i = 0; i < thisRowData.length - 1; i++){
+        console.log(thisRowData[i])
+    }
+
+    [document.getElementById('darkFade'), document.getElementById('editRow')].forEach(element =>{
+        element.style.display = 'flex'
+    })
+
+    editCurso.value = thisRowData[0].textContent
+    editTurno.value = thisRowData[1].textContent
+    editDia.value = thisRowData[2].textContent
+    editTurma.value = thisRowData[3].textContent
+    editDisciplina.value = thisRowData[4].textContent
+    editProfessor.value = thisRowData[5].textContent
+    editSala.value = thisRowData[6].textContent
+    editModulo.value = thisRowData[7].textContent
+    editInicio.value = thisRowData[8].textContent
+    editFim.value = thisRowData[9].textContent
+
+    beforeUpdate = {
+        beforeCurso: thisRowData[0].textContent,
+        beforeTurno: thisRowData[1].textContent,
+        beforeDia: thisRowData[2].textContent,
+        beforeTurma: thisRowData[3].textContent
+    }    
+}
+
+async function submitEdit(){
+    //Get values
+    let updatingCurso = document.getElementById('editCurso').value
+    let updatingTurno = document.getElementById('editTurno').value
+    let updatingDia = document.getElementById('editDia').value
+    let updatingTurma = document.getElementById('editTurma').value
+    let updatingDisciplina = document.getElementById('editDisciplina').value
+    let updatingProfessor = document.getElementById('editProfessor').value
+    let updatingSala = document.getElementById('editSala').value
+    let updatingModulo = document.getElementById('editModulo').value
+    let updatingInicio = document.getElementById('editInicio').value
+    let updatingFim = document.getElementById('editFim').value
+
+    //Destructurin beforeUpdate
+    let { beforeCurso, beforeTurno, beforeDia, beforeTurma } = beforeUpdate
+    //Fetch
+    let response = await fetch(url + '/.netlify/functions/updatemap', {
+        method: 'put',
+        body: JSON.stringify({
+            curso: beforeCurso,
+            turno: beforeTurno,
+            dia: beforeDia,
+            turma: beforeTurma
+        })
+    })
+
+    let data = await response.json()
+
+    console.log(data)
 }

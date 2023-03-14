@@ -11,10 +11,10 @@ const adm_collection = process.env.ADMCOLLECTION
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let conection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${adm_collection}?retryWrites=true&w=majority`)
+    let connection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${adm_collection}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
-    if(conection){
+    if(connection){
         console.log('Connection successful!')
     }else{
         return{

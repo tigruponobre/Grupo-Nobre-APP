@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../css/map/header.css">
     <link rel="stylesheet" href="../css/map/selects.css">
     <link rel="stylesheet" href="../css/map/table.css">
-    <script src="../scripts/map/search.js" defer></script>
+    <link rel="stylesheet" href="../css/map/editRow.css">
+    <script src="../scripts/map/admin.js" defer></script>
     <link rel="shortcut icon" href="../img/logos/favicon-unef.ico" type="image/x-icon">
     <title>Mapa de salas</title>
 </head>
@@ -60,8 +61,62 @@
                 <th>MÓDULO</th>
                 <th>INÍCIO</th>
                 <th>FIM</th>
+                <th>EDITAR</th>      
             </tr>
         </table>
+    </div>
+
+
+    <div id="darkFade" style="display: none;"></div>
+    <div id="editRow" style="display: none;">
+        <h2>Editar linha:</h2>
+        <div id="sides">
+            <div id="leftSide">
+                <div class="edit">
+                    <label>CURSO:</label>
+                    <input type="text" name="editCurso" id="editCurso">
+                </div>
+                <div class="edit">
+                    <label>TURNO:</label>
+                    <input type="text" name="editTurno" id="editTurno">
+                </div>
+                <div class="edit">
+                    <label>DIA DA SEMANA:</label>
+                    <input type="text" name="editDia" id="editDia">
+                </div>
+                <div class="edit">
+                    <label>TURMA:</label>
+                    <input type="text" name="editTurma" id="editTurma">
+                </div>
+                <div class="edit">
+                    <label>DISCIPLINA:</label>
+                    <input type="text" name="editDisciplina" id="editDisciplina">
+                </div>
+            </div>
+            <div id="rightSide">
+                <div class="edit">
+                    <label>PROFESSOR(A):</label>
+                    <input type="text" name="editProfessor" id="editProfessor">
+                </div>
+                <div class="edit">
+                    <label>SALA:</label>
+                    <input type="text" name="editSala" id="editSala">
+                </div>
+                <div class="edit">
+                    <label>MÓDULO:</label>
+                    <input type="text" name="editModulo" id="editModulo">
+                </div>
+                <div class="edit">
+                    <label>INÍCIO:</label>
+                    <input type="text" name="editInicio" id="editInicio">
+                </div>
+                <div class="edit">
+                    <label>FIM:</label>
+                    <input type="text" name="editFim" id="editFim">
+            </div>
+        </div>
+        </div>
+        <div id="submit"><button id="aplicar" onclick="submitEdit()">Aplicar</button></div>
     </div>
 </body>
 </html>

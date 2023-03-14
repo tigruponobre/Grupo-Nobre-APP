@@ -95,7 +95,9 @@ async function getLogged(){
             if(sessionStorage.unauthorized == 'true'){
                 document.querySelector('.authentication').remove()
             }
-            window.location.href = url + '/pages/administrativo'
+            if(data.permission == 'superAdmin') window.location.href = url + '/pages/administrativo'
+            else window.location.href = url + '/pages/mapa-admin'
+            
         },1500)
     }
 }
