@@ -38,9 +38,9 @@ exports.handler = async function(event, context){
         // updatingFim } = eventBody
         
         let table = await Map.findOne({CURSO: curso})
-        table[turno][dia][turma]["SALA"] = "SALVE"
+        table[turno][dia][turma]["SALA"] = "17"
 
-        let confirmUpdate = await Map.save()
+        let confirmUpdate = await table.save()
     return{
         statusCode: 200,
         body: JSON.stringify({
