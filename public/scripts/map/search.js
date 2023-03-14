@@ -108,10 +108,12 @@ async function searchMapMobile(curso, turno, dia){
         information = await data.information
         document.getElementById('tables').innerHTML = ''
     }else{
-        document.getElementById('myTable').innerHTML =
-        `<tr>
+        document.getElementById('tables').innerHTML =
+        `<table>
+        <tr>
         <th>NÃO ENCONTRADO</th>
-        </tr>`
+        </tr>
+        </table>`
         return
     }
 
