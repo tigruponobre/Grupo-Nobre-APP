@@ -45,6 +45,13 @@ async function searchMapDesktop(curso, turno, dia){
     const data = await response.json()
     if (response.status == 200){
         information = await data.information
+        if(!information){
+            document.getElementById('myTable').innerHTML =
+            `<tr>
+            <th>NÃO ENCONTRADO</th>
+            </tr>`
+            return
+        }
     }else{
         document.getElementById('myTable').innerHTML =
         `<tr>
@@ -161,9 +168,6 @@ let beforeUpdate = ''
 
 function editRow(event){
     let thisRowData = Array.from(event.target.parentElement.parentElement.children)
-    for(let i = 0; i < thisRowData.length - 1; i++){
-        console.log(thisRowData[i])
-    }
 
     [document.getElementById('darkFade'), document.getElementById('editRow')].forEach(element =>{
         element.style.display = 'flex'
@@ -234,3 +238,10 @@ async function submitEdit(){
         }
     }
 }
+
+window.addEventListener('keydown', event =>{
+    if(event.keyCode == 27){
+        document.getElementById('darkFade').style.display = 'none'
+        document.getElementById('editRow').style.display = 'none'
+    }
+})

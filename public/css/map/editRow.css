@@ -7,6 +7,15 @@
     z-index: 9;
 }
 
+#closeEdit{
+    position: absolute;
+    top: 6.5%;
+    right: 5%;
+    font-size: 3em;
+    color: #dd4646;
+    cursor: pointer;
+}
+
 #editRow{
     background-color: #fff;
     position: absolute;
@@ -26,6 +35,7 @@
     width: 100%;
     text-align: center;
     margin: 1em 0;
+    margin-bottom: 2em;
 }
 
 #sides{
