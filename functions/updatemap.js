@@ -39,8 +39,11 @@ exports.handler = async function(event, context){
         
         let table = await Map.findOne({CURSO: curso})
         table[turno][dia][turma]["SALA"] = "17"
-
-        let confirmUpdate = await table.save()
+        //console.log(table[turno][dia][turma])
+        //let confirmUpdate = await table.save()
+        let confirmUpdate = await Map.updateOne({CURSO: "FARMÁCIA"}, table)
+        console.log(confirmUpdate.matchedCount)
+        console.log(confirmUpdate.modifiedCount)
     return{
         statusCode: 200,
         body: JSON.stringify({
