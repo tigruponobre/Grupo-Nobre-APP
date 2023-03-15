@@ -147,17 +147,17 @@ async function searchMapMobile(curso, turno, dia){
         newTable.setAttribute('class', 'newTable')
         newTable.innerHTML = 
         `<tr>
-        <th>CURSO: ${newCurso}</th>
-        <th>TURNO: ${newTurno}</th>
-        <th>DIA DA SEMANA: ${newDia}</th>
-        <th>TURMA: ${newTurma}</th>
-        <th>DISCIPLINA: ${newDisciplina}</th>
-        <th>PROFESSOR(A): ${newProfessor}</th>
-        <th>SALA: ${newSala}</th>
-        <th>MÓDULO: ${newModulo}</th>
-        <th>INÍCIO: ${newInicio}</th>
-        <th>FIM: ${newFim}</th>
-        <th>EDITAR: <button class="editButton">EDITAR</button></th>
+        <th>CURSO:<td class="tableData">${newCurso}</td></th>
+        <th>TURNO: <td class="tableData">${newTurno}</td></th>
+        <th>DIA DA SEMANA: <td class="tableData">${newDia}</td></th>
+        <th>TURMA: <td class="tableData">${newTurma}</td></th>
+        <th>DISCIPLINA: <td class="tableData">${newDisciplina}</td></th>
+        <th>PROFESSOR(A): <td class="tableData">${newProfessor}</td></th>
+        <th>SALA: <td class="tableData">${newSala}</td></th>
+        <th>MÓDULO: <td class="tableData">${newModulo}</td></th>
+        <th>INÍCIO: <td class="tableData">${newInicio}</td></th>
+        <th>FIM: <td class="tableData">${newFim}</td></th>
+        <th>EDITAR: <button class="editButton" onClick="editRowMobile(event)">EDITAR</button></th>
         </tr>`
 
         document.getElementById('tables').appendChild(newTable)
@@ -171,7 +171,7 @@ function editRow(event){
 
     document.getElementById('darkFade').style.display = 'flex'
     document.getElementById('editRow').style.display = 'flex'
-    
+
     editCurso.value = thisRowData[0].textContent
     editTurno.value = thisRowData[1].textContent
     editDia.value = thisRowData[2].textContent
@@ -188,6 +188,44 @@ function editRow(event){
         beforeTurno: thisRowData[1].textContent,
         beforeDia: thisRowData[2].textContent,
         beforeTurma: thisRowData[3].textContent
+    }    
+}
+
+function editRowMobile(event){
+    //Remove tables from screen
+    document.getElementById('tables').style.display = 'none'
+
+    //Get necessary data to update
+    let thisRowData = Array.from(event.target.parentElement.parentElement.children)
+    thisRowNecessaryData = []
+    for(let elem of Array.from(thisRowData)){
+        if(elem.classList.contains('tableData')){
+            thisRowNecessaryData.push(elem)
+        }
+    }
+
+    //Show edit row box
+    document.getElementById('darkFade').style.display = 'flex'
+    document.getElementById('editRow').style.display = 'flex'
+
+    //Setting necessary data to variables
+    editCurso.value = thisRowNecessaryData[0].textContent
+    editTurno.value = thisRowNecessaryData[1].textContent
+    editDia.value = thisRowNecessaryData[2].textContent
+    editTurma.value = thisRowNecessaryData[3].textContent
+    editDisciplina.value = thisRowNecessaryData[4].textContent
+    editProfessor.value = thisRowNecessaryData[5].textContent
+    editSala.value = thisRowNecessaryData[6].textContent
+    editModulo.value = thisRowNecessaryData[7].textContent
+    editInicio.value = thisRowNecessaryData[8].textContent
+    editFim.value = thisRowNecessaryData[9].textContent
+
+    //Saving necessary data before the update to search on DB
+    beforeUpdate = {
+        beforeCurso: thisRowNecessaryData[0].textContent,
+        beforeTurno: thisRowNecessaryData[1].textContent,
+        beforeDia: thisRowNecessaryData[2].textContent,
+        beforeTurma: thisRowNecessaryData[3].textContent
     }    
 }
 
@@ -225,6 +263,9 @@ async function submitEdit(){
         window.alert('Disciplina atualizada com sucesso!')
         document.getElementById('darkFade').style.display = 'none'
         document.getElementById('editRow').style.display = 'none'
+        //Bring back tables div that was removed if using phone screen
+        document.getElementById('tables').style.display = 'flex'
+        
         if(window.innerWidth > 680){
             searchMapDesktop(beforeCurso, beforeTurno, beforeDia)
         }else{
@@ -235,7 +276,18 @@ async function submitEdit(){
 
 window.addEventListener('keydown', event =>{
     if(event.keyCode == 27){
+        //Bring back tables div that was removed if using phone screen
+        document.getElementById('tables').style.display = 'flex'
+
         document.getElementById('darkFade').style.display = 'none'
         document.getElementById('editRow').style.display = 'none'
     }
+})
+
+document.getElementById('closeEdit').addEventListener('click', ()=>{
+    //Bring back tables div that was removed if using phone screen
+    document.getElementById('tables').style.display = 'flex'
+
+    document.getElementById('darkFade').style.display = 'none'
+    document.getElementById('editRow').style.display = 'none'
 })
