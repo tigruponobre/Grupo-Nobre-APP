@@ -77,6 +77,7 @@ async function getLogged(){
         await sessionStorage.setItem('token', data.token)
         await sessionStorage.setItem('unauthorized', false)
         await sessionStorage.setItem('userName', login)
+        await sessionStorage.setItem('permissions', data.permissions)
         checkLogin()
         notification.innerText = 'Login efetuado com sucesso!'
         notification.style.color = '#32be56'

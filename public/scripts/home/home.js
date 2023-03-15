@@ -1,28 +1,20 @@
-//Show documentations
-let consultaDocs = document.querySelector('#queryDocs')
-let docs = document.querySelectorAll('.doc')
-docs = Array.from(docs)
-
 //Login/Logout
 let login_logout = document.querySelector('.login_logout')
-async function checkLogin(){
-    let token = sessionStorage.getItem('token')
-    let response = await fetch(url + '/.netlify/functions/validation',{
-        method: 'post',
-        body: JSON.stringify({
-            validationToken: token
-        })
-    })
-    if(response.status != 200){
-        login_logout.textContent = 'Administrativo'
-        document.getElementById('greeting').textContent = 'Bem-vindo ao'
-    }else{
-        let user = sessionStorage.userName
+function checkLogin(){
+    const user = sessionStorage.getItem('userName')
+    if(user){
         document.getElementById('greeting').textContent = `OLÁ ${user.split('.')[0].toUpperCase()}, VOCÊ ESTÁ NO`
         login_logout.textContent = 'Logout'
+    }else{
+        document.getElementById('greeting').textContent = 'Bem-vindo ao'
+        login_logout.textContent = 'Login'
     }
 }
 checkLogin()
+
+//Admin Panel
+const adminButton = document.getElementById('admin')
+adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
 
 let loginDiv = document.querySelector('.loginDiv')
 let fade = document.querySelector('.fade')
@@ -31,7 +23,7 @@ let inputs = Array.from(document.querySelectorAll('.inputs input'))
 let loginButtonHome = document.querySelector('#loginButton')
 let register = document.querySelector('#registerMessage a')
 login_logout.addEventListener('click', ()=>{
-    if(login_logout.textContent == 'Administrativo'){
+    if(login_logout.textContent == 'Login'){
         for(let i in inputs){
             inputs[i].removeAttribute('disabled')
         }
@@ -48,6 +40,7 @@ login_logout.addEventListener('click', ()=>{
         sessionStorage.removeItem('unauthorized')
         sessionStorage.removeItem('userName')
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('permissions')
         checkLogin()
     }
 })

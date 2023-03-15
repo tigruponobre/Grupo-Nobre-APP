@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="../css/administrative/circles.css">
     <link rel="stylesheet" href="../css/administrative/main.css">
     <link rel="stylesheet" href="../css/administrative/content.css">
+    <link rel="stylesheet" href="../css/administrative/backButton.css">
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
-    <!-- <script src="../scripts/authentication.js"></script> -->
     <script src="../scripts/administrative/menu.js" defer></script>
     <script src="../scripts/administrative/register.js" defer></script>
     <script src="../scripts/administrative/users.js" defer></script>
-
+    <script src="../scripts/administrative/backButton.js" defer></script>
+    
     <script>
         //Set url in sessionStorage to use on fetch's
         sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
         const url = sessionStorage.url
     </script>
-
     
+    <script src="../scripts/authentication.js"></script>
+
     <title>Painel Administrativo</title>
 </head>
 <body>
@@ -118,6 +120,11 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <div class="back">
+        <label class="backLabel" for="backButton">Voltar</label>
+        <button class="backButton"><img src="../img/icons/home-icon.png"></button>
     </div>
 </body>
 </html>

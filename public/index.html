@@ -19,6 +19,7 @@
         //Set url in sessionStorage to use on fetch's
         sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
         const url = sessionStorage.url
+        
     </script>
 
     <title>Home</title>
@@ -30,10 +31,9 @@
     </search>
     <main>
         <nav id="right-side">
-            <img id="topLogo" src="./img/logos/GRUPO NOBRE.png" alt="logo_azul" width="150px">
             <ul id="menu">
                 <li class="login_logout"></li>
-                <li class="home">Home</li>
+                <li id="admin">Painel Administrativo</li>
             </ul>
         </nav>
     

@@ -1,20 +1,18 @@
-let getToken = sessionStorage.getItem('token')
-const url = sessionStorage.url
 
-if(!getToken){
-    sessionStorage.setItem('unauthorized', true)
-    window.location = url
-}else{
-    async function validation(){
-        let response = await fetch(url + '/.netlify/functions/validation',{
-            method: 'post',
-            body: JSON.stringify({
-                tokenValidation: getToken
-            })
+async function validation() {
+    const getToken = await sessionStorage.getItem('token')
+    const permissions = await sessionStorage.getItem('permissions')
+    const response = await fetch(url + '/.netlify/functions/validation', {
+        method: 'post',
+        body: JSON.stringify({
+            validationToken: getToken,
+            permissions
         })
-        if(response.status != 200){
-            sessionStorage.setItem('unauthorized', true)
-            window.location = url
-        }
+    })
+    if (response.status != 200) {
+        sessionStorage.setItem('unauthorized', true)
+        window.location = url
     }
 }
+
+validation()
