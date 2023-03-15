@@ -3,7 +3,6 @@ let passwordInput = document.getElementById('password')
 let confirmPasswordInput = document.getElementById('confirmPassword')
 let notification = document.getElementById('notification')
 let registrateButton = document.getElementById('registrate')
-let url = document.URL.split('/').splice('0',3).join('/')
 
 //Checkboxes
 let superAdmin = document.getElementById('superAdmin')

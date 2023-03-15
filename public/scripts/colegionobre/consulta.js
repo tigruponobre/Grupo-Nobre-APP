@@ -1,5 +1,3 @@
-let url = document.URL.split('/').splice('0',3).join('/')
-
 //Dots and bars on inputs
 const inputCPF = document.getElementById('cpf')
 

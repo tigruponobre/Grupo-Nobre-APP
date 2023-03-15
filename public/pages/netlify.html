@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="../css/netlify/backButton.css">
     <script src="../scripts/authentication.js"></script>
     <script src="../scripts/netlify/netlify.js" defer></script>
+
+    <script>
+        //Set url in sessionStorage to use on fetch's
+        sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
+        const url = sessionStorage.url
+    </script>
+    
     <title>Netlify</title>
 </head>
 <body>

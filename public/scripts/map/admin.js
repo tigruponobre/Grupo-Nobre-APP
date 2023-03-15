@@ -10,9 +10,6 @@
     })
 });
 
-//url
-const url = document.URL.split('/').splice('0',3).join('/')
-
 async function searchMapDesktop(curso, turno, dia){
     //Reset table
     document.getElementById('myTable').innerHTML = 
@@ -34,7 +31,7 @@ async function searchMapDesktop(curso, turno, dia){
     let information = ''
 
     //Fetch
-    const response = await fetch(url + '/.netlify/functions/searchmap', {
+    const response = await fetch(url + '/.netlify/functions/search_map', {
         method: 'post',
         body: JSON.stringify({
             curso: curso,
@@ -108,7 +105,7 @@ async function searchMapMobile(curso, turno, dia){
     let information = ''
 
     //Fetch
-    const response = await fetch(url + '/.netlify/functions/searchmap', {
+    const response = await fetch(url + '/.netlify/functions/search_map', {
         method: 'post',
         body: JSON.stringify({
             curso: curso,
@@ -241,7 +238,7 @@ async function submitEdit(){
     //Destructurin beforeUpdate
     let { beforeCurso, beforeTurno, beforeDia, beforeDisciplina } = beforeUpdate
     //Fetch
-    let response = await fetch(url + '/.netlify/functions/updatemap', {
+    let response = await fetch(url + '/.netlify/functions/update_map', {
         method: 'put',
         body: JSON.stringify({
             curso: beforeCurso,

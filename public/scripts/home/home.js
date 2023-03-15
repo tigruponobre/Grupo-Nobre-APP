@@ -3,10 +3,6 @@ let consultaDocs = document.querySelector('#queryDocs')
 let docs = document.querySelectorAll('.doc')
 docs = Array.from(docs)
 
-//Set url in sessionStorage
-sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
-const url = sessionStorage.url
-
 //Login/Logout
 let login_logout = document.querySelector('.login_logout')
 async function checkLogin(){

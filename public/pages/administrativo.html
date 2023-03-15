@@ -15,6 +15,14 @@
     <script src="../scripts/administrative/menu.js" defer></script>
     <script src="../scripts/administrative/register.js" defer></script>
     <script src="../scripts/administrative/users.js" defer></script>
+
+    <script>
+        //Set url in sessionStorage to use on fetch's
+        sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
+        const url = sessionStorage.url
+    </script>
+
+    
     <title>Painel Administrativo</title>
 </head>
 <body>
