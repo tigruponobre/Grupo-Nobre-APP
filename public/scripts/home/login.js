@@ -96,8 +96,7 @@ async function getLogged(){
                 document.querySelector('.authentication').remove()
             }
             if(data.permission == 'superAdmin') window.location.href = url + '/pages/administrativo'
-            else window.location.href = url + '/pages/mapa-admin'
-            
+            else window.location.href = 'https://mapa.unef.edu.br/pages/mapa-admin.html' 
         },1500)
     }
 }

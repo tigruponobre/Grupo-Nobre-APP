@@ -20,6 +20,9 @@ exports.handler = async function(event, context){
     }else{
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Connection failed."
             })
@@ -55,6 +58,9 @@ exports.handler = async function(event, context){
     if(confirmUpdate.matchedCount != 0 && confirmUpdate.updateOne != 0){
         return{
             statusCode: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Update successful."
             })
@@ -62,6 +68,9 @@ exports.handler = async function(event, context){
     }else{
         return{
             statusCode: 412,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Update failed."
             })

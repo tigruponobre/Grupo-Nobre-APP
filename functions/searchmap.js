@@ -18,6 +18,9 @@ exports.handler = async function(event, context){
     }else{
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Connection failed."
             })
@@ -32,6 +35,9 @@ exports.handler = async function(event, context){
         let information = table[turno][dia]
         return {
             statusCode: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 information
             })
@@ -39,6 +45,9 @@ exports.handler = async function(event, context){
     } catch (error) {
         return {
             statusCode: 404,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: 'Not found.'
             })

@@ -20,6 +20,9 @@ exports.handler = async function (event, context){
     }else{
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Connection failed."
             })
@@ -48,6 +51,9 @@ exports.handler = async function (event, context){
             if(checkPassword){
                 return{
                     statusCode: 200,
+                    headers: {
+                        "Access-Control-Allow-Origin": "*"
+                    },
                     body: JSON.stringify({
                         resposta: 'Login successful!',
                         permissions: infoAdmin.permissions,
@@ -57,6 +63,9 @@ exports.handler = async function (event, context){
             }else{
                 return{
                     statusCode: 400,
+                    headers: {
+                        "Access-Control-Allow-Origin": "*"
+                    },
                     body: JSON.stringify({
                         resposta: 'Incorrect password.',
                     })
@@ -66,6 +75,9 @@ exports.handler = async function (event, context){
         else{
             return{
                 statusCode: 404,
+                headers: {
+                    "Access-Control-Allow-Origin": "*"
+                },
                 body: JSON.stringify({
                     resposta: 'Admin not found.'
                 })
@@ -74,6 +86,9 @@ exports.handler = async function (event, context){
     } catch (error) {
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Server error."
             })
