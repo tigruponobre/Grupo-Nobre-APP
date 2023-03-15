@@ -169,10 +169,9 @@ let beforeUpdate = ''
 function editRow(event){
     let thisRowData = Array.from(event.target.parentElement.parentElement.children)
 
-    [document.getElementById('darkFade'), document.getElementById('editRow')].forEach(element =>{
-        element.style.display = 'flex'
-    })
-
+    document.getElementById('darkFade').style.display = 'flex'
+    document.getElementById('editRow').style.display = 'flex'
+    
     editCurso.value = thisRowData[0].textContent
     editTurno.value = thisRowData[1].textContent
     editDia.value = thisRowData[2].textContent
@@ -194,11 +193,6 @@ function editRow(event){
 
 async function submitEdit(){
     //Get values
-    // let updatingCurso = document.getElementById('editCurso').value
-    // let updatingTurno = document.getElementById('editTurno').value
-    // let updatingDia = document.getElementById('editDia').value
-    // let updatingTurma = document.getElementById('editTurma').value
-    // let updatingDisciplina = document.getElementById('editDisciplina').value
     let updatingProfessor = document.getElementById('editProfessor').value.toUpperCase()
     let updatingSala = document.getElementById('editSala').value
     let updatingModulo = document.getElementById('editModulo').value

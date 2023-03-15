@@ -30,13 +30,16 @@ exports.handler = async function(event, context){
     }
 
     const eventBody = await JSON.parse(event.body)
-    const { curso, turno, dia, turma, professor, sala, modulo, inicio, fim, token } = eventBody
+    const { curso, turno, dia, turma, professor, sala, modulo, inicio, fim, token } = await eventBody
 
-    //Check admin
+    // Check admin
     let checkAdmin = await bcrypt.compare(masterToken, token)
     if(!checkAdmin){
         return{
             statusCode: 401,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 msg: "Unauthorized"
             })
