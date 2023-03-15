@@ -44,6 +44,13 @@ async function searchMapDesktop(curso, turno, dia){
     const data = await response.json()
     if (response.status == 200){
         information = await data.information
+        if(!information){
+            document.getElementById('myTable').innerHTML =
+            `<tr>
+            <th>NÃO ENCONTRADO</th>
+            </tr>`
+            return
+        }
     }else{
         document.getElementById('myTable').innerHTML =
         `<tr>
@@ -73,10 +80,10 @@ async function searchMapDesktop(curso, turno, dia){
         newDia.innerText = document.getElementById('dia').value
         newRow.appendChild(newDia)
 
-        //Turma from response
-        let newTurma = document.createElement('td')
-        newTurma.innerText = elem
-        newRow.appendChild(newTurma)
+        //Disciplina from response
+        let newDisciplina = document.createElement('td')
+        newDisciplina.innerText = elem
+        newRow.appendChild(newDisciplina)
 
         //Information in JSON from the request
         for (let key of Array.from(Object.keys(information[elem]))){

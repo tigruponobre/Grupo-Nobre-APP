@@ -14,7 +14,7 @@ body{
 
 @media (max-width: 680px){
     body{
-        background: url('../../img/backgrounds/blue-red.jpg');
+        background: url('../../img/backgrounds/gradiente-laranja-amarelo.png');
         background-size: auto;
         background-position: center;
     }

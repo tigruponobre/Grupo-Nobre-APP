@@ -20,8 +20,8 @@ async function searchMapDesktop(curso, turno, dia){
     <th>CURSO</th>
     <th>TURNO</th>
     <th>DIA DA SEMANA</th>
-    <th>TURMA</th>
     <th>DISCIPLINA</th>
+    <th>TURMA</th>
     <th>PROFESSOR(A)</th>
     <th>SALA</th>
     <th>MÓDULO</th>
@@ -135,8 +135,8 @@ async function searchMapMobile(curso, turno, dia){
         let newCurso = document.getElementById('curso').value
         let newTurno = document.getElementById('turno').value
         let newDia = document.getElementById('dia').value
-        let newTurma = elem
-        let newDisciplina = information[elem]['DISCIPLINA']
+        let newDisciplina = elem
+        let newTurma = information[elem]['TURMA']
         let newProfessor = information[elem]['PROFESSOR']
         let newSala = information[elem]['SALA']
         let newModulo = information[elem]['MODULO']
@@ -150,8 +150,8 @@ async function searchMapMobile(curso, turno, dia){
         <th>CURSO:<td class="tableData">${newCurso}</td></th>
         <th>TURNO: <td class="tableData">${newTurno}</td></th>
         <th>DIA DA SEMANA: <td class="tableData">${newDia}</td></th>
-        <th>TURMA: <td class="tableData">${newTurma}</td></th>
         <th>DISCIPLINA: <td class="tableData">${newDisciplina}</td></th>
+        <th>TURMA: <td class="tableData">${newTurma}</td></th>
         <th>PROFESSOR(A): <td class="tableData">${newProfessor}</td></th>
         <th>SALA: <td class="tableData">${newSala}</td></th>
         <th>MÓDULO: <td class="tableData">${newModulo}</td></th>
@@ -175,8 +175,8 @@ function editRow(event){
     editCurso.value = thisRowData[0].textContent
     editTurno.value = thisRowData[1].textContent
     editDia.value = thisRowData[2].textContent
-    editTurma.value = thisRowData[3].textContent
-    editDisciplina.value = thisRowData[4].textContent
+    editDisciplina.value = thisRowData[3].textContent
+    editTurma.value = thisRowData[4].textContent
     editProfessor.value = thisRowData[5].textContent
     editSala.value = thisRowData[6].textContent
     editModulo.value = thisRowData[7].textContent
@@ -187,7 +187,7 @@ function editRow(event){
         beforeCurso: thisRowData[0].textContent,
         beforeTurno: thisRowData[1].textContent,
         beforeDia: thisRowData[2].textContent,
-        beforeTurma: thisRowData[3].textContent
+        beforeDisciplina: thisRowData[3].textContent
     }    
 }
 
@@ -212,8 +212,8 @@ function editRowMobile(event){
     editCurso.value = thisRowNecessaryData[0].textContent
     editTurno.value = thisRowNecessaryData[1].textContent
     editDia.value = thisRowNecessaryData[2].textContent
-    editTurma.value = thisRowNecessaryData[3].textContent
-    editDisciplina.value = thisRowNecessaryData[4].textContent
+    editDisciplina.value = thisRowNecessaryData[3].textContent
+    editTurma.value = thisRowNecessaryData[4].textContent
     editProfessor.value = thisRowNecessaryData[5].textContent
     editSala.value = thisRowNecessaryData[6].textContent
     editModulo.value = thisRowNecessaryData[7].textContent
@@ -225,7 +225,7 @@ function editRowMobile(event){
         beforeCurso: thisRowNecessaryData[0].textContent,
         beforeTurno: thisRowNecessaryData[1].textContent,
         beforeDia: thisRowNecessaryData[2].textContent,
-        beforeTurma: thisRowNecessaryData[3].textContent
+        beforeDisciplina: thisRowNecessaryData[3].textContent
     }    
 }
 
@@ -239,7 +239,7 @@ async function submitEdit(){
     let token = await sessionStorage.getItem('token')
 
     //Destructurin beforeUpdate
-    let { beforeCurso, beforeTurno, beforeDia, beforeTurma } = beforeUpdate
+    let { beforeCurso, beforeTurno, beforeDia, beforeDisciplina } = beforeUpdate
     //Fetch
     let response = await fetch(url + '/.netlify/functions/updatemap', {
         method: 'put',
@@ -247,7 +247,7 @@ async function submitEdit(){
             curso: beforeCurso,
             turno: beforeTurno,
             dia: beforeDia,
-            turma: beforeTurma,
+            disciplina: beforeDisciplina,
             professor: updatingProfessor,
             sala: updatingSala,
             modulo: updatingModulo,
