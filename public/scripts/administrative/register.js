@@ -48,7 +48,7 @@ async function createUser(){
         notification.style.borderColor = 'rgb(200, 82, 115)'
     }else{
         let login = firstName.toLowerCase() + '.' + lastName.toLowerCase()
-        let response = await fetch(url + '/.netlify/functions/create',{
+        let response = await fetch(url + '/.netlify/functions/create_admin',{
             method: 'post',
             body: JSON.stringify({
                 login,

@@ -44,7 +44,7 @@ async function searchInfo(){
     const consultButton = document.getElementById('consult')
     consultButton.textContent = 'Aguarde...'
     let reqCPF = inputCPF.value.replace('.','').replace('.','').replace('-','')
-    const response = await fetch(`${url}/.netlify/functions/searchstudent`, {
+    const response = await fetch(`${url}/.netlify/functions/searach_school_student`, {
         method: 'post',
         body: JSON.stringify({
             cpf: reqCPF,

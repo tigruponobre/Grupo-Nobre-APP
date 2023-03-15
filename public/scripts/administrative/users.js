@@ -18,7 +18,7 @@ search.addEventListener('keyup', (event)=>{
 let usersUl = document.querySelector('#users ul')
 async function getUsers(){
     usersUl.innerHTML = ''
-    let response = await fetch(url + '/.netlify/functions/getUsers')
+    let response = await fetch(url + '/.netlify/functions/all_admins')
     let data = await response.json()
     let users = data.resposta
 
@@ -35,7 +35,7 @@ async function getUsers(){
             // console.log(e.target.parentElement.textContent)
             let gettingUserName = e.target.parentElement.textContent
             if(window.confirm(`Deseja excluir o usuário de ${gettingUserName}?`)){
-                let response = await fetch(url + '/.netlify/functions/delete', {
+                let response = await fetch(url + '/.netlify/functions/delete_admin', {
                     method: 'delete',
                     body: JSON.stringify({
                         name: gettingUserName,

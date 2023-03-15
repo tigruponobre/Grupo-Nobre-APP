@@ -18,7 +18,7 @@ async function searchMapDesktop(curso, turno, dia) {
     let information = ''
 
     //Fetch
-    const response = await fetch('https://home.gruponobre.edu.br/.netlify/functions/searchmap', {
+    const response = await fetch('https://home.gruponobre.edu.br/.netlify/functions/search_map', {
         method: 'post',
         body: JSON.stringify({
             curso: curso,
@@ -88,7 +88,7 @@ async function searchMapMobile(curso, turno, dia) {
     let information = ''
 
     //Fetch
-    const response = await fetch('https://home.gruponobre.edu.br/.netlify/functions/searchmap', {
+    const response = await fetch('https://home.gruponobre.edu.br/.netlify/functions/search_map', {
         method: 'post',
         body: JSON.stringify({
             curso: curso,
