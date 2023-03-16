@@ -117,6 +117,7 @@ async function searchMapMobile(curso, turno, dia){
     if (response.status == 200){
         information = await data.information
         document.getElementById('tables').innerHTML = ''
+        console.log(information)
     }else{
         document.getElementById('tables').innerHTML =
         `<table>
