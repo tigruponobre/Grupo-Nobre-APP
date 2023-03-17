@@ -7,7 +7,7 @@
     z-index: 9;
 }
 
-#closeEdit{
+.closeEdit, .closeCreate{
     position: absolute;
     top: 6.5%;
     right: 5%;
@@ -38,7 +38,7 @@
     margin-bottom: 2em;
 }
 
-#sides{
+.sides{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -59,13 +59,13 @@
     min-width: 60vh;
 }
 
-#submit{
+.submit{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#aplicar{
+.aplicar{
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -75,7 +75,7 @@
     transition: ease .3s;
 }
 
-#aplicar:hover{
+.aplicar:hover{
     background-color: #d17f31;
 }
 
@@ -94,7 +94,7 @@
         z-index: 10;
         justify-content: center;
     }
-    #sides{
+    .sides{
         flex-direction: column;
         gap: 1%;
     }
@@ -106,7 +106,7 @@
     .edit{
         margin-bottom: 1em;
     }
-    #closeEdit{
+    .closeEdit, .closeCreate{
         top: 1%
     }
 }

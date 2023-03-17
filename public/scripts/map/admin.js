@@ -130,9 +130,9 @@ async function searchMapMobile(curso, turno, dia){
 
     for (let elem of Array.from(Object.keys(information))){
         //Getting info
-        let newCurso = document.getElementById('curso').value
-        let newTurno = document.getElementById('turno').value
-        let newDia = document.getElementById('dia').value
+        let newCurso = document.querySelector('.editCurso').value
+        let newTurno = document.querySelector('.editTurno').value
+        let newDia = document.querySelector('.editDia').value
         let newDisciplina = elem
         let newTurma = information[elem]['TURMA']
         let newProfessor = information[elem]['PROFESSOR']
@@ -163,6 +163,16 @@ async function searchMapMobile(curso, turno, dia){
 }
 
 let beforeUpdate = ''
+let editCurso = document.querySelector('.editCurso')
+let editTurno = document.querySelector('.editTurno')
+let editDia = document.querySelector('.editDia')
+let editDisciplina = document.querySelector('.editDisciplina')
+let editTurma = document.querySelector('.editTurma')
+let editProfessor = document.querySelector('.editProfessor')
+let editSala = document.querySelector('.editSala')
+let editModulo = document.querySelector('.editModulo')
+let editInicio = document.querySelector('.editInicio')
+let editFim = document.querySelector('.editFim')
 
 function editRow(event){
     let thisRowData = Array.from(event.target.parentElement.parentElement.children)
@@ -229,12 +239,11 @@ function editRowMobile(event){
 
 async function submitEdit(){
     //Get values
-    let updatingProfessor = document.getElementById('editProfessor').value.toUpperCase()
-    let updatingSala = document.getElementById('editSala').value
-    let updatingModulo = document.getElementById('editModulo').value
-    let updatingInicio = document.getElementById('editInicio').value
-    let updatingFim = document.getElementById('editFim').value
-    let token = await sessionStorage.getItem('token')
+    let updatingProfessor = document.querySelector('.editProfessor').value.toUpperCase()
+    let updatingSala = document.querySelector('.editSala').value
+    let updatingModulo = document.querySelector('.editModulo').value
+    let updatingInicio = document.querySelector('.editInicio').value
+    let updatingFim = document.querySelector('.editFim').value
 
     //Destructurin beforeUpdate
     let { beforeCurso, beforeTurno, beforeDia, beforeDisciplina } = beforeUpdate
@@ -282,7 +291,7 @@ window.addEventListener('keydown', event =>{
     }
 })
 
-document.getElementById('closeEdit').addEventListener('click', ()=>{
+document.querySelector('.closeEdit').addEventListener('click', ()=>{
     //Bring back tables div that was removed if using phone screen
     document.getElementById('tables').style.display = 'flex'
 

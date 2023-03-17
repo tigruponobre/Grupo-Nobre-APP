@@ -1,0 +1,25 @@
+#newDiscipline{
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 80%;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    z-index: 10;
+    justify-content: center;
+}
+
+#newDiscipline h2{
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+    margin-bottom: 2em;
+}
+
+.disciplineSelect{
+    min-width: 100%;
+}

@@ -55,7 +55,7 @@ header{
     background-color: #d17f31;
 }
 
-#professors{
+#newDisciplineButton{
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -65,7 +65,7 @@ header{
     transition: ease .3s;
 }
 
-#professors:hover{
+#newDisciplineButton:hover{
     background-color: #d17f31;
 }
 

@@ -61,7 +61,7 @@ exports.handler = async function(event, context){
             return{
                 statusCode: 200,
                 body: JSON.stringify({
-                    resposta: 'Map registrated'
+                    resposta: 'Map registered'
                 })
             }
         } catch (error) {
@@ -82,7 +82,7 @@ exports.handler = async function(event, context){
         return{
             statusCode: 200,
             body: JSON.stringify({
-                resposta: 'Map registrated'
+                resposta: 'Map registered'
             })
         }
     } catch (error) {
