@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../img/backgrounds/gradiente-laranja-amarelo.png);
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+* {
+    box-sizing: border-box;
+}

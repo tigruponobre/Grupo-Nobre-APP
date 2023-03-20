@@ -1,0 +1,31 @@
+#search{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0 3em 0;
+}
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #ee6318;
+}
+input {
+    border: 2px solid #ee6318;
+    border-radius: 3rem;
+    width: 500px;
+    height: 70px;
+    font-size: 20px;
+    font-family: inherit;
+    color: #ee6318;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+input:focus{
+    outline: none;
+}

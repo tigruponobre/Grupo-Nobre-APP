@@ -1,0 +1,40 @@
+#container{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-inline: 5%;
+    color: #FFFFFF;
+}
+
+#container_2{
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-inline: 5%;
+    color: #FFFFFF;
+    padding-bottom: 100px;
+}
+
+.boxes{
+    width: 30%;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 20px;
+    height: 400px;
+    box-shadow: 0 0 4px #303030;
+}
+
+.boxes h2{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 22px;
+}
+
+.boxes p{
+    font-size: 15px;
+    margin-top: -15px;
+}

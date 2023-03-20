@@ -1,0 +1,82 @@
+header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    padding: 2vh 14vh 0 19vh;
+}
+
+.logo{
+    width: 14em;
+}
+
+.child {
+    display: flex;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    padding: 0 30px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ee6318;
+    transition: 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 2px solid white;
+    line-height: 45px;
+
+}
+
+
+.link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#contact {
+    padding: 9px 25px;
+    background-color: #ee6318;
+    border: 1px solid white;
+    border-radius: 3rem;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#contact:hover{
+    background-color: white;
+    border: 1px solid #ee6318;
+    color: #ee6318;
+}
