@@ -130,9 +130,9 @@ async function searchMapMobile(curso, turno, dia){
 
     for (let elem of Array.from(Object.keys(information))){
         //Getting info
-        let newCurso = document.querySelector('.editCurso').value
-        let newTurno = document.querySelector('.editTurno').value
-        let newDia = document.querySelector('.editDia').value
+        let newCurso = document.getElementById('curso').value
+        let newTurno = document.getElementById('turno').value
+        let newDia = document.getElementById('dia').value
         let newDisciplina = elem
         let newTurma = information[elem]['TURMA']
         let newProfessor = information[elem]['PROFESSOR']
