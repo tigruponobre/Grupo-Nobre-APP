@@ -31,10 +31,9 @@ exports.handler = async function(event, context){
 
     const eventBody = await JSON.parse(event.body)
     const { curso, turno, dia, disciplina, turma, professor, sala, modulo, inicio, fim, token } = eventBody
-    console.log(curso, turno, dia, disciplina, turma, professor, sala, modulo, inicio, fim, token)
 
     // Check admin
-    /*let checkAdmin = await bcrypt.compare(masterToken, token)
+    let checkAdmin = await bcrypt.compare(masterToken, token)
     if(!checkAdmin){
         return{
             statusCode: 401,
@@ -45,7 +44,7 @@ exports.handler = async function(event, context){
                 msg: "Unauthorized"
             })
         }
-    }*/
+    }
 
     //Finding document
     let table = await Map.findOne({CURSO: curso})
@@ -61,10 +60,8 @@ exports.handler = async function(event, context){
             "FIM": "${fim}"
         }
     }`
-    console.log(newDisciplineString)
 
     const newDispline = await JSON.parse(newDisciplineString)
-    console.log(newDispline)
 
     Object.assign(table[turno][dia], newDispline)
 

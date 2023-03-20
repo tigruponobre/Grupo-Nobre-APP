@@ -44,8 +44,31 @@ async function createNewDiscipline(){
 
     const data = await response.json()
 
-    if (data.resposta == "Update successful."){
-        window.alert('Disciplina criada com sucesso!')
+    if (data.resposta == "Insert successful."){
+        //Window alert
+        window.alert('Disciplina inserida com sucesso!')
+
+        document.getElementById('selectCourse').value = 'CURSO'
+        document.getElementById('selectShift').value = 'TURNO'
+        document.getElementById('selectDay').value = 'DIA DA SEMANA'
+        document.querySelector('.newDisciplineName').value = ''
+        document.querySelector('.newClass').value = ''
+        document.querySelector('.newProfessor').value = ''
+        document.querySelector('.newRoom').value = ''
+        document.querySelector('.newModule').value = ''
+        document.querySelector('.newStart').value = ''
+        document.querySelector('.newEnd').value = ''
+
+        const searchCurso = document.getElementById('curso').value
+        const searchTurno = document.getElementById('turno').value
+        const searchDia = document.getElementById('dia').value
+
+        //Update table showing data
+        if(window.innerWidth > 680){
+            searchMapDesktop(searchCurso, searchTurno, searchDia)
+        }else{
+            searchMapMobile(searchCurso, searchTurno, searchDia)
+        }
     }else{
         window.alert(data.resposta)
     }
