@@ -4,11 +4,11 @@ header{
     display: flex;
     background-color: white;
     align-items: center;
-    padding: 2vh 14vh 0 19vh;
+    padding: 2vh 14vh 0 25vh;
 }
 
 .logo{
-    width: 14em;
+    width: 18em;
 }
 
 .child {
