@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/general/all.css">
     <link rel="stylesheet" href="../css/colegionobre/body.css">
-    <link rel="stylesheet" href="../css/colegionobre/card.css">
+    <link rel="stylesheet" href="../css/colegionobre/leftSide.css">
+    <link rel="stylesheet" href="../css/colegionobre/rightSide.css">
+    <script src="../scripts/colegionobre/dismissInfo.js" defer></script>
     <script src="../scripts/colegionobre/consulta.js" defer></script>
-    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logos/CNicon.png" type="image/x-icon">
 
     <script>
         //Set url in sessionStorage to use on fetch's
@@ -20,27 +22,47 @@
     <title>Consulta RA</title>
 </head>
 <body>
-    <div id="consulta" class="card">
-        <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
-        <h1 class="title">Consulte seu Regristro Acadêmico (RA)</h1>
-        <div class="inputs">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" autocomplete="off">
+    <div id="left">
+        <h2 id="infoTitle">Sobre meu <b>RA</b></h2>
+        <div class="topic">
+            <h3>O que é?</h3>
+            <p>&nbsp;&nbsp;<b>RA</b> é a sigla utlizada para o termo <b>Registro Acadêmico</b>. Número de identificação de cada aluno matriculado. Cada aluno possui o seu próprio, ou seja, não existem RA's idênticos em uma única instituição.</p>
         </div>
-        <div class="inputs">
-            <label for="dtnascimento">Data de Nascimento</label>
-            <input type="text" id="dtnascimento" autocomplete="off">
+        <div class="topic">
+            <h3>Para que serve?</h3>
+            <p>&nbsp;&nbsp;Como credencial, o <b>RA</b> serve para que se possa associar no sistema todas os eventos referentes àquele aluno <b>e principalmente para que se consiga acessar portais acadêmicos.</b></p>
         </div>
-        <p id="notification">CPF ou data de nascimento incorreto!</p>
-        <button id="consult" onclick="searchInfo()">Consultar</button>
-        <span id="notFound">Não encontrou? <b>Contate a secretaria.</b></span>
+        <div class="topic">
+            <h3>O que fazer se não encontrar meu RA?</h3>
+            <p>&nbsp;&nbsp;Contate a secretaria para verificar se o seu CPF está corretamente cadastrado!</p>
+        </div>
+        <div id="dismissButtonDiv">
+            <button id="dismissInfo" onclick="dismissInfo()">OK</button>
+        </div>
     </div>
-    <div id="resultado" class="card">
-        <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
-        <h1 class="title">Consulta de RA</h1>
-        <h2 id="nome" class="identification"></h2>
-        <h2 id="registro" class="identification"></h2>
-        <button id="back" onclick="newSearch()">Pesquisar novamente</button>
+    <div id="right">
+        <div id="consulta" class="card">
+            <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
+            <h1 class="title">Consulte seu Regristro Acadêmico (RA)</h1>
+            <div class="inputs">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" autocomplete="off">
+            </div>
+            <div class="inputs">
+                <label for="dtnascimento">Data de Nascimento</label>
+                <input type="text" id="dtnascimento" autocomplete="off">
+            </div>
+            <p id="notification">CPF ou data de nascimento incorreto!</p>
+            <button id="consult" onclick="searchInfo()">Consultar</button>
+            <span id="notFound">Não encontrou? <b><a id="secretaryNumber" href="https://wa.me/+5575981976002" target="_blank">Contate a secretaria.</b></a></span>
+        </div>
+        <div id="resultado" class="card">
+            <img class="logo_colegio" src="../img/logos/COLEGIO NOBRE.png" alt="logo_colegio" width="250px">
+            <h1 class="title">Consulta de RA</h1>
+            <h2 id="nome" class="identification"></h2>
+            <h2 id="registro" class="identification"></h2>
+            <button id="back" onclick="newSearch()">Pesquisar novamente</button>
+        </div>
     </div>
 </body>
 </html>

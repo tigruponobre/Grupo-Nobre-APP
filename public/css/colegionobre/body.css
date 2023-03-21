@@ -1,3 +1,4 @@
 body{
     background: url('../../img/backgrounds/blue-red.jpg');
+    display: flex;
 }
