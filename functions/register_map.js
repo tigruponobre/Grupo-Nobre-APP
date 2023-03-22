@@ -26,12 +26,13 @@ exports.handler = async function(event, context){
 
     // Destructuring variabels
     const eventBody = await JSON.parse(event.body)
-    let { CURSO, MATUTINO, NOTURNO } = eventBody
+    let { CURSO, MODALIDADE, MATUTINO, NOTURNO } = eventBody
 
     // Register map
     if (MATUTINO && NOTURNO){
         let newMap = {
             CURSO,
+            MODALIDADE,
             MATUTINO,
             NOTURNO
     }
@@ -54,7 +55,8 @@ exports.handler = async function(event, context){
     }else if (MATUTINO){
         let newMap = {
                 CURSO,
-                "MATUTINO": MATUTINO
+                MODALIDADE,
+                MATUTINO
         }
         try {
             await Map.create(newMap)
@@ -75,6 +77,7 @@ exports.handler = async function(event, context){
     }else if (NOTURNO){
         let newMap = {
             CURSO,
+            MODALIDADE,
             NOTURNO
     }
     try {

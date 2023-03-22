@@ -18,6 +18,9 @@ exports.handler = async function(event, context){
     }else{
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: "Connection failed."
             })
@@ -34,6 +37,9 @@ exports.handler = async function(event, context){
     if(studentInfo){
         return {
             statusCode: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: studentInfo
             })
@@ -41,6 +47,9 @@ exports.handler = async function(event, context){
     }else{
         return {
             statusCode: 404,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
                 resposta: 'Usuário não encontrado.'
             })

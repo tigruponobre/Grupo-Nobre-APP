@@ -14,9 +14,6 @@ async function searchMapDesktop(curso, turno, dia){
     //Reset table
     document.getElementById('myTable').innerHTML = 
     `<tr>
-    <th>CURSO</th>
-    <th>TURNO</th>
-    <th>DIA DA SEMANA</th>
     <th>DISCIPLINA</th>
     <th>TURMA</th>
     <th>PROFESSOR(A)</th>
@@ -62,21 +59,21 @@ async function searchMapDesktop(curso, turno, dia){
         //New Row
         let newRow = document.createElement('tr')
 
-        //Information that doesn't came in the fetch response
-        //Curso from select
-        let newCurso = document.createElement('td')
-        newCurso.innerText = document.getElementById('curso').value
-        newRow.appendChild(newCurso)
+        // //Information that doesn't came in the fetch response
+        // //Curso from select
+        // let newCurso = document.createElement('td')
+        // newCurso.innerText = document.getElementById('curso').value
+        // newRow.appendChild(newCurso)
 
-        //Turno from select
-        let newTurno = document.createElement('td')
-        newTurno.innerText = document.getElementById('turno').value
-        newRow.appendChild(newTurno)
+        // //Turno from select
+        // let newTurno = document.createElement('td')
+        // newTurno.innerText = document.getElementById('turno').value
+        // newRow.appendChild(newTurno)
 
-        //Dia from select
-        let newDia = document.createElement('td')
-        newDia.innerText = document.getElementById('dia').value
-        newRow.appendChild(newDia)
+        // //Dia from select
+        // let newDia = document.createElement('td')
+        // newDia.innerText = document.getElementById('dia').value
+        // newRow.appendChild(newDia)
 
         //Turma from response
         let newTurma = document.createElement('td')
@@ -117,7 +114,6 @@ async function searchMapMobile(curso, turno, dia){
     if (response.status == 200){
         information = await data.information
         document.getElementById('tables').innerHTML = ''
-        console.log(information)
     }else{
         document.getElementById('tables').innerHTML =
         `<table>
@@ -145,9 +141,9 @@ async function searchMapMobile(curso, turno, dia){
         newTable.setAttribute('class', 'newTable')
         newTable.innerHTML = 
         `<tr>
-        <th>CURSO:<td class="tableData">${newCurso}</td></th>
+        <!--<th>CURSO:<td class="tableData">${newCurso}</td></th>
         <th>TURNO: <td class="tableData">${newTurno}</td></th>
-        <th>DIA DA SEMANA: <td class="tableData">${newDia}</td></th>
+        <th>DIA DA SEMANA: <td class="tableData">${newDia}</td></th>-->
         <th>DISCIPLINA: <td class="tableData">${newDisciplina}</td></th>
         <th>TURMA: <td class="tableData">${newTurma}</td></th>
         <th>PROFESSOR(A): <td class="tableData">${newProfessor}</td></th>
@@ -180,22 +176,22 @@ function editRow(event){
     document.getElementById('darkFade').style.display = 'flex'
     document.getElementById('editRow').style.display = 'flex'
 
-    editCurso.value = thisRowData[0].textContent
-    editTurno.value = thisRowData[1].textContent
-    editDia.value = thisRowData[2].textContent
-    editDisciplina.value = thisRowData[3].textContent
-    editTurma.value = thisRowData[4].textContent
-    editProfessor.value = thisRowData[5].textContent
-    editSala.value = thisRowData[6].textContent
-    editModulo.value = thisRowData[7].textContent
-    editInicio.value = thisRowData[8].textContent
-    editFim.value = thisRowData[9].textContent
+    editCurso.value = document.getElementById('curso').value
+    editTurno.value = document.getElementById('turno').value
+    editDia.value = document.getElementById('dia').value
+    editDisciplina.value = thisRowData[0].textContent
+    editTurma.value = thisRowData[1].textContent
+    editProfessor.value = thisRowData[2].textContent
+    editSala.value = thisRowData[3].textContent
+    editModulo.value = thisRowData[4].textContent
+    editInicio.value = thisRowData[5].textContent
+    editFim.value = thisRowData[6].textContent
 
     beforeUpdate = {
-        beforeCurso: thisRowData[0].textContent,
-        beforeTurno: thisRowData[1].textContent,
-        beforeDia: thisRowData[2].textContent,
-        beforeDisciplina: thisRowData[3].textContent
+        beforeCurso: document.getElementById('curso').value,
+        beforeTurno: document.getElementById('turno').value,
+        beforeDia: document.getElementById('dia').value,
+        beforeDisciplina: thisRowData[0].textContent
     }    
 }
 
