@@ -9,9 +9,11 @@
         <link rel="stylesheet" type="text/css" href="../css/faq/header.css">
         <link rel="stylesheet" type="text/css" href="../css/faq/search.css">
         <link rel="stylesheet" type="text/css" href="../css/faq/questions.css">
+        <link rel="stylesheet" type="text/css" href="../css/faq/addQuestion.css">
         <link rel="shortcut icon" href="../img/logos/favicon-unef.ico" type="image/x-icon">
 
         <script src="../scripts/faq/questions.js" defer></script>
+        <script src="../scripts/faq/addQuestion.js" defer></script>
         <script>
             //Set url in sessionStorage to use on fetch's
             sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
@@ -31,7 +33,7 @@
 
         <div id="search">
             <H1>Base de conhecimento</H1>
-            <input type="text" placeholder="Palavra chave" >
+            <input id="searchKeyword" type="text" placeholder="Palavra chave" >
         </div>
 
         <div class="question">
@@ -49,7 +51,22 @@
             <p class="questionContent questionContentNotActivate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         </div>
 
-        
+        <div id="addQuestion">
+            <div id="fade"></div>
+            <div id="cardAddQuestion">
+                <p id="close">X</p>
+                <h3>Adicionar pergunta</h3>
+                <div class="addQuestionField">
+                    <label>Título da pergunta:</label>
+                    <input type="text" placeholder="Título.">
+                </div>
+                <div class="addQuestionField">
+                    <label>Resposta:</label>
+                    <textarea name="response" id="response" cols="30" rows="15" placeholder="Resposta."></textarea>
+                </div>
+                <button onclick="addQuestion()">Adicionar</button>
+            </div>
+        </div>
         
         
         <footer>

@@ -41,13 +41,13 @@
 
 .questionActivate{
     animation-name: divquestionin;
-    animation-duration: 2s;
+    animation-duration: 0.7s;
     height: 160px;
 }
 
 .questionNotActivate{
     animation-name: divquestionout;
-    animation-duration: 2s;
+    animation-duration: 0.7s;
     height: 71px;
 }
 
@@ -90,11 +90,11 @@
 
 .questionContentActivate{
     display: flex;
-    animation: contentfadein 1.5s;
+    animation: contentfadein 0.7s;
     opacity: 1;
 }
 
 .questionContentNotActivate{
-    animation: contentfadeout 1.5s;
+    animation: contentfadeout 0.7s;
     opacity: 0;
 }

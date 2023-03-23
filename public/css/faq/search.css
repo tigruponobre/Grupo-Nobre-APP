@@ -13,7 +13,7 @@ h1 {
     margin-bottom: 1em;
     color: #ee6318;
 }
-input {
+#searchKeyword {
     border: 2px solid #ee6318;
     border-radius: 3rem;
     width: 500px;
