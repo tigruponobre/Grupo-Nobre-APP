@@ -8,8 +8,16 @@
         <link rel="stylesheet" type="text/css" href="../css/faq/body.css">
         <link rel="stylesheet" type="text/css" href="../css/faq/header.css">
         <link rel="stylesheet" type="text/css" href="../css/faq/search.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/containers.css">
         <link rel="stylesheet" type="text/css" href="../css/faq/questions.css">
+        <link rel="shortcut icon" href="../img/logos/favicon-unef.ico" type="image/x-icon">
+
+        <script src="../scripts/faq/questions.js" defer></script>
+        <script>
+            //Set url in sessionStorage to use on fetch's
+            sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
+            const url = sessionStorage.url
+            const token = sessionStorage.getItem('token')
+        </script>
 
     </head>
     <body>
@@ -27,13 +35,18 @@
         </div>
 
         <div class="question">
-            <div class="headerQuestion">
+            <div class="questionHeader">
             <h2>Pergunta 1</h2>
             <a href="#" onclick="activate(event)"><img class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left"></a>
             </div>
-            <div class="questionContent">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <p class="questionContent questionContentNotActivate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+        <div class="question">
+            <div class="questionHeader">
+            <h2>Pergunta 2</h2>
+            <a href="#" onclick="activate(event)"><img class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left"></a>
             </div>
+            <p class="questionContent questionContentNotActivate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         </div>
 
         
