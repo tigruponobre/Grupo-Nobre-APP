@@ -1,3 +1,22 @@
+const container = document.getElementById('container')
+async function getQuestions(){
+    const response = await fetch(url + '/.netlify/functions/get_questions')
+    const data = await response.json()
+
+    for (let question of Array.from(data.questions)){
+        const newQuestion = document.createElement('div')
+        newQuestion.setAttribute('class', 'question')
+        newQuestion.innerHTML = ` <div class="questionHeader">
+        <h2>${question.title}</h2>
+        <a onclick="activate(event)"><img class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left"></a>
+        </div>
+        <p class="questionContent questionContentNotActivate">${question.content}</p>`
+        container.appendChild(newQuestion)
+    }
+}
+
+getQuestions()
+
 function activate(event){
     const thisArrow = event.target
     const thisContent = thisArrow.parentElement.parentElement.parentElement.children[1]

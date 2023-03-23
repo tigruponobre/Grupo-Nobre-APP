@@ -1,8 +1,14 @@
+#container{
+    padding-bottom: 5em;
+}
+
 .arrow-left{
     width: 36px;
     height: 36px;
     align-items: center;
     transition: 0.3s;
+    cursor: pointer;
+    user-select: none;
 }
 
 .arrow-left:hover{
@@ -14,17 +20,6 @@
 }
 
 /* Div question */
-
-@keyframes divquestionin{
-    from {height: 71px;}
-    to {height: 160px;}
-}
-
-@keyframes divquestionout{
-    from {height: 160px;}
-    to {height: 71;}
-}
-
 .question{
     display: flex;
     flex-direction: column;
@@ -40,15 +35,12 @@
 }
 
 .questionActivate{
-    animation-name: divquestionin;
-    animation-duration: 0.7s;
-    height: 160px;
+    min-height: 160px;
 }
 
 .questionNotActivate{
-    animation-name: divquestionout;
     animation-duration: 0.7s;
-    height: 71px;
+    min-height: 71px;
 }
 
 
@@ -70,7 +62,7 @@
         opacity: 1;
     }
 
-    from {margin-top: -40px;}
+    from {margin-top: -20px;}
     to {margin-top: 0;}
 }
 
@@ -79,7 +71,7 @@
     to {opacity: 0;}
 
     from {margin-top: 0;}
-    to {margin-top: -40px;}
+    to {margin-top: -20px;}
 }
 
 .questionContent{
