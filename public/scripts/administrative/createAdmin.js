@@ -5,7 +5,7 @@ let notification = document.getElementById('notification')
 let registrateButton = document.getElementById('registrate')
 
 //Registrate user
-async function createUser(){
+async function create_admin(){
     //Get values
     let firstName = document.getElementById('firstName').value
     let lastName = document.getElementById('lastName').value
@@ -25,7 +25,7 @@ async function createUser(){
         notification.style.borderColor = 'rgb(200, 82, 115)'
     }else{
         let login = firstName.toLowerCase() + '.' + lastName.toLowerCase()
-        let response = await fetch(url + '/.netlify/functions/create_admin',{
+        let response = await fetch(url + '/.netlify/functions/insert_admin',{
             method: 'post',
             body: JSON.stringify({
                 login,
@@ -56,6 +56,6 @@ async function createUser(){
 
 document.getElementById('confirmPassword').addEventListener('keypress', (e)=>{
     if(e.keyCode == 13){
-        createUser()
+        create_admin()
     }
 })

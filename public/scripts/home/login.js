@@ -1,6 +1,66 @@
+//Declearing variables
+const loginDiv = document.querySelector('.loginDiv')
+const fade = document.querySelector('.fade')
+
+const inputs = Array.from(document.querySelectorAll('.inputs input'))
+const loginButtonHome = document.querySelector('#loginButton')
+const register = document.querySelector('#registerMessage a')
+
+//Oppening login div
+login_logout.addEventListener('click', ()=>{
+    //If login_logout == Login -> Open login div -- Else -> Log out
+    if(login_logout.textContent == 'Login'){
+        //Remove disable attribute from inputs in login div
+        for(let i in inputs){
+            inputs[i].removeAttribute('disabled')
+        }
+        loginButtonHome.removeAttribute('disabled')
+
+        //Adding url to "Solicite registro"
+        register.setAttribute('href', 'http://192.168.10.10/glpi/index.php')
+
+        //Oppening login div and showing fade
+        fade.classList.toggle('unhide')
+        loginDiv.classList.toggle('unhide')
+    }else{
+        //Log out
+
+        //Disabling inputs
+        for(let i in inputs){
+            inputs[i].setAttribute('disabled', '')
+        }
+        loginButtonHome.setAttribute('disabled', '')
+
+        //Removing url of "Solicite registro"
+        register.setAttribute('href', '')
+
+        //Removing sessionStorage Attributes
+        sessionStorage.removeItem('unauthorized')
+        sessionStorage.removeItem('logged')
+        sessionStorage.removeItem('token')
+        sessionStorage.removeItem('permissions')
+
+        //Check login again
+        checkLogin()
+    }
+})
+
+//Closing login div with esc or click outside the card
+document.onkeydown = (e) =>{
+    if(loginDiv.classList.contains('unhide')){
+        if(e.keyCode == 27){
+            [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+        }
+    }
+}
+
+fade.addEventListener('click', ()=>{
+    [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+})
+
 //Get DOM elemnts
 const loginButton = document.getElementById('loginButton')
-let notification = document.getElementById("notification")
+const notification = document.getElementById("notification")
 const inputLogin = document.getElementById("loginInput")
 const inputPass = document.getElementById("passwordInput")
 
