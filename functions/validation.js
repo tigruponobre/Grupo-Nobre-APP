@@ -1,11 +1,11 @@
 require('dotenv').config()
 const bcrypt = require('bcryptjs')
 
-const token = process.env.TOKEN
+const master_token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     const eventBody = await JSON.parse(event.body)
-    const {validationToken, permissions} = eventBody
+    const {token, permissions} = eventBody
 
     if(permissions != 'super-admin'){
         return {
@@ -16,7 +16,7 @@ exports.handler = async function (event, context){
         }
     }
 
-    let validation = await bcrypt.compare(token, validationToken)
+    let validation = await bcrypt.compare(master_token, token)
 
     if(validation){
         return {

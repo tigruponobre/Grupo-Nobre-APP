@@ -8,7 +8,7 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const token = process.env.TOKEN
+const master_token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -28,10 +28,10 @@ exports.handler = async function (event, context){
 
     // Get login, password and secretKey
     const eventBody = JSON.parse(event.body)
-    const {login, password, permissions, creator, currentDate, secretKey}  = eventBody
+    const {login, password, permissions, creator, currentDate, token}  = eventBody
 
-    //Check token
-    const authorization = await bcrypt.compare(token, secretKey)
+    //Check master_token
+    const authorization = await bcrypt.compare(master_token, token)
     if(!authorization){
         console.log(authorization)
         return {

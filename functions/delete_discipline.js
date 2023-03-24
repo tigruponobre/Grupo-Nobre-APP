@@ -4,15 +4,15 @@ const Map = require('../models/Map')
 const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
-const db_user = process.env.DB_USER
-const db_pass = process.env.DB_PASS
-const cluster = process.env.CLUSTER
-const maps_collection = process.env.MAPSCOLLECTION
-const masterToken = process.env.TOKEN
+const db_user = process.env.DB_TI_USER
+const db_pass = process.env.DB_TI_PASSWORD
+const cluster = process.env.DB_TI_CLUSTER
+const db_name = process.env.DB_TI_NAME
+const master_token = process.env.TOKEN
 
-exports.handler = async function(event, context){
+exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let connection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${maps_collection}?retryWrites=true&w=majority`)
+    let connection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.qk8butq.mongodb.net/${db_name}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
     if(connection){
@@ -33,7 +33,7 @@ exports.handler = async function(event, context){
     const { curso, turno, dia, disciplina, token } = await eventBody
 
     // Check admin
-    let checkAdmin = await bcrypt.compare(masterToken, token)
+    let checkAdmin = await bcrypt.compare(master_token, token)
     if(!checkAdmin){
         return{
             statusCode: 401,

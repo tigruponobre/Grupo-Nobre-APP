@@ -8,7 +8,6 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas

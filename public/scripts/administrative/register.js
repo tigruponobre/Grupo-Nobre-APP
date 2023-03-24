@@ -33,7 +33,7 @@ async function createUser(){
                 permissions,
                 currentDate,
                 creator,
-                secretKey
+                token
             })
         })
         let data = await response.json()

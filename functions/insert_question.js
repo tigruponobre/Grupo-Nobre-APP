@@ -8,7 +8,7 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const realToken = process.env.TOKEN
+const master_token = process.env.TOKEN
 
 exports.handler = async function(event, context){
     //Connection with MongoDB Atlas
@@ -29,16 +29,17 @@ exports.handler = async function(event, context){
     const eventBody = await JSON.parse(event.body)
     const { title, content, user_name, token } = eventBody
 
-    // const compareToken = await bcrypt.compare(realToken, token)
+    //Check admin
+    const compareToken = await bcrypt.compare(master_token, token)
 
-    // if(!compareToken){
-    //     return{
-    //         statusCode: 401,
-    //         body: JSON.stringify({
-    //             msg:"Unauthorized"
-    //         })
-    //     }
-    // }
+    if(!compareToken){
+        return{
+            statusCode: 401,
+            body: JSON.stringify({
+                msg:"Unauthorized"
+            })
+        }
+    }
     
     if(!title || !content || !user_name){
         return{

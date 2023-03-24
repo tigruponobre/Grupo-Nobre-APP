@@ -4,15 +4,15 @@ const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
-const db_user = process.env.DB_USER
-const db_pass = process.env.DB_PASS
-const cluster = process.env.CLUSTER
-const adm_collection = process.env.ADMCOLLECTION
-const masterKey = process.env.MASTERKEY
+const db_user = process.env.DB_TI_USER
+const db_pass = process.env.DB_TI_PASSWORD
+const cluster = process.env.DB_TI_CLUSTER
+const db_name = process.env.DB_TI_NAME
+const master_token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
-    let connection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.se0mehr.mongodb.net/${adm_collection}?retryWrites=true&w=majority`)
+    let connection = await mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@${cluster}.qk8butq.mongodb.net/${db_name}?retryWrites=true&w=majority`)
 
     //Check if connetion succeeded
     if(connection){
@@ -31,7 +31,7 @@ exports.handler = async function (event, context){
     const {name, token}  = eventBody
 
     //Verifying token
-    if(!bcrypt.compare(token, masterKey)){
+    if(!bcrypt.compare(master_token, token)){
         return {
             statusCode: 401,
             body: JSON.stringify({

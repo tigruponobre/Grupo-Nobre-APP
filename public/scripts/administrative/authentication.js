@@ -1,11 +1,11 @@
 
 async function validation() {
-    const getToken = await sessionStorage.getItem('token')
+    const token = await sessionStorage.getItem('token')
     const permissions = await sessionStorage.getItem('permissions')
     const response = await fetch(url + '/.netlify/functions/validation', {
         method: 'post',
         body: JSON.stringify({
-            validationToken: getToken,
+            token,
             permissions
         })
     })

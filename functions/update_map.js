@@ -8,7 +8,7 @@ const db_user = process.env.DB_USER
 const db_pass = process.env.DB_PASS
 const cluster = process.env.CLUSTER
 const maps_collection = process.env.MAPSCOLLECTION
-const masterToken = process.env.TOKEN
+const master_token = process.env.TOKEN
 
 exports.handler = async function(event, context){
     //Connection with MongoDB Atlas
@@ -33,7 +33,7 @@ exports.handler = async function(event, context){
     const { curso, turno, dia, disciplina, professor, sala, modulo, inicio, fim, token } = await eventBody
 
     // Check admin
-    let checkAdmin = await bcrypt.compare(masterToken, token)
+    let checkAdmin = await bcrypt.compare(master_token, token)
     if(!checkAdmin){
         return{
             statusCode: 401,
