@@ -16,9 +16,8 @@
         <script src="../scripts/faq/addQuestion.js" defer></script>
         <script src="../scripts/faq/search.js" defer></script>
         <script>
-            //Set url in sessionStorage to use on fetch's
-            sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
-            const url = sessionStorage.url
+            //Set url to use on fetch's
+            const url = document.URL.split('/').splice('0',3).join('/')
             const token = sessionStorage.getItem('token')
         </script>
 

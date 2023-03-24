@@ -76,7 +76,7 @@ async function getLogged(){
     }else{
         await sessionStorage.setItem('token', data.token)
         await sessionStorage.setItem('unauthorized', false)
-        await sessionStorage.setItem('userName', login)
+        await sessionStorage.setItem('logged', login)
         await sessionStorage.setItem('permissions', data.permissions)
         checkLogin()
         notification.innerText = 'Login efetuado com sucesso!'
@@ -96,7 +96,7 @@ async function getLogged(){
             if(sessionStorage.unauthorized == 'true'){
                 document.querySelector('.authentication').remove()
             }
-            if(data.permissions == 'superAdmin') window.location.href = url + '/pages/administrativo'
+            if(data.permissions == 'super-admin') window.location.href = url + '/pages/administrativo'
             else window.location.href = url + '/pages/mapa-admin'
         },1500)
     }

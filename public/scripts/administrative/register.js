@@ -4,24 +4,6 @@ let confirmPasswordInput = document.getElementById('confirmPassword')
 let notification = document.getElementById('notification')
 let registrateButton = document.getElementById('registrate')
 
-//Checkboxes
-let superAdmin = document.getElementById('superAdmin')
-let roomMap = document.getElementById('roomMap')
-let professor = document.getElementById('professor')
-
-superAdmin.addEventListener('click', ()=> {
-    roomMap.checked = false
-    professor.checked = false
-})
-roomMap.addEventListener('click', ()=> {
-    superAdmin.checked = false
-    professor.checked = false
-})
-professor.addEventListener('click', ()=> {
-    roomMap.checked = false
-    superAdmin.checked = false
-})
-
 //Registrate user
 async function createUser(){
     //Get values
@@ -32,13 +14,8 @@ async function createUser(){
     let secretKey = sessionStorage.getItem('token')
     let newDate = new Date()
     let currentDate = await `${newDate.getDate()}-${newDate.getMonth() + 1}-${newDate.getFullYear()}`
-    let creator = await sessionStorage.getItem('userName')
-    let permissions = ''
-    Array.from(document.querySelectorAll('input[type=checkbox]')).forEach(element => {
-        if(element.checked){
-            permissions = element.id
-        }
-    })
+    let creator = await sessionStorage.getItem('logged')
+    let permissions = document.getElementById('permissions').value
 
     //Check if passwords match
     if(password != confirmPassword || password == ''){
@@ -68,9 +45,6 @@ async function createUser(){
             document.getElementById('lastName').value = ''
             document.getElementById('password').value = ''
             document.getElementById('confirmPassword').value = ''
-            document.getElementById('superAdmin').checked = false
-            document.getElementById('roomMap').checked = false
-            document.getElementById('professor').checked = false
             setTimeout(() => {
                 notification.innerHTML = ''
                 passwordInput.style.borderColor = '#2D73B4'
