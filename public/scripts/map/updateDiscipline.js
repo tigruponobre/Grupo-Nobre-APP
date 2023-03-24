@@ -88,7 +88,7 @@ async function submitEdit(){
     //Destructurin beforeUpdate
     let { beforeCurso, beforeTurno, beforeDia, beforeDisciplina } = beforeUpdate
     //Fetch
-    let response = await fetch(url + '/.netlify/functions/update_map', {
+    let response = await fetch(url + '/.netlify/functions/update_discipline', {
         method: 'put',
         body: JSON.stringify({
             curso: beforeCurso,

@@ -102,7 +102,7 @@ async function searchMapMobile(curso, turno, dia){
     let information = ''
 
     //Fetch
-    const response = await fetch(url + '/.netlify/functions/search_map', {
+    const response = await fetch(url + '/.netlify/functions/search_disciplines', {
         method: 'post',
         body: JSON.stringify({
             curso: curso,

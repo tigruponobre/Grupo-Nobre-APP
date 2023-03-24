@@ -8,6 +8,7 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
+const master_token = process.env.TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -34,7 +35,7 @@ exports.handler = async function (event, context){
 
     //TOKEN
     const salt = await bcrypt.genSalt(12)
-    const tokenHash = await bcrypt.hash(token,salt)
+    const tokenHash = await bcrypt.hash(master_token,salt)
 
     //Find user
     try {

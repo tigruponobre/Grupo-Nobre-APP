@@ -25,7 +25,7 @@ async function createNewDiscipline(){
     const newStart = await document.querySelector('.newStart').value
     const newEnd = await document.querySelector('.newEnd').value
 
-    const response = await fetch(url + '/.netlify/functions/insert_discipline', {
+    const response = await fetch(url + '/.netlify/functions/create_discipline', {
         method: 'put',
         body: JSON.stringify({
             curso: newCourse,

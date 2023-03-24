@@ -11,7 +11,7 @@ async function create_admin(){
     let lastName = document.getElementById('lastName').value
     let password = passwordInput.value
     let confirmPassword = confirmPasswordInput.value
-    let secretKey = sessionStorage.getItem('token')
+    let token = sessionStorage.getItem('token')
     let newDate = new Date()
     let currentDate = await `${newDate.getDate()}-${newDate.getMonth() + 1}-${newDate.getFullYear()}`
     let creator = await sessionStorage.getItem('logged')
@@ -25,7 +25,7 @@ async function create_admin(){
         notification.style.borderColor = 'rgb(200, 82, 115)'
     }else{
         let login = firstName.toLowerCase() + '.' + lastName.toLowerCase()
-        let response = await fetch(url + '/.netlify/functions/insert_admin',{
+        let response = await fetch(url + '/.netlify/functions/create_admin',{
             method: 'post',
             body: JSON.stringify({
                 login,
