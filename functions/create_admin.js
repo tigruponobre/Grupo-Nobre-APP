@@ -31,16 +31,16 @@ exports.handler = async function (event, context){
     const {login, password, permissions, creator, currentDate, secretKey}  = eventBody
 
     //Check token
-    // const authorization = await bcrypt.compare(token, secretKey)
-    // if(!authorization){
-    //     console.log(authorization)
-    //     return {
-    //         statusCode: 401,
-    //         body: JSON.stringify({
-    //             resposta: "User not allowed"
-    //         })
-    //     }
-    // }
+    const authorization = await bcrypt.compare(token, secretKey)
+    if(!authorization){
+        console.log(authorization)
+        return {
+            statusCode: 401,
+            body: JSON.stringify({
+                resposta: "User not allowed"
+            })
+        }
+    }
 
     //Check if admin exists
     const adminExists = await Admin.findOne({login: login})

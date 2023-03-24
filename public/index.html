@@ -16,10 +16,8 @@
     <script src="./scripts/home/login.js" defer></script>
 
     <script>
-        //Set url in sessionStorage to use on fetch's
-        sessionStorage.setItem('url', document.URL.split('/').splice('0',3).join('/'))
-        const url = sessionStorage.url
-        
+        //Set url to use on fetch's
+        const url = document.URL.split('/').splice('0',3).join('/')
     </script>
 
     <title>Home</title>

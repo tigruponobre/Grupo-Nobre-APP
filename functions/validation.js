@@ -7,7 +7,7 @@ exports.handler = async function (event, context){
     const eventBody = await JSON.parse(event.body)
     const {validationToken, permissions} = eventBody
 
-    if(permissions != 'superAdmin'){
+    if(permissions != 'super-admin'){
         return {
             statusCode: 401,
             body: JSON.stringify({

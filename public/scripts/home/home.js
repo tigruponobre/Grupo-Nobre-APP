@@ -1,7 +1,7 @@
 //Login/Logout
 let login_logout = document.querySelector('.login_logout')
 function checkLogin(){
-    const user = sessionStorage.getItem('userName')
+    const user = sessionStorage.getItem('logged')
     if(user){
         document.getElementById('greeting').textContent = `OLÁ ${user.split('.')[0].toUpperCase()}, VOCÊ ESTÁ NO`
         login_logout.textContent = 'Logout'
@@ -14,7 +14,14 @@ checkLogin()
 
 //Admin Panel
 const adminButton = document.getElementById('admin')
-adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
+const permissions = sessionStorage.getItem('permissions')
+if(permissions == 'room-map'){
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/mapa-admin')
+}else if(permissions == 'faq'){
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/base-de-conhecimento')
+}else{
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
+}
 
 let loginDiv = document.querySelector('.loginDiv')
 let fade = document.querySelector('.fade')
@@ -38,7 +45,7 @@ login_logout.addEventListener('click', ()=>{
         loginButtonHome.setAttribute('disabled', '')
         register.setAttribute('href', '')
         sessionStorage.removeItem('unauthorized')
-        sessionStorage.removeItem('userName')
+        sessionStorage.removeItem('logged')
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('permissions')
         checkLogin()
