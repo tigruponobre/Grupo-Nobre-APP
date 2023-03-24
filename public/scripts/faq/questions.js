@@ -8,7 +8,7 @@ async function getQuestions(){
         newQuestion.setAttribute('class', 'question')
         newQuestion.innerHTML = ` <div class="questionHeader">
         <h2>${question.title}</h2>
-        <a onclick="activate(event)"><img class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left"></a>
+        <img onclick="activate(event)" class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left">
         </div>
         <p class="questionContent questionContentNotActivate">${question.content}</p>`
         container.appendChild(newQuestion)
@@ -19,7 +19,7 @@ getQuestions()
 
 function activate(event){
     const thisArrow = event.target
-    const thisContent = thisArrow.parentElement.parentElement.parentElement.children[1]
+    const thisContent = thisArrow.parentElement.parentElement.children[1]    
     thisArrow.classList.toggle('arrow-activate')
     thisContent.classList.toggle('questionContentActivate')
     thisContent.classList.toggle('questionContentNotActivate')

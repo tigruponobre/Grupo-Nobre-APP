@@ -33,7 +33,7 @@ exports.handler = async function(event, context){
     const { curso, turno, dia, disciplina, token } = await eventBody
 
     // Check admin
-    /*let checkAdmin = await bcrypt.compare(masterToken, token)
+    let checkAdmin = await bcrypt.compare(masterToken, token)
     if(!checkAdmin){
         return{
             statusCode: 401,
@@ -44,7 +44,7 @@ exports.handler = async function(event, context){
                 msg: "Unauthorized"
             })
         }
-    }*/
+    }
 
     //Finding document
     let table = await Map.findOne({CURSO: curso})

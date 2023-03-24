@@ -52,6 +52,7 @@
 
 .addQuestionField input, .addQuestionField textarea{
     font-size: 1.2em;
+    padding-inline: 5px;
 }
 
 #cardAddQuestion button{
