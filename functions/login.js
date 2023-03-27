@@ -46,8 +46,6 @@ exports.handler = async function (event, context){
             //Check user password
             const checkPassword = await bcrypt.compare(password, infoAdmin.password)
 
-            if(infoAdmin.permissions == 'roomMap') connection.disconnect()
-
             if(checkPassword){
                 return{
                     statusCode: 200,

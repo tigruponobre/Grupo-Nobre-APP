@@ -1,17 +1,26 @@
-const searchInput = document.getElementById('searchKeyword')
+const container = document.getElementById('container')
+async function getQuestions(){
+    const response = await fetch(url + '/.netlify/functions/search_questions')
+    const data = await response.json()
 
-searchInput.addEventListener('keyup', (event)=>{
-    event.preventDefault()
-    const titles = Array.from(document.querySelectorAll('.questionHeader h2'))
-
-    for(let question of titles){
-        const questionDiv = question.parentElement.parentElement
-        questionDiv.style.display = 'none'
-
-        const questionTitle = question.textContent.toLowerCase()
-        const searchValue = searchInput.value.toLowerCase()
-        if(questionTitle.match(searchValue)){
-            question.parentElement.parentElement.style.display = 'flex'
-        }
+    for (let question of Array.from(data.questions)){
+        const newQuestion = document.createElement('div')
+        newQuestion.setAttribute('class', 'question')
+        newQuestion.innerHTML = ` <div class="questionHeader">
+        <h2>${question.title}</h2>
+        <img onclick="activate(event)" class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left">
+        </div>
+        <p class="questionContent questionContentNotActivate">${question.content}</p>`
+        container.appendChild(newQuestion)
     }
-})
+}
+
+getQuestions()
+
+function activate(event){
+    const thisArrow = event.target
+    const thisContent = thisArrow.parentElement.parentElement.children[1]    
+    thisArrow.classList.toggle('arrow-activate')
+    thisContent.classList.toggle('questionContentActivate')
+    thisContent.classList.toggle('questionContentNotActivate')
+}

@@ -157,7 +157,8 @@ async function getLogged(){
                 document.querySelector('.authentication').remove()
             }
             if(data.permissions == 'super-admin') window.location.href = url + '/pages/administrativo'
-            else window.location.href = url + '/pages/mapa-admin'
+            else if (data.permissions == 'faq') window.location.href = url + '/pages/base-de-conhecimento'
+            else if (data.permissions == 'room-map') window.location.href = url + '/pages/mapa-admin'
         },1500)
     }
 }
