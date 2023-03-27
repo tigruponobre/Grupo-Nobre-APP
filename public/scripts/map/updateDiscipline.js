@@ -129,6 +129,6 @@ window.addEventListener('keydown', event =>{
 
         document.getElementById('darkFade').style.display = 'none'
         document.getElementById('editRow').style.display = 'none'
-        document.getElementById('editCreate').style.display = 'none'
+        document.getElementById('newDiscipline').style.display = 'none'
     }
 })

@@ -74,30 +74,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-bottom: 2px solid #08012e;
+        /* background-color: rgba(255, 255, 255, 0.7); */
+        /* border-bottom: 2px solid #08012e; */
         border-top: 2px solid #08012e;
     }
     #menu{
         width: 100%;
         justify-content: center;
-        padding: 1% 1%;
+        padding: 3% 1%;
         gap: 12%;
     }
     .login_logout{
-        color: #200f81;
+        display: flex;
+        align-items: center;
+        color: #2D73B4;
         transition: .3s;
-        background-color: #2D73B4;
+        background-color: #fff;
         padding: 1vh 2.8vh;
         border-radius: 50em;
-        color: #fff;
+        /* color: #fff; */
         font-size: .8em;
+        /* text-shadow: 0 0 10px #fff; */
     }
-    .login_logout:hover{
-        box-shadow: 0 0 3px #200f81;
-        text-shadow: none;
-    }
-    .admin{
+    #admin{
         font-size: .8em;
     }
     #search{
