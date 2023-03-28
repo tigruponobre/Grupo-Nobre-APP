@@ -1,7 +1,7 @@
+//Imports
 require('dotenv').config()
 const mongoose = require('mongoose')
 const Admin = require('../models/Admin')
-const bcrypt = require('bcryptjs')
 
 //Enviroment Variables
 const db_user = process.env.DB_TI_USER
@@ -19,35 +19,40 @@ exports.handler = async function (event, context){
     }else{
         return{
             statusCode: 500,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
             body: JSON.stringify({
-                msg: "Connection failed."
+                resposta: "Connection failed."
             })
         }
     }
 
-    //GET ALL USERS
-    let allAdmins = await Admin.find()
+    //Get login and password
+    const login = await event.body
+    console.log(login)
+    //Get user to change
+    let user_to_change = await Admin.findOne({login: login})
 
-    //Showing users name
-    let users = []
-    for (let index in allAdmins){
-        let login = allAdmins[index]['login']
-        users.push(login)
-    }
+    //Change parameter to true
+    user_to_change['password_changed'] = true
+
+    //Confirm update
+    let confirmUpdate = await Admin.updateOne({login: login}, user_to_change)
 
     //Response
-    if(allAdmins){
+    if(confirmUpdate.matchedCount != 0 && confirmUpdate.updateOne != 0){
         return{
             statusCode: 200,
             body: JSON.stringify({
-                users: users.sort()
+                msg: "Update successful."
             })
         }
     }else{
         return{
-            statusCode: 200,
+            statusCode: 412,
             body: JSON.stringify({
-                msg: "Nenhum usuário encontrado"
+                msg: "Update failed."
             })
         }
     }

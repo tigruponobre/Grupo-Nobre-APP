@@ -1,7 +1,9 @@
+//Imports
 require('dotenv').config()
 const mongoose = require('mongoose')
 const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
+const axios = require('axios')
 
 //Enviroment Variables
 const db_user = process.env.DB_TI_USER
@@ -9,6 +11,7 @@ const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
 const master_token = process.env.TOKEN
+const minor_token = process.env.MINOR_TOKEN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -29,19 +32,28 @@ exports.handler = async function (event, context){
         }
     }
 
-    //Get e-mail and password
+    //Get login and password
     const eventBody = JSON.parse(event.body)
     const {login, password} = eventBody 
 
     //TOKEN
     const salt = await bcrypt.genSalt(12)
-    const tokenHash = await bcrypt.hash(master_token,salt)
+    const tokenHash = ''
+    const response = await axios.get('http://localhost:8888/.netlify/functions/search_super_admins')
+    const data = await response.data.users
+    if(data.includes(login)){
+        tokenHash = await bcrypt.hash(master_token,salt)
+    }else{
+        tokenHash = await bcrypt.hash(minor_token,salt)
+    }
+
 
     //Find user
     try {
         //Find Admin
         let infoAdmin = await Admin.findOne({login: login})
 
+        //User finded
         if(infoAdmin){
             //Check user password
             const checkPassword = await bcrypt.compare(password, infoAdmin.password)
@@ -55,10 +67,13 @@ exports.handler = async function (event, context){
                     body: JSON.stringify({
                         resposta: 'Login successful!',
                         permissions: infoAdmin.permissions,
-                        token: tokenHash
+                        token: tokenHash,
+                        need_to_change
                     })
                 }
-            }else{
+            }
+            //User not finded
+            else{
                 return{
                     statusCode: 400,
                     headers: {

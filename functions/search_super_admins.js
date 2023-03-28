@@ -26,17 +26,17 @@ exports.handler = async function (event, context){
     }
 
     //GET ALL USERS
-    let allAdmins = await Admin.find()
+    let superAdmins = await Admin.find({permissions: "super-admin"})
 
     //Showing users name
     let users = []
-    for (let index in allAdmins){
-        let login = allAdmins[index]['login']
+    for (let index in superAdmins){
+        let login = superAdmins[index]['login']
         users.push(login)
     }
 
     //Response
-    if(allAdmins){
+    if(superAdmins){
         return{
             statusCode: 200,
             body: JSON.stringify({

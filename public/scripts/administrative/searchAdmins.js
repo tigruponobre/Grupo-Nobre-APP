@@ -20,7 +20,7 @@ async function getUsers(){
     usersUl.innerHTML = ''
     let response = await fetch(url + '/.netlify/functions/search_admins')
     let data = await response.json()
-    let users = data.resposta
+    let users = data.users
 
     await users.forEach(element => {
         let userData = document.createElement('li')
