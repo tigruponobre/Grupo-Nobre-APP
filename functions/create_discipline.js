@@ -29,6 +29,7 @@ exports.handler = async function (event, context){
         }
     }
 
+    //Get information from req body
     const eventBody = await JSON.parse(event.body)
     const { curso, turno, dia, disciplina, turma, professor, sala, modulo, inicio, fim, token } = eventBody
 
@@ -49,6 +50,7 @@ exports.handler = async function (event, context){
     //Finding document
     let table = await Map.findOne({CURSO: curso})
 
+    // Creating new discipline string objetc
     const newDisciplineString = 
     `{
         "${disciplina}": {
@@ -61,10 +63,13 @@ exports.handler = async function (event, context){
         }
     }`
 
+    //Turn discipline string into JSON
     const newDispline = await JSON.parse(newDisciplineString)
 
+    //Turn old object into the new one
     Object.assign(table[turno][dia], newDispline)
 
+    //Confirm the information insert
     let confirmInsert = await Map.updateOne({CURSO: curso}, table)
 
     //Response

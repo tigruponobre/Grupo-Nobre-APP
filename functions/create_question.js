@@ -26,6 +26,7 @@ exports.handler = async function(event, context){
         }
     }
 
+    //Get info variables from req body
     const eventBody = await JSON.parse(event.body)
     const { title, content, user_name, token } = eventBody
 
@@ -41,6 +42,7 @@ exports.handler = async function(event, context){
         }
     }
     
+    //Checking if variables are filled
     if(!title || !content || !user_name){
         return{
             statusCode: 204,
@@ -48,36 +50,37 @@ exports.handler = async function(event, context){
                 msg:"Wrong information or empty"
             })
         }
-    }else{
-        let newDate = new Date()
-        let currentDate = await `${newDate.getDate()}-${newDate.getMonth() + 1}-${newDate.getFullYear()}`
-        
-        try {
-            const newQuestion = await {
-                title,
-                content,
-                created_by: user_name,
-                created_in : currentDate
-            }
+    }
+    
+    //Get current date
+    let newDate = new Date()
+    let currentDate = await `${newDate.getDate()}-${newDate.getMonth() + 1}-${newDate.getFullYear()}`
+    
+    try {
+        // Await to create new question object
+        const newQuestion = await {
+            title,
+            content,
+            created_by: user_name,
+            created_in : currentDate
+        }
 
-            console.log(newQuestion)
+        // Create object on DB
+        await Question.create(newQuestion)
 
-            await Question.create(newQuestion)
-
-            return{
-                statusCode: 201,
-                body: JSON.stringify({
-                    msg:"Question registered successfully"
-                })
-            }
-        } catch (error) {
-            return{
-                statusCode: 500,
-                body: JSON.stringify({
-                    msg:"It was not possible to register this question",
-                    error
-                })
-            }
+        return{
+            statusCode: 201,
+            body: JSON.stringify({
+                msg:"Question registered successfully"
+            })
+        }
+    } catch (error) {
+        return{
+            statusCode: 500,
+            body: JSON.stringify({
+                msg:"It was not possible to register this question",
+                error
+            })
         }
     }
 }

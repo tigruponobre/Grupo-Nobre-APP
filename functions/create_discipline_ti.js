@@ -28,7 +28,7 @@ exports.handler = async function (event, context){
     const eventBody = await JSON.parse(event.body)
     let { CURSO, MODALIDADE, MATUTINO, NOTURNO } = eventBody
 
-    // Register map
+    // Discipline object if MATUTINO and NOTURNO needs to be registered
     if (MATUTINO && NOTURNO){
         let newMap = {
             CURSO,
@@ -36,6 +36,7 @@ exports.handler = async function (event, context){
             MATUTINO,
             NOTURNO
     }
+    // Create discipline
     try {
         await Map.create(newMap)
         return{
@@ -49,15 +50,18 @@ exports.handler = async function (event, context){
             statusCode: 500,
             body: JSON.stringify({
                 resposta: 'It was not possible to registrate this map'
-            })
+                })
+            }
         }
     }
-    }else if (MATUTINO){
+    // Discipline object if only MATUTINO needs to be registered
+    else if (MATUTINO){
         let newMap = {
                 CURSO,
                 MODALIDADE,
                 MATUTINO
         }
+        // Create discipline
         try {
             await Map.create(newMap)
             return{
@@ -74,12 +78,15 @@ exports.handler = async function (event, context){
                 })
             }
         }
-    }else if (NOTURNO){
+    }
+    // Discipline object if only NOTURNO needs to be registered
+    else if (NOTURNO){
         let newMap = {
             CURSO,
             MODALIDADE,
             NOTURNO
     }
+    // Create Discipline
     try {
         await Map.create(newMap)
         return{
