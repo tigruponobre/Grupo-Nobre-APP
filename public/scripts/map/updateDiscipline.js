@@ -1,3 +1,12 @@
+//Variabels
+const editRowDiv = document.getElementById('editRow')
+const closeEdit = document.querySelector('.closeEdit')
+
+closeEdit.addEventListener('click', ()=>{
+    darkFade.style.display = 'none';
+    editRowDiv.style.display = 'none';
+})
+
 //Get inputs
 let beforeUpdate = ''
 let editCurso = document.querySelector('.editCurso')

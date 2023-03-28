@@ -35,8 +35,7 @@ exports.handler = async function (event, context){
     const { curso, turno, dia, disciplina, turma, professor, sala, modulo, inicio, fim, token } = eventBody
 
     // Check admin
-    let checkAdmin = await bcrypt.compare(master_token, token)
-    if(!checkAdmin) checkAdmin = await bcrypt.compare(minor_token, token)
+    let checkAdmin = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
 
     if(!checkAdmin){
         return{
