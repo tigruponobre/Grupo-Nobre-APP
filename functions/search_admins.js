@@ -27,6 +27,8 @@ exports.handler = async function (event, context){
 
     //GET ALL USERS
     let allAdmins = await Admin.find()
+
+    //Showing users name
     let users = []
     for (let index in allAdmins){
         let login = allAdmins[index]['login']
@@ -37,8 +39,7 @@ exports.handler = async function (event, context){
         users.push(userName)
     }
 
-    // console.log(allAdmins)
-
+    //Response
     if(allAdmins){
         return{
             statusCode: 200,

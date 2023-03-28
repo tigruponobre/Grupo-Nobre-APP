@@ -49,8 +49,10 @@ exports.handler = async function (event, context){
     //Finding document
     let table = await Map.findOne({CURSO: curso})
 
+    //Delete table
     delete table[turno][dia][disciplina]
     
+    //Confirm changes
     let confirmUpdate = await Map.updateOne({CURSO: curso}, table)
 
     //Response
