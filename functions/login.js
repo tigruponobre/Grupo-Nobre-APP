@@ -38,11 +38,13 @@ exports.handler = async function (event, context){
 
     //TOKEN
     const salt = await bcrypt.genSalt(12)
-    const tokenHash = ''
+    let tokenHash = ''
     const response = await axios.get('http://localhost:8888/.netlify/functions/search_super_admins')
     const data = await response.data.users
     if(data.includes(login)){
+        console.log('ok')
         tokenHash = await bcrypt.hash(master_token,salt)
+        console.log('ok2')
     }else{
         tokenHash = await bcrypt.hash(minor_token,salt)
     }
@@ -52,7 +54,6 @@ exports.handler = async function (event, context){
     try {
         //Find Admin
         let infoAdmin = await Admin.findOne({login: login})
-
         //User finded
         if(infoAdmin){
             //Check user password
@@ -67,8 +68,7 @@ exports.handler = async function (event, context){
                     body: JSON.stringify({
                         resposta: 'Login successful!',
                         permissions: infoAdmin.permissions,
-                        token: tokenHash,
-                        need_to_change
+                        token: tokenHash
                     })
                 }
             }
