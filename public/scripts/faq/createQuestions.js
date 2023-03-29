@@ -22,6 +22,7 @@ closeButton.addEventListener("click", ()=>{
 })
 
 async function postQuestion(){
+    document.getElementById('postQuestion').textContent = 'Aguarde...'
     container.innerHTML = ''
     const title = document.getElementById('titleQuestion').value
     const textArea = document.getElementById('response').value
@@ -39,6 +40,7 @@ async function postQuestion(){
     })
 
     const data = await response.json()
+    document.getElementById('postQuestion').textContent = 'Adicionar'
     window.alert(data.msg)
 
     document.getElementById('titleQuestion').value = ''
