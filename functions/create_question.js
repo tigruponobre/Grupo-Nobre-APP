@@ -9,6 +9,7 @@ const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
 const master_token = process.env.TOKEN
+const minor_token = process.env.MINOR_TOKEN
 
 exports.handler = async function(event, context){
     //Connection with MongoDB Atlas
@@ -28,10 +29,11 @@ exports.handler = async function(event, context){
 
     //Get info variables from req body
     const eventBody = await JSON.parse(event.body)
-    const { title, content, user_name, token } = eventBody
+    const { title, answer, user_name, token } = eventBody
 
+    console.log(answer)
     //Check admin
-    const compareToken = await bcrypt.compare(master_token, token)
+    const compareToken = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
 
     if(!compareToken){
         return{
@@ -43,11 +45,11 @@ exports.handler = async function(event, context){
     }
     
     //Checking if variables are filled
-    if(!title || !content || !user_name){
+    if(!title || !answer || !user_name){
         return{
             statusCode: 204,
             body: JSON.stringify({
-                msg:"Wrong information or empty"
+                msg:"Wrong or empty information"
             })
         }
     }
@@ -60,7 +62,7 @@ exports.handler = async function(event, context){
         // Await to create new question object
         const newQuestion = await {
             title,
-            content,
+            answer,
             created_by: user_name,
             created_in : currentDate
         }

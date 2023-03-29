@@ -25,13 +25,16 @@ async function postQuestion(){
     container.innerHTML = ''
     const title = document.getElementById('titleQuestion').value
     const textArea = document.getElementById('response').value
+    const user_name = await sessionStorage.getItem('logged')
+    const token = await sessionStorage.getItem('token')
 
-    const response = await fetch(url + '/.netlify/functions/insert_question', {
+    const response = await fetch(url + '/.netlify/functions/create_question', {
         method: 'post',
         body: JSON.stringify({
             title,
-            content: textArea,
-            user_name: 'gustavo.queiroz'
+            answer: textArea,
+            user_name,
+            token
         })
     })
 

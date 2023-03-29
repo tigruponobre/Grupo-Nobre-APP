@@ -42,9 +42,7 @@ exports.handler = async function (event, context){
     const response = await axios.get('http://localhost:8888/.netlify/functions/search_super_admins')
     const data = await response.data.users
     if(data.includes(login)){
-        console.log('ok')
         tokenHash = await bcrypt.hash(master_token,salt)
-        console.log('ok2')
     }else{
         tokenHash = await bcrypt.hash(minor_token,salt)
     }

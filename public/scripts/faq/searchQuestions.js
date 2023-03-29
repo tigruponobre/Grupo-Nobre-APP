@@ -10,7 +10,7 @@ async function getQuestions(){
         <h2>${question.title}</h2>
         <img onclick="activate(event)" class="arrow-left" src="../img/icons/white-arrow.png" alt="arrow-left">
         </div>
-        <p class="questionContent questionContentNotActivate">${question.content}</p>`
+        <p class="questionContent questionContentNotActivate">${question.answer}</p>`
         container.appendChild(newQuestion)
     }
 }
