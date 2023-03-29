@@ -34,12 +34,12 @@ exports.handler = async function (event, context){
 
     //Get login and password
     const eventBody = JSON.parse(event.body)
-    const {login, password} = eventBody 
+    const {login, password, url} = eventBody 
 
     //TOKEN
     const salt = await bcrypt.genSalt(12)
     let tokenHash = ''
-    const response = await axios.get('http://localhost:8888/.netlify/functions/search_super_admins')
+    const response = await axios.get(url + '/.netlify/functions/search_super_admins')
     const data = await response.data.users
     if(data.includes(login)){
         tokenHash = await bcrypt.hash(master_token,salt)

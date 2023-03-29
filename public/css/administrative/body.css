@@ -12,3 +12,9 @@ body{
     margin-top: 11vh;
     z-index: -1;
 }
+
+@media (max-width: 1140px){
+    #admin{
+        opacity: 0.3;
+    }
+}

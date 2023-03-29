@@ -3,6 +3,7 @@ section{
     display: none;
     margin-top: .5%;
     background-image: url('../../img/backgrounds/science_bg.png');
+    background-color: #0F054C;
     max-width: 90vh;
     margin-inline: 8%;
     border-radius: 20px;
