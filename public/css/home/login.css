@@ -10,7 +10,7 @@
     pointer-events: none;
     transition: ease .3s;
 }
-#card{
+.card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@
     border-radius: 4px;
     box-shadow: 0 0 20px #00000090;
 }
-#logo-azul{
+#logo-azul-login{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@ label{
 }
 
 #loginButton{
-    padding: 10px 50px;
+    padding: .8em 3em;
     margin-bottom: 5%;
     margin-top: 3%;
     background-color: #2D73B4;
@@ -68,10 +68,32 @@ label{
     color: #fff;
     cursor: pointer;
     font-size: 16px;
+    transition: ease .3s;
 }
 
-#registerMessage{
-    color: #2469aa;
+#loginButton:hover{
+    background-color: #27649e;
+}
+
+#choices{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+#choices p{
+    width: 2%;
+    text-align: center;
+}
+
+#choices a{
+    width: 49%;
+}
+
+#call_update_password{
+    text-align: end;
+    cursor: pointer;
 }
 
 @keyframes notify{

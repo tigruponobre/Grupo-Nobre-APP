@@ -28,14 +28,26 @@ exports.handler = async function (event, context){
         }
     }
 
-    //Get login and password
-    const login = await event.body
-    console.log(login)
+    //Get info from requisition
+    const {login, password, newPassword} = event.body
+
     //Get user to change
     let user_to_change = await Admin.findOne({login: login})
 
-    //Change parameter to true
-    user_to_change['password_changed'] = true
+    //Check user current password
+    const checkPassword = await bcrypt.compare(password, user_to_change.password)
+
+    if(!checkPassword){
+        return{
+            statusCode: 400,
+            body: JSON.stringify({
+                msg: "User or password incorrect."
+            })
+        }
+    }
+
+    //Update password
+    user_to_change['password'] = newPassword
 
     //Confirm update
     let confirmUpdate = await Admin.updateOne({login: login}, user_to_change)

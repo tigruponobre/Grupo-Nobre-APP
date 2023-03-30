@@ -2,17 +2,17 @@
 const loginDiv = document.querySelector('.loginDiv')
 const fade = document.querySelector('.fade')
 
-const inputs = Array.from(document.querySelectorAll('.inputs input'))
+const loginInputs = Array.from(document.querySelectorAll('.card .inputs input'))
 const loginButtonHome = document.querySelector('#loginButton')
-const register = document.querySelector('#registerMessage a')
+const register = document.querySelector('#registerMessage')
 
 //Oppening login div
 login_logout.addEventListener('click', ()=>{
     //If login_logout == Login -> Open login div -- Else -> Log out
     if(login_logout.textContent == 'Login'){
-        //Remove disable attribute from inputs in login div
-        for(let i in inputs){
-            inputs[i].removeAttribute('disabled')
+        //Remove disable attribute from loginInputs in login div
+        for(let i in loginInputs){
+            loginInputs[i].removeAttribute('disabled')
         }
         loginButtonHome.removeAttribute('disabled')
 
@@ -25,9 +25,9 @@ login_logout.addEventListener('click', ()=>{
     }else{
         //Log out
 
-        //Disabling inputs
-        for(let i in inputs){
-            inputs[i].setAttribute('disabled', '')
+        //Disabling loginInputs
+        for(let i in loginInputs){
+            loginInputs[i].setAttribute('disabled', '')
         }
         loginButtonHome.setAttribute('disabled', '')
 

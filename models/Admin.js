@@ -5,8 +5,7 @@ const Admin = mongoose.model('Admin', {
     password: "String",
     permissions: "String",
     criador: "String",
-    data_de_criacao: "String",
-    password_changed: "Boolean"
+    data_de_criacao: "String"
 })
 
 module.exports = Admin

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/home/menu.css">
     <link rel="stylesheet" href="./css/home/containers.css">
     <link rel="stylesheet" href="./css/home/login.css">
+    <link rel="stylesheet" href="./css/home/updatePassword.css">
     <link rel="stylesheet" href="./css/general/footer.css">
     <script src="./scripts/home/admPanelButton.js" defer></script>
     <script src="./scripts/home/checkLogin.js" defer></script>
@@ -60,8 +61,8 @@
     <div class="fade"></div>
     
     <div class="loginDiv">
-        <div id="card">
-            <div id="logo-azul">
+        <div class="card">
+            <div id="logo-azul-login">
                 <img src="./img/logos/GRUPO NOBRE.png" alt="logo" width="48%">
             </div>
             <div class="inputs">
@@ -74,9 +75,37 @@
             </div>
             <p id="notification"></p>
             <button id="loginButton" disabled>Login</button>
-            <div id="register">
-                <p id="registerMessage">Não tem conta? <b><a class="link" href="">Solicite registro.</a></b></p>
+            <div id="choices">
+                <a id="call_update_password" class="link"><b>Alterar senha</b></a>
+                <p class="link">|</p>
+                <a id="registerMessage" class="link" href=""><b>Solicitar registro</b></a>
             </div>
+        </div>
+    </div>
+
+    <div class="update_password">
+        <div class="card">
+            <div id="logo-azul-update">
+                <img src="./img/logos/GRUPO NOBRE.png" alt="logo" width="48%">
+            </div>
+            <div class="inputs">
+                <label for="login">Usuário</label>
+                <input type="text" id="loginInput" disabled>
+            </div>
+            <div class="inputs">
+                <label for="password">Senha</label>
+                <input type="password" id="passwordInput" disabled>
+            </div>
+            <div class="inputs">
+                <label for="newPassword">Nova senha</label>
+                <input type="newPassword" id="newPasswordInput" disabled>
+            </div>
+            <div class="inputs">
+                <label for="validationPassword">Confirme a nova senha</label>
+                <input type="validationPassword" id="validationPasswordInput" disabled>
+            </div>
+            <p id="notification"></p>
+            <button id="loginButton" disabled>Alterar senha</button>
         </div>
     </div>
 

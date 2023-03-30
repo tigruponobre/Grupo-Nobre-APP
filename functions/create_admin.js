@@ -65,8 +65,7 @@ exports.handler = async function (event, context){
         password: passwordHash,
         permissions,
         criador: creator,
-        data_de_criacao: currentDate,
-        password_changed: false
+        data_de_criacao: currentDate
     }
 
     //Register admin
