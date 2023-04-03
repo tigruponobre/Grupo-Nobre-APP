@@ -28,8 +28,26 @@ exports.handler = async function (event, context){
     }
 
     const eventBody = JSON.parse(event.body)
-    const { login, oldPassword, newPasswrd} = eventBody
+    const { login, oldPassword, newPassword} = eventBody
 
     //Check user
-    const findLogin = await Admin.findOne({login: login})
+    const get_admin = await Admin.findOne({login: login})
+
+    //Check admin old password
+    try {
+        const check_old_password = await bcrypt.compare(oldPassword, get_admin['password'])
+        return{
+            statusCode: 200,
+            body: JSON.stringify({
+                msg: check_old_password
+            })
+        }   
+    } catch (error) {
+        return{
+            statusCode: 401,
+            body: JSON.stringify({
+                msg: "Invalid old password"
+            })
+        }   
+    }
 }

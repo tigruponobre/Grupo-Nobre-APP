@@ -13,13 +13,27 @@ call_update_password.addEventListener('click', ()=>{
 })
 
 async function updatePassword(){
+    //Check Passwords
     if(new_password.value != confirm_new_password.value){
         new_password.classList.add('error')
         confirm_new_password.classList.add('error')
+        return;
     }else{
         if(new_password.classList.contains('error')){
             new_password.classList.remove('error')
             confirm_new_password.classList.remove('error')
         }
     }
+
+    //Do the update
+    const response = await fetch(url + '/.netlify/functions/update_admin_password', {
+        method: 'put',
+        body: JSON.stringify({
+            login: user_to_update.value,
+            oldPassword: old_password.value,
+            newPassword: new_password.value
+        })
+    })
+    const data = await response.json()
+    console.log(data.msg)
 }
