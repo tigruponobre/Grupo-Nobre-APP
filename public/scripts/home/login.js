@@ -47,15 +47,13 @@ login_logout.addEventListener('click', ()=>{
 
 //Closing login div with esc or click outside the card
 document.onkeydown = (e) =>{
-    if(loginDiv.classList.contains('unhide')){
-        if(e.keyCode == 27){
-            [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
-        }
+    if(e.keyCode == 27){
+        [fade, loginDiv, update_password_div].forEach((el)=> el.classList.remove('unhide'))
     }
 }
 
 fade.addEventListener('click', ()=>{
-    [fade, loginDiv].forEach((el)=> el.classList.toggle('unhide'))
+    [fade, loginDiv, update_password_div].forEach((el)=> el.classList.remove('unhide'))
 })
 
 //Get DOM elemnts
