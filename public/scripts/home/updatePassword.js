@@ -6,6 +6,7 @@ const user_to_update = document.getElementById('login_input')
 const old_password = document.getElementById('password_input')
 const new_password = document.getElementById('new_password_input')
 const confirm_new_password = document.getElementById('confirm_password_input')
+const update_password_button = document.getElementById('update_password_button')
 
 call_update_password.addEventListener('click', ()=>{
     loginDiv.classList.toggle('unhide')
@@ -14,7 +15,7 @@ call_update_password.addEventListener('click', ()=>{
 
 async function updatePassword(){
     //Check Passwords
-    if(new_password.value != confirm_new_password.value){
+    if(new_password.value != confirm_new_password.value || new_password.value == ''){
         new_password.classList.add('error')
         confirm_new_password.classList.add('error')
         return;
@@ -24,6 +25,9 @@ async function updatePassword(){
             confirm_new_password.classList.remove('error')
         }
     }
+
+    //Wait...
+    update_password_button.textContent = 'Aguarde...'
 
     //Do the update
     const response = await fetch(url + '/.netlify/functions/update_admin_password', {
@@ -35,5 +39,10 @@ async function updatePassword(){
         })
     })
     const data = await response.json()
-    console.log(data.msg)
+    window.alert('Senha alterada com sucesso!')
+
+    update_password_button.textContent = 'Alterar senha'
+
+    update_password_div.classList.toggle('unhide')
+    loginDiv.classList.toggle('unhide')
 }
