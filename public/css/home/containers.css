@@ -78,7 +78,7 @@
     width: 25vh;
 }
 
-@media (max-width: 70em){
+@media (max-width: 1180px){
     #logodiv{
         margin: 0;
         width: 100%;

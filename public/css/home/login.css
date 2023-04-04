@@ -147,7 +147,7 @@ label{
     transition: ease .5s;
 }
 
-@media (max-width: 70em){
+@media (max-width: 1180px){
     .fade{
         opacity: .6;
         z-index: -1;

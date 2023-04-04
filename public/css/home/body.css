@@ -11,7 +11,7 @@ body{
     height: 100vh;
 }
 
-@media (max-width: 70em){
+@media (max-width: 1180px){
     body{
         background-size: auto;
         background-position: center;

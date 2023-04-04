@@ -1,14 +1,19 @@
 /* SEARCH */
-#search{
+#google_search{
     position: absolute;
     top: 3%;
-    right: 6%;
-    width: 28em;
+    right: 6.5%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+#search{
+    width: 29em;
     padding-left: .8em;
     padding-right: 2.8em;
     height: 2.5em;
     border-radius: 50em;
-    z-index: 2;
     color: #2D73B4;
     border: 2px solid #0F054C;
     transition: ease .3s;
@@ -17,19 +22,10 @@
     outline: none;
     border: 2px solid #2D73B4;
 }
+
 #lens{
-    position: absolute;
-    right: 6.5%;
-    border-top-right-radius: 50em;
-    border-bottom-right-radius: 50em;
-    top: 3.18%;
-    z-index: 2;
-    background-color: transparent;
-    padding-left: .3%;
-    height: 3.3%;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    width: 18px;
+    margin-left: -1.9em;
 }
 
 /* RIGHT SIDE */
@@ -51,64 +47,66 @@
 
 /* MENU ITEMS */
 .login_logout{
-    color: #44d4f5;
+    width: 5%;
+    padding: 1vh 0;
+    text-align: center;
     cursor: pointer;
-    padding-top: 1vh;
+    color: #5eb0fd;
+    transition: ease .2s;
 }
+
 .login_logout:hover{
-    text-shadow: 0 0 10px #42E9E1;
+    text-shadow: 0 0 5px #5eb0fd;
 }
+
 #admin{
     background-color: #2D73B4;
-    padding: 1vh 2.8vh;
+    padding: 1vh 0;
+    width: 15%;
     border-radius: 1.5vh;
     cursor: pointer;
     transition: ease .3s;
+    text-align: center;
 }
 #admin:hover{
     background-color: #275f94;
 }
 
-@media (max-width: 70em){
+@media (max-width: 1180px){
     #right-side{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* background-color: rgba(255, 255, 255, 0.7); */
-        /* border-bottom: 2px solid #08012e; */
         border-top: 2px solid #08012e;
     }
     #menu{
         width: 100%;
         justify-content: center;
         padding: 3% 1%;
-        gap: 12%;
+        gap: 5%;
     }
+
     .login_logout{
-        display: flex;
-        align-items: center;
-        color: #2D73B4;
-        transition: .3s;
+        width: 47%;
         background-color: #fff;
-        padding: 1vh 2.8vh;
-        border-radius: 50em;
-        /* color: #fff; */
+        border-radius: 1.5vh;
         font-size: .8em;
-        /* text-shadow: 0 0 10px #fff; */
+        color: #275f94;
     }
+
+    .login_logout:hover{
+        text-shadow: none;
+    }
+
     #admin{
+        width: 47%;
         font-size: .8em;
     }
-    #search{
+    #google_search{
         top: auto;
         bottom: 5vh;
-        right: 50%;
-        transform: translate(50%);
-    }
-    #lens{
-        top: auto;
-        bottom: 5.2vh;
-        right: 50%;
-        transform: translate(10em);
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%)
     }
 }
