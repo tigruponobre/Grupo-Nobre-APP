@@ -70,3 +70,19 @@
 #cardAddQuestion button:hover{
     background-color: #d86527;
 }
+
+@media (max-width: 1180px){
+    #cardAddQuestion{
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(0, 0);
+        font-size: 2em;
+    }
+
+    #postQuestion{
+        font-size: 1.5em;
+        min-width: 50%;
+    }
+}
