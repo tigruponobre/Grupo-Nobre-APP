@@ -30,8 +30,12 @@ checkLogin()
 
 //Check user is authorized
 if(sessionStorage.getItem('unauthorized') == 'true'){
-    let authNotification = document.createElement('div')
-    authNotification.setAttribute('class', 'authentication authNotificationMove')
-    authNotification.innerHTML = '<img src="./img/icons/warning.png" alt="warning" width="20px"><h3>Você não está autorizado a visualizar aquela página, por gentileza, efetue o <b id="notificationLogin">login como administrador!</b></h3>'
-    document.querySelector('body').insertBefore(authNotification, document.querySelector('header'))
+    if(window.innerWidth > 1180){
+        let authNotification = document.createElement('div')
+        authNotification.setAttribute('class', 'authentication authNotificationMove')
+        authNotification.innerHTML = '<img src="./img/icons/warning.png" alt="warning" width="20px"><h3>Você não está autorizado a visualizar aquela página, por gentileza, efetue o <b id="notificationLogin">login como administrador!</b></h3>'
+        document.querySelector('body').insertBefore(authNotification, document.querySelector('header'))
+    }else{
+        window.alert('Você não está autorizado a visualizar aquela página, por gentileza, efetue o login como administrador!')
+    }
 }
