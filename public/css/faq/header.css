@@ -3,7 +3,7 @@ header{
     background-color: #0c68afc4;
     margin-top: 1vh;
     border-radius: 10px;
-    padding: 3vh 5vw 30vh 5vw;
+    padding: 3vh 5vw 7em 5vw;
 }
 
 #navigation{
@@ -88,6 +88,6 @@ header{
 #pageTitle{
     font-size: 4em;
     position: relative;
-    top: 15vh;
+    top: .8em;
     letter-spacing: 5px;
 }

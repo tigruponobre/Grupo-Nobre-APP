@@ -1,6 +1,6 @@
 #leftSide{
     width: 98%;
-    padding: 5vh 0 10vh 3vw;
+    padding: 5vh 0 0 3vw;
 }
 
 #summary{
@@ -30,7 +30,7 @@
 }
 
 .block h4{
-    font-size: 1.6vw;
+    font-size: 1.6em;
 }
 
 .block p{
