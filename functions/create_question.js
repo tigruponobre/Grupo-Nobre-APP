@@ -29,30 +29,19 @@ exports.handler = async function(event, context){
 
     //Get info variables from req body
     const eventBody = await JSON.parse(event.body)
-    const { title, answer, user_name, token } = eventBody
+    const { theme, title, answer_unef, answer_unifan, answer_unefead, answer_unifanead, user_name, token } = eventBody
 
-    console.log(answer)
     //Check admin
-    const compareToken = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
+    // const compareToken = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
 
-    if(!compareToken){
-        return{
-            statusCode: 401,
-            body: JSON.stringify({
-                msg:"Unauthorized"
-            })
-        }
-    }
-    
-    //Checking if variables are filled
-    if(!title || !answer || !user_name){
-        return{
-            statusCode: 204,
-            body: JSON.stringify({
-                msg:"Wrong or empty information"
-            })
-        }
-    }
+    // if(!compareToken){
+    //     return{
+    //         statusCode: 401,
+    //         body: JSON.stringify({
+    //             msg:"Unauthorized"
+    //         })
+    //     }
+    // }
     
     //Get current date
     let newDate = new Date()
@@ -61,8 +50,12 @@ exports.handler = async function(event, context){
     try {
         // Await to create new question object
         const newQuestion = await {
+            theme,
             title,
-            answer,
+            answer_unef,
+            answer_unifan,
+            answer_unefead,
+            answer_unifanead,
             created_by: user_name,
             created_in : currentDate
         }
@@ -73,7 +66,7 @@ exports.handler = async function(event, context){
         return{
             statusCode: 201,
             body: JSON.stringify({
-                msg:"Question registered successfully"
+                msg: newQuestion
             })
         }
     } catch (error) {

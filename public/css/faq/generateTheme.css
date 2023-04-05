@@ -1,0 +1,50 @@
+#themeQuestions{
+    max-width: 55%;
+}
+
+#chosenTitle{
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+.question div{
+    /* display: none; */
+    padding: .5em 2em 0 .5em;
+    text-align: justify;
+}
+
+.questionTitle{
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.questionTitle img{
+    cursor: pointer;
+    transition: .2s;
+}
+
+.questionTitle img:hover{
+    transform: rotate(-90deg);
+}
+
+.questionActivated{
+    transform: rotate(-90deg);
+}
+
+.question div h6{
+    font-size: 1em;
+}
+
+.question{
+    border: 1px solid #10101090;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #37b67f70;
+    margin-bottom: 1em;
+}
+
+.response{
+    display: none;
+}
