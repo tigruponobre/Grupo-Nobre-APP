@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/general/all.css">
     <link rel="stylesheet" href="../css/faq/body.css">
+    <link rel="stylesheet" href="../css/faq/fade.css">
     <link rel="stylesheet" href="../css/faq/header.css">
     <link rel="stylesheet" href="../css/faq/leftSide.css">
     <link rel="stylesheet" href="../css/faq/rightSide.css">
-    <link rel="stylesheet" href="../css/faq/generateTheme.css
-    ">
+    <link rel="stylesheet" href="../css/faq/generateTheme.css">
+    <link rel="stylesheet" href="../css/faq/createQuestion.css">
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
 
     <script src="../scripts/faq/generateTheme.js" defer></script>
@@ -18,6 +19,50 @@
     <title>Base de conhecimento</title>
 </head>
 <body>
+    
+    <div id="fade" ></div>
+    <div id="addQuestionDiv">
+        <h2>Cadastro de pergunta</h2>
+        <div id="questionInfo">
+            <div>
+                <h3>Pergunta:</h3>
+                <input type="text" id="createQuestionTitle" placeholder="Digite o título da pergunta.">
+            </div>
+            <div>
+                <h3>Marque as instituições que receberão resposta para esta pergunta:</h3>
+            </div>
+            <div>
+                <div class="check">
+                    <input type="checkbox" id="unefCheck">
+                    <label for="unefCheck">UNEF:</label>
+                </div>
+                <input type="text" placeholder="Digite a resposta para a UNEF.">
+            </div>
+            <div>
+                <div class="check">
+                    <input type="checkbox" id="unifanCheck">
+                    <label for="unifanCheck">UNIFAN:</label>
+                </div>
+                <input type="text" placeholder="Digite a resposta para a UNIFAN.">
+            </div>
+            <div>
+                <div class="check">
+                    <input type="checkbox" id="unefeadCheck">
+                    <label for="unefeadCheck">UNEF EAD:</label>
+                </div>
+                <input type="text" placeholder="Digite a resposta para a UNEF EAD.">
+            </div>
+            <div>
+                <div class="check">
+                    <input type="checkbox" id="unifaneadCheck">
+                    <label for="unifaneadCheck">UNIFAN EAD:</label>
+                </div>
+                <input type="text" placeholder="Digite a resposta para a UNIFAN EAD.">
+            </div>
+        </div>
+    </div>
+
+
     <header>
         <img id="faq" src="../img/icons/faq.png" alt="faq">
         <img id="interrogation" src="../img/icons/interrogation.png" alt="interrogation">
@@ -25,7 +70,6 @@
             <h3 id="blog">Blog</h3>
             <nav id="navbar">
                 <ul>
-                    <li id="addTheme">Adicionar Tema</li>
                     <li id="addQuestion">Adicionar perguntas</li>
                     <li id="contacts">Contatos</li>
                 </ul>

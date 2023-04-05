@@ -1,0 +1,20 @@
+#addQuestionDiv{
+    min-width: 50vw;
+    min-height: 70vh;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2em;
+}
+
+#addQuestionDiv h3{
+    margin-top: 2em
+}
+
+#questionInfo div label{
+    width: 100%;
+}
