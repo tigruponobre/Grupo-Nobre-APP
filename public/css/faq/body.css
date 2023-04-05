@@ -1,12 +1,11 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url(../../img/backgrounds/gradiente-laranja-amarelo.png);
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.9;
+*{
+    letter-spacing: 1px;
+    cursor: default;
+    user-select: none;
 }
 
-* {
-    letter-spacing: .8px;
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

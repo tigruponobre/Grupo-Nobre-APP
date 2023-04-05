@@ -3,8 +3,9 @@
     list-style: none;
     gap: 5px;
     justify-content: flex-end;
-    margin-right: 20%;
-    padding-top: 8em;
+    position: relative;
+    right: 20vw;
+    top: 2vh;
 }
 
 #circles li{

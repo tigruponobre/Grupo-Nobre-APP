@@ -1,113 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8" >
-        <title>Base de conhecimento</title>
-        <link rel="stylesheet" type="text/css" href="../css/general/all.css">
-        <link rel="stylesheet" type="text/css" href="../css/general/footer.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/body.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/header.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/search.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/questions.css">
-        <link rel="stylesheet" type="text/css" href="../css/faq/addQuestion.css">
-        <link rel="shortcut icon" href="../img/logos/favicon-unef.ico" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general/all.css">
+    <link rel="stylesheet" href="../css/faq/body.css">
+    <link rel="stylesheet" href="../css/faq/header.css">
+    <link rel="stylesheet" href="../css/faq/leftSide.css">
+    <link rel="stylesheet" href="../css/faq/rightSide.css">
+    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
 
-        <script src="../scripts/faq/searchQuestions.js" defer></script>
-        <script src="../scripts/faq/createQuestions.js" defer></script>
-        <script src="../scripts/faq/keyword.js" defer></script>
-        <script>
-            //Set url to use on fetch's
-            const url = document.URL.split('/').splice('0',3).join('/')
-            const token = sessionStorage.getItem('token')
-        </script>
+    <script src="../scripts/faq/generateTheme.js" defer></script>
 
-    </head>
-    <body>
-        <header>
-            <img class="logo" src="../img/logos/unef_vertical.png" alt="Logo UNEF">
-                <ul class="child nav">
-                    <li><p id="showAddQuestion">Adicionar pergunta</p></li>
-                    <li><a href="http://192.168.10.214/" target="_blank"><button id="contact">CONTATOS</button></a></li>
+    <title>Base de conhecimento</title>
+</head>
+<body>
+    <header>
+        <img id="faq" src="../img/icons/faq.png" alt="faq">
+        <img id="interrogation" src="../img/icons/interrogation.png" alt="interrogation">
+        <div id="navigation">
+            <h3 id="blog">Blog</h3>
+            <nav id="navbar">
+                <ul>
+                    <li id="addTheme">Adicionar Tema</li>
+                    <li id="addQuestion">Adicionar perguntas</li>
+                    <li id="contacts">Contatos</li>
                 </ul>
-        </header>
-
-        <div id="search">
-            <h1>Base de conhecimento</h1>
-            <input id="searchKeyword" type="text" placeholder="Palavra chave" >
+            </nav>
         </div>
 
-        <div id="container"></div>
+        <h1 id="pageTitle">Perguntas respondidas</h1>
+    </header>
 
-        <div id="addQuestion" style="display: none;">
-            <div id="fade"></div>
-            <div id="cardAddQuestion">
-                <p id="close">X</p>
-                <h3>Adicionar pergunta</h3>
-                <div class="addQuestionField">
-                    <label>Título da pergunta:</label>
-                    <input id="titleQuestion" type="text" placeholder="Título.">
-                </div>
-                <div class="addQuestionField">
-                    <label>Resposta:</label>
-                    <textarea name="response" id="response" cols="30" rows="15" placeholder="Resposta."></textarea>
-                </div>
-                <button id="postQuestion" onclick="postQuestion()">Adicionar</button>
+    <section id="leftSide">
+        <!-- <p id="summary">
+            Esta base de conhecimento traz diversas indagações feitas com frequência que já 
+            foram respondidas anteriormente, com o intuito auxiliar a todos de serem dúvidas rapidamente sanadas!
+        </p>
+
+        <div id="mostAccessed">
+            <div id="first" class="block">
+                <h6>Transferência</h6>
+                <p id="transfer">Descubra um pouco mais sobre transferência interna e externa!</p>
+            </div>
+            <div id="second" class="block">
+                <h6>Desconto</h6>
+                <p id="tranfer">Saiba como conseguir desconto durante todo o seu curso!</p>
+            </div>
+            <div id="third" class="block">
+                <h6>Cancelamento</h6>
+                <p id="tranfer">Saiba como solicitar cancelamento de matrícula da graduação ou pós.</p>
             </div>
         </div>
 
-        <div class="back">
-            <label class="backLabel" for="backButton">Voltar</label>
-            <button class="backButton"><img src="../img/icons/home-icon.png"></button>
-            <style>
-                .back{
-                    position: fixed;
-                    bottom: 3%;
-                    right: .8%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    cursor: pointer;
-                    transition: .3s;
-                }
-                .backLabel{
-                    font-weight: 600;
-                    cursor: pointer;
-                    opacity: 0;
-                    transition: .3s;
-                    margin-top: 5px;
-                    color: #fff;
-                }
-                .backButton{
-                    background-color: transparent;
-                    border: none;
-                    cursor: pointer;
-                    transition: .3s;
-                }
-            </style>
-            <script>
-                let buttonDiv = document.querySelector('.back')
-                let backButton = document.querySelector('.backButton')
-                let label = document.querySelector('.backLabel')
-    
-                backButton.addEventListener('click', ()=> window.location.href = url + '/')
-    
-                backButton.addEventListener('mouseover', ()=>{
-                    buttonDiv.style.transform = 'translateY(-10px)'
-                    label.style.transform = 'translateY(-5px)'
-                    label.style.opacity = '1'
-                })
-                backButton.addEventListener('mouseout', ()=>{
-                    buttonDiv.style.transform = 'translateY(0)'
-                    label.style.transform = 'translateY(5px)'
-                    label.style.opacity = '0'
-                })
-            </script>
-        </div>
-        
-        
-        <footer>
-            <p id="copy">&copy; 2023 Grupo Nobre. Todos os direitos reservados.</p>
-        </footer>
+        <div id="gnLogo">
+            <img src="../img/logos/GRUPO NOBRE.png" alt="GRUPO NOBRE.png_logo" width="300px">
+        </div> -->
 
-    </body>
+
+
+        <div id="themeQuestions">
+            <div class="question">
+                <h5>CHAT TÉCNICO</h5>
+                <div class="unef"><h6>UNEF</h6><p>Qualquer dúvida acadêmica, direcionado a coordenação e professores. Aluno EAD não resolve problemas acadêmicas no NAC - UNEF.</p></div>
+                <div class="unifan"><h6>unifan</h6><p>Alunos com dificuldade passados o contato geral da huggy (2102-9100) e pedimos para falar com o NAC.</p></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="rightSide">
+        <h2 id="themesTitle">Temas:</h2>
+        <ul id="themes">
+            <li><h4>Transferência</h4><p>01</p></li>
+             <li><h4>Desconto</h4><p>02</p></li>
+            <li><h4>Cancelamento</h4><p>03</p></li>
+            <li><h4>EAD</h4><p>04</p></li>
+            <li><h4>Tema 1</h4><p>01</p></li>
+            <li><h4>Tema 1</h4><p>01</p></li>
+        </ul>
+    </section>
+</body>
 </html>

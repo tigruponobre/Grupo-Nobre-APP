@@ -1,0 +1,52 @@
+#leftSide{
+    width: 98%;
+    padding: 5vh 0 10vh 3vw;
+}
+
+#summary{
+    width: 55%;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    letter-spacing: 01px;
+    text-align: justify;
+    font-weight: 600;
+}
+
+#mostAccessed{
+    margin-top: 3em;
+    width: 55%;
+    display: flex;
+    gap: 3%;
+}
+
+.block{
+    width: 30%;
+    padding: 2vh 1em 3vh 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    background-color: #dddddd90;
+    border-radius: 10px;
+}
+
+.block h4{
+    font-size: 1.6vw;
+}
+
+.block p{
+    font: 1.6em;
+    text-align: justify;
+    line-height: 1.4em;
+    cursor: pointer;
+}
+
+.block p:hover{
+    text-decoration: underline;
+}
+
+#gnLogo{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}

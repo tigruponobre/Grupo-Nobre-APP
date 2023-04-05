@@ -43,3 +43,9 @@ main h1{
 .options:hover{
     color: #309cb4;
 }
+
+@media (max-width: 1080px){
+    main h1{
+        font-size: 8vw;
+    }
+}

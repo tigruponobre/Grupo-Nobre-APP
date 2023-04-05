@@ -195,7 +195,7 @@ input[type=checkbox], #checkboxes label{
 
 
 /* RESPONSIVE */
-@media (max-width: 1140px){
+@media (max-width: 1080px){
     main{
         padding-top: 13vh;
     }
@@ -215,10 +215,5 @@ input[type=checkbox], #checkboxes label{
         margin-top: 5%;
         width: 12em;
         height: 26vh;
-    }
-    #circles{
-        margin-right: 50%;
-        justify-content: center;
-        transform: translate(50%,0);
     }
 }

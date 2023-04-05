@@ -1,0 +1,71 @@
+#rightSide{
+    position: absolute;
+    right: 11vw;
+    top: 31vh;
+    padding: 2vh 0 7vh 0;
+    width: 25%;
+    border: 1px solid #ffffff50;
+    border-radius: 10px;
+    background-color: #ffffff60;
+}
+
+#themesTitle{
+    font-size: 3.5em;
+    margin-bottom: 2vh;
+    padding-left: 2vw;
+}
+
+#themes{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#themes li{
+    list-style: none;
+    padding-inline: 3vw;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#themes li h4{
+    font-size: 2em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#themes li p{
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+#themes li{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+#themes li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #37b67f;
+
+    transform: scaleY(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+#themes li:hover::after{
+    transform: scaleY(1);
+    transform-origin: left;
+}

@@ -5,7 +5,6 @@ nav{
     align-items: center;
     background-color: #110947;
     color: #fff;
-    position: fixed;
     z-index: 10;
     border-bottom: 2px solid #090429;
     box-shadow: 0 0 10px #00000090;
@@ -28,10 +27,10 @@ nav{
 #menu li{
    font-size: 1.2em;
    border: 1px solid #2D73B4;
-   width: 20%;
+   min-width: 18%;
    display: flex;
    justify-content: center;
-   padding: .5em 0;
+   padding: .5em 1em;
    border-radius: 4px;
    cursor: pointer;
    transition: ease .3s;
@@ -46,16 +45,20 @@ nav{
     border-color: #fff;
 }
 
-@media (max-width: 1140px){
-    #menu{
-        gap: 1%;
-    }
-    #menu li{
-        width: 32%;
-        font-size: .8em;
+@media (max-width: 1080px){
+    nav{
+        flex-direction: column;
     }
     #logo_gn{
-        width: 100px;
-        margin-left: 1%;
+        margin: 2vh 0 0 0;
+    }
+    #menu{
+        justify-content: center;
+        margin: 2vh 0;
+
+    }
+    #menu li{
+        font-size: .8em;
+        padding: .5em .8em;
     }
 }
