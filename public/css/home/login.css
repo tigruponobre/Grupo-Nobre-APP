@@ -4,7 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    /* width: 500px; */
     max-width: 90%;
     opacity: 0;
     pointer-events: none;
@@ -16,7 +16,8 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    height: 55vh;
+    height: 75vh;
+    padding-inline: 3em;
     border-radius: 4px;
     box-shadow: 0 0 20px #00000090;
 }
