@@ -2,7 +2,7 @@
     position: absolute;
     right: 11vw;
     top: 20em;
-    padding: 2vh 0 5em 0;
+    padding: 2vh 0 1em 0;
     width: 25%;
     border: 1px solid #ffffff50;
     border-radius: 10px;
@@ -73,4 +73,11 @@
 
 .activated{
     border-right: 4px solid #1c704c;
+}
+
+#gnLogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
 }

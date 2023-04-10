@@ -43,10 +43,3 @@
 .block p:hover{
     text-decoration: underline;
 }
-
-#gnLogo{
-    width: 55%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-}
