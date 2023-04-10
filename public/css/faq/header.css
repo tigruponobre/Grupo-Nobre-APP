@@ -76,6 +76,7 @@ header{
     opacity: 0.1;
     top: 5%;
     left: 18%;
+    z-index: -1
 }
 
 #interrogation{
@@ -83,6 +84,7 @@ header{
     opacity: 0.1;
     right: 15%;
     top: 9vh;
+    z-index: -1;
 }
 
 #pageTitle{
