@@ -1,4 +1,6 @@
 //Variabels
+const addQuestionButton = document.getElementById('addQuestion')
+const addQuestionDiv = document.getElementById('addQuestionDiv')
 const questionTitle = document.getElementById('questionTitle')
 const theme = document.getElementById('selectTheme')
 const unefCheck = document.getElementById('unefCheck')
@@ -9,7 +11,14 @@ const unefTextArea = document.getElementById('unefTextArea')
 const unifanTextArea = document.getElementById('unifanTextArea')
 const unefeadTextArea = document.getElementById('unefeadTextArea')
 const unifaneadTextArea = document.getElementById('unifaneadTextArea')
+const bodyChildren = Array.from(document.querySelector('body').children)
 
+addQuestionButton.addEventListener('click', ()=>{
+    bodyChildren.forEach(element => {
+        element.style.display = 'none'
+    });
+    addQuestionDiv.style.display = 'block'
+})
 
 questionTitle.addEventListener('blur', ()=>{
     questionTitle.value = questionTitle.value[0].toUpperCase() + questionTitle.value.substring(1,questionTitle.value.length)
