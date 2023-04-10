@@ -1,8 +1,14 @@
+:root{
+    --blur: #ffffff60
+}
+
 #addQuestionDiv{
-    min-width: 50vw;
-    min-height: 70vh;
+    background-image: url('../../img/backgrounds/addQuestionBG.jpg');
+    background-size: cover;
+    background-position: bottom;
+    min-width: 100vw;
+    min-height: 100vh;
     background-color: #fff;
-    border-radius: 10px;
     z-index: 3;
     position: absolute;
     top: 50%;
@@ -11,10 +17,119 @@
     padding: 2em;
 }
 
-#addQuestionDiv h3{
-    margin-top: 2em
+#addQuestionDiv h2{
+    font-size: 2.8em;
+    padding: .7em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--blur);
 }
 
-#questionInfo div label{
+#questionInfo{
+    background-color: var(--blur);
+    padding: 2em 1em;
+    margin-top: 2em;
+    min-height: calc(100vh - (113px + 8em));
+}
+
+#firstLine{
+    display: flex;
     width: 100%;
+}
+
+#questionTitleDiv, #selectThemeDiv{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: 50%;
+}
+
+#questionTitleDiv h3, #selectThemeDiv h3{
+    font-size: 2.2em;
+}
+
+#questionTitle, #selectTheme{
+    background-color: var(--blur);
+    font-size: 1.2em;
+    border: none;
+    width: 98%;
+    padding: .5em .3em;
+}
+
+#questionTitle:focus, #selectTheme{
+    outline: none;
+}
+
+#selectTheme option{
+    background-color: antiquewhite;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.check label{
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.check input{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+#institutions h3{
+    margin: .8em 0 .3em 0;
+    font-size: 2.2em;
+    width: 49%;
+}
+
+#institutionsBlock{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#institutionsBlock div{
+    min-width: 50%;
+    margin-bottom: 1em;
+}
+
+#institutionsBlock textarea{
+    font-size: 1.2em;
+    background-color: var(--blur);
+    padding: .5em .3em;
+    min-width: 98%;
+    resize: none;
+    min-height: 10vh;
+}
+
+#institutionsBlock textarea:focus{
+    outline: none;
+}
+
+#submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#submit button{
+    padding: 1em 0;
+    width: 20vw;
+    cursor: pointer;
+    background-color: var(--blur);
+    transition: ease .3s;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#submit button:hover{
+    background-color: #ffffff40
 }
