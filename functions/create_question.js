@@ -31,17 +31,17 @@ exports.handler = async function(event, context){
     const eventBody = await JSON.parse(event.body)
     const { theme, title, answer_unef, answer_unifan, answer_unefead, answer_unifanead, user_name, token } = eventBody
 
-    //Check admin
-    // const compareToken = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
+    // Check admin
+    const compareToken = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
 
-    // if(!compareToken){
-    //     return{
-    //         statusCode: 401,
-    //         body: JSON.stringify({
-    //             msg:"Unauthorized"
-    //         })
-    //     }
-    // }
+    if(!compareToken){
+        return{
+            statusCode: 401,
+            body: JSON.stringify({
+                msg:"Unauthorized"
+            })
+        }
+    }
     
     //Get current date
     let newDate = new Date()

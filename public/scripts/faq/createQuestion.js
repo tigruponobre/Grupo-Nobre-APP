@@ -73,7 +73,8 @@ async function addNewQuestion(){
                 answer_unifan: unefTextArea.value,
                 answer_unefead: unefeadTextArea.value,
                 answer_unifanead: unifaneadTextArea.value,
-                user_name: sessionStorage.getItem('logged')
+                user_name: sessionStorage.getItem('logged'),
+                token: sessionStorage.getItem('token')
             })
         })
 
