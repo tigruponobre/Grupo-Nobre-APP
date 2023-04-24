@@ -32,13 +32,13 @@
 }
 
 #themes li h4{
-    font-size: 2em;
+    font-size: 2vw;
     font-weight: 500;
     cursor: pointer;
 }
 
 #themes li p{
-    font-size: 1.8em;
+    font-size: 1.8vw;
     cursor: pointer;
 }
 
@@ -80,4 +80,8 @@
     display: flex;
     justify-content: center;
     padding-top: 3em;
+}
+
+#gnLogo img{
+    max-width: 230px;
 }

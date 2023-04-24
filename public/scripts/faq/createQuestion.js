@@ -79,6 +79,12 @@ async function addNewQuestion(){
         })
 
         if(response.status == 201){
+            questionTitle.value = ''
+            theme.selectedIndex = 0
+            unefTextArea.value = ''
+            unifanTextArea.value = ''
+            unefeadTextArea.value = ''
+            unifaneadTextArea.value = ''
             window.alert('Pergunta cadastrada com sucesso!')
         }else{
             window.alert('Erro ao cadastrar, entre em contato com o administrador.')
@@ -86,3 +92,11 @@ async function addNewQuestion(){
     }
 }
 
+
+//Back to FAQ
+function backToFaq(){
+    bodyChildren.forEach(element => {
+        element.style.display = 'block'
+    });
+    addQuestionDiv.style.display = 'none'
+}

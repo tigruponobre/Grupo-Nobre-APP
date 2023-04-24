@@ -3,7 +3,7 @@
 }
 
 #addQuestionDiv{
-    background-image: url('../../img/backgrounds/addQuestionBG.jpg');
+    background-image: url('../../img/backgrounds/GN\ BG.png');
     background-size: cover;
     background-position: bottom;
     min-width: 100vw;
@@ -118,6 +118,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2%;
+    gap: 10px;
 }
 
 #submit button{
