@@ -27,7 +27,7 @@ exports.handler = async function(event, context){
     const { theme } = eventBody
 
     try {
-        const findTheme = await Question.findOne({ theme: theme})
+        const findTheme = await Question.find({ theme: theme})
         if(findTheme){
             return {
                 statusCode: 200,

@@ -15,7 +15,7 @@ async function generateTheme(event){
     const getTheme = event.target.textContent
 
     const response = await fetch(url + '/.netlify/functions/search_questions', {
-        method: 'get',
+        method: 'post',
         body: JSON.stringify({
             theme: getTheme
         })
