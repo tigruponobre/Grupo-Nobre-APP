@@ -23,19 +23,31 @@ exports.handler = async function(event, context){
         }
     }
 
+    const eventBody = await JSON.parse(event.body)
+    const { theme } = eventBody
+
     try {
-        const questions = await Question.find()
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                questions
-            })
+        const findTheme = await Question.findOne({ theme: theme})
+        if(findTheme){
+            return {
+                statusCode: 200,
+                body: JSON.stringify({
+                    content: findTheme
+                })
+            }
+        }else{
+            return {
+                statusCode: 404,
+                body: JSON.stringify({
+                    msg: "Theme not found"
+                })
+            }
         }
     } catch (error) {
         return {
-            statusCode: 404,
+            statusCode: 500,
             body: JSON.stringify({
-                msg: "It was not possible to find questions"
+                msg: "Server error"
             })
         }
     }

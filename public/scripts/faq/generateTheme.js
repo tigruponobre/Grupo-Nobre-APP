@@ -11,6 +11,17 @@ function showResponse(e){
     })
 }
 
-function generateTheme(event){
-    console.log(event.target.textContent)
+async function generateTheme(event){
+    const getTheme = event.target.textContent
+
+    const response = await fetch(url + '/.netlify/functions/search_questions', {
+        method: 'get',
+        body: JSON.stringify({
+            theme: getTheme
+        })
+    })
+
+    const data = await response.json()
+
+    console.log(data)
 }
