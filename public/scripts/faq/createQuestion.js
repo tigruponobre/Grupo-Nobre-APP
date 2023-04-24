@@ -85,6 +85,12 @@ async function addNewQuestion(){
             unifanTextArea.value = ''
             unefeadTextArea.value = ''
             unifaneadTextArea.value = ''
+
+            unefCheck.checked = false
+            unifanCheck.checked = false
+            unefeadCheck.checked = false
+            unifaneadCheck.checked = false
+            
             window.alert('Pergunta cadastrada com sucesso!')
         }else{
             window.alert('Erro ao cadastrar, entre em contato com o administrador.')
