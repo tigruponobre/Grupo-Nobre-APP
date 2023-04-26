@@ -9,10 +9,13 @@ async function validation() {
             permissions
         })
     })
-    if (response.status != 200) {
+    if(response.status != 200) {
         sessionStorage.setItem('unauthorized', true)
         window.location = url
+    }else{
+        document.body.style.display = 'block'
     }
+
 }
 
 validation()
