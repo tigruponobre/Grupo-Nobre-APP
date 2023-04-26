@@ -14,3 +14,7 @@ body{
 img{
     user-select: none;
 }
+
+.backLabel{
+    color: #000;
+}

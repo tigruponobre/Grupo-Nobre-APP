@@ -21,7 +21,7 @@ function checkLogin(){
     if(permissions == 'room-map'){
         adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/mapa-admin')
     }else if(permissions == 'faq'){
-        adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/base-de-conhecimento')
+        adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/faq-admin')
     }else{
         adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
     }

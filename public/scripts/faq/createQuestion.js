@@ -60,19 +60,24 @@ async function addNewQuestion(){
     }else{
         theme.style.border = 'none'
 
-        const response = await fetch(url + '/.netlify/functions/create_question', {
-            method: 'post',
-            body: JSON.stringify({
-                theme: theme.value,
-                title: questionTitle.value.toUpperCase(),
-                answer_unef: unefTextArea.value.toUpperCase(),
-                answer_unifan: unefTextArea.value.toUpperCase(),
-                answer_unefead: unefeadTextArea.value.toUpperCase(),
-                answer_unifanead: unifaneadTextArea.value.toUpperCase(),
-                user_name: sessionStorage.getItem('logged').toUpperCase(),
-                token: sessionStorage.getItem('token')
+        let response = ''
+        try {
+            response = await fetch(url + '/.netlify/functions/create_question', {
+                method: 'post',
+                body: JSON.stringify({
+                    theme: theme.value,
+                    title: questionTitle.value.toUpperCase(),
+                    answer_unef: unefTextArea.value.toUpperCase() || null,
+                    answer_unifan: unifanTextArea.value.toUpperCase() || null,
+                    answer_unefead: unefeadTextArea.value.toUpperCase() || null,
+                    answer_unifanead: unifaneadTextArea.value.toUpperCase() || null,
+                    user_name: sessionStorage.getItem('logged').toUpperCase() || null,
+                    token: sessionStorage.getItem('token')
+                })
             })
-        })
+        } catch (error) {
+            window.alert('Não foi possível cadastrar a pergunta, contate um administrador.')
+        }
 
         if(response.status == 201){
             questionTitle.value = ''

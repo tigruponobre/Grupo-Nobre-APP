@@ -117,15 +117,15 @@
         <div id="mostAccessed">
             <div id="first" class="block">
                 <h4>Transferência</h4>
-                <p id="transfer">Descubra um pouco mais sobre transferência interna e externa!</p>
+                <p onclick="generateTheme('Transferência')">Descubra um pouco mais sobre transferência interna e externa!</p>
             </div>
             <div id="second" class="block">
                 <h4>Desconto</h4>
-                <p id="tranfer">Saiba como conseguir desconto durante todo o seu curso!</p>
+                <p onclick="generateTheme('Desconto')">Saiba como conseguir desconto durante todo o seu curso!</p>
             </div>
             <div id="third" class="block">
                 <h4>Cancelamento</h4>
-                <p id="tranfer">Saiba como solicitar cancelamento de matrícula da graduação ou pós.</p>
+                <p onclick="generateTheme('Cancelamento')">Saiba como solicitar cancelamento de matrícula da graduação ou pós.</p>
             </div>
         </div>
     </section>
@@ -159,6 +159,9 @@
     <footer>
         <p id="copy">&copy; 2022 Grupo Nobre. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="../scripts/backButton.js"></script>
+    <style>.backLabel{color: #000;}</style>
 </body>
 
 </html>
