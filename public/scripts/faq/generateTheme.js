@@ -12,10 +12,16 @@ function showResponse(e){
 }
 
 async function generateTheme(event){
+    
     const leftSide = document.getElementById('leftSide')
     leftSide.innerHTML = `<div id="themeQuestions"></div>`
 
-    const getTheme = event.target.textContent
+    let getTheme = ''
+    if(typeof(event) == 'object'){
+        getTheme = event.target.textContent
+    }else{
+        getTheme = event
+    }
 
     const response = await fetch(url + '/.netlify/functions/search_questions', {
         method: 'post',

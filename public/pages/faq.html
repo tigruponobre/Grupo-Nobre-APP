@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general/all.css">
+    <link rel="stylesheet" href="../css/general/footer.css">
+    <link rel="stylesheet" href="../css/faq/body.css">
+    <link rel="stylesheet" href="../css/faq/fade.css">
+    <link rel="stylesheet" href="../css/faq/header.css">
+    <link rel="stylesheet" href="../css/faq/leftSide.css">
+    <link rel="stylesheet" href="../css/faq/rightSide.css">
+    <link rel="stylesheet" href="../css/faq/generateTheme.css">
+    <link rel="stylesheet" href="../css/faq/createQuestion.css">
+    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
+
+    <script>
+        //Set url to use on fetch's
+        const url = document.URL.split('/').splice('0',3).join('/')
+    </script>
+
+    <script src="../scripts/faq/generateTheme.js" defer></script>
+
+    <title>Base de conhecimento</title>
+</head>
+
+<body>            
+    <header>
+        <img id="faq" src="../img/icons/faq.png" alt="faq">
+        <img id="interrogation" src="../img/icons/interrogation.png" alt="interrogation">
+        <div id="navigation">
+            <h3 id="blog">Blog</h3>
+            <nav id="navbar">
+                <ul>
+                    <li id="contacts" onclick="window.location.href = 'http:\/\/192.168.10.214/'">Contatos</li>
+                </ul>
+            </nav>
+        </div>
+
+        <h1 id="pageTitle">Perguntas <br>frequentemente<br> respondidas</h1>
+    </header>
+
+    <section id="leftSide">
+        <p id="summary">
+            Esta base de conhecimento traz diversas indagações feitas com frequência que já 
+            foram respondidas anteriormente, com o intuito auxiliar a todos de serem dúvidas rapidamente sanadas!
+        </p>
+
+        <div id="mostAccessed">
+            <div id="first" class="block">
+                <h4>Transferência</h4>
+                <p onclick="generateTheme('Transferência')">Descubra um pouco mais sobre transferência interna e externa!</p>
+            </div>
+            <div id="second" class="block">
+                <h4>Desconto</h4>
+                <p onclick="generateTheme('Desconto')">Saiba como conseguir desconto durante todo o seu curso!</p>
+            </div>
+            <div id="third" class="block">
+                <h4>Cancelamento</h4>
+                <p onclick="generateTheme('Cancelamento')">Saiba como solicitar cancelamento de matrícula da graduação ou pós.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rightSide">
+        <h2 id="themesTitle">Temas:</h2>
+        <ul id="themes">
+            <li>
+                <h4 onclick="generateTheme(event)">Transferência</h4>
+                <p>01</p>
+            </li>
+            <li>
+                <h4 onclick="generateTheme(event)">Desconto</h4>
+                <p>02</p>
+            </li>
+            <li>
+                <h4 onclick="generateTheme(event)">Cancelamento</h4>
+                <p>03</p>
+            </li>
+            <li>
+                <h4 onclick="generateTheme(event)">EAD</h4>
+                <p>04</p>
+            </li>
+        </ul>
+
+        <div id="gnLogo">
+            <img src="../img/logos/GRUPO NOBRE.png" alt="GRUPO NOBRE.png_logo" width="300px">
+        </div>
+    </section>
+
+    <footer>
+        <p id="copy">&copy; 2022 Grupo Nobre. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
