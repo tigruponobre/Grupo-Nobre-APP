@@ -137,7 +137,6 @@ async function getLogged(){
         await sessionStorage.setItem('unauthorized', false)
         await sessionStorage.setItem('logged', login)
         await sessionStorage.setItem('permissions', data.permissions)
-        console.log(data.need_to_change)
         checkLogin()
         notification.innerText = 'Login efetuado com sucesso!'
         notification.style.color = '#32be56'
@@ -153,7 +152,7 @@ async function getLogged(){
             notification.style.display = 'none'
             document.querySelector('.fade').classList.toggle('unhide')
             document.querySelector('.loginDiv').classList.toggle('unhide')
-            if(sessionStorage.unauthorized == 'true'){
+            if(sessionStorage.unauthorized != 'true'){
                 document.querySelector('.authentication').remove()
             }
             if(data.permissions == 'super-admin') window.location.href = url + '/pages/administrativo'
