@@ -152,7 +152,7 @@ async function getLogged(){
             notification.style.display = 'none'
             document.querySelector('.fade').classList.toggle('unhide')
             document.querySelector('.loginDiv').classList.toggle('unhide')
-            if(sessionStorage.unauthorized != 'true'){
+            if(document.querySelector('.authentication')){
                 document.querySelector('.authentication').remove()
             }
             if(data.permissions == 'super-admin') window.location.href = url + '/pages/administrativo'

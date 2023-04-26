@@ -32,13 +32,13 @@
 }
 
 #themes li h4{
-    font-size: 2vw;
+    font-size: 1.4vw;
     font-weight: 500;
     cursor: pointer;
 }
 
 #themes li p{
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     cursor: pointer;
 }
 
