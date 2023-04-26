@@ -7,4 +7,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    padding-bottom: 3em;
+}
+
+img{
+    user-select: none;
 }

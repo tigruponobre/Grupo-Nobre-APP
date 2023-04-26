@@ -20,10 +20,6 @@ addQuestionButton.addEventListener('click', ()=>{
     addQuestionDiv.style.display = 'block'
 })
 
-questionTitle.addEventListener('blur', ()=>{
-    questionTitle.value = questionTitle.value[0].toUpperCase() + questionTitle.value.substring(1,questionTitle.value.length)
-})
-
 unefCheck.addEventListener('click', ()=>{
     if(unefCheck.checked){
         unefTextArea.removeAttribute('disabled')
@@ -68,12 +64,12 @@ async function addNewQuestion(){
             method: 'post',
             body: JSON.stringify({
                 theme: theme.value,
-                title: questionTitle.value,
-                answer_unef: unefTextArea.value,
-                answer_unifan: unefTextArea.value,
-                answer_unefead: unefeadTextArea.value,
-                answer_unifanead: unifaneadTextArea.value,
-                user_name: sessionStorage.getItem('logged'),
+                title: questionTitle.value.toUpperCase(),
+                answer_unef: unefTextArea.value.toUpperCase(),
+                answer_unifan: unefTextArea.value.toUpperCase(),
+                answer_unefead: unefeadTextArea.value.toUpperCase(),
+                answer_unifanead: unifaneadTextArea.value.toUpperCase(),
+                user_name: sessionStorage.getItem('logged').toUpperCase(),
                 token: sessionStorage.getItem('token')
             })
         })
