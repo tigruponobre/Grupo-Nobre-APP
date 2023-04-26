@@ -78,5 +78,6 @@ async function generateTheme(event){
             themeQuestions.appendChild(generateIntireQuestion)
         })
 
+        window.scrollTo(0, 0)
     }
 }
