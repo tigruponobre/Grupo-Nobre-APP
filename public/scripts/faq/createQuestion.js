@@ -71,7 +71,7 @@ async function addNewQuestion(){
                     answer_unifan: unifanTextArea.value.toUpperCase() || null,
                     answer_unefead: unefeadTextArea.value.toUpperCase() || null,
                     answer_unifanead: unifaneadTextArea.value.toUpperCase() || null,
-                    user_name: sessionStorage.getItem('logged').toUpperCase() || null,
+                    user_name: sessionStorage.getItem('logged') || null,
                     token: sessionStorage.getItem('token')
                 })
             })

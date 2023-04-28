@@ -55,6 +55,8 @@ async function generateTheme(event){
             if(element.answer_unef){
                 answer_unef.setAttribute('class', 'response')
                 answer_unef.innerHTML = `<h6>UNEF</h6><p>${element.answer_unef}</p>`
+                console.log(element.answer_unef.replace(`
+                `, 'AEHOOOOOOO'))                
                 generateIntireQuestion.innerHTML += answer_unef.outerHTML
             }
             const answer_unifan = document.createElement('div')

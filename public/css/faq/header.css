@@ -3,7 +3,7 @@ header{
     background-color: #0c68afc4;
     margin-top: 1vh;
     border-radius: 10px;
-    padding: 3vh 5vw 7em 5vw;
+    padding: 3vh 5vw 9em 5vw;
 }
 
 #navigation{
@@ -92,4 +92,5 @@ header{
     position: relative;
     top: .8em;
     letter-spacing: 5px;
+    padding-top: .5em;
 }
