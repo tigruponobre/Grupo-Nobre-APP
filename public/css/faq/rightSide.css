@@ -37,11 +37,6 @@
     cursor: pointer;
 }
 
-#themes li p{
-    font-size: 1.5vw;
-    cursor: pointer;
-}
-
 #themes li{
     display: flex;
     align-items: center;
@@ -84,4 +79,30 @@
 
 #gnLogo img{
     max-width: 230px;
+}
+
+@media (max-width: 1040px){
+    #themesTitle{
+        font-size: 3em;
+    }
+    #themes li{
+        margin-left: 1.5em;
+    }
+}
+
+@media (max-width: 768px){
+    #themesTitle{
+        font-size: 2.5em;
+    }
+    #themes li h4{
+        font-size: 1em;
+    }
+    #rightSide{
+        position: static;
+        width: 98%;
+        margin-top: -1em;
+    }
+    #themesTitle{
+        text-align: center;
+    }
 }

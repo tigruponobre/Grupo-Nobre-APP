@@ -8,7 +8,6 @@
 }
 
 .question div{
-    /* display: none; */
     padding: .5em 2em 0 .5em;
     text-align: justify;
 }
@@ -47,4 +46,18 @@
 
 .response{
     display: none;
+}
+
+@media (max-width:768px){
+    #themeQuestions{
+        max-width: 98%;
+        display: flex;
+        flex-direction: column;
+    }
+    #chosenTitle{
+        text-align: center;
+    }
+    .question{
+        padding: .5em;
+    }
 }

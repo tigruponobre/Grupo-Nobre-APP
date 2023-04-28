@@ -80,6 +80,7 @@ async function generateTheme(event){
             themeQuestions.appendChild(generateIntireQuestion)
         })
 
+        document.getElementById('rightSide').style.marginTop = '0'
         window.scrollTo(0, 0)
     }
 }

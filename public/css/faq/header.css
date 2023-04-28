@@ -94,3 +94,16 @@ header{
     letter-spacing: 5px;
     padding-top: .5em;
 }
+
+@media (max-width: 768px){
+    #faq{
+        display: none;
+    }
+    #interrogation{
+        display: none;
+    }
+    #pageTitle{
+        font-size: 3em;
+        text-align: center;
+    }
+}

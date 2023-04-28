@@ -43,3 +43,25 @@
 .block p:hover{
     text-decoration: underline;
 }
+
+@media (max-width:768px){
+    #leftSide{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #summary{
+        width: 100%;
+        padding: 1em;
+        text-align: center;
+    }
+    #mostAccessed{
+        width: 100%;
+        margin-top: 2%;
+        justify-content: center;
+    }
+    .block{
+        display: none;
+    }
+}
