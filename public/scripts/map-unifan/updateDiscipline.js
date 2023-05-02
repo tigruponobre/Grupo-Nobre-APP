@@ -88,6 +88,7 @@ function editRowMobile(event){
 //Submit edit
 async function submitEdit(){
     //Get values
+    let updatingTurma = document.querySelector('.editTurma').value
     let updatingProfessor = document.querySelector('.editProfessor').value.toUpperCase()
     let updatingSala = document.querySelector('.editSala').value
     let updatingAndar = document.querySelector('.editAndar').value
@@ -104,6 +105,7 @@ async function submitEdit(){
             turno: beforeTurno,
             dia: beforeDia,
             disciplina: beforeDisciplina,
+            turma: updatingTurma,
             professor: updatingProfessor,
             sala: updatingSala,
             andar: updatingAndar,

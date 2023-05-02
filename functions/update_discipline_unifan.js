@@ -31,7 +31,7 @@ exports.handler = async function (event, context){
     }
 
     const eventBody = await JSON.parse(event.body)
-    const { curso, turno, dia, disciplina, professor, sala, andar, inicio, fim, token } = await eventBody
+    const { curso, turno, dia, disciplina, turma, professor, sala, andar, inicio, fim, token } = await eventBody
 
     // Check admin
     let checkAdmin = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
@@ -52,6 +52,7 @@ exports.handler = async function (event, context){
     let table = await Map.findOne({CURSO: curso})
 
     //Updating
+    table[turno][dia][disciplina]["TURMA"] = turma
     table[turno][dia][disciplina]["PROFESSOR"] = professor
     table[turno][dia][disciplina]["SALA"] = sala
     table[turno][dia][disciplina]["ANDAR"] = andar
