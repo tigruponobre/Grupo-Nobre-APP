@@ -56,7 +56,7 @@ exports.handler = async function (event, context){
         url: 'https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
         headers: {
             'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `eb417da7-87f4-4dfc-98b6-7a41335ff2af` //UNIFAN SECRET KEY
+            "X-DigitalLibraryIntegration-API-Key": `${secret}` //UNIFAN SECRET KEY
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreatePreRegisterUserRequest
@@ -85,7 +85,7 @@ exports.handler = async function (event, context){
         method: 'post',
         headers: {
             'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `eb417da7-87f4-4dfc-98b6-7a41335ff2af` //CHAVE DA UNIFAN
+            "X-DigitalLibraryIntegration-API-Key": `${secret}` //CHAVE DA UNIFAN
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreateAuthenticatedUrlRequest

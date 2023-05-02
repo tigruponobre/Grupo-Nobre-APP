@@ -56,7 +56,7 @@ exports.handler = async function (event, context){
         url: 'https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
         headers: {
             'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `2a7c95c0-9247-49c4-a31c-677dc589380d` //UNEF SECRET KEY
+            "X-DigitalLibraryIntegration-API-Key": `${secret}` //UNEF SECRET KEY
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreatePreRegisterUserRequest
@@ -85,7 +85,7 @@ exports.handler = async function (event, context){
         method: 'post',
         headers: {
             'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `2a7c95c0-9247-49c4-a31c-677dc589380d` //CHAVE DA UNEF
+            "X-DigitalLibraryIntegration-API-Key": `${secret}` //CHAVE DA UNEF
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreateAuthenticatedUrlRequest
