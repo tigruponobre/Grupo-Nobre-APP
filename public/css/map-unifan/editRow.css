@@ -1,0 +1,135 @@
+#darkFade{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #00000090;
+    z-index: 9;
+}
+
+.closeEdit, .closeCreate{
+    position: absolute;
+    top: 6.5%;
+    right: 5%;
+    font-size: 3em;
+    color: #dd4646;
+    cursor: pointer;
+    user-select: none;
+}
+
+#editRow{
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 80%;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    z-index: 10;
+    justify-content: center;
+}
+
+#editRow h2{
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+    margin-bottom: 2em;
+}
+
+.sides{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2%;
+}
+
+.edit{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5%;
+    margin-bottom: 2em;
+    gap: 5px;
+}
+
+.edit input{
+    font-size: 1.3em;
+    min-width: 60vh;
+}
+
+#buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.delete{
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    background-color: #ff4545;
+    padding: .6em 4%;
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+.delete:hover{
+    background-color: #9b2020;
+}
+
+.aplicar{
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    background-color: var(--bluebutton);
+    padding: .6em 4%;
+    cursor: pointer;
+    transition: ease .3s;
+    color: #fff;
+}
+
+.aplicar:hover{
+    background-color: var(--hoverbutton);
+}
+
+.submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:680px) {
+    #editRow{
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0,0);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        z-index: 10;
+        justify-content: center;
+    }
+    .sides{
+        flex-direction: column;
+        gap: 1%;
+    }
+    .edit input{
+        font-size: 1em;
+        min-width: 0;
+        width: 100%;
+    }
+    .edit{
+        margin-bottom: 1em;
+    }
+    .closeEdit, .closeCreate{
+        top: 1%
+    }
+}
