@@ -68,8 +68,14 @@ exports.handler = async function (event, context){
     //Turn discipline string into JSON
     const newDispline = await JSON.parse(newDisciplineString)
 
-    //Turn old object into the new one
-    Object.assign(table[turno][dia], newDispline)
+    //Check if day exist on DB
+    if(!table[turno][dia]){
+        table[turno][dia] = newDispline
+    }else{
+        //Turn old object into the new one
+        Object.assign(table[turno][dia], newDispline)
+    }
+
 
     //Confirm the information insert
     let confirmInsert = await Map.updateOne({CURSO: curso}, table)
