@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/new_admin/all.css">
+    <link rel="stylesheet" href="../css/new_admin/content.css">
     <link rel="stylesheet" href="../css/new_admin/aside.css">
+    <link rel="stylesheet" href="../css/new_admin/article.css">
 
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
     <title>Painel administrativo</title>
@@ -15,46 +17,68 @@
     <header>
         <img src="../img/logos/gn_black_logo.png" alt="Grupo Nobre" width="200px">
     </header>
-    <aside id="left-side">
-        <section>
-            <div class="sectionTitle">
+    <div id="content">
+        <aside id="left-side">
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <h2>Grupo Nobre APP</h2>
+                </div>
+                <ul>
+                    <li class="active">Apresentação</li>
+                    <li>Exigências</li>
+                    <li>Dependências</li>
+                    <li>Estrutura</li>
+                    <li>Ambiente de desenvolvimento</li>
+                    <li>Variáveis de ambiente</li>
+                    <li>Deploy</li>
+                </ul>
+            </section>
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <h2>Usuários</h2>
+                </div>
+                <ul>
+                    <li>Listagem de usuários</li>
+                    <li>Tipos de usuários</li>
+                    <li>Criação de usuários</li>
+                    <li>Token</li>
+                </ul>
+            </section>
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <h2>Projetos integrados</h2>
+                </div>
+                <ul>
+                    <li>Mapa de salas</li>
+                    <li>Biblioteca Virtual</li>
+                    <li>FAQ</li>
+                    <li>Consulta RA - Colégio Nobre</li>
+                </ul>
+            </section>
+        </aside>
+    
+        <article>
+            <h1>Conheça o Grupo Nobre APP</h1>
+            <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
+            <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
+            <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP">github</a>.</p>
+            <h2>Como utilizar este painel administrativo</h2>
+            <div class="doc">
                 <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <h2>Grupo Nobre APP</h2>
+                <p><b class="cyan">Grupo Nobre APP</b> inclui tudo que é necessário para manutenção em geral, incluindo instruições específicas e detalhamento do esqueleto do software.</p>
             </div>
-            <ul>
-                <li><a>Apresentação</a></li>
-                <li><a>Requerimentos</a>
-                <li><a>Dependencias</a></li>
-                <li><a>Estrutura</a></li>
-                <li><a>Ambiente de desenvolvimento</a></li>
-                <li><a>Variáveis de ambiente</a></li>
-                <li><a>Deploy</a></li>
-            </ul>
-        </section>
-        <section>
-            <div class="sectionTitle">
+            <div class="doc">
                 <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <h2>Usuários</h2>
+                <p><b class="cyan">Usuários</b> inclui a listagem dos usuários, os tipos atualmente existentes, a criação de novos usuários e o funcionamento do token secreto.</p>
             </div>
-            <ul>
-                <li><a>Listagem de usuários</a></li>
-                <li><a>Tipos de usuários</a></li>
-                <li><a>Criação de usuários</a></li>
-                <li><a>Token</a></li>
-            </ul>
-        </section>
-        <section>
-            <div class="sectionTitle">
+            <div class="doc">
                 <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <h2>Projetos integrados</h2>
+                <p><b class="cyan">Projetos integrados</b> inclui cada projeto que está ligado a este software, instruções para a utilzação e redirecionamentos para as áreas de gestão dos projetos.</p>
             </div>
-            <ul>
-                <li><a>Mapa de salas</a></li>
-                <li><a>Biblioteca Virtual</a></li>
-                <li><a>FAQ</a></li>
-                <li><a>Consulta RA - Colégio Nobre</a></li>
-            </ul>
-        </section>
-    </aside>
+        </article>
+    </div>
 </body>
 </html>

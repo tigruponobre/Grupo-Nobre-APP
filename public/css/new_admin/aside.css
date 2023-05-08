@@ -1,5 +1,5 @@
 aside{
-    padding: 2% 12%;
+    width: 30%;
 }
 
 .sectionTitle{
@@ -24,11 +24,23 @@ section ul li{
     cursor: pointer;
 }
 
-section ul li a{
+section ul li{
     transition: ease .2s;
-    letter-spacing: 0px;
 }
 
-section ul li a:hover{
+section ul li:hover{
     color: #f0f0f090;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.active::before{
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #2E8DE0; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
