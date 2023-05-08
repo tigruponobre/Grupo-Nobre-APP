@@ -1,7 +1,7 @@
 # GRUPO NOBRE APP
 
 ## Choose your language
-<a href="./README.md"><img src="./public/img/icons/us_flag.png" width="75px">/</a>  <a href="./LEIAME.md"><img src="./public/img/icons/br_flag.png" width="75px"/></a>
+<a href="./README.md"><img src="./public/img/icons/us_flag.png" width="75px"/></a>  <a href="./LEIAME.md"><img src="./public/img/icons/br_flag.png" width="75px"/></a>
 
 ## About
 - Application that hosts api's, documentations and redirects of Grupo Nobre.
