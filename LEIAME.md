@@ -1,7 +1,7 @@
 # GRUPO NOBRE APP
 
 ## Escolha seu idioma
-<a href="./README.md"><img src="./public/img/icons/us_flag.png" width="75px"/></a>  <a href="./LEIAME.md"><img src="./public/img/icons/br_flag.png" width="75px"/></a>
+<a href="./README.md"<img src="./public/img/icons/us_flag.png" width="75px"/</a  <a href="./LEIAME.md"<img src="./public/img/icons/br_flag.png" width="75px"/</a
 
 ## Sobre
 - Aplicativo que hospeda api's, documentações e redirecionamentos do Grupo Nobre.
@@ -77,34 +77,34 @@
 
 ## Endpoints
 - Grupo Nobre App admins
-    >- create_admin
-    >- search_admins
-    >- update_admin_password
-    >- delete_admin
-    >- login
-    >- validation
+    - create_admin
+    - search_admins
+    - update_admin_password
+    - delete_admin
+    - login
+    - validation
 - Biblioteca virtual
-    >- bibli_fan
-    >- bibli_unef
+    - bibli_fan
+    - bibli_unef
 - Dúvidas frequentes
-    >- create_question
-    >- search_questions
+    - create_question
+    - search_questions
 - Consulta de RA
-    >- create_school_student
-    >- search_school_student
+    - create_school_student
+    - search_school_student
 - Mapa de salas
     - UNEF
-        >- create_discipline
-        >- create_map_unef
-        >- search_discipline
-        >- update_discipline
-        >- delete_discipline
+        - create_discipline
+        - create_map_unef
+        - search_discipline
+        - update_discipline
+        - delete_discipline
     - UNIFAN
-        >- create_discipline_unifan
-        >- create_map_unifan
-        >- search_discipline_unifan
-        >- update_discipline_unifan
-        >- delete_discipline_unifan
+        - create_discipline_unifan
+        - create_map_unifan
+        - search_discipline_unifan
+        - update_discipline_unifan
+        - delete_discipline_unifan
 
 ## Criado por
 > Gustavo Pasqua de Queiroz

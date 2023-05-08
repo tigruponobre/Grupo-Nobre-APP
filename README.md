@@ -1,7 +1,7 @@
 # GRUPO NOBRE APP
 
 ## Choose your language
-<a href="./README.md"><img src="./public/img/icons/us_flag.png" width="75px"/></a>  <a href="./LEIAME.md"><img src="./public/img/icons/br_flag.png" width="75px"/></a>
+<a href="./README.md"<img src="./public/img/icons/us_flag.png" width="75px"/</a  <a href="./LEIAME.md"<img src="./public/img/icons/br_flag.png" width="75px"/</a
 
 ## About
 - Application that hosts api's, documentations and redirects of Grupo Nobre.
@@ -77,34 +77,34 @@
 
 ## Endpoints
 - Grupo Nobre App admins
-    >- create_admin
-    >- search_admins
-    >- update_admin_password
-    >- delete_admin
-    >- login
-    >- validation
+    - create_admin
+    - search_admins
+    - update_admin_password
+    - delete_admin
+    - login
+    - validation
 - Virtual library
-    >- bibli_fan
-    >- bibli_unef
+    - bibli_fan
+    - bibli_unef
 - FAQ (frequently asked questions)
-    >- create_question
-    >- search_questions
+    - create_question
+    - search_questions
 - Academic record
-    >- create_school_student
-    >- search_school_student
+    - create_school_student
+    - search_school_student
 - Room map
     - UNEF
-        >- create_discipline
-        >- create_map_unef
-        >- search_discipline
-        >- update_discipline
-        >- delete_discipline
+        - create_discipline
+        - create_map_unef
+        - search_discipline
+        - update_discipline
+        - delete_discipline
     - UNIFAN
-        >- create_discipline_unifan
-        >- create_map_unifan
-        >- search_discipline_unifan
-        >- update_discipline_unifan
-        >- delete_discipline_unifan
+        - create_discipline_unifan
+        - create_map_unifan
+        - search_discipline_unifan
+        - update_discipline_unifan
+        - delete_discipline_unifan
 
 ## CREATED BY
 > Gustavo Pasqua de Queiroz
