@@ -1,12 +1,12 @@
 #rightSide{
     position: absolute;
-    right: 11vw;
+    right: 8vw;
     top: 20em;
     padding: 2vh 0 1em 0;
-    width: 25%;
+    width: 30%;
     border: 1px solid #ffffff50;
     border-radius: 10px;
-    background-color: #37b67f70;
+    background-color: #37b67f90;
 }
 
 #themesTitle{
@@ -29,6 +29,7 @@
     justify-content: space-between;
     cursor: pointer;
     margin-left: 3em;
+    font-weight: 300;
 }
 
 #themes li h4{
