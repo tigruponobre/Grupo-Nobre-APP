@@ -1,7 +1,7 @@
 # GRUPO NOBRE APP
 
 ## Escolha seu idioma
-<a> href="./README.md"<img src="./public/img/icons/us_flag.png" width="75px">/</a>  <a> href="./LEIAME.md"<img src="./public/img/icons/br_flag.png" width="75px"/></a>
+<a href="./README.md"><img src="./public/img/icons/us_flag.png" width="75px">/</a>  <a> href="./LEIAME.md"<img src="./public/img/icons/br_flag.png" width="75px"/></a>
 
 ## Sobre
 - Aplicativo que hospeda api's, documentações e redirecionamentos do Grupo Nobre.
