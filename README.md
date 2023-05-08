@@ -8,7 +8,7 @@
 - This software was written in english and brazilian portuguese
 
 ## Languages
-[![JS](https://skills.thijs.gg/icons?i=html,css,js,nodejs)](https://skills.thijs.gg)
+![JS](https://skills.thijs.gg/icons?i=html,css,js,nodejs)
 
 ## Requirements
 - [Node LTS](https://nodejs.org/en/)

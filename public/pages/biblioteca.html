@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general/all.css">
+    <link rel="stylesheet" href="../css/general/footer.css">
+    <link rel="stylesheet" href="../css/netlify/body.css">
+    <link rel="stylesheet" href="../css/netlify/header.css">
+    <link rel="stylesheet" href="../css/netlify/choices.css">
+    <link rel="stylesheet" href="../css/docs/docsContainers.css">
+    <link rel="stylesheet" href="../css/netlify/backButton.css">
+    <script src="../scripts//library/main.js" defer></script>
+    <script src="../scripts/authentication.js" defer></script>
+
+    <script>
+        //Set url to use on fetch's
+        const url = document.URL.split('/').splice('0',3).join('/')
+    </script>
+    
+    <title>Minha biblioteca</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <input type="checkbox" id="sandwich-check" checked>
+            <label for="sandwich-check" id="sandwich">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <h1 id="title">Minha Biblioteca</h1>
+        </div>
+    </header>
+    <div class="container disappears" id="about">
+        <h3 class="container-title">Sobre</h3>
+        <hr>
+        <div class="content">
+            <p>API desenvolvida para integrar a biblioteca online com qualquer sistema.</p>
+        </div>
+        <div class="content">
+            <p>Os endpoints recebem a requisição com as informações necessárias no body.</p>
+        </div>
+        <div class="content">
+            <p>A API processa os dados e envia para a biblioteca online verificar.</p>
+        </div>
+        <div class="content">
+            <p>Caso a biblioteca retorne positivo, a URL autenticada é devolvida ao sistema requerente.</p>
+        </div>       
+    </div>
+    <div class="container disappears" id="construction">
+        <h3 class="container-title">Construção</h3>
+        <hr>
+        <div class="content">
+            <p>Criados endpoints separados UNEF e UNIFAN</p>
+        </div>
+        <div class="content">
+            <p>A API conversa com a API da Biblioteca Virtual</p>
+        </div>
+        <div class="content">
+            <p>Necessária SECRET KEY no header da requisição.</p>
+        </div>
+    </div>
+    <div class="container disappears" id="application">
+        <h3 class="container-title">Aplicação</h3>
+        <hr>
+        <div class="content">
+            <p><b>https://gruponobre.netlify.app/.netlify/functions/bibli_unef</b><br/><b>https://gruponobre.netlify.app/.netlify/functions/bibli_fan</b></p>
+        </div>
+        <div class="content">
+            <p>body: JSON.stringify({<br/>
+                firstName: firstName,<br/>
+                lastName: lastName,<br/>
+                ra: ra<br/>
+            })</p>
+        </div>
+    </div>
+    <div class="choices">
+        <div class="choice">
+            <h3>SOBRE</h3>
+        </div>
+        <div class="choice">
+            <h3>CONSTRUÇÃO</h3>
+        </div>
+        <div class="choice">
+            <h3>APLICAÇÃO</h3>
+        </div>
+    </div>
+    <img id="logo" src="../img/logos/GN BRANCA.png" alt="logo" width="200px">
+    <div class="back">
+        <label class="backLabel" for="backButton">Voltar</label>
+        <button class="backButton"><img src="../img/icons/home-icon.png"></button>
+    </div>
+</body>
+</html>
