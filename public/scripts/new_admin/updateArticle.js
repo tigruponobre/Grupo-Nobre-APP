@@ -22,7 +22,7 @@ function presentation(){
     </div>
     <div class="doc">
         <img src="../img/icons/share.png" alt="Projetos">
-        <p><b class="cyan">Projetos integrados</b> inclui cada projeto que está ligado a este software, instruções para a utilzação e redirecionamentos para as áreas de gestão dos projetos.</p>
+        <p><b class="cyan">Projetos integrados</b> inclui cada projeto que está ligado a este software, instruções para a utilzação e purpleirecionamentos para as áreas de gestão dos projetos.</p>
     </div>`
 }
 
@@ -46,19 +46,49 @@ function dependences(){
                 <li><a href="https://www.npmjs.com/package/dotenv" class="mark">Dotenv</a></li>
             </ul>
         </p>
-        <div id="code">
+        <div class="code">
             <h2>Instalação do Netlify CLI</h2>
             <div class="copyCode">
-                <p>npm <b class="red">install</b> netlify-cli -g</p>
+                <p>npm <b class="purple">install</b> netlify-cli -g</p>
                 <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
             </div>
         </div>
-        <div id="code">
+        <div class="code">
             <h2>Instalação de dependências</h2>
             <div class="copyCode">
-                <p>npm <b class="red">install</b> bcryptjs express mongoose axios dotenv</p>
+                <p>npm <b class="purple">install</b> bcryptjs express mongoose axios dotenv</p>
                 <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
             </div>
         </div>
     </div>  `
+}
+
+//Structure
+function structure(){
+    article.innerHTML = 
+    `<em> Grupo Nobre APP / Estrutura</em>
+    <h1>Conheça a <b class="cyan">estrutura</b> do projeto</h1>
+    <div id="frontend">
+        <h2>Frontend</h2>
+        <p>Construído com <b class="purple">HTML</b>, <b class="purple">CSS</b> e <b class="purple">JAVASCRIPT</b></p>
+        <p>Localizado em <b class="mark">./public</b></p>
+        <p>Página home: <b class="mark">./public/index.html</b></p>
+        <p>Dividido em:</p>
+        <ul id="frontendList">
+            <li>Páginas: <b class="mark">./public/pages</b></li>
+            <li>CSS: <b class="mark">./public/pages</b></li>
+            <li>Imagens: <b class="mark">./public/img</b></li>
+            <li>Scripts: <b class="mark">./public/scripts</b></li>
+        </ul>
+    </div>
+    <div id="backend">
+        <h2>Backend</h2>
+        <p>Construído com <b class="purple">NODE.JS</b> com funções AWS Lambda</p>
+        <p>Localizado em <b class="mark">./functions</b></p>
+        <p>Cada endpoint se encontra em um arquivo diferente</p>
+        <p>Bando de dados: <b class="mark">MongoDB Altas</b></p>
+        <p>Link de conexão ajustado por variáveis de ambiente</p>
+        <p>Models em <b class="mark">./models</b></p>
+        <p>Acesso aos endpoints por meio de <b class="mark">/.netlify/functions/endpoit_name</b></p>
+    </div>`
 }

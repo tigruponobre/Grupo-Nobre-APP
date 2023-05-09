@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/new_admin/article.css">
     <link rel="stylesheet" href="../css/new_admin/presentation.css">
     <link rel="stylesheet" href="../css/new_admin/dependences.css">
+    <link rel="stylesheet" href="../css/new_admin/structure.css">
 
     <script src="../scripts/new_admin/updateArticle.js" defer></script>
     <script src="../scripts/new_admin/copyCode.js" defer></script>
@@ -32,10 +33,8 @@
                 <ul>
                     <li class="active" onclick="presentation()">Apresentação</li>
                     <li onclick="dependences()">Exigências e Dependências</li>
-                    <li>Estrutura</li>
-                    <li>Ambiente de desenvolvimento</li>
-                    <li>Variáveis de ambiente</li>
-                    <li>Deploy</li>
+                    <li onclick="structure()">Estrutura</li>
+                    <li onclick="development()">Desenvolvimento e Deploy</li>
                 </ul>
             </section>
             <section>
@@ -65,7 +64,70 @@
         </aside>
     
         <article>
-                      
+            <em>Grupo Nobre APP / Ambiente de desenvolvimento</em>
+            <h1>Ambiente de <b class="cyan">desenvolvimento</b></h1>
+            <h2>Netlify utiliza <b class="purple">Command Line Interface</b></h2>
+            <p>Todo comando é feito utilizando <b class="purple">"netlify"</b> ou <b class="purple">"ntl"</b></p>
+            <div class="code">
+                <h2>Verificação se Netlify encontra-se instalado</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> --version</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Iniciação de novo projeto</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> init</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Linkagem de usuário</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> login</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Visualização de todos os comandos</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> help</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Verificação das configurações do projeto</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> status</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Inicialização do ambiente de desenvolvimento</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> dev</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Controle de variáveis de ambiente</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> env</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
+            <div class="code">
+                <h2>Deploy teste e deploy prodrução</h2>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> deploy</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+                <div class="copyCode">
+                    <p><b class="purple">ntl</b> deploy --prod</p>
+                    <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
+                </div>
+            </div>
         </article>
     </div>
 </body>
