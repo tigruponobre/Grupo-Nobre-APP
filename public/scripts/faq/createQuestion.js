@@ -18,6 +18,7 @@ addQuestionButton.addEventListener('click', ()=>{
         element.style.display = 'none'
     });
     addQuestionDiv.style.display = 'block'
+    document.body.style.overflow = 'hidden'
 })
 
 unefCheck.addEventListener('click', ()=>{
@@ -106,4 +107,5 @@ function backToFaq(){
         element.style.display = 'block'
     });
     addQuestionDiv.style.display = 'none'
+    document.body.style.overflowY = 'scroll'
 }
