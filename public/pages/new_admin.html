@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/new_admin/content.css">
     <link rel="stylesheet" href="../css/new_admin/aside.css">
     <link rel="stylesheet" href="../css/new_admin/article.css">
+    <link rel="stylesheet" href="../css/new_admin/presentation.css">
+    <link rel="stylesheet" href="../css/new_admin/dependences.css">
+
+    <script src="../scripts/new_admin/updateArticle.js" defer></script>
+    <script src="../scripts/new_admin/copyCode.js" defer></script>
 
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
     <title>Painel administrativo</title>
@@ -25,9 +30,8 @@
                     <h2>Grupo Nobre APP</h2>
                 </div>
                 <ul>
-                    <li class="active">Apresentação</li>
-                    <li>Exigências</li>
-                    <li>Dependências</li>
+                    <li class="active" onclick="presentation()">Apresentação</li>
+                    <li onclick="dependences()">Exigências e Dependências</li>
                     <li>Estrutura</li>
                     <li>Ambiente de desenvolvimento</li>
                     <li>Variáveis de ambiente</li>
@@ -36,7 +40,7 @@
             </section>
             <section>
                 <div class="sectionTitle">
-                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <img src="../img/icons/user.png" alt="Usuários">
                     <h2>Usuários</h2>
                 </div>
                 <ul>
@@ -48,7 +52,7 @@
             </section>
             <section>
                 <div class="sectionTitle">
-                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <img src="../img/icons/share.png" alt="Projetos">
                     <h2>Projetos integrados</h2>
                 </div>
                 <ul>
@@ -61,23 +65,7 @@
         </aside>
     
         <article>
-            <h1>Conheça o Grupo Nobre APP</h1>
-            <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
-            <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
-            <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP">github</a>.</p>
-            <h2>Como utilizar este painel administrativo</h2>
-            <div class="doc">
-                <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <p><b class="cyan">Grupo Nobre APP</b> inclui tudo que é necessário para manutenção em geral, incluindo instruições específicas e detalhamento do esqueleto do software.</p>
-            </div>
-            <div class="doc">
-                <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <p><b class="cyan">Usuários</b> inclui a listagem dos usuários, os tipos atualmente existentes, a criação de novos usuários e o funcionamento do token secreto.</p>
-            </div>
-            <div class="doc">
-                <img src="../img/icons/app.png" alt="Grupo Nobre APP">
-                <p><b class="cyan">Projetos integrados</b> inclui cada projeto que está ligado a este software, instruções para a utilzação e redirecionamentos para as áreas de gestão dos projetos.</p>
-            </div>
+                      
         </article>
     </div>
 </body>

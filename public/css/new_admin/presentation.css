@@ -1,0 +1,23 @@
+.doc{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 9vh;
+    cursor: pointer;
+    padding-inline: 2%;
+    transition: ease .3s;
+}
+
+.doc img{
+    max-width: 60px;
+    padding-right: 5px;
+    border-right: 1px solid #fff;
+}
+
+.doc:hover{
+    background-color: #303030;
+}
+
+.presentationSubtitle{
+    margin-top: 2em;
+}

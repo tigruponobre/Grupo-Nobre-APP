@@ -10,7 +10,6 @@ h1{
 }
 
 article h2{
-    margin-top: 2em;
     font-size: 2rem;
 }
 
@@ -19,15 +18,20 @@ p{
     text-align: justify;
 }
 
-.doc{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 9vh;
+.cyan{
+    color: var(--cyan);
 }
 
-.doc img{
-    max-width: 60px;
-    padding-right: 5px;
-    border-right: 1px solid #fff;
+.red{
+    color: var(--red);
+}
+
+.mark{
+    background-color: #505050;
+    padding-inline: 5px;
+    border-radius: 4px;
+}
+
+a{
+    text-decoration: none;
 }

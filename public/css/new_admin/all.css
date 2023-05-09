@@ -18,3 +18,8 @@ header{
     justify-content: center;
     background-color: #ffffff;
 }
+
+:root{
+    --cyan: #2E8DE0;
+    --red: #dd5050;
+}

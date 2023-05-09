@@ -8,6 +8,10 @@ aside{
     gap: 12px;
 }
 
+.sectionTitle h2{
+    cursor: default;
+}
+
 .sectionTitle img{
     max-width: 45px;
 }
