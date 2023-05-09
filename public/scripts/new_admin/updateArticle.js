@@ -182,3 +182,43 @@ function userType(){
         </li>
     </ul>`
 }
+
+function createUserDiv(){
+    article.innerHTML = 
+    `<em>Usuários / Criação de usuários</em>
+    <h1>Crie um novo <b class="cyan">usuário</b></h1>
+    <p>O padrão para criação de novos usuários é <b class="purple">"primeiro nome"."último sobrenome"</b></p>
+    <div class="create">
+        <div>
+            <label for="firstName"><b>Primeiro nome:</b></label>
+            <input id="firstName" type="text" autocomplete="off">
+        </div>
+        <div>
+            <label for="lastName"><b>Último sobrenome:</b></label>
+            <input id="lastName" type="text" autocomplete="off">
+        </div>
+    </div>
+    <div class="create">
+        <div>
+            <label for="pass"><b>Senha:</b></label>
+            <input id="pass" type="password">
+        </div>
+        <div>
+            <label for="confirmPass"><b>Confirme a senha:</b></label>
+            <input id="confirmPass" type="password">
+        </div>
+    </div>
+    <div id="permissionsDiv">
+        <label for="permissions"><b class="cyan">Permissões:</b></label>
+        <select name="permission" id="permissions">
+            <option value="not-selected">Selecione as permissões do usuário</option>
+            <option value="admin-master">Administrador Mestre</option>
+            <option value="room-map-unef">Gestor de Mapa de Salas UNEF</option>
+            <option value="room-map-unifan">Gestor de Mapa de Salas UNIFAN</option>
+            <option value="faq">Gestor de dúvidas frequentes na FAQ</option>
+        </select>
+    </div>
+    <div id="submitCreate">
+        <button id="createUser" onclick="createUser()">Criar</button>
+    </div>`
+}
