@@ -49,14 +49,14 @@ function dependences(){
         <div class="code">
             <h2>Instalação do Netlify CLI</h2>
             <div class="copyCode">
-                <p>npm <b class="purple">install</b> netlify-cli -g</p>
+                <p><b class="purple">npm install</b> netlify-cli -g</p>
                 <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
             </div>
         </div>
         <div class="code">
             <h2>Instalação de dependências</h2>
             <div class="copyCode">
-                <p>npm <b class="purple">install</b> bcryptjs express mongoose axios dotenv</p>
+                <p><b class="purple">npm install</b> bcryptjs express mongoose axios dotenv</p>
                 <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
             </div>
         </div>
@@ -160,4 +160,25 @@ function development(){
             <img onclick="copyCode(event)" src="../img/icons/copy.png" alt="Copiar" title="Copiar">
         </div>
     </div>`
+}
+
+function userType(){
+    article.innerHTML = 
+    `<em> Usuários / Tipos de usuários</em>
+    <h1>Conheça os tipos de <b class="cyan">usuários</b></h1>
+    <ul>
+        <li class="userType">
+            <h2>Administrador <b class="purple">Mestre</b></h2>
+            <p>Possui todas as permissões de gestão de projeto e acesso a todas as informações</p>
+        </li>
+        <li class="userType">
+            <h2>Administrador de <b class="purple">Mapa de Salas</b></h2>
+            <p>Existe tanto para <b class="cyan">UNEF</b> quanto para <b class="cyan">UNIFAN</b></p>
+            <p>Um administrador <b class="cyan">UNEF</b> não tem permissão de alterar o <b class="purple">Mapa de Salas</b> <b class="cyan">UNIFAN</b> e vice versa</p>
+        </li>
+        <li class="userType">
+            <h2>Administrador da <b class="purple">FAQ</b></h2>
+            <p>Consegue adicionar novas dúvidas frequentes</p>
+        </li>
+    </ul>`
 }
