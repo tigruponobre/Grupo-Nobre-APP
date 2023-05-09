@@ -10,8 +10,10 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const master_token = process.env.TOKEN
-const minor_token = process.env.MINOR_TOKEN
+const token_master = process.env.TOKEN_MASTER
+const token_room_map_unef = process.env.TOKEN_ROOM_MAP_UNEF
+const token_room_map_unifan = process.env.TOKEN_ROOM_MAP_UNIFAN
+const token_faq = process.env.TOKEN_FAQ
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -37,18 +39,11 @@ exports.handler = async function (event, context){
     const {login, password, url} = eventBody 
 
     //TOKEN
-    const salt = await bcrypt.genSalt(12)
+    const salt = await bcrypt.genSalt(8)
     let tokenHash = ''
-    const response = await axios.get(url + '/.netlify/functions/search_super_admins')
-    const data = await response.data.users
-    if(data.includes(login)){
-        tokenHash = await bcrypt.hash(master_token,salt)
-    }else{
-        tokenHash = await bcrypt.hash(minor_token,salt)
-    }
-
 
     //Find user
+    const response = await axios.get(url + '/.netlify/functions/search_admins')
     try {
         //Find Admin
         let infoAdmin = await Admin.findOne({login: login})
@@ -56,6 +51,15 @@ exports.handler = async function (event, context){
         if(infoAdmin){
             //Check user password
             const checkPassword = await bcrypt.compare(password, infoAdmin.password)
+            if(infoAdmin.permissions == 'admin-master'){
+                tokenHash = await bcrypt.hash(token_master, salt)
+            }else if(infoAdmin.permissions == 'room-map-unef'){
+                tokenHash = await bcrypt.hash(token_room_map_unef, salt)
+            }else if(infoAdmin.permissions == 'room-map-unifan'){
+                tokenHash = await bcrypt.hash(token_room_map_unifan, salt)
+            }else if(infoAdmin.permissions == 'faq'){
+                tokenHash = await bcrypt.hash(token_faq, salt)
+            }
 
             if(checkPassword){
                 return{

@@ -1,0 +1,76 @@
+.create{
+    display: flex;
+    gap: 5%;
+    margin-top: 1em;
+}
+
+.create div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40%;
+}
+
+.create div label{
+    font-size: 1.3em;
+}
+
+.create div input{
+    font-size: 1.2em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--cyan);
+    color: #b8b6b6;
+}
+
+.create div input:focus{
+    outline: none;
+}
+
+#permissionsDiv{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#permissionsDiv label{
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+#permissions{
+    background-color: transparent;
+    font-size: 1.2em;
+    width: 85%;
+    color: #b8b6b6;
+}
+
+#permissions:focus{
+    outline: none;
+}
+
+#permissions option{
+    background-color: transparent;
+    color: #171717;
+}
+
+#pass, #confirmPass{
+    letter-spacing: 2px;
+}
+
+#submitCreate{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#createUser{
+    width: 20%;
+    height: 35px;
+    font-size: 1em;
+    background-color: var(--cyan);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ const article = document.getElementsByTagName('article')[0]
 //Presentation
 function presentation(){
     article.innerHTML = 
-    `<em> Grupo Nobre APP / Apresentação</em>
+    `<em>Grupo Nobre APP / Apresentação</em>
     <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
     <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
     <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
@@ -29,7 +29,7 @@ function presentation(){
 //Dependences
 function dependences(){
     article.innerHTML = 
-    `<em> Grupo Nobre APP / Exigências e Dependências</em>
+    `<em>Grupo Nobre APP / Exigências e Dependências</em>
     <h1><b class="cyan">Exigências</b> e <b class="cyan">dependências</b> gerais do projeto</h1>
     <h2>Passo a passo:</h2>
     <div class="step">
@@ -66,7 +66,7 @@ function dependences(){
 //Structure
 function structure(){
     article.innerHTML = 
-    `<em> Grupo Nobre APP / Estrutura</em>
+    `<em>Grupo Nobre APP / Estrutura</em>
     <h1>Conheça a <b class="cyan">estrutura</b> do projeto</h1>
     <div id="frontend">
         <h2>Frontend</h2>
@@ -83,7 +83,7 @@ function structure(){
     </div>
     <div id="backend">
         <h2>Backend</h2>
-        <p>Construído com <b class="purple">NODE.JS</b> com funções AWS Lambda</p>
+        <p>Construído com <b class="purple">NODE.JS</b> com funções <b class="purple">AWS Lambda</b></p>
         <p>Localizado em <b class="mark">./functions</b></p>
         <p>Cada endpoint se encontra em um arquivo diferente</p>
         <p>Bando de dados: <b class="mark">MongoDB Altas</b></p>
@@ -164,7 +164,7 @@ function development(){
 
 function userType(){
     article.innerHTML = 
-    `<em> Usuários / Tipos de usuários</em>
+    `<em>Usuários / Tipos de usuários</em>
     <h1>Conheça os tipos de <b class="cyan">usuários</b></h1>
     <ul>
         <li class="userType">
