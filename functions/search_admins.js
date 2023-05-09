@@ -32,7 +32,7 @@ exports.handler = async function (event, context){
     let users = []
     for (let index in allAdmins){
         const user = {
-            username: allAdmins[index]['login'],
+            login: allAdmins[index]['login'],
             permissions: allAdmins[index]['permissions'],
             criador: allAdmins[index]['criador'],
             data_de_criacao: allAdmins[index]['data_de_criacao']
