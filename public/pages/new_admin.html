@@ -20,6 +20,7 @@
     <script src="../scripts/new_admin/copyCode.js" defer></script>
     <script src="../scripts/new_admin/listUser.js" defer></script>
     <script src="../scripts/new_admin/createUser.js" defer></script>
+    <script src="../scripts/new_admin/deleteUser.js" defer></script>
 
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
     <title>Painel administrativo</title>
@@ -49,7 +50,7 @@
                 </div>
                 <ul>
                     <li onclick="userType()">Tipos de usuários</li>
-                    <li>Listagem de usuários</li>
+                    <li onclick="listUsersDiv()">Listagem de usuários</li>
                     <li onclick="createUserDiv()">Criação de usuários</li>
                     <li>Token</li>
                 </ul>
@@ -69,16 +70,7 @@
         </aside>
     
         <article>
-            <em>Usuários / Listagem de usuários</em>
-            <h1>Visualize todos os <b class="cyan">usuários</b></h1>
-            <h2>Administradores <b class="purple">Mestres</b></h2>
-            <div id="masters" class="adminDivision"></div>
-            <h2>Administradores <b class="purple">Mapa de Salas UNEF</b></h2>
-            <div id="room-map-unef" class="adminDivision"></div>
-            <h2>Administradores <b class="purple">Mapa de Salas UNIFAN</b></h2>
-            <div id="room-map-unifan" class="adminDivision"></div>
-            <h2>Administradores <b class="purple">FAQ</b></h2>
-            <div id="faq" class="adminDivision"></div>
+            
         </article>
     </div>
 </body>

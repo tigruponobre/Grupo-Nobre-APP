@@ -222,3 +222,18 @@ function createUserDiv(){
         <button id="createUser" onclick="createUser()">Criar</button>
     </div>`
 }
+
+function listUsersDiv(){
+    article.innerHTML = 
+    `<em>Usuários / Listagem de usuários</em>
+    <h1>Visualize todos os <b class="cyan">usuários</b></h1>
+    <h2>Administradores <b class="purple">Mestres</b></h2>
+    <div id="masters" class="adminDivision"></div>
+    <h2>Administradores <b class="purple">Mapa de Salas UNEF</b></h2>
+    <div id="room-map-unef" class="adminDivision"></div>
+    <h2>Administradores <b class="purple">Mapa de Salas UNIFAN</b></h2>
+    <div id="room-map-unifan" class="adminDivision"></div>
+    <h2>Administradores <b class="purple">FAQ</b></h2>
+    <div id="faq" class="adminDivision"></div>`
+    listUsers()   
+}

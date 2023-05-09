@@ -1,4 +1,4 @@
-async function listUser(){
+async function listUsers(){
     const response = await fetch('../.netlify/functions/search_admins')
     const data = await response.json()
 
