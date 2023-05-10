@@ -16,13 +16,17 @@ function presentation(){
         <img src="../img/icons/app.png" alt="Grupo Nobre APP">
         <p><b class="cyan">Grupo Nobre APP</b> inclui tudo que é necessário para manutenção em geral, incluindo instruições específicas e detalhamento do esqueleto do software.</p>
     </div>
-    <div class="doc">
+    <div class="doc" onclick="userType()">
         <img src="../img/icons/user.png" alt="Usuários">
         <p><b class="cyan">Usuários</b> inclui a listagem dos usuários, os tipos atualmente existentes, a criação de novos usuários e o funcionamento do token secreto.</p>
     </div>
-    <div class="doc">
+    <div class="doc" onclick="integratedProjects()">
         <img src="../img/icons/share.png" alt="Projetos">
         <p><b class="cyan">Projetos integrados</b> inclui cada projeto que está ligado a este software, instruções para a utilzação e purpleirecionamentos para as áreas de gestão dos projetos.</p>
+    </div>
+    <div class="doc" onclick="documentations()">
+        <img src="../img/icons/info.png" alt="Documentações">
+        <p><b class="cyan">Documentações gerais</b> incluem projetos que não estão necessariamente atrelados ao Grupo Nobre APP mas que vão ser de grande ajuda para manutenção dos projetos vigentes.</p>
     </div>`
 }
 
@@ -283,6 +287,7 @@ function roomMap(){
     article.innerHTML = 
     `<em>Projetos integrados / Mapa de salas</em>
     <h1>Conheça o <b class="cyan">Mapa de Salas</b></h1>
+    <p>Este projeto foi criado para que os alunos possam saber <b class="purple">onde será ministrada suas aulas</b> e <b class="purple">quais os horários.</b></p>
 
     <h2 class="cyan">UNEF</h2>
     <h3 class="purple">Localização</h3>
@@ -339,4 +344,30 @@ function faq(){
     <h2 class="cyan">Manutenção do Backend</h2>
     <p>Para criar uma nova pergunta respondida <b class="mark">./functions/create_question</b></p>
     <p>Para ler as perguntas cadastradas <b class="mark">./functions/search_question</b> - OBS: Este endpoint <b class="purple">exige que o tema seja enviado na requisição</b> para pesquisa somente das perguntas daquele tema</p>`
+}
+
+function documentations(){
+    article.innerHTML =
+    `<em>Documentações gerais / Apresentação</em>
+    <h1>Visualize a documentação de <b class="cyan">Projetos Grupo Nobre</b></h1>
+    <p>Nesta seção você poderá visualizar a <b class="cyan">documentação de diversos projetos</b> em vigência no Grupo Nobre</p>
+    <div class="doc" onclick="searchRA()">
+        <img src="../img/icons/bookmark.png" alt="Consulta RA">
+        <p><b class="cyan">Consulta de RA</b> - Colégio Nobre</p>
+    </div>`
+}
+
+function searchRA(){
+    article.innerHTML =
+    `<em>Documentações gerais / Consulta de RA</em>
+    <h1><b class="cyan">Consulta de RA</b> - Colégio Nobre</h1>
+    <p>Este software foi desenvolvido para que os alunos do Colégio Nobre que não lembram seu RA possam consultar</p>
+    <p><b class="purple">Dados necessários</b> para a consulta: <b class="purple">CPF</b> e <b class="purple">Data de Nascimento</b></p>
+    <h2 class="purple">Localização</h2>
+    <p>A única página necessária estar em funcionamento é de <b class="purple">cliente</b></p>
+    <p>Hospedada na <b class="purple">Hostgator</b> em <b class="mark"><a href="https://consulta.colegionobre.com.br/">https://consulta.colegionobre.com.br/</a></b></p>
+    <h2 class="purple">Manutenção do backend</h2>
+    <p>Para coletar os dados de cadatro dos alunos é necessário realizar uma query no <b class="purple">banco de dados</b> do <b class="cyan">RM</b></p>
+    <p>A execução do processo de insert no <b class="purple">MongoDB</b> para que possa ser solicitado pelo aluno é feita por meio de uma <b class="purple">ferramenta de ETL em Python</b></p>
+    <p>Os endpoints da API deste projetos estão em <b class="mark">./functions/create_school_student.js</b> e <b class="mark">./functions/search_school_student.js</b></p>`
 }
