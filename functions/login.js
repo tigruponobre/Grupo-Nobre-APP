@@ -25,9 +25,6 @@ exports.handler = async function (event, context){
     }else{
         return{
             statusCode: 500,
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            },
             body: JSON.stringify({
                 resposta: "Connection failed."
             })
@@ -36,14 +33,13 @@ exports.handler = async function (event, context){
 
     //Get login and password
     const eventBody = JSON.parse(event.body)
-    const {login, password, url} = eventBody 
+    const {login, password} = eventBody 
 
     //TOKEN
     const salt = await bcrypt.genSalt(8)
     let tokenHash = ''
 
     //Find user
-    const response = await axios.get(url + '/.netlify/functions/search_admins')
     try {
         //Find Admin
         let infoAdmin = await Admin.findOne({login: login})
@@ -78,9 +74,6 @@ exports.handler = async function (event, context){
             else{
                 return{
                     statusCode: 400,
-                    headers: {
-                        "Access-Control-Allow-Origin": "*"
-                    },
                     body: JSON.stringify({
                         resposta: 'Incorrect password.',
                     })
@@ -90,9 +83,6 @@ exports.handler = async function (event, context){
         else{
             return{
                 statusCode: 404,
-                headers: {
-                    "Access-Control-Allow-Origin": "*"
-                },
                 body: JSON.stringify({
                     resposta: 'Admin not found.'
                 })
@@ -101,9 +91,6 @@ exports.handler = async function (event, context){
     } catch (error) {
         return{
             statusCode: 500,
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            },
             body: JSON.stringify({
                 resposta: "Server error."
             })

@@ -15,15 +15,8 @@ function checkLogin(){
         login_logout.textContent = 'Login'
     }
 
-    //Admin Panel
-    let adminButton = document.getElementById('admin')
-    let permissions = sessionStorage.getItem('permissions')
-    if(permissions == 'room-map'){
-        adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/mapa-admin')
-    }else if(permissions == 'faq'){
-        adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/faq-admin')
-    }else{
-        adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
+    if(login_logout.textContent == 'Logout'){
+        sessionStorage.setItem('unauthorized', false)
     }
 }
 checkLogin()

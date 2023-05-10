@@ -91,8 +91,7 @@ async function getLogged(){
         method: 'post',
         body: JSON.stringify({
             login,
-            password,
-            url
+            password
         })
     })
 
