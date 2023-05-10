@@ -5,7 +5,7 @@ backButtonHTML.innerHTML =
 <button class="backButton"><img src="../img/icons/home-icon.png"></button>
 <style>
     .back{
-        position: absolute;
+        position: fixed;
         bottom: 3%;
         right: 6.7%;
         display: flex;

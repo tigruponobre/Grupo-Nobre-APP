@@ -155,7 +155,7 @@ async function getLogged(){
             if(document.querySelector('.authentication')){
                 document.querySelector('.authentication').remove()
             }
-            if(data.permissions == 'super-admin') window.location.href = url + '/pages/administrativo'
+            if(data.permissions == 'admin-master') window.location.href = url + '/pages/new-admin'
             else if (data.permissions == 'faq') window.location.href = url + '/pages/faq-admin'
             else if (data.permissions == 'room-map-unef') window.location.href = url + '/pages/mapa-admin-unef'
             else if (data.permissions == 'room-map-unifan') window.location.href = url + '/pages/mapa-admin-unifan'

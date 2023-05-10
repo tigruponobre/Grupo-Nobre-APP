@@ -1,10 +1,12 @@
 //Admin Panel
 let adminButton = document.getElementById('admin')
 let permissions = sessionStorage.getItem('permissions')
-if(permissions == 'room-map'){
+if(permissions == 'room-map-unef'){
     adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/mapa-admin')
+}else if(permissions == 'room-map-unifan'){
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/mapa-admin-unifan')
 }else if(permissions == 'faq'){
-    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/base-de-conhecimento')
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/faq-admin')
 }else{
-    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/new_admin')
 }
