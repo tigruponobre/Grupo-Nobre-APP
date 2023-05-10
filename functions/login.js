@@ -3,7 +3,6 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
-const axios = require('axios')
 
 //Enviroment Variables
 const db_user = process.env.DB_TI_USER
@@ -37,16 +36,25 @@ exports.handler = async function (event, context){
 
     //TOKEN
     const salt = await bcrypt.genSalt(8)
-    let tokenHash = ''
+    let tokenHash = 'aaaaa'
 
     //Find user
     try {
         //Find Admin
         let infoAdmin = await Admin.findOne({login: login})
+        if(!infoAdmin){
+            return{
+                statusCode: 404,
+                body: JSON.stringify({
+                    resposta: 'User not finded'
+                })
+            }
+        }
         //User finded
-        if(infoAdmin){
-            //Check user password
-            const checkPassword = await bcrypt.compare(password, infoAdmin.password)
+        let checkPassword = await bcrypt.compare(password, infoAdmin.password)
+        
+        if(checkPassword){
+            //Token hash
             if(infoAdmin.permissions == 'admin-master'){
                 tokenHash = await bcrypt.hash(token_master, salt)
             }else if(infoAdmin.permissions == 'room-map-unef'){
@@ -57,42 +65,29 @@ exports.handler = async function (event, context){
                 tokenHash = await bcrypt.hash(token_faq, salt)
             }
 
-            if(checkPassword){
-                return{
-                    statusCode: 200,
-                    headers: {
-                        "Access-Control-Allow-Origin": "*"
-                    },
-                    body: JSON.stringify({
-                        resposta: 'Login successful!',
-                        permissions: infoAdmin.permissions,
-                        token: tokenHash
-                    })
-                }
-            }
-            //User not finded
-            else{
-                return{
-                    statusCode: 400,
-                    body: JSON.stringify({
-                        resposta: 'Incorrect password.',
-                    })
-                }
-            }
-        }
-        else{
-            return{
-                statusCode: 404,
+            //Return
+            return {
+                statusCode: 200,
                 body: JSON.stringify({
-                    resposta: 'Admin not found.'
+                    token: tokenHash,
+                    permissions: infoAdmin.permissions
                 })
-            }
+            }   
+        }else{
+            //Wrong password
+            return {
+                statusCode: 400,
+                body: JSON.stringify({
+                    resposta: 'Wrong password'
+                })
+            }   
         }
     } catch (error) {
+        console.log(error)
         return{
             statusCode: 500,
             body: JSON.stringify({
-                resposta: "Server error."
+                resposta: error
             })
         }
     }
