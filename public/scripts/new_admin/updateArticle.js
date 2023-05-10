@@ -237,3 +237,106 @@ function listUsersDiv(){
     <div id="faq" class="adminDivision"></div>`
     listUsers()   
 }
+
+function token(){
+    article.innerHTML = 
+    `<em>Usuários / Token</em>
+    <h1>Saiba mais sobre o <b class="cyan">Token de autenticação</b></h1>
+    <p>Cada tipo de usuário utiliza um <b class="cyan">token</b> diferente</p>
+    <p>O token de <b class="purple">Administrador Mestre</b> pode ser utilizado em <b class="purple">todas as aplicações deste projeto</b></p>
+    <p>Os <b class="cyan">tokens</b> ficam registrados em <b class="purple">variáveis de ambiente</b></p>
+    <p>Quando o login é efetuado, uma <b class="cyan">hash do token</b> é gerada dinamicamente e enviada ao usuário</p>
+    <p>Para saber mais sobre a geração dinâmica do token acesso <b class="mark">./functions/login</b></p>
+    <p>A única página que utiliza o token para visualização geral é o <b class="purple">painel administrativo</b></p>
+    <p>Além desta funcionalidade, tokens são verficados para tentativa de acesso/alteração no <b class="purple">banco de dados</b></p>`
+}
+
+function integratedProjects(){
+    article.innerHTML = 
+    `<em>Projetos integrados / Apresentação</em>
+    <h1>Conheça os <b class="cyan">Projetos Integrados</b> ao Grupo Nobre APP</h1>
+    <p>Nesta seção encontrará a documentação dos projetos que estão diretamente ligados ao <b class="purple">Grupo Nobre APP</b></p>
+    <p>Todos os <b class="cyan">paineis administrativos</b> destes projetos se encontram no <b class="purple">Grupo Nobre APP</b></p>
+    <p>Alguns destes projetos tem sua <b class="cyan">versão cliente</b> hospedada no <b class="purple">servidor VPS Hostgator</b> do Grupo Nobre</p>
+    <p>Projetos que consomem API's do <b class="cyan">Grupo Nobre APP</b> foram testados antes de serem hospedados na <b class="purple">Hostgator</b></p>
+    <h2 class="cyan">Banco de dados</h2>
+    <p>O banco de dados para estes projetos está em cloud com <b class="mark"><a href="https://mongodb.com/">MongoDB Atlas</a></b></p>
+    <p>O login de acesso é <b class="cyan">ti@gruponobre.edu.br</b> e a <b class="cyan">senha corporativa</b></p>
+    <p>Cada projeto possui uma <b class="purple">collection</b> situada no mesmo <b class="purple">cluster</b></p>`
+}
+
+function virtualLibrary(){
+    article.innerHTML =
+    `<em>Projetos integrados / Biblioteca Virtual</em>
+    <h1>Conheça os endpoints de integração com a <b class="cyan">Biblioteca Virtual</b></h1>
+    <p>Estes endpoints foram criados com o objetivo de integrar a <b class="purple">criação de novos usuários</b> na bilbioteca virtual e na solicitação de <b class="purple">url autenticada</b> para o aluno que efetuar acesso</p>
+    <p>A estrutura destes endpointes são iguais para <b class="cyan">UNEF</b> e para a <b class="cyan">UNIFAN</b>, a única diferença é a chave secreta que vai no header da requisição</p>
+    <p>Estes endpoints consomem a <b class="cyan">API</b> da <b class="purple">Biblioteca Virtual</b></p>
+    <p>Podem ser chamados em qualquer projetos, passando os <b class="purple">dados necessários</b></p>
+    <p>Os dados que devem ser enviados no <b class="purple">Body da requisição</b> são: <b class="cyan">Primeiro nome do aluno, último nome do aluno e registro acadêmico do aluno</b></p>
+    <p>O endpoint trata de montar a requisição com estes dados da forma que a <b class="purple">Bilbioteca Virtual</b> solicita</p>
+    <h2 class="purple">Localização</h2>
+    <p><b class="mark">./functions/bibli_unef.js</b> e <b class="mark">./functions/bibli_fan.js</b></p>`
+}
+
+function roomMap(){
+    article.innerHTML = 
+    `<em>Projetos integrados / Mapa de salas</em>
+    <h1>Conheça o <b class="cyan">Mapa de Salas</b></h1>
+
+    <h2 class="cyan">UNEF</h2>
+    <h3 class="purple">Localização</h3>
+    <p>Painel administrativo em <b class="mark"><a href="https://home.gruponobre.edu.br/pages/mapa-admin-unef">https://home.gruponobre.edu.br/pages/mapa-admin-unef</a></b></p>
+    <p>Página cliente em <b class="mark"><a href="https://mapa.unef.edu.br/">https://mapa.unef.edu.br/</a></b></p>
+    <h3 class="purple">Manutenção do Frontend</h3>
+    <h4 class="purple">Administrativo</h4>
+    <p>
+        <b class="mark">./public/pages/mapa-admin-unef.html</b><br>
+        <b class="mark">./public/css/map</b><br>
+        <b class="mark">./public/scripts/map</b><br>
+    </p>
+    <h4 class="purple">Cliente</h4>
+    <p>Gerenciador de arquivos <b class="purple">Hostagor</b></p>
+    <h3 class="purple">Manutenção do Backend</h3>
+    <p>Para gerar o mapa completo com base em um arquivo xlsx (excel) é necessário utilizar o <b class="purple" style="text-decoration: underline;">software de ETL em Python</b> com a leitura do arquivo e construção das requisições que serão enviadas para <b class="mark">./functions/create_map_unef.js</b></p>
+    <p>Para gerar disciplinas as requisições são feitas em <b class="mark">./functions/create_discipline.js</b></p>
+    <p>Para leitura das disciplinas no banco é utilizado o endpoint <b class="mark">./functions/search_disciplines.js</b></p>
+    <p>Update de disciplinas em <b class="mark">./functions/update_disciple.js</b></p>
+    <p>Exclusão de disciplina em <b class="mark">./function/update_discipline.js</b></p>
+
+    <h2 class="cyan">UNIFAN</h2>
+    <h3 class="purple">Localização</h3>
+    <p>Painel administrativo em <b class="mark"><a href="https://home.gruponobre.edu.br/pages/mapa-admin-unifan">https://home.gruponobre.edu.br/pages/mapa-admin-unifan</a></b></p>
+    <p>Página cliente em <b class="mark"><a href="https://mapa.unifan.net.br/">https://mapa.unifan.net.br/</a></b></p>
+    <h3 class="purple">Manutenção do Frontend</h3>
+    <h4 class="purple">Administrativo</h4>
+    <p>
+        <b class="mark">./public/pages/mapa-admin-unifan.html</b><br>
+        <b class="mark">./public/css/map-unfan</b><br>
+        <b class="mark">./public/scripts/map-unifan</b><br>
+    </p>
+    <h4 class="purple">Cliente</h4>
+    <p>Gerenciador de arquivos <b class="purple">Hostagor</b></p>
+    <h3 class="purple">Manutenção do Backend</h3>
+    <p>Para gerar o mapa completo com base em um arquivo xlsx (excel) é necessário utilizar o <b class="purple" style="text-decoration: underline;">software de ETL em Python</b> com a leitura do arquivo e construção das requisições que serão enviadas para <b class="mark">./functions/create_map_unifan.js</b></p>
+    <p>Para gerar disciplinas as requisições são feitas em <b class="mark">./functions/create_discipline_unifan.js</b></p>
+    <p>Para leitura das disciplinas no banco é utilizado o endpoint <b class="mark">./functions/search_discipline_unifans.js</b></p>
+    <p>Update de disciplinas em <b class="mark">./functions/update_discipline_unifan.js</b></p>
+    <p>Exclusão de disciplina em <b class="mark">./function/update_discipline_unifan.js</b></p>`
+}
+
+function faq(){
+    article.innerHTML=
+    `<em>Projetos integrados / FAQ</em>
+    <h1>Conheça a nossa <b class="cyan">Base de Conhecimento</b></h1>
+    <p>Comumente ulilizada pelo <b class="purple">call center</b></p>
+    <p>Base ulilizada para acesso rápido a <b class="purple">informações e perguntas</b> que são respondidas com frequência</p>
+    <p>Tanto a página administrativa quanto a página cliente estão hospedadas no <b class="cyan">Grupo Nobre APP</b></p>
+    <h2 class="cyan">Manutenção do Frontend</h2>
+    <p><b class="mark">./public/pages/faq.html</b> e <b class="mark">./public/pages/faq-admin.html</b></p>
+    <p><b class="mark">./public/css/faq</b></p>
+    <p><b class="mark">./public/scripts/faq</b></p>
+    <h2 class="cyan">Manutenção do Backend</h2>
+    <p>Para criar uma nova pergunta respondida <b class="mark">./functions/create_question</b></p>
+    <p>Para ler as perguntas cadastradas <b class="mark">./functions/search_question</b> - OBS: Este endpoint <b class="purple">exige que o tema seja enviado na requisição</b> para pesquisa somente das perguntas daquele tema</p>`
+}
