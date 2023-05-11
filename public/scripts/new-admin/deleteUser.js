@@ -12,6 +12,7 @@ async function deleteUser(event){
     })
     if(response.status == 200){
         window.alert(`Usuário ${name} deletado com sucesso.`)
+        await listUsers()
         listUsersDiv()
     }else{
         window.alert('Erro ao deletar usuário.')

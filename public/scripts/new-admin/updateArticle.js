@@ -239,7 +239,41 @@ function listUsersDiv(){
     <div id="room-map-unifan" class="adminDivision"></div>
     <h2>Administradores <b class="purple">FAQ</b></h2>
     <div id="faq" class="adminDivision"></div>`
-    listUsers()   
+    
+    //For each user do...
+    getUsers.forEach(user => {
+        const newCard = document.createElement('div')      
+        newCard.setAttribute('class', 'userCard')
+
+        //Generate card
+        newCard.innerHTML =
+        `<h2>${user.username}</h2>
+        <div class="info">
+            <h5><b class="purple">Usuário:</b></h5>
+            <p>${user.login}</p>
+        </div>
+        <div class="info">
+            <h5><b class="purple">Criado por:</b></h5>
+            <p>${user.criador}</p>
+        </div>
+        <div class="info">
+            <h5><b class="purple">Criado em:</b></h5>
+            <p>${user.criacao}</p>
+        </div>
+        <div class="delete">
+            <button class="deleteUser" onclick="deleteUser(event)">Deletar usuário</button>
+        </div>`
+
+        if(user.permissions == 'admin-master'){
+            document.getElementById('masters').appendChild(newCard)
+        }else if(user.permissions == 'room-map-unef'){
+            document.getElementById('room-map-unef').appendChild(newCard)
+        }else if(user.permissions == 'room-map-unifan'){
+            document.getElementById('room-map-unifan').appendChild(newCard)
+        }else if(user.permissions == 'faq'){
+            document.getElementById('faq').appendChild(newCard)
+        }
+    })
 }
 
 function token(){

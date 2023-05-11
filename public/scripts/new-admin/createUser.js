@@ -56,4 +56,6 @@ async function createUser(){
     document.getElementById('pass').value = ''
     document.getElementById('confirmPass').value = ''
     document.getElementById('permissions').value = 'not-selected'
+
+    listUsers()
 }   
