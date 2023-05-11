@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 9vh;
+    max-height: 9vh;
+    min-height: 9vh;
     cursor: pointer;
     padding-inline: 2%;
     transition: ease .3s;
