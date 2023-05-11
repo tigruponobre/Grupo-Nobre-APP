@@ -46,7 +46,7 @@ exports.handler = async function (event, context){
             return{
                 statusCode: 404,
                 body: JSON.stringify({
-                    resposta: 'User not finded'
+                    resposta: 'User not found'
                 })
             }
         }

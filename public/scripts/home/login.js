@@ -102,7 +102,7 @@ async function getLogged(){
 
     //Check response
     if(response.status != 200){
-        if(data.resposta == 'Admin not found.'){
+        if(data.resposta == 'User not found'){
             if(notification.innerText){
                 notification.classList.add('bounce')
                 notification.classList.remove('notifyAnimation')
@@ -117,7 +117,7 @@ async function getLogged(){
             inputLogin.classList.add('error')
             inputPass.classList.add('error')
         }else 
-        if(data.resposta == 'Incorrect password.'){
+        if(data.resposta == 'Wrong password'){
             if(notification.innerText){
                 notification.classList.add('bounce')
                 notification.classList.remove('notifyAnimation')

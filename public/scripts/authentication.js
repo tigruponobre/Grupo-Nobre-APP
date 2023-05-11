@@ -2,7 +2,7 @@
 async function validation() {
     const token = await sessionStorage.getItem('token')
     const permissions = await sessionStorage.getItem('permissions')
-    const response = await fetch(url + '/.netlify/functions/validation', {
+    const response = await fetch('../.netlify/functions/validation', {
         method: 'post',
         body: JSON.stringify({
             token,
@@ -11,7 +11,7 @@ async function validation() {
     })
     if(response.status != 200) {
         sessionStorage.setItem('unauthorized', true)
-        window.location = url
+        window.location = history.back()
     }else{
         document.body.style.display = 'block'
     }
