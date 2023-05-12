@@ -3,8 +3,13 @@ const article = document.getElementsByTagName('article')[0]
 
 //Grupo Nobre APP
 
+
 //Presentation
 function presentation(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Grupo Nobre APP / Apresentação</em>
     <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
@@ -32,6 +37,10 @@ function presentation(){
 
 //Dependences
 function dependences(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Grupo Nobre APP / Exigências e Dependências</em>
     <h1><b class="cyan">Exigências</b> e <b class="cyan">dependências</b> gerais do projeto</h1>
@@ -69,6 +78,10 @@ function dependences(){
 
 //Structure
 function structure(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Grupo Nobre APP / Estrutura</em>
     <h1>Conheça a <b class="cyan">estrutura</b> do projeto</h1>
@@ -99,6 +112,10 @@ function structure(){
 
 //Development
 function development(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Grupo Nobre APP / Ambiente de desenvolvimento</em>
     <h1>Ambiente de <b class="cyan">desenvolvimento</b> e <b class="cyan">Deploy</b></h1>
@@ -167,6 +184,10 @@ function development(){
 }
 
 function userType(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Usuários / Tipos de usuários</em>
     <h1>Conheça os tipos de <b class="cyan">usuários</b></h1>
@@ -188,6 +209,10 @@ function userType(){
 }
 
 function createUserDiv(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Usuários / Criação de usuários</em>
     <h1>Crie um novo <b class="cyan">usuário</b></h1>
@@ -228,6 +253,10 @@ function createUserDiv(){
 }
 
 function listUsersDiv(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Usuários / Listagem de usuários</em>
     <h1>Visualize todos os <b class="cyan">usuários</b></h1>
@@ -277,6 +306,10 @@ function listUsersDiv(){
 }
 
 function token(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Usuários / Token</em>
     <h1>Saiba mais sobre o <b class="cyan">Token de autenticação</b></h1>
@@ -290,6 +323,10 @@ function token(){
 }
 
 function integratedProjects(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Projetos integrados / Apresentação</em>
     <h1>Conheça os <b class="cyan">Projetos Integrados</b> ao Grupo Nobre APP</h1>
@@ -304,6 +341,10 @@ function integratedProjects(){
 }
 
 function virtualLibrary(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML =
     `<em>Projetos integrados / Biblioteca Virtual</em>
     <h1>Conheça os endpoints de integração com a <b class="cyan">Biblioteca Virtual</b></h1>
@@ -318,6 +359,10 @@ function virtualLibrary(){
 }
 
 function roomMap(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML = 
     `<em>Projetos integrados / Mapa de salas</em>
     <h1>Conheça o <b class="cyan">Mapa de Salas</b></h1>
@@ -365,6 +410,10 @@ function roomMap(){
 }
 
 function faq(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML=
     `<em>Projetos integrados / FAQ</em>
     <h1>Conheça a nossa <b class="cyan">Base de Conhecimento</b></h1>
@@ -381,6 +430,10 @@ function faq(){
 }
 
 function documentations(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML =
     `<em>Documentações gerais / Apresentação</em>
     <h1>Visualize a documentação de <b class="cyan">Projetos Grupo Nobre</b></h1>
@@ -392,6 +445,10 @@ function documentations(){
 }
 
 function searchRA(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
     article.innerHTML =
     `<em>Documentações gerais / Consulta de RA</em>
     <h1><b class="cyan">Consulta de RA</b> - Colégio Nobre</h1>

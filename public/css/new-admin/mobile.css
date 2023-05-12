@@ -2,11 +2,14 @@
     #left-side{
         display: none;
     }
+
     article{
         width: 100%;
         margin: 0;
         padding-bottom: 5em;
+        /* display: none; */
     }
+
     .doc{
         flex-direction: column;
         margin-top: 1em;
@@ -14,8 +17,59 @@
         max-height: 0;
         min-height: 0;
     }
+
     .doc img{
         border: none;
         padding-right: 0;
+    }
+
+    aside{
+        width: 100%;
+        position: static;
+    }
+
+    .copyCode{
+        padding: .4em;
+    }
+
+    .copyCode p{
+        padding-inline: .4em;
+    }
+
+    #content{
+        padding-inline: 5%;
+        padding-top: 8em;
+    }
+
+    #menu{
+        display: flex;
+    }
+
+    .userCard{
+        width: 100%;
+    }
+
+    .create{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .create div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #permissions{
+        width: 100%;
+    }
+
+    #submitCreate{
+        width: 100%;
+    }
+
+    #right-side > p{
+        margin-bottom: .7em;
     }
 }

@@ -29,6 +29,12 @@ backButtonHTML.innerHTML =
         transition: .3s;
         z-index: 3;
     }
+
+    @media (max-width: 1040px){
+        .backButton img{
+            max-width: 40px;
+        }
+    }
 </style>`
 
 document.body.appendChild(backButtonHTML)

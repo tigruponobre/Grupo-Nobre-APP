@@ -13,14 +13,6 @@ body{
     background-color: #0E1117;
 }
 
-header{
-    display: flex;
-    justify-content: center;
-    background-color: #ffffff;
-    position: fixed;
-    width: 100%;
-}
-
 :root{
     --cyan: #2E8DE0;
     --purple: #9053fa;

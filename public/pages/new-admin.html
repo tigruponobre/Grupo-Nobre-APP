@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/new-admin/all.css">
+    <link rel="stylesheet" href="../css/new-admin/header.css">
     <link rel="stylesheet" href="../css/new-admin/content.css">
     <link rel="stylesheet" href="../css/new-admin/aside.css">
     <link rel="stylesheet" href="../css/new-admin/article.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../css/new-admin/userType.css">
     <link rel="stylesheet" href="../css/new-admin/userList.css">
     <link rel="stylesheet" href="../css/new-admin/createUser.css">
+    <link rel="stylesheet" href="../css/new-admin/nav.css">
     <link rel="stylesheet" href="../css/new-admin/mobile.css">
 
     <script src="../scripts/authentication.js"></script>
@@ -23,6 +25,7 @@
     <script src="../scripts/new-admin/listUser.js" defer></script>
     <script src="../scripts/new-admin/createUser.js" defer></script>
     <script src="../scripts/new-admin/deleteUser.js" defer></script>
+    <script src="../scripts/new-admin/menuMobile.js" defer></script>
     <script src="../scripts/backButton.js" defer></script>
 
     <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
@@ -32,6 +35,14 @@
     <header>
         <img src="../img/logos/gn_black_logo.png" alt="Grupo Nobre" width="200px">
     </header>
+    <nav id="menu">
+        <input type="checkbox" id="sandwich-check">
+        <label for="sandwich-check" id="sandwich">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </nav>
     <div id="content">
         <aside id="left-side">
             <section>
@@ -82,7 +93,7 @@
             </section>
         </aside>
     
-        <article>
+        <article id="right-side">
             <em>Grupo Nobre APP / Apresentação</em>
             <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
             <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>

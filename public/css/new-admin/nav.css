@@ -1,0 +1,63 @@
+#menu{
+    position: fixed;
+    padding-top: 3.5em;
+    padding-bottom: .5em;
+    width: 100%;
+    height: 5em;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: .5%;
+    background-color: var(--cyan);
+    font-size: x-large;
+}
+
+#sandwich-check:checked + #menu #title{
+    opacity: 0;
+}
+
+#sandwich-check{
+    position: absolute;
+    opacity: 0; 
+    pointer-events: none;
+}
+#sandwich{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 35px;
+}
+#sandwich span{
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 1px;
+    background-color: #FFFFFF;
+    transition: .4s ease-in-out;
+}
+
+#sandwich span:nth-child(1){
+    top: 0;
+}
+#sandwich span:nth-child(2){
+    top: 10px;
+}
+#sandwich span:nth-child(3){
+    top: 20px;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(2){
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+#sandwich-check:checked + #sandwich span:nth-child(3){
+    opacity: 0;
+}
