@@ -60,8 +60,10 @@
     width: 100%;
 }
 /* CROWN ICON */
-.crown{
-    width: 4.7vh;
+.gn_colorful{
+    width: 4.5vh;
+    margin: 1px 0 1px 1px;
+    border-radius: 5em; 
 }
 /* ARROW ICON */
 .interaction{
