@@ -8,8 +8,8 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const master_token = process.env.TOKEN
-const minor_token = process.env.MINOR_TOKEN
+const token_master = process.env.TOKEN_MASTER
+const token_room_map_unifan = process.env.TOKEN_ROOM_MAP_UNIFAN
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -34,7 +34,7 @@ exports.handler = async function (event, context){
     const { curso, turno, dia, disciplina, turma, professor, sala, andar, inicio, fim, token } = await eventBody
 
     // Check admin
-    let checkAdmin = await bcrypt.compare(master_token, token) || await bcrypt.compare(minor_token, token)
+    let checkAdmin = await bcrypt.compare(token_master, token) || await bcrypt.compare(token_room_map_unifan, token)
 
     if(!checkAdmin){
         return{

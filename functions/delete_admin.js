@@ -9,7 +9,7 @@ const db_user = process.env.DB_TI_USER
 const db_pass = process.env.DB_TI_PASSWORD
 const cluster = process.env.DB_TI_CLUSTER
 const db_name = process.env.DB_TI_NAME
-const master_token = process.env.TOKEN
+const token_master = process.env.TOKEN_MASTER
 
 exports.handler = async function (event, context){
     //Connection with MongoDB Atlas
@@ -32,7 +32,7 @@ exports.handler = async function (event, context){
     const {name, token}  = eventBody
 
     //Verifying token
-    if(!bcrypt.compare(master_token, token)){
+    if(!bcrypt.compare(token_master, token)){
         return {
             statusCode: 401,
             body: JSON.stringify({
