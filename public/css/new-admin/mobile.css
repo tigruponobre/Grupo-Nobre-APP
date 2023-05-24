@@ -72,4 +72,8 @@
     #right-side > p{
         margin-bottom: .7em;
     }
+
+    ol li{
+        margin: 0;
+    }
 }

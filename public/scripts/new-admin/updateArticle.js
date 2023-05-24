@@ -481,7 +481,7 @@ function CPA(){
         <li>
             <h3>Configuração no código no <b class="cyan">servidor</b></h3>
             <p>- 192.168.0.250</p>
-            <p>- C:\\xampp\\hdocs\\unef_g5websrv\\models\\Teacher.php - Alterar período letivo da consulta de professores</p>
+            <p>- C: > xampp > hdocs > unef_g5websrv > models > Teacher.php - Alterar período letivo da consulta de professores</p>
         </li>
         <li>
             <h3>Configuração no <b class="cyan">PHPMyAdmin - Hostgator</b></h3>
