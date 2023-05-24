@@ -441,6 +441,10 @@ function documentations(){
     <div class="doc" onclick="searchRA()">
         <img src="../img/icons/bookmark.png" alt="Consulta RA">
         <p><b class="cyan">Consulta de RA</b> - Colégio Nobre</p>
+    </div>
+    <div class="doc" onclick="CPA()">
+        <img src="../img/icons/bookmark.png" alt="Consulta RA">
+        <p><b class="cyan">CPA</b> - UNEF / UNIFAN</p>
     </div>`
 }
 
@@ -461,4 +465,38 @@ function searchRA(){
     <p>Para coletar os dados de cadatro dos alunos é necessário realizar uma query no <b class="purple">banco de dados</b> do <b class="cyan">RM</b></p>
     <p>A execução do processo de insert no <b class="purple">MongoDB</b> para que possa ser solicitado pelo aluno é feita por meio de uma <b class="purple">ferramenta de ETL em Python</b></p>
     <p>Os endpoints da API deste projetos estão em <b class="mark">./functions/create_school_student.js</b> e <b class="mark">./functions/search_school_student.js</b></p>`
+}
+
+function CPA(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
+    article.innerHTML =
+    `<em>Documentações gerais / CPA</em>
+    <h1><b class="cyan">CPA</b> - UNEF / UNIFAN</h1>
+    <p>Pesquisa realizada todos os semestres para que os alunos das faculdades possam avaliar seus professores, realizar comentários e enviar propostas para possível melhora.</p>
+    <h2 class="purple">Três locais para configuração completa</h2>
+    <ol>
+        <li>
+            <h3>Configuração no código no <b class="cyan">servidor</b></h3>
+            <p>- 192.168.0.250</p>
+            <p>- C:\\xampp\\hdocs\\unef_g5websrv\\models\\Teacher.php - Alterar período letivo da consulta de professores</p>
+        </li>
+        <li>
+            <h3>Configuração no <b class="cyan">PHPMyAdmin - Hostgator</b></h3>
+            <p>- Solicitar às secretarias a lista atualizadas dos coordenadores de cada curso</p>
+            <p>- Ativar ou inativar os coordenadores nas tabelas sur_coordenador nos banco de dados gruponob > apps > ...</p>
+            <p>- Verificar na tabela "periodo" de cada banco se o período letivo ativo está correto</p>
+            <p>- Para realizar CPA EAD é necessário configurar para datas diferentes no Dominus, o periodo letivo que estiver ativo no PHPMyAdmin é o que vai receber as informações inseridas, então é necessário fazer a troca quando estiver executando com um idperlet diferente</p>
+        </li>
+        <li>
+            <h3>Configuração no <b class="cyan">Dominus</b</h3>
+            <p>- Logar com perfil ADM Master</p>
+            <p>- Acessar aba "Administração > Configurar CPA</p>
+            <p>- Incluir novo</p>
+            <p>- Selecionar o período letivo e data de execução</p>
+            <p>- Dentro da data delimitada, todos os alunos que realizarem o login serão redirecionados ao formulário</p>
+        </li>
+    </ol>`
 }
