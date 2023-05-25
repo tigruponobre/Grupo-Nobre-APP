@@ -491,7 +491,7 @@ function CPA(){
             <p>- Para realizar CPA EAD é necessário configurar para datas diferentes no Dominus, o periodo letivo que estiver ativo no PHPMyAdmin é o que vai receber as informações inseridas, então é necessário fazer a troca quando estiver executando com um idperlet diferente</p>
         </li>
         <li>
-            <h3>Configuração no <b class="cyan">Dominus</b</h3>
+            <h3>Configuração no <b class="cyan">Dominus</b></h3>
             <p>- Logar com perfil ADM Master</p>
             <p>- Acessar aba "Administração > Configurar CPA</p>
             <p>- Incluir novo</p>
