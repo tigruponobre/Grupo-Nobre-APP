@@ -49,33 +49,31 @@ async function generateTheme(event){
 
             const generateIntireQuestion = document.createElement('div')
             generateIntireQuestion.setAttribute('class', 'question')
-            generateIntireQuestion.innerHTML = generateQuestionTitle.outerHTML
+            generateIntireQuestion.innerHTML = generateQuestionTitle.outerHTML.replace(/\n/g, "<br>");
 
             const answer_unef = document.createElement('div')
             if(element.answer_unef){
                 answer_unef.setAttribute('class', 'response')
-                answer_unef.innerHTML = `<h6>UNEF</h6><p>${element.answer_unef}</p>`
-                console.log(element.answer_unef.replace(`
-                `, 'AEHOOOOOOO'))                
-                generateIntireQuestion.innerHTML += answer_unef.outerHTML
+                answer_unef.innerHTML = `<h6>UNEF</h6><p>${element.answer_unef}</p>`               
+                generateIntireQuestion.innerHTML += answer_unef.outerHTML.replace(/\n/g, "<br>");
             }
             const answer_unifan = document.createElement('div')
             if(element.answer_unifan){
                 answer_unifan.setAttribute('class', 'response')
                 answer_unifan.innerHTML = `<h6>UNIFAN</h6><p>${element.answer_unifan}</p>`
-                generateIntireQuestion.innerHTML += answer_unifan.outerHTML
+                generateIntireQuestion.innerHTML += answer_unifan.outerHTML.replace(/\n/g, "<br>");
             }
             const answer_unefead = document.createElement('div')
             if(element.answer_unefead){
                 answer_unefead.setAttribute('class', 'response')
                 answer_unefead.innerHTML = `<h6>UNEF EAD</h6><p>${element.answer_unefead}</p>`
-                generateIntireQuestion.innerHTML += answer_unefead.outerHTML
+                generateIntireQuestion.innerHTML += answer_unefead.outerHTML.replace(/\n/g, "<br>");
             }
             const answer_unifanead = document.createElement('div')
             if(element.answer_unifanead){
                 answer_unifanead.setAttribute('class', 'response')
                 answer_unifanead.innerHTML = `<h6>UNIFAN EAD</h6><p>${element.answer_unifanead}</p>`
-                generateIntireQuestion.innerHTML += answer_unifanead.outerHTML
+                generateIntireQuestion.innerHTML += answer_unifanead.outerHTML.replace(/\n/g, "<br>");
             }
             themeQuestions.appendChild(generateIntireQuestion)
         })

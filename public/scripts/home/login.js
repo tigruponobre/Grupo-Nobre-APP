@@ -16,6 +16,8 @@ login_logout.addEventListener('click', ()=>{
         }
         loginButtonHome.removeAttribute('disabled')
 
+        document.getElementById('loginInput').focus()
+
         //Adding url to "Solicite registro"
         register.setAttribute('href', 'http://192.168.10.10/glpi/index.php')
 
