@@ -496,3 +496,36 @@ function CPA(){
         </li>
     </ol>`
 }
+
+function CDB(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
+    article.innerHTML = 
+    `<em>Documentações gerais / Concurso de Bolsas - Streamlit</em>
+    <h1><b class="cyan">Concurso de bolsas</b> - Streamlit</h1>
+    <h2 class="purple">Objetivo</h2>
+    <p>Este software foi desenvolvido com o objetivo facilitar as pesquisas por resultados do concurso de bolsa.</p>
+    <h2 class="purple">Usuabilidade</h2>
+    <p>Amplamente utilizado pelo setor <b class="purple">comercial</b>.</p>
+    <p>As consultas podem ser realizadas por <b class="cyan">primeiro nome</b>, <b class="cyan">algum sobrenome</b>, <b class="cyan">nome completo</b> ou <b class="cyan">CPF (com ou sem pontuação)</b>.</p>
+    <h2 class="purple">Estrutura</h2>
+    <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/concurso_de_bolsas" class="cyan">github</a>.</p>
+    <p>Construído utilizando biblioteca <b class="purple">Pandas em Python</b> para análise de arquivo excel e <b class="purple">Streamlit em Python para montar a interface da consulta.</b></p>
+    <h2 class="purple">Configuração</h2>
+    <p>A configuração do sistema para atender um novo período letivo, com novos resultado é feita em etapas</p>
+    <ul>
+        <li class="step"><b class="purple">Localizar</b> o projeto e os arquivos xlsx anteriores.</li>
+        <li class="step">O projeto em produção roda no servidor <b class="purple">192.168.10.83</b> e costuma ficar na área de trabalho.</li>
+        <li class="step">Solictar ao setor <b class="purple">comercial</b> o <b class="cyan">arquivos xlsx</b> UNEF e UNIFAN com os resultados, seguindo exato mesmo padrão do arquivo do período anterior.</li>
+        <li class="step">Colocar os arquivos xlsx na <b class="purple">raiz do projeto</b>.</li>
+        <li class="step">Localizar o arquivo de <b class="purple">transformação de CPF</b>, pois os CPF's geralmente vem com o tipo errado de dados o que ocasiona falta de 0's à esquerda.</li>
+        <li class="step">No arquivo de transformação de CPF, <b class="purple">trocar o nome</b> do arquivo xlsx que está sendo lido pelo programa.</li>
+        <li class="step">Este último passo irá gerar um <b class="purple">novo arquivo</b> que será utilizado pelo projeto final.</li>
+        <li class="step">Após trocar o nome deste arquivo para <b class="purple">CDB UNEF *periodo_atual*</b> (no caso da UNIFAN, CBD UNIFAN *periodo_atual*).</li>
+        <li class="step">Localizar a pasta <b class="purple">pages</b> que contem o projeto da UNEF e UNIFAN e alterar o nome dos arquivos xlsx lidos, da mesma forma que no de transformação de CPF.</li>
+        <li class="step">Após toda a configuração é necessário executar o comando <b class="purple">streamlit run Bem-vindo.py</b> na raiz do projeto, <b class="purple">via CMD</b>.</li>
+        <li class="step">Caso o projeto não se encontre em <b class="purple">https://home.gruponobre.edu.br</b>, necessário adicionar o link <b class="cyan">http://192.168.10.83:8501</b> no HTML.</li>
+    </ul>`
+}
