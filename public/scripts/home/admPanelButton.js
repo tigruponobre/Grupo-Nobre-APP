@@ -8,5 +8,5 @@ if(permissions == 'room-map-unef'){
 }else if(permissions == 'faq'){
     adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/faq-admin')
 }else{
-    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/new-admin')
+    adminButton.addEventListener('click', ()=> window.location.href = url + '/pages/administrativo')
 }

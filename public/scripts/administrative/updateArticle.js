@@ -441,6 +441,10 @@ function documentations(){
     <div class="doc" onclick="CPA()">
         <img src="../img/icons/bookmark.png" alt="Consulta RA">
         <p><b class="cyan">CPA</b> - UNEF / UNIFAN</p>
+    </div>
+    <div class="doc" onclick="CDB()">
+        <img src="../img/icons/bookmark.png" alt="Consulta RA">
+        <p><b class="cyan">Concurso de bolsas</b> - Streamlit</p>
     </div>`
 }
 
