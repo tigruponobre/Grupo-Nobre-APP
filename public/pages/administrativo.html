@@ -114,6 +114,17 @@
                 <p><b class="cyan">FAQ Admin</b> - Criação de novas perguntas respondidas para dúvidas frequentes.</p>
             </div>
         </article>
+
+
+        <script>
+            // Rolagem da barra lateral esquerda
+            var aside = document.querySelector('aside');
+
+            aside.addEventListener('wheel', function(e) {
+            // Desloque a rolagem verticalmente
+            aside.scrollTop += e.deltaY;
+            });
+        </script>
     </div>
 </body>
 </html>
