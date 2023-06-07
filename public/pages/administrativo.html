@@ -1,121 +1,119 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        //Set url to use on fetch's
-        const url = document.URL.split('/').splice('0',3).join('/')
-    </script>
-    <script src="../scripts/authentication.js"></script>
-    <link rel="stylesheet" href="../css/general/all.css">
-    <link rel="stylesheet" href="../css/administrative/body.css">
-    <link rel="stylesheet" href="../css/administrative/menu.css">
-    <link rel="stylesheet" href="../css/administrative/circles.css">
-    <link rel="stylesheet" href="../css/administrative/main.css">
+
+    <link rel="stylesheet" href="../css/administrative/all.css">
+    <link rel="stylesheet" href="../css/administrative/header.css">
     <link rel="stylesheet" href="../css/administrative/content.css">
-    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
-    <script src="../scripts/administrative/menu.js" defer></script>
-    <script src="../scripts/administrative/createAdmin.js" defer></script>
-    <script src="../scripts/administrative/searchAdmins.js" defer></script>
+    <link rel="stylesheet" href="../css/administrative/aside.css">
+    <link rel="stylesheet" href="../css/administrative/article.css">
+    <link rel="stylesheet" href="../css/administrative/presentation.css">
+    <link rel="stylesheet" href="../css/administrative/dependences.css">
+    <link rel="stylesheet" href="../css/administrative/structure.css">
+    <link rel="stylesheet" href="../css/administrative/userType.css">
+    <link rel="stylesheet" href="../css/administrative/userList.css">
+    <link rel="stylesheet" href="../css/administrative/createUser.css">
+    <link rel="stylesheet" href="../css/administrative/nav.css">
+    <link rel="stylesheet" href="../css/administrative/mobile.css">
+
+    <script src="../scripts/authentication.js"></script>
+    <script src="../scripts/administrative/updateArticle.js" defer></script>
+    <script src="../scripts/administrative/copyCode.js" defer></script>
+    <script src="../scripts/administrative/listUser.js" defer></script>
+    <script src="../scripts/administrative/createUser.js" defer></script>
+    <script src="../scripts/administrative/deleteUser.js" defer></script>
+    <script src="../scripts/administrative/menuMobile.js" defer></script>
     <script src="../scripts/backButton.js" defer></script>
 
-    <title>Painel Administrativo</title>
+    <link rel="shortcut icon" href="../img/logos/favicon.ico" type="image/x-icon">
+    <title>Painel administrativo</title>
 </head>
 <body>
-    <style>body{display: none;}</style>
-    <!-- NAV MENU -->
-    <nav>
-        <img id="logo_gn" src="../img/logos/gn_branca_curta.png" alt="logo">
-        <ul id="menu">
-            <li>DOCUMENTAÇÕES</li>
-            <li>USUÁRIOS</li>
-            <li>CADASTRO</li>
-        </ul>
+    <header>
+        <img src="../img/logos/gn_black_logo.png" alt="Grupo Nobre" width="200px">
+    </header>
+    <nav id="menu">
+        <input type="checkbox" id="sandwich-check">
+        <label for="sandwich-check" id="sandwich">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
     </nav>
-    <!-- CONTENT -->
     <div id="content">
-        <!-- CIRCLES -->
-        <ul id="circles">
-            <li>&nbsp</li>
-            <li>&nbsp</li>
-            <li>&nbsp</li>
-        </ul>
-        <!-- MAIN BOX THAT GIVES USERS WELCOME -->
-        <main>
-            <h1>Painel administrativo</h1>
-            <div id="select">
-                <a onclick="window.location.href = url + '/pages/mapa-admin-unef'" class="options"><p><img class="crown" src="../img/icons/crown1.png">Mapa de salas UNEF - Gestor</p><img class="interaction" src="../img/icons/interaction.png"></a>
-                <a onclick="window.location.href = url + '/pages/mapa-admin-unifan'" class="options"><p><img class="crown" src="../img/icons/crown1.png">Mapa de salas UNIFAN - Gestor</p><img class="interaction" src="../img/icons/interaction.png"></a>
-                <a onclick="window.location.href = url + '/pages/faq-admin'" class="options"><p><img class="crown" src="../img/icons/crown1.png">Base de conhecimento - Gestor</p><img class="interaction" src="../img/icons/interaction.png"></a>
-            </div>
-        </main>
-        <!-- DOCUMENTATIONS BOX -->
-        <section id="docs">
-            <h3>DOCUMENTAÇÕES</h3>
-            <div id="cards">
-                <div class="card" onclick="window.location.href = `${url}/pages/netlify`"><img src="../img/icons/netlify_icon.png" alt="netlify_icon" width="250vh"><p class="docName">NETLIFY</p></div>
-                <div class="card" onclick="window.location.href = `${url}/pages/biblioteca`"><img src="../img/icons/bilbioteca_icon.jpg" alt="bilbioteca_icon" width="250vh"><p class="docName">BIBLIOTECA VIRTUAL</p></div>
-            </div>
-        </section>
-        <!-- USERS BOX -->
-        <section id="consultUsers">
-            <div id="top">
-                <h3>USUÁRIOS</h3>
-                <div id="searchDiv">
-                    <img id="lens" src="../img/icons/lupa.png" alt="lupa" width="22vh" height="22vh">
-                    <input id="search" type="text" placeholder="Pesquisar usuário" autocomplete="off">
+        <aside id="left-side">
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/app.png" alt="Grupo Nobre APP">
+                    <h2>Grupo Nobre APP</h2>
                 </div>
-            </div>
-            <div id="users">
-                <ul></ul>
-            </div>
-        </section>
-        <img id="admin" src="../img/backgrounds/admin.jpg" alt="admin" width="700vh">
-        <!-- REGISTER BOX -->
-        <section id="register">
-            <div id="registerTitle">
-                <ul class="registerCircles">
-                    <li></li>
-                    <li></li>
+                <ul>
+                    <li class="active" onclick="presentation()">Apresentação</li>
+                    <li onclick="dependences()">Exigências e Dependências</li>
+                    <li onclick="structure()">Estrutura</li>
+                    <li onclick="development()">Desenvolvimento e Deploy</li>
                 </ul>
-                <h3>CADASTRO</h3>
+            </section>
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/user.png" alt="Usuários">
+                    <h2>Usuários</h2>
+                </div>
+                <ul>
+                    <li onclick="userType()">Tipos de usuários</li>
+                    <li onclick="listUsersDiv()">Listagem de usuários</li>
+                    <li onclick="createUserDiv()">Criação de usuários</li>
+                    <li onclick="token()">Token</li>
+                </ul>
+            </section>
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/share.png" alt="Projetos">
+                    <h2>Projetos integrados</h2>
+                </div>
+                <ul>
+                    <li onclick="integratedProjects()">Apresentação</li>
+                    <li onclick="roomMap()">Mapa de salas</li>
+                    <li onclick="virtualLibrary()">Biblioteca Virtual</li>
+                    <li onclick="faq()">FAQ</li>
+                </ul>
+            </section>
+            <section>
+                <div class="sectionTitle">
+                    <img src="../img/icons/info.png" alt="Documentações">
+                    <h2>Docuemtações gerais</h2>
+                </div>
+                <ul>
+                    <li onclick="documentations()">Apresentação</li>
+                    <li onclick="searchRA()">Consulta RA - Colégio Nobre</li>
+                    <li onclick="CPA()">CPA - UNEF / UNIFAN</li>
+                </ul>
+            </section>
+        </aside>
+    
+        <article id="right-side">
+            <em>Grupo Nobre APP / Apresentação</em>
+            <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
+            <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
+            <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
+            <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP" class="cyan">github</a>.</p>
+            <h2 class="presentationSubtitle">Paineis administrativos</h2>
+            <div class="doc" onclick="window.location.href = './mapa-admin-unef'">
+                <img src="../img/icons/RoomMap.png" alt="Grupo Nobre APP">
+                <p><b class="cyan">Mapa de Salas UNEF</b> - Criação de novas disciplinas, alteração de disciplinas existentes e exclusão de disciplinas.</p>
             </div>
-            <div id="registerInfo">
-                <div class="inputDiv">
-                    <label for="firstName">Primeiro nome:</label>
-                    <input id="firstName" type="text" spellcheck="false" autocomplete="off">
-                </div>
-                <div class="inputDiv">
-                    <label for="lastName">Último nome:</label>
-                    <input id="lastName" type="text" spellcheck="false" autocomplete="off">
-                </div>
-                <div class="inputDiv">
-                    <label for="password">Senha:</label>
-                    <input id="password" type="password" spellcheck="false" autocomplete="off">
-                </div>
-                <div class="inputDiv">
-                    <label for="confirmPassword">Confirmar senha:</label>
-                    <input id="confirmPassword" type="password" spellcheck="false" autocomplete="off">
-                </div>
-                <div class="inputDiv">
-                    <label>Permissões:</label>
-                    <div id="checkboxes">
-                        <select name="permissions" id="permissions">
-                            <option value="super-admin">Super Admin</option>
-                            <option value="room-map-unef">Mapa de salas UNEF - Gestor</option>
-                            <option value="room-map-unifan">Mapa de salas UNIFAN - Gestor</option>
-                            <option value="faq">Base de conhecimento - Gestor</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="registrateButton">
-                    <p id="notification"></p>
-                    <button id="registrate" onCLick="create_admin()">Enviar</button>
-                </div>
+            <div class="doc" onclick="window.location.href = './mapa-admin-unifan'">
+                <img src="../img/icons/RoomMap.png" alt="Usuários">
+                <p><b class="cyan">Mapa de Salas UNIFAN</b> - Criação de novas disciplinas, alteração de disciplinas existentes e exclusão de disciplinas.</p>
             </div>
-        </section>
+            <div class="doc" onclick="window.location.href = './faq-admin'">
+                <img src="../img/icons/FAQicon.png" alt="Projetos">
+                <p><b class="cyan">FAQ Admin</b> - Criação de novas perguntas respondidas para dúvidas frequentes.</p>
+            </div>
+        </article>
     </div>
 </body>
 </html>
