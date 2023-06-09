@@ -13,7 +13,7 @@ function presentation(){
     article.innerHTML = 
     `<em>Grupo Nobre APP / Apresentação</em>
     <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
-    <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
+    <p>Este software foi desenvolvido com o objetivo de facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
     <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
     <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP" class="cyan">github</a>.</p>
     <h2 class="presentationSubtitle">Paineis administrativos</h2>

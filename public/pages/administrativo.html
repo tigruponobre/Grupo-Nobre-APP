@@ -91,6 +91,7 @@
                     <li onclick="searchRA()">Consulta RA - Colégio Nobre</li>
                     <li onclick="CPA()">CPA - UNEF / UNIFAN</li>
                     <li onclick="CDB()">Concurso de bolsas - Streamlit</li>
+                    <li onclick="rm_eps()">Integração RM - EPS</li>
                 </ul>
             </section>
         </aside>
@@ -98,7 +99,7 @@
         <!-- <article id="right-side">
             <em>Grupo Nobre APP / Apresentação</em>
             <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
-            <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
+            <p>Este software foi desenvolvido com o objetivo de facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
             <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
             <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP" class="cyan">github</a>.</p>
             <h2 class="presentationSubtitle">Paineis administrativos</h2>
@@ -117,23 +118,39 @@
         </article> -->
         <article id="right-side">
             <em>Grupo Nobre APP / Integração RM - EPS</em>
-            <h1>Conheça o <b class="cyan">Grupo Nobre APP</b></h1>
-            <p>Este software foi desenvolvido com o objetivo facilitar acessos a todas as aplicações Grupo Nobre, hospedar API's e documentações, além de se tornar a interface de gerenciamento de outros projetos.</p>
-            <p>Os idiomas utilizados foram <b>Portugues Brasileiro</b> no frontend e <b>Inglês</b> no backend.</p>
-            <p>O backup do projeto se encontra no <a href="https://github.com/gustavopqz/Grupo-Nobre-APP" class="cyan">github</a>.</p>
-            <h2 class="presentationSubtitle">Paineis administrativos</h2>
-            <div class="doc" onclick="window.location.href = './mapa-admin-unef'">
-                <img src="../img/icons/RoomMap.png" alt="Grupo Nobre APP">
-                <p><b class="cyan">Mapa de Salas UNEF</b> - Criação de novas disciplinas, alteração de disciplinas existentes e exclusão de disciplinas.</p>
-            </div>
-            <div class="doc" onclick="window.location.href = './mapa-admin-unifan'">
-                <img src="../img/icons/RoomMap.png" alt="Usuários">
-                <p><b class="cyan">Mapa de Salas UNIFAN</b> - Criação de novas disciplinas, alteração de disciplinas existentes e exclusão de disciplinas.</p>
-            </div>
-            <div class="doc" onclick="window.location.href = './faq-admin'">
-                <img src="../img/icons/FAQicon.png" alt="Projetos">
-                <p><b class="cyan">FAQ Admin</b> - Criação de novas perguntas respondidas para dúvidas frequentes.</p>
-            </div>
+            <h1>Integração <b class="cyan">RM</b> - <b class="cyan">EPS</b></h1>
+            <h2 class="purple">Objetivo</h2>
+            <p>Este software foi desenvolvido com o objetivo de realizar <b class="purple">cargas dos alunos matriculados</b> do RM para o Ambiente Virtual de Aprendizado EPS.</p>
+            <h2 class="purple">Usuabilidade</h2>
+            <p>Disparos automáticos pelo agendador de tarefas</p>
+            <p><b class="purple">Graduação:</b> 08:00 - 11:00 - 17:00</p>
+            <p><b class="purple">Pós-graduação:</b> 08:00</p>
+            <p>Para realizar testes é possível descomentar as linhas:<br>
+                <b class="yellow">\App\controller\HelperController::debugVar($this->aData, 2);<br>
+                \App\controller\HelperController::debugVar($sField.' '.$sTables.' '.$sConditions, 2);<br>
+                exit();</b></p>
+            <p>Estas linhas se econtram em UNEFEAD_API\src\model nos arquivos <b class="purple">Alunos.php</b>, <b class="purple">AlunosCurso.php</b>, <b class="purple">AlunosTurma.php</b> e <b class="purple">Turma.php</b>.</p>
+            <p>OBS: Nos arquivos <b class="purple">Alunos e Turma</b> -> Somente <b class="cyan">um bloco</b> destas linas</p>
+            <p>Nos arquivos <b class="purple">AlunosCurso e AlunosTurma</b> -> <b class="cyan">Dois blocos</b> destas linhas</p>
+            <h2 class="purple">Estrutura</h2>
+            <p>O projeto foi construído em <b class="purple">PHP</b></p>
+            <p>Está dividido em <b class="purple">grupos</b> e <b class="purple">subgrupo</b>.</p>
+            <p><b class="purple"></b>Grupos:</p>
+            <ul>
+                <li class="step">EAD</li>
+                <li class="step">Interativas</li>
+                <li class="step">Pós</li>
+                <li class="step">Presencial</li>
+            </ul>
+            <p><b class="purple">Subgrupos:</b></p>
+            <ul>
+                <li class="step">UNEF</li>
+                <li class="step">UNIFAN</li>
+                <li class="step">UNEFEAD (somente na pós)</li>
+            </ul>
+            <h2 class="purple">Configuração</h2>
+            <p>Em cada <b class="purple">período letivo</b> é necessário realizar a configuração de idperlet.</p>
+            <p></p>
         </article>
 
 
