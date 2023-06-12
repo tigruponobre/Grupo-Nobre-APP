@@ -511,7 +511,7 @@ function CDB(){
     <h1><b class="cyan">Concurso de bolsas</b> - Streamlit</h1>
     <h2 class="purple">Objetivo</h2>
     <p>Este software foi desenvolvido com o objetivo facilitar as pesquisas por resultados do concurso de bolsa.</p>
-    <h2 class="purple">Usuabilidade</h2>
+    <h2 class="purple">Usabilidade</h2>
     <p>Amplamente utilizado pelo setor <b class="purple">comercial</b>.</p>
     <p>As consultas podem ser realizadas por <b class="cyan">primeiro nome</b>, <b class="cyan">algum sobrenome</b>, <b class="cyan">nome completo</b> ou <b class="cyan">CPF (com ou sem pontuação)</b>.</p>
     <h2 class="purple">Estrutura</h2>
@@ -532,4 +532,61 @@ function CDB(){
         <li class="step">Após toda a configuração é necessário executar o comando <b class="purple">streamlit run Bem-vindo.py</b> na raiz do projeto, <b class="purple">via CMD</b>.</li>
         <li class="step">Caso o projeto não se encontre em <b class="purple">https://home.gruponobre.edu.br</b>, necessário adicionar o link <b class="cyan">http://192.168.10.83:8501</b> no HTML.</li>
     </ul>`
+}
+
+function rm_eps(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
+    article.innerHTML =
+    `<em>Grupo Nobre APP / Integração RM - EPS</em>
+    <h1>Integração <b class="cyan">RM</b> - <b class="cyan">EPS</b></h1>
+    <h2 class="purple">Objetivo</h2>
+    <p>Este software foi desenvolvido com o objetivo de realizar <b class="purple">cargas dos alunos matriculados</b> do RM para o Ambiente Virtual de Aprendizado EPS.</p>
+    <h2 class="purple">Usabilidade</h2>
+    <p>Disparos automáticos pelo agendador de tarefas</p>
+    <p><b class="purple">Graduação:</b> 08:00 - 11:00 - 17:00</p>
+    <p><b class="purple">Pós-graduação:</b> 08:00</p>
+    <p>Para realizar testes é possível descomentar as linhas:<br>
+        <b class="yellow">\App\controller\HelperController::debugVar($this->aData, 2);<br>
+        \App\controller\HelperController::debugVar($sField.' '.$sTables.' '.$sConditions, 2);<br>
+        exit();</b></p>
+    <p>Estas linhas se econtram em UNEFEAD_API\src\model nos arquivos <b class="purple">Alunos.php</b>, <b class="purple">AlunosCurso.php</b>, <b class="purple">AlunosTurma.php</b> e <b class="purple">Turma.php</b>.</p>
+    <p>OBS: Nos arquivos <b class="purple">Alunos e Turma</b> -> Somente <b class="cyan">um bloco</b> destas linas</p>
+    <p>Nos arquivos <b class="purple">AlunosCurso e AlunosTurma</b> -> <b class="cyan">Dois blocos</b> destas linhas</p>
+    <h2 class="purple">Estrutura</h2>
+    <p>O projeto foi construído em <b class="purple">PHP</b></p>
+    <p>Está dividido em <b class="purple">grupos</b> e <b class="purple">subgrupo</b>.</p>
+    <p><b class="purple"></b>Grupos:</p>
+    <ul>
+        <li class="step">EAD</li>
+        <li class="step">Interativas</li>
+        <li class="step">Pós</li>
+        <li class="step">Presencial</li>
+    </ul>
+    <p><b class="purple">Subgrupos:</b></p>
+    <ul>
+        <li class="step">UNEF</li>
+        <li class="step">UNIFAN</li>
+        <li class="step">UNEFEAD (somente na pós)</li>
+    </ul>
+    <h2 class="purple">Configuração</h2>
+    <p>Em cada <b class="purple">período letivo</b> é necessário realizar a configuração de idperlet.</p>
+    <p>Em cada Grupo há arquivos php em que no topo possuem uma chamada de função <b class="purple">setIdperlet(idperlet)</b></p>
+    <p>Verificar os <b class="purple">disparadores automáticos</b> no <b class="purple">agendador de tarefas</b></p>
+    <h2 class="purple">Validação</h2>
+    <p>Para validar os alunos que foram enviados pela carga é necessário acessar o banco de dados <b class="purple">UNEFEAD_API localizado no 192.168.10.100</b> e <b class="purple">FANEAD_API localizado no 192.168.0.157</b></p>
+    <p>As <b class="purple">tabelas</b> de verificação são:</p>
+    <ul>
+        <li class="step">log_export_aluno</li>
+        <li class="step">log_export_aluno_curso</li>
+        <li class="step">log_export_aluno_turma</li>
+        <li class="step">log_export_turma</li>
+    </ul>
+    <p>Cada aluno tem <b class="cyan">UMA</b> intância em <b class="purple">log_export_aluno</b> trazendo <b class="purple">RA e CPF</b> - Dados utilizados para login no portal</p>
+    <p>Em cada export_aluno é necessário verificar <b class="purple">log_retorno_destinatario</b></p>
+    <p>Cada aluno tem <b class="cyan">UMA</b> intância em <b class="purple">log_export_aluno_curso</b>, assim se torna possível verificar se o aluno foi cadastrado no curso</p>
+    <p>Cada aluno tem <b class="cyan">UMA</b> intância <b class="cyan">para cada turma em que está matriculado</b> em <b class="purple">log_export_aluno_turma</b>, assim se torna possível visualizar se ele foi vinculado às turmas</p>
+    <p>O log de <b class="purple">turmas</b> independe dos alunos.</p>`
 }
