@@ -351,9 +351,12 @@ function virtualLibrary(){
     <p>Os dados que devem ser enviados no <b class="purple">Body da requisição</b> são: <b class="cyan">Primeiro nome do aluno, último nome do aluno e registro acadêmico do aluno</b></p>
     <p>O endpoint trata de montar a requisição com estes dados da forma que a <b class="purple">Bilbioteca Virtual</b> solicita</p>
     <h2 class="purple">Localização</h2>
-    <p><b class="mark">./functions/bibli_unef.js</b> e <b class="mark">./functions/bibli_fan.js</b></p>
+    <p><b class="cyan">./functions/bibli_unef.js</b> e <b class="cyan">./functions/bibli_fan.js</b></p>
     <h2 class="purple">Parâmetros no body da requisição</h2>
-    <p><b class="mark">firstName</b>, <b class="mark">lastName</b> e <b class="mark">ra</b></p>`
+    <p><b class="cyan">firstName</b>, <b class="cyan">lastName</b> e <b class="cyan">ra</b></p>
+    <h2 class="purple">Link de acesso</h2>
+    <p><b class="cyan">https://home.gruponobre.edu.br/.netlify/functions/nome-arquivo-js</b></p>`
+
 }
 
 function roomMap(){
