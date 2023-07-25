@@ -73,7 +73,7 @@ exports.handler = async function (event, context){
     //Error creating user
     if(createUser.data.Success == false){
         return {
-            statusCode: 200,
+            statusCode: 400,
             body: JSON.stringify({
                 resposta: "Usuário NÃO cadastrado!"
             })
