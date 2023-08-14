@@ -26,16 +26,44 @@ exports.handler = async function (event, context){
 
     // Destructuring variabels
     const eventBody = await JSON.parse(event.body)
-    let { CURSO, MODALIDADE, MATUTINO, NOTURNO } = eventBody
+    let { CURSO, MODALIDADE, MATUTINO, VESPERTINO, NOTURNO } = eventBody
+    
+    // Discipline object if all shifts needs to be registered
+    if(MATUTINO && VESPERTINO && NOTURNO){
+        let newMap = {
+            CURSO,
+            MODALIDADE,
+            MATUTINO,
+            VESPERTINO,
+            NOTURNO
+        }
 
+        // Create discipline
+        try {
+            await Map.create(newMap)
+            return{
+                statusCode: 200,
+                body: JSON.stringify({
+                    resposta: 'Map registered'
+                })
+            }
+        } catch (error) {
+            return {
+                statusCode: 500,
+                body: JSON.stringify({
+                    resposta: 'It was not possible to registrate this map'
+                    })
+                }
+            }
+    }
     // Discipline object if MATUTINO and NOTURNO needs to be registered
-    if (MATUTINO && NOTURNO){
+    else if (MATUTINO && NOTURNO){
         let newMap = {
             CURSO,
             MODALIDADE,
             MATUTINO,
             NOTURNO
-    }
+        }
     // Create discipline
     try {
         await Map.create(newMap)
