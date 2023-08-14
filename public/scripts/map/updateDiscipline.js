@@ -31,12 +31,12 @@ function editRow(event){
     editTurno.value = document.getElementById('turno').value
     editDia.value = document.getElementById('dia').value
     editDisciplina.value = thisRowData[0].textContent
-    editTurma.value = thisRowData[1].textContent
-    editProfessor.value = thisRowData[2].textContent
-    editSala.value = thisRowData[3].textContent
-    editModulo.value = thisRowData[4].textContent
-    editInicio.value = thisRowData[5].textContent
-    editFim.value = thisRowData[6].textContent
+    // editTurma.value = thisRowData[1].textContent
+    editProfessor.value = thisRowData[1].textContent
+    editSala.value = thisRowData[2].textContent
+    editModulo.value = thisRowData[3].textContent
+    editInicio.value = thisRowData[4].textContent
+    editFim.value = thisRowData[5].textContent
 
     beforeUpdate = {
         beforeCurso: document.getElementById('curso').value,
@@ -69,12 +69,12 @@ function editRowMobile(event){
     editTurno.value = thisRowNecessaryData[1].textContent
     editDia.value = thisRowNecessaryData[2].textContent
     editDisciplina.value = thisRowNecessaryData[3].textContent
-    editTurma.value = thisRowNecessaryData[4].textContent
-    editProfessor.value = thisRowNecessaryData[5].textContent
-    editSala.value = thisRowNecessaryData[6].textContent
-    editModulo.value = thisRowNecessaryData[7].textContent
-    editInicio.value = thisRowNecessaryData[8].textContent
-    editFim.value = thisRowNecessaryData[9].textContent
+    // editTurma.value = thisRowNecessaryData[4].textContent
+    editProfessor.value = thisRowNecessaryData[4].textContent
+    editSala.value = thisRowNecessaryData[5].textContent
+    editModulo.value = thisRowNecessaryData[6].textContent
+    editInicio.value = thisRowNecessaryData[7].textContent
+    editFim.value = thisRowNecessaryData[8].textContent
 
     //Saving necessary data before the update to search on DB
     beforeUpdate = {

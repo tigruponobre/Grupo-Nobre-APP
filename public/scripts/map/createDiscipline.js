@@ -18,7 +18,7 @@ async function createNewDiscipline(){
     const newShift = await document.getElementById('selectShift').value
     const newDay = await document.getElementById('selectDay').value
     const newDisciplineName = await document.querySelector('.newDisciplineName').value
-    const newClass = await document.querySelector('.newClass').value
+    // const newClass = await document.querySelector('.newClass').value
     const newProfessor = await document.querySelector('.newProfessor').value
     const newRoom = await document.querySelector('.newRoom').value
     const newModule = await document.querySelector('.newModule').value
@@ -32,7 +32,7 @@ async function createNewDiscipline(){
             turno: newShift,
             dia: newDay,
             disciplina: newDisciplineName,
-            turma: newClass,
+            // turma: newClass,
             professor: newProfessor,
             sala: newRoom,
             modulo: newModule,
@@ -52,7 +52,7 @@ async function createNewDiscipline(){
         document.getElementById('selectShift').value = 'TURNO'
         document.getElementById('selectDay').value = 'DIA DA SEMANA'
         document.querySelector('.newDisciplineName').value = ''
-        document.querySelector('.newClass').value = ''
+        // document.querySelector('.newClass').value = ''
         document.querySelector('.newProfessor').value = ''
         document.querySelector('.newRoom').value = ''
         document.querySelector('.newModule').value = ''

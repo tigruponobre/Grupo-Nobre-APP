@@ -15,7 +15,6 @@ async function searchMapDesktop(curso, turno, dia){
     document.getElementById('myTable').innerHTML = 
     `<tr>
     <th>DISCIPLINA</th>
-    <th>TURMA</th>
     <th>PROFESSOR(A)</th>
     <th>SALA</th>
     <th>MÓDULO</th>
@@ -145,7 +144,6 @@ async function searchMapMobile(curso, turno, dia){
         <th>TURNO: <td class="tableData">${newTurno}</td></th>
         <th>DIA DA SEMANA: <td class="tableData">${newDia}</td></th>-->
         <th>DISCIPLINA: <td class="tableData">${newDisciplina}</td></th>
-        <th>TURMA: <td class="tableData">${newTurma}</td></th>
         <th>PROFESSOR(A): <td class="tableData">${newProfessor}</td></th>
         <th>SALA: <td class="tableData">${newSala}</td></th>
         <th>MÓDULO: <td class="tableData">${newModulo}</td></th>
