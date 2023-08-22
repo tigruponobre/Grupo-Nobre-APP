@@ -16,7 +16,7 @@
 - [Mongo DB](https://www.mongodb.com/)
 
 ## Dependencias
-- `Bcrypt.js`
+- `Bcryptjs`
 - `Express`
 - `Mongoose`
 - `Axios`
