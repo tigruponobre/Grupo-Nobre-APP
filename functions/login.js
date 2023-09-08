@@ -36,7 +36,7 @@ exports.handler = async function (event, context){
 
     //TOKEN
     const salt = await bcrypt.genSalt(8)
-    let tokenHash = 'aaaaa'
+    let tokenHash = ''
 
     //Find user
     try {
