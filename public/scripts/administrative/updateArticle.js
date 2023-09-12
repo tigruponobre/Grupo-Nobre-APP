@@ -608,22 +608,31 @@ function servers(){
     <h3>Servidor base de dados RM: <b class="cyan">192.168.10.100</b></h3>
     <h3>Portais TOTVS: <b class="cyan">192.168.10.102</b></h3>
     <ul>
-        <li class="step">Educacional: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional</b></li>
-        <li class="step">Professor: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor</b></li>
-        <li class="step">Gestão Educacional: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional</b></li>
-        <li class="step">TReports: <b class="mark">\\192.168.10.102\c$\totvs\TReports\smart-view\deployments</b></li>
+        <li class="step">Educacional: <b class="mark">192.168.10.102/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalEducacional</b></li>
+        <li class="step">Professor: <b class="mark">192.168.10.102/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalDoProfessor</b></li>
+        <li class="step">Gestão Educacional: <b class="mark">192.168.10.102/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalGestaoEducacional</b></li>
+        <li class="step">TReports: <b class="mark">192.168.10.102/c$/totvs/TReports/smart-view/deployments</b></li>
     </ul>
     <h3>API planos de pagamentos: <b class="cyan">192.168.10.36</b></h3>
     <h3>Servidor de ramais e histórico legado: <b class="cyan">192.168.10.214</b></h3>
     <h2>Servidores <b class="purple">UNIFAN</b></h2>
     <h3>Servidor base de dados RM: <b class="cyan">192.168.0.157</b></h3>
     <h3>Portais TOTVS: <b class="cyan">192.168.0.31</b></h3>
-        <ul>
-            <li class="step">Educacional: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional</b></li>
-            <li class="step">Professor: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor</b></li>
-            <li class="step">Gestão Educacional: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional</b></li>
-            <li class="step">TReports: <b class="mark">\\192.168.0.31\c$\totvs\TReports\smart-view\deployments</b></li>
-        </ul>
-    <h2>Servidores <b class="cyan">Maple Bear</b></h2>
-    <h3>Servidor Food Ordering: <b class="cyan">192.168.11.3</b></h3>`
+    <ul>
+        <li class="step">Educacional: <b class="mark">192.168.0.31/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalEducacional</b></li>
+        <li class="step">Professor: <b class="mark">192.168.0.31/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalDoProfessor</b></li>
+        <li class="step">Gestão Educacional: <b class="mark">192.168.0.31/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalGestaoEducacional</b></li>
+        <li class="step">TReports: <b class="mark">192.168.0.31/c$/totvs/TReports/smart-view/deployments</b></li>
+    </ul>
+    <h2>Servidores <b class="purple">Colégio Nobre</b></h2>
+    <h3>Portais TOTVS: <b class="cyan">192.168.0.157</b></h3>
+    <ul>
+        <li class="step">Educacional: <b class="mark">192.168.0.157/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalEducacional</b></li>
+        <li class="step">Professor: <b class="mark">192.168.0.157/c$/totvs/CorporeRM/FrameHTML/Web/App/Edu/PortalDoProfessor</b></li>
+    </ul>
+    <h2>Servidores <b class="purple">Maple Bear</b></h2>
+    <h3>Servidor Food Ordering: <b class="cyan">192.168.11.3</b></h3>
+    <h2>Servidores de <b class="purple">testes</b></h2>
+    <h3>Servidor da base teste: <b class="cyan">192.168.10.83</b></h3>
+    `
 }
