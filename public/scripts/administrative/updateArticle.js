@@ -595,3 +595,35 @@ function rm_eps(){
     <p>Cada aluno tem <b class="cyan">UMA</b> intância <b class="cyan">para cada turma em que está matriculado</b> em <b class="purple">log_export_aluno_turma</b>, assim se torna possível visualizar se ele foi vinculado às turmas</p>
     <p>O log de <b class="purple">turmas</b> independe dos alunos.</p>`
 }
+
+function servers(){
+    if(window.innerWidth < 1040 && sandwichCheck.checked){
+        toggleDivs()
+        sandwichCheck.checked = false
+    }
+    article.innerHTML =
+    `<em>Grupo Nobre APP / Servidores</em>
+    <h1>Localização dos <b class="cyan">servidores locais</b> e <b class="cyan">projetos locais</b></h1>
+    <h2>Servidores <b class="purple">UNEF</b></h2>
+    <h3>Servidor base de dados RM: <b class="cyan">192.168.10.100</b></h3>
+    <h3>Portais TOTVS: <b class="cyan">192.168.10.102</b></h3>
+    <ul>
+        <li class="step">Educacional: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional</b></li>
+        <li class="step">Professor: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor</b></li>
+        <li class="step">Gestão Educacional: <b class="mark">\\192.168.10.102\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional</b></li>
+        <li class="step">TReports: <b class="mark">\\192.168.10.102\c$\totvs\TReports\smart-view\deployments</b></li>
+    </ul>
+    <h3>API planos de pagamentos: <b class="cyan">192.168.10.36</b></h3>
+    <h3>Servidor de ramais e histórico legado: <b class="cyan">192.168.10.214</b></h3>
+    <h2>Servidores <b class="purple">UNIFAN</b></h2>
+    <h3>Servidor base de dados RM: <b class="cyan">192.168.0.157</b></h3>
+    <h3>Portais TOTVS: <b class="cyan">192.168.0.31</b></h3>
+        <ul>
+            <li class="step">Educacional: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional</b></li>
+            <li class="step">Professor: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor</b></li>
+            <li class="step">Gestão Educacional: <b class="mark">\\192.168.0.31\c$\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional</b></li>
+            <li class="step">TReports: <b class="mark">\\192.168.0.31\c$\totvs\TReports\smart-view\deployments</b></li>
+        </ul>
+    <h2>Servidores <b class="cyan">Maple Bear</b></h2>
+    <h3>Servidor Food Ordering: <b class="cyan">192.168.11.3</b></h3>`
+}
