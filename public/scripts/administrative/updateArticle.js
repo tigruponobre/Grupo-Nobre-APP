@@ -634,5 +634,6 @@ function servers(){
     <h3>Servidor Food Ordering: <b class="cyan">192.168.11.3</b></h3>
     <h2>Servidores de <b class="purple">testes</b></h2>
     <h3>Servidor da base teste: <b class="cyan">192.168.10.83</b></h3>
+    <h3>Servidor de Cargas: <b class="cyan">192.168.10.65</b></h3>
     `
 }

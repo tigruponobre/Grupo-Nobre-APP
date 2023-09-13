@@ -25,7 +25,7 @@
 ## Como instalar o ambiente de desenvolvimento
 - Clone o projeto `https://github.com/gustavopqz/Grupo-Nobre-APP.git`
 - Instalação global do Netlify CLI `npm i netlify-cli -g`
-- Instalação de dependencias `npm i express mongoose axios dotenv bryptjs`
+- Instalação de dependencias `npm i express mongoose axios dotenv brcyptjs`
 - Rodar ambiente `ntl dev`
 
 ## Como adicionar variáveis de ambiente
