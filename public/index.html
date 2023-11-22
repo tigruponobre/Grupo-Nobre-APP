@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,11 +22,12 @@
 
     <script>
         //Set url to use on fetch's
-        const url = document.URL.split('/').splice('0',3).join('/')
+        const url = document.URL.split('/').splice('0', 3).join('/')
     </script>
 
     <title>Home</title>
 </head>
+
 <body>
     <div id="google_search">
         <input id="search" type="text" placeholder="Google" autocomplete="off">
@@ -38,20 +40,35 @@
                 <li id="admin">Painel Administrativo</li>
             </ul>
         </nav>
-    
+
         <div id="left-side">
             <section id="content">
                 <div id="title">
                     <h2 id="greeting"></h2>
                     <h1>GRUPO NOBRE APP</h1>
                 </div>
-    
+
                 <div id="select">
-                    <a href="http://192.168.10.214/" class="options"><p><img class="gn_colorful" src="./img/icons/gn_colorful.png">Ramais Grupo Nobre</p><img class="interaction" src="./img/icons/interaction.png"></a>
-                    <a href="http://192.168.10.214:8080" class="options"><p><img class="gn_colorful" src="./img/icons/gn_colorful.png">Histórico SISGU</p><img class="interaction" src="./img/icons/interaction.png"></a>
-                    <a href="http://192.168.10.10/glpi/index.php" class="options"><img class="gn_colorful" src="./img/icons/gn_colorful.png"><p>Solicitação ao TI - GLPI</p><img class="interaction" src="./img/icons/interaction.png"></a>
-                    <a href="./pages/faq" class="options"><img class="gn_colorful" src="./img/icons/gn_colorful.png"><p>Base de conhecimento</p><img class="interaction" src="./img/icons/interaction.png"></a>
-                    <a href="http://192.168.10.83:8501" class="options"><img class="gn_colorful" src="./img/icons/gn_colorful.png"><p>Concurso de bolsas</p><img class="interaction" src="./img/icons/interaction.png"></a>
+                    <a href="http://192.168.10.214/" class="options" target="_blank">
+                        <p><img class="gn_colorful" src="./img/icons/gn_colorful.png">Ramais Grupo Nobre</p><img
+                            class="interaction" src="./img/icons/interaction.png">
+                    </a>
+                    <a href="http://192.168.10.214:8080" class="options" target="_blank">
+                        <p><img class="gn_colorful" src="./img/icons/gn_colorful.png">Histórico SISGU</p><img
+                            class="interaction" src="./img/icons/interaction.png">
+                    </a>
+                    <a href="http://192.168.10.10/glpi/index.php" class="options" target="_blank"><img
+                            class="gn_colorful" src="./img/icons/gn_colorful.png">
+                        <p>Solicitação ao TI - GLPI</p><img class="interaction" src="./img/icons/interaction.png">
+                    </a>
+                    <a href="./pages/faq" class="options" target="_blank"><img class="gn_colorful"
+                            src="./img/icons/gn_colorful.png">
+                        <p>Base de conhecimento (FAQ)</p><img class="interaction" src="./img/icons/interaction.png">
+                    </a>
+                    <a href="http://192.168.10.83:8501" class="options" target="_blank"><img class="gn_colorful"
+                            src="./img/icons/gn_colorful.png">
+                        <p>Documentos importantes</p><img class="interaction" src="./img/icons/interaction.png">
+                    </a>
                 </div>
             </section>
             <div id="logodiv">
@@ -59,9 +76,9 @@
             </div>
         </div>
     </main>
-    
+
     <div class="fade"></div>
-    
+
     <div class="loginDiv">
         <div class="card">
             <div id="logo-azul-login">
@@ -112,7 +129,8 @@
     </div>
 
     <footer>
-        <p id="copy">&copy; 2022 Grupo Nobre. Todos os direitos reservados.</p>
+        <p id="copy">&copy; 2023 Grupo Nobre. Todos os direitos reservados.</p>
     </footer>
 </body>
+
 </html>
