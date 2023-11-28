@@ -5,19 +5,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-#logo-unef {
+#logo-colegio {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 1em 0;
 }
 
-#imagem-unef {
+#imagem-colegio {
     max-width: 200px;
 }
 
 header {
-    background: linear-gradient(-45deg, #f8904a, #F47017, #AF4D11);
+    background: linear-gradient(-45deg, #3395D1, #5e9dd9, #1d539a);
     background-size: 500% 500%;
     position: relative;
     animation: change 2.8s ease-in-out infinite;
@@ -55,7 +55,7 @@ h2 {
 }
 
 #container {
-    background-color: #282D33;
+    background-color: #2C72B4;
     width: 80vh;
     height: 100%;
     border-radius: 61px 61px 0px 0px;
@@ -74,14 +74,13 @@ h2 {
     display: block;
     margin: 0 auto;
     margin-top: 50px;
-    /* background: #F17E30; */
-    background: #AF4D10;
+    background: #E9F4FD;
     border-radius: 25px;
     height: 48px;
     width: 30vh;
     text-align: center;
     cursor: pointer;
-    color: white;
+    color: #2C72B4;
     font-weight: bold;
     line-height: 18px;
     border: none;
