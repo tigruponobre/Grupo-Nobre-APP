@@ -22,7 +22,7 @@ header {
     position: relative;
     animation: change 2.8s ease-in-out infinite;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@ h2 {
 .documentos {
     display: block;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 40px;
     background: #E9F4FD;
     border-radius: 25px;
     height: 48px;
@@ -128,4 +128,14 @@ h2 {
         overflow: auto;
     }
 
+    header {
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-height: 932px) {
+    header {
+        height: 100vh;
+    }
 }
