@@ -1,4 +1,4 @@
-function sortear() {
+function sorteador() {
 
     // Obter valores dos inputs
     const quantidadeDeNumeros = document.querySelector("#quantidade").value
