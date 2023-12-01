@@ -7,7 +7,7 @@ function sorteador() {
 
 
     // Validar se os valores são numéricos e se maximo >= minimo
-    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
+    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo || quantidadeDeNumeros > valorMaximo && valorMinimo || quantidadeDeNumeros < 0) {
         alert("Por favor, insira valores válidos.");
         return;
     }
