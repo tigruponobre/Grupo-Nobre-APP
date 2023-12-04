@@ -6,9 +6,12 @@ function sortear() {
     const valorMaximo = Math.floor(document.querySelector("#input-max").value)
 
 
-    // Validar se os valores são numéricos e se maximo >= minimo
-    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
+    // Validar se os valores são numéricos, inteiros e se maximo >= minimo
+    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo || quantidadeDeNumeros > valorMaximo) {
         alert("Por favor, insira valores válidos.");
+        return;
+    } else if (quantidadeDeNumeros < 0 || valorMaximo < 0 || valorMinimo < 0 && !Number.isInteger(quantidadeDeNumeros)) {
+        alert("Por favor, insira números inteiros.");
         return;
     }
 

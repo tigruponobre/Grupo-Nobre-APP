@@ -8,11 +8,10 @@
 }
 
 body {
-    background: linear-gradient(-40deg, #0700b8 0%, #1bb16b 80%);
-    /* background: #177962; */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(-45deg, #28A573, #04413E, #2FAC68);
+    background-size: 500% 500%;
+    position: relative;
+    animation: change 4s ease-in-out infinite;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -202,6 +201,21 @@ input:active {
     background-color: #555;
     /* Cor da barra de rolagem ao passar o mouse */
 }
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 
 @media (max-width: 740px) {
 

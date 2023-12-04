@@ -8,11 +8,10 @@
 }
 
 body {
-    background: linear-gradient(-40deg, #f6c66d 0%, #f98e01 100%);
-    /* background-color: #EC8A0E; */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(-45deg, #f8904a, #F47017, #AF4D11);
+    background-size: 500% 500%;
+    position: relative;
+    animation: change 4s ease-in-out infinite;
     min-height: 100vh;
     overflow-x: hidden;
     /* overflow-y: hidden; */
@@ -201,6 +200,20 @@ input:active {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
     /* Cor da barra de rolagem ao passar o mouse */
+}
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 @media (max-width: 740px) {
