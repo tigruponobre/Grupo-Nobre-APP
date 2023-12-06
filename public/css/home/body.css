@@ -1,9 +1,9 @@
-*{
+* {
     user-select: none;
 }
 
-body{
-    background-image: url(../../img/backgrounds/tech-city.jpg);
+body {
+    /* background-image: url(../../img/backgrounds/tech-city.jpg); */
     color: #fff;
     background-size: auto;
     background-position: top;
@@ -11,8 +11,8 @@ body{
     height: 100vh;
 }
 
-@media (max-width: 1180px){
-    body{
+@media (max-width: 1180px) {
+    body {
         background-size: auto;
         background-position: center;
         background-repeat: no-repeat;

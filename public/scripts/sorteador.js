@@ -1,16 +1,16 @@
-function sorteador() {
+function sortear() {
 
     // Obter valores dos inputs
     const quantidadeDeNumeros = document.querySelector("#quantidade").value
-    const valorMinimo = Math.ceil(document.querySelector("#input-min").value)
-    const valorMaximo = Math.floor(document.querySelector("#input-max").value)
+    const valorMinimo = document.querySelector("#input-min").value
+    const valorMaximo = document.querySelector("#input-max").value
 
 
     // Validar se os valores são numéricos, inteiros e se maximo >= minimo
     if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo || quantidadeDeNumeros > valorMaximo) {
         alert("Por favor, insira valores válidos.");
         return;
-    } else if (quantidadeDeNumeros < 0 || valorMaximo < 0 || valorMinimo < 0 && !Number.isInteger(quantidadeDeNumeros)) {
+    } else if (quantidadeDeNumeros < 0 || valorMaximo < 0 || valorMinimo < 0 && !Number.isInteger(quantidadeDeNumeros) || !Number.isInteger(valorMaximo) || !Number.isInteger(valorMinimo)) {
         alert("Por favor, insira números inteiros.");
         return;
     }
