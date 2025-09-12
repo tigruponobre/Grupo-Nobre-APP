@@ -3,7 +3,7 @@ const axios = require('axios')
 require('dotenv').config()
 
 //Enviroment variables
-const secret = process.env.BIBLI_FAN_SECRET
+const secret = process.env.BIBLI_FAN_SECRET || 'eb417da7-87f4-4dfc-9b86-7a41335ff2af'
 
 exports.handler = async function (event, context){
     //Get student information from body requistion
@@ -13,10 +13,11 @@ exports.handler = async function (event, context){
     const ra = eventBody.ra
 
     //Consume library API
-    let response = await axios('https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
+    let response = await axios('https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
         method: 'post',
         headers: {
-            'Content-type': 'text/xml',
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
             "X-DigitalLibraryIntegration-API-Key": `${secret}` //UNIFAN SECRET KEY
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
@@ -53,9 +54,10 @@ exports.handler = async function (event, context){
     //Else -> Create user in library database
     let createUser = await axios({
         method: 'post',
-        url: 'https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
+        url: 'https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
         headers: {
-            'Content-type': 'text/xml',
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
             "X-DigitalLibraryIntegration-API-Key": `${secret}` //UNIFAN SECRET KEY
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
@@ -81,10 +83,11 @@ exports.handler = async function (event, context){
     }
 
     //Success creating user -> Return authenticated URL
-    response = await axios('https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
+    response = await axios('https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
         method: 'post',
         headers: {
-            'Content-type': 'text/xml',
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
             "X-DigitalLibraryIntegration-API-Key": `${secret}` //CHAVE DA UNIFAN
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
