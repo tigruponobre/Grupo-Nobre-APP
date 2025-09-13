@@ -2,22 +2,25 @@
 const axios = require('axios')
 require('dotenv').config()
 
-//Enviroment variables
+//Environment variables
+// Coloque no seu .env:
+// BIBLI_UNEF_SECRET=eb417da7-87f4-4dfc-98b6-7a41335ff2af
 const secret = process.env.BIBLI_UNEF_SECRET
 
-exports.handler = async function (event, context){
-    //Get student information from body requistion
+exports.handler = async function (event, context) {
+    //Get student information from body request
     let eventBody = JSON.parse(event.body)
     const firstName = eventBody.firstName
     const lastName = eventBody.lastName
     const ra = eventBody.ra
 
-    //Consume library API
-    let response = await axios('https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
+    //Consume library API (AuthenticatedUrl)
+    let response = await axios('https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
         method: 'post',
         headers: {
-            'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `${secret}` //CHAVE DA UNEF,
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
+            'X-DigitalLibraryIntegration-API-Key': `${secret}`
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreateAuthenticatedUrlRequest
@@ -33,12 +36,12 @@ exports.handler = async function (event, context){
         </CreateAuthenticatedUrlRequest>
         `)
     })
-    
+
     //Get response data
     let data = await response.data
 
     //Success -> Return authenticated URL
-    if(data.Success == true){
+    if (data.Success == true) {
         return {
             statusCode: 200,
             headers: {
@@ -49,14 +52,15 @@ exports.handler = async function (event, context){
             })
         }
     }
-    
+
     //Else -> Create user in library database
     let createUser = await axios({
         method: 'post',
-        url: 'https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
+        url: 'https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/CreatePreRegisterUser',
         headers: {
-            'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `${secret}` //UNEF SECRET KEY
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
+            'X-DigitalLibraryIntegration-API-Key': `${secret}`
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreatePreRegisterUserRequest
@@ -71,7 +75,7 @@ exports.handler = async function (event, context){
     })
 
     //Error creating user
-    if(createUser.data.Success == false){
+    if (createUser.data.Success == false) {
         return {
             statusCode: 400,
             body: JSON.stringify({
@@ -80,12 +84,13 @@ exports.handler = async function (event, context){
         }
     }
 
-    //Success creating user -> Return authenticated URL
-    response = await axios('https://digitallibrary.zbra.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
+    //Success creating user -> Return authenticated URL again
+    response = await axios('https://integracao.dli.minhabiblioteca.com.br/DigitalLibraryIntegrationService/AuthenticatedUrl', {
         method: 'post',
         headers: {
-            'Content-type': 'text/xml',
-            "X-DigitalLibraryIntegration-API-Key": `${secret}` //CHAVE DA UNEF
+            'Host': 'integracao.dli.minhabiblioteca.com.br',
+            'Content-Type': 'application/xml; charset=utf-8',
+            'X-DigitalLibraryIntegration-API-Key': `${secret}`
         },
         data: (`<?xml version="1.0" encoding="utf-8"?>
         <CreateAuthenticatedUrlRequest
@@ -101,19 +106,19 @@ exports.handler = async function (event, context){
         </CreateAuthenticatedUrlRequest>
         `)
     })
-    
+
     //Get response data
     data = await response.data
 
     //Success
-    if(data.Success == true){
+    if (data.Success == true) {
         return {
             statusCode: 200,
             body: JSON.stringify({
                 resposta: data.AuthenticatedUrl
             })
         }
-    }else{
+    } else {
         return {
             statusCode: 500,
             body: JSON.stringify({
