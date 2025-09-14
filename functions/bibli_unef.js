@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
             }
         }
 
-        // Nova URL base da Minha Biblioteca (obrigatória após 15/09)
+        // ⚠️ ATENÇÃO: NÃO HÁ ESPAÇOS NO FINAL DA URL!
         const baseUrl = 'https://integracao.dli.minhabiblioteca.com.br/'
 
         // Função auxiliar para enviar requisições XML
